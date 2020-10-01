@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Galopago electronics projects publication"
+title                    : "Galopago projects publication"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Galopago Consulting"
@@ -95,8 +95,8 @@ analytics:
 author:
   name             : "Your Name"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : "Sensu stricto, nullo metro copositum est"
+  location         : "Lithospehre,PE"
   email            :
   links:
     - label: "Email"
