@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Galopago projects publication"
+title                    : "Galopago projects"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Galopago Consulting"
-description              : "An amazing website."
+description              : "Open source and Open hardware electronic projects"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "Editor"
   avatar           : "/assets/images/galopagologo_200x201.png"
-  bio              : "Sensu stricto, nullo metro copositum est"
+  bio              : "Electronics projects, Open source & Open hardware"
   location         : #"Lithospehre,PE"
   email            :
   links:
