@@ -24,10 +24,10 @@ If you could keep awake (but of course you can't) you would see your own mother 
 
 I don't know whether you have ever seen a map of a person's mind. Doctors sometimes draw maps of other parts of you, and your own map can become intensely interesting, but catch them trying to draw a map of a child's mind, which is not only confused, but keeps going round all the time. There are zigzag lines on it, just like your temperature on a card, and these are probably roads in the island, for the Neverland is always more or less an island, with astonishing splashes of colour here and there, and coral reefs and rakish-looking craft in the offing, and savages and lonely lairs, and gnomes who are mostly tailors, and caves through which a river runs, and princes with six elder brothers, and a hut fast going to decay, and one very small old lady with a hooked nose. It would be an easy map if that were all, but there is also first day at school, religion, fathers, the round pond, needle-work, murders, hangings, verbs that take the dative, chocolate pudding day, getting into braces, say ninety-nine, three-pence for pulling out your tooth yourself, and so on, and either these are part of the island or they are another map showing through, and it is all rather confusing, especially as nothing will stand still.
 
-| Employee         | Get it | Datasheet                                          | 
+| Employee         | Get yours! | Datasheet                                          | 
 | --------         | ------ | ------------------------------------------------------------ |
-| RAK811 LoRa Module    | $1     | [RAK811.pdf](/assets/pdf/RAK811.pdf)           |
-| Generic 83x58x33mm waterproof enclosure box    | $100K  | For all the blogging she does.                               |
+| RAK811 LoRa Module    | [💸](#)     | [RAK811.pdf](/assets/pdf/RAK811.pdf)           |
+| Generic 83x58x33mm waterproof enclosure box    | [☢](#)  | For all the blogging she does.                               |
 | [Fred Bloggs] | $100M  | Pictures are worth a thousand words, right? So Jane × 1,000. |
 | [Jane Bloggs] | $100B  | With hair like that?! Enough said.                           |
 
