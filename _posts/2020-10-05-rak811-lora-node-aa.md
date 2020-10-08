@@ -1,8 +1,8 @@
 ---
-title: "Nodo LoRa basado en RAK811 alimentado por pilas AA"
+title: "RAK811 based LoRa Node powered by AA batteries"
 excerpt_separator: "<!--more-->"
 categories:
-  - espanol
+  - english
 tags:
   - AN000
   - LoRaWAN
@@ -24,12 +24,25 @@ If you could keep awake (but of course you can't) you would see your own mother 
 
 I don't know whether you have ever seen a map of a person's mind. Doctors sometimes draw maps of other parts of you, and your own map can become intensely interesting, but catch them trying to draw a map of a child's mind, which is not only confused, but keeps going round all the time. There are zigzag lines on it, just like your temperature on a card, and these are probably roads in the island, for the Neverland is always more or less an island, with astonishing splashes of colour here and there, and coral reefs and rakish-looking craft in the offing, and savages and lonely lairs, and gnomes who are mostly tailors, and caves through which a river runs, and princes with six elder brothers, and a hut fast going to decay, and one very small old lady with a hooked nose. It would be an easy map if that were all, but there is also first day at school, religion, fathers, the round pond, needle-work, murders, hangings, verbs that take the dative, chocolate pudding day, getting into braces, say ninety-nine, three-pence for pulling out your tooth yourself, and so on, and either these are part of the island or they are another map showing through, and it is all rather confusing, especially as nothing will stand still.
 
-| Employee         | Get yours! | Datasheet                                          | 
-| --------         | ------ | ------------------------------------------------------------ |
+| Component         | Get yours! | Datasheet                                          | 
+| -------- | ------ | ------------------------------------------------------------ |
 | RAK811 LoRa Module    | [💸](#)     | [RAK811.pdf](/assets/pdf/RAK811.pdf)           |
-| Generic 83x58x33mm waterproof enclosure box    | [☢](#)  | For all the blogging she does.                               |
-| [Fred Bloggs] | $100M  | Pictures are worth a thousand words, right? So Jane × 1,000. |
-| [Jane Bloggs] | $100B  | With hair like that?! Enough said.                           |
+| Generic 83x58x33mm waterproof enclosure box (wall mounting tabs, clear cover options available)    | [☢](#)  | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf)                               |
+| Single AA battery holder for pcb mounting | $100M  | [BH311.pdf](/assets/pdf/BH311.pdf) | 
+| Screw terminal kf350 3.5mm 3 pin | $100B  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
+| Spring antenna for 433,868,915 mhz| $100B  | [SW433-TH32.pdf](/assets/pdf/SW433-TH32.pdf) [SW868-TH06.pdf](/assets/pdf/SW868-TH06.pdf) [SW915-TH12.pdf](/assets/pdf/SW915-TH12.pdf)
+| Female header 2.54mm  | $100B  | [FHA3-SXX.pdf](/assets/pdf/FHA3-S1XX.pdf)                           |
+| Male pin header 2.54mm  | $100B  | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)                           |
+
+| PCB    | Get yours! | Source files                                          | 
+| -------- | ------ | ------------------------------------------------------------ |
+| Main circuit board    | [💸](#)     | [RAK811 LORA ADAPTABLE NODE](https://github.com/galopago/RAK811_LORA_ADAPTABLE_NODE)           |
+| Female header 2.54mm  | $100B  | [RAK LORA ADAPTABLE NODE BREAKOUT 2AA](https://github.com/galopago/RAK_LORA_ADAPTABLE_NODE_BREAKOUT_2AA)        |
+
+| Software    | Get yours! | Source files                                          | 
+| -------- | ------ | ------------------------------------------------------------ |
+| Main circuit board    | [💸](#)     | [RAK811 RUI SWITCH SENSOR](https://github.com/galopago/RAK811_RUI_SWITCH_SENSOR)           |
+
 
 | Header1 | Header2 | Header3 |
 |:--------|:-------:|--------:|
