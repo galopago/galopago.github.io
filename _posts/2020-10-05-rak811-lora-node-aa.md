@@ -10,7 +10,15 @@ tags:
 
 En un inicio este post ll children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing in a garden, and she plucked another flower and ran with it to her mother. I suppose she must have looked rather delightful, for Mrs. Darling put her hand to her heart and cried, "Oh, why can't you remain like this for ever!" This was all that passed between them on the subject, but henceforth Wendy knew that she must grow up. You always know after you are two. Two is the beginning of the end.
 
-Mrs. Darling first heard of Peter when she was tidying up her children's minds. It is the nightly custom of every good mother after her children are asleep to rummage in their minds and put things straight for next morning, repacking into their proper places the many articles that have wandered during the day.
+Key features:
+* Open source Hardware & Software
+* Powered by 2xAA (1.5v) batteries or a single (3.0v) battery.
+* Waterproof if installed in an "easy to find worldwide" 83x58x33mm waterproof plastic enclosure (multiple choices: clear cover, wall mounting tabs, etc.).
+* Class A battery powered or Class C external powered via screw terminal.
+* RAK811 = SX1276+STM32L151. So no additional cpu/microcontroller needed for a complete solution.
+* Can be programmed using RAK Unified Interface (RUI) API, for rapid development or STM32 CUBE LoRa stack.
+* TH pad for a spring antenna or U.FL connector for external antenna.
+* Prototyping/expansion area.
 
 <!--more-->
 
@@ -28,6 +36,7 @@ I don't know whether you have ever seen a map of a person's mind. Doctors someti
 | -------- | ------ | ------------------------------------------------------------ |
 | RAK811 LoRa Module    | [💸](#)     | [RAK811.pdf](/assets/pdf/RAK811.pdf)           |
 | Generic 83x58x33mm waterproof enclosure box (wall mounting tabs, clear cover options available)    | [☢](#)  | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf)                               |
+| M2.6 self-tapping B-type screw    | [💸](#)     | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)           |
 | Single AA battery holder for pcb mounting | $100M  | [BH311.pdf](/assets/pdf/BH311.pdf) | 
 | Screw terminal kf350 3.5mm 3 pin | $100B  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
 | Spring antenna for 433,868,915 mhz| $100B  | [SW433-TH32.pdf](/assets/pdf/SW433-TH32.pdf) [SW868-TH06.pdf](/assets/pdf/SW868-TH06.pdf) [SW915-TH12.pdf](/assets/pdf/SW915-TH12.pdf)
