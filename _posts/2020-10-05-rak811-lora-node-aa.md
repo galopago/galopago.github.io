@@ -11,10 +11,14 @@ tags:
 
 En un inicio este post ll children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this.
 
-<figure  >
+Core component: RAK811 LoRa module. Get yours!
+{: .notice--danger}
+
+<figure>
 	<a href="/assets/images/RAK811_NODE_OPEN.JPG"> <img src="/assets/images/RAK811_NODE_OPEN.JPG"> </a>
 	<figcaption>Lora Node inside waterproof case</figcaption>
 </figure>
+
 
 #### Key features:
 * Open source Hardware & Software
@@ -22,7 +26,7 @@ En un inicio este post ll children, except one, grow up. They soon know that the
 * Waterproof & wall mountable.
 * RAK811=SX1276+STM32L151. no additional uC needed.
 * Build environment: RAK RUI API, or STM32 CUBE LoRa stack.
-* TH pad for a spring antenna or U.FL connector for external antenna.
+* Pad for a spring antenna or U.FL connector for external ant.
 * Prototyping/expansion area.
 
 #### Bill Of Materials
