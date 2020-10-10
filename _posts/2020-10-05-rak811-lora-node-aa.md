@@ -11,7 +11,7 @@ tags:
 
 En un inicio este post ll children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this.
 
-<figure  class="align-center">
+<figure  >
 	<a href="/assets/images/RAK811_NODE_OPEN.JPG"> <img src="/assets/images/RAK811_NODE_OPEN.JPG"> </a>
 	<figcaption>Lora Node inside waterproof case</figcaption>
 </figure>
