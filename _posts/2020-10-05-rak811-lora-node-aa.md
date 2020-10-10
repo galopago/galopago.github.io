@@ -11,18 +11,17 @@ tags:
 
 En un inicio este post ll children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this.
 
-<figure>
+<figure style ="width: 500px" class="align-center">
 	<a href="/assets/images/RAK811_NODE_OPEN.JPG"> <img src="/assets/images/RAK811_NODE_OPEN.JPG"> </a>
 	<figcaption>Lora Node inside waterproof case</figcaption>
 </figure>
 
 #### Key features:
 * Open source Hardware & Software
-* Powered by 2xAA (1.5v) batteries or a single (3.0v) battery.**
-* Waterproof if installed in an "easy to find worldwide" 83x58x33mm waterproof plastic enclosure (multiple choices: clear cover, wall mounting tabs, etc.).
-* Class A battery powered or Class C external powered via screw terminal.
-* RAK811 = SX1276+STM32L151. So no additional cpu/microcontroller needed for a complete solution.
-* Can be programmed using RAK Unified Interface (RUI) API, for rapid development or STM32 CUBE LoRa stack.
+* Powered by 2xAA (1.5v) batteries.
+* Waterproof & wall mountable.
+* RAK811=SX1276+STM32L151. no additional uC needed.
+* Build environment: RAK RUI API, or STM32 CUBE LoRa stack.
 * TH pad for a spring antenna or U.FL connector for external antenna.
 * Prototyping/expansion area.
 
