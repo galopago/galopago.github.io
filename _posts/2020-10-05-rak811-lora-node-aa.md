@@ -16,7 +16,7 @@ Core component: [RAK811 LoRa module.](#)
 {: .notice--danger}
 
 <figure>
-	<a href="/assets/images/RAK811_NODE_OPEN.JPG"> <img src="/assets/images/RAK811_NODE_OPEN.JPG"> </a>
+	<a href="/assets/images/RAK811_NODE_OPEN.jpg"> <img src="/assets/images/RAK811_NODE_OPEN.jpg"> </a>
 	<figcaption>Lora Node inside waterproof case</figcaption>
 </figure>
 
@@ -71,7 +71,7 @@ The PCB fits inside a "generic" unbranded 83x58x33mm waterproof plastic enclosur
 #### Expansion
 
 <figure class="half">
-	<a href="/assets/images/RAK811_EXPANSION.JPG"> <img src="/assets/images/RAK811_EXPANSION.JPG"> </a>
+	<a href="/assets/images/RAK811_NODE_EXPANSION.jpg"> <img src="/assets/images/RAK811_NODE_EXPANSION.jpg"> </a>
 	<a href="/assets/images/RAK811_NODE_PINOUT.png"> <img src="/assets/images/RAK811_NODE_PINOUT.png"> </a>
 	<figcaption>PCB expansion area</figcaption>
 </figure>
@@ -81,8 +81,30 @@ note that RAK811-LF and RAK811-HF have sligter differences in some i/o pins
 
 
 #### Antenna options
+JP2 1-2 J6 spring antenna
+JP2 2-3 U.FL
 
 #### Sample application
+
+<figure class="third">
+	<a href="/assets/images/RAK811_NODE_RESISTORS.jpg"> <img src="/assets/images/RAK811_NODE_RESISTORS.jpg"> </a>
+	<a href="/assets/images/RAK811_NODE_REEDSWITCH.jpg"> <img src="/assets/images/RAK811_NODE_REEDSWITCH.jpg"> </a>
+	<a href="/assets/images/RAK811_NODE_CLOSED.jpg"> <img src="/assets/images/RAK811_NODE_CLOSED.jpg"> </a>
+	<figcaption>Magnetic Switch LoRa sensor node</figcaption>
+</figure>
+
 switch based sensor , vibrating sensors, ball sensors, fw descpription
+cut headers (link) silicon cable ( link)
+
+##Additional components:
+
+| Component         | Get yours! | Datasheet                                          | 
+| -------- | ------ | ------------------------------------------------------------ |
+| 30 AWG UL1423, UL3135 silicone cable    | [💸](#)     | [UL1423.pdf](/assets/pdf/UL1423.pdf)           |
+| vibration sensor (wall mounting tabs, clear cover options available)    | [💸](#)  | [SW-18015p.pdf](/assets/pdf/SW-18015p.pdf)                               |
+| plastic small red switch (wall mounting tabs, clear cover options available)    | [💸](#)  | [GPS-11A.pdf](/assets/pdf/GPS-11A.pdf)                               |
+| ball sensor (wall mounting tabs, clear cover options available)    | [💸](#)  | [SW-200D.pdf](/assets/pdf/SW-200D.pdf)                               |
+
+                     
 
 Occasionally in her travels through her children's minds Mrs. Darling found things she could not understand, and of these quite the most perplexing was the word Peter. She knew of no Peter, and yet he was here and there in John and Michael's minds, while Wendy's began to be scrawled all over with him. The name stood out in bolder letters than any of the other words, and as Mrs. Darling gaze
