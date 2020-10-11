@@ -10,6 +10,7 @@ tags:
 ---
 
 En un inicio este post ll children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this.
+experimental but strong but usefull
 
 Core component: [RAK811 LoRa module.](#)
 {: .notice--danger}
@@ -62,22 +63,26 @@ The device can work from 3.7v down to 1.8v. There are many alternatives to power
 * 2 x AA alkaline batteries. JP1 jumper positions 1-2 shorted
 * 1 x 14500 lithium battery. JP1 jumper positions 2-3 shorted. BT2 battery holder could be removed freeing up some pcb space.
 * External power applied to J1 screw terminal. BT1 and BT2 battery holders could be removes freeing up even more pcb space.
+battery connected to module pins
 
 #### Enclosure
 The PCB fits inside a "generic" unbranded 83x58x33mm waterproof plastic enclosure. Theese enclosures came in multiple flavors: gray, white, black, clear lid, wall mount tabs. The board is fixed to the enclosure by two self tapping screws.
 
 #### Expansion
+
+<figure class="half">
+	<a href="/assets/images/RAK811_EXPANSION.JPG"> <img src="/assets/images/RAK811_EXPANSION.JPG"> </a>
+	<a href="/assets/images/RAK811_NODE_PINOUT.png"> <img src="/assets/images/RAK811_NODE_PINOUT.png"> </a>
+	<figcaption>PCB expansion area</figcaption>
+</figure>
+
 The prototyping area contains TH pads connected to all pins of RAK811 module, plus  some small amount of free connected pads for prototping. Conections for outside sensors are provided via W,X,Y,Z screw terminals. If the vast prototyping area isn't enough, female pin headers cold be soldered and an expansion board could be plugged in.
-note that RAK811-HF and RAK811-LF have sligter differences in some i/o pins
+note that RAK811-LF and RAK811-HF have sligter differences in some i/o pins
 
 
 #### Antenna options
 
 #### Sample application
 switch based sensor , vibrating sensors, ball sensors, fw descpription
-
-Of course the Neverlands vary a good deal. John's, for instance, had a lagoon with flamingoes flying over it at which John was shooting, while Michael, who was very small, had a flamingo with lagoons flying over it. John lived in a boat turned upside down on the sands, Michael in a wigwam, Wendy in a house of leaves deftly sewn together. John had no friends, Michael had friends at night, Wendy had a pet wolf forsaken by its parents, but on the whole the Neverlands have a family resemblance, and if they stood still in a row you could say of them that they have each other's nose, and so forth. On these magic shores children at play are for ever beaching their coracles [simple boat]. We too have been there; we can still hear the sound of the surf, though we shall land no more.
-
-Of all delectable islands the Neverland is the snuggest and most compact, not large and sprawly, you know, with tedious distances between one adventure and another, but nicely crammed. When you play at it by day with the chairs and table-cloth, it is not in the least alarming, but in the two minutes before you go to sleep it becomes very real. That is why there are night-lights.
 
 Occasionally in her travels through her children's minds Mrs. Darling found things she could not understand, and of these quite the most perplexing was the word Peter. She knew of no Peter, and yet he was here and there in John and Michael's minds, while Wendy's began to be scrawled all over with him. The name stood out in bolder letters than any of the other words, and as Mrs. Darling gaze
