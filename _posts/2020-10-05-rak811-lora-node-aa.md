@@ -81,8 +81,8 @@ note that RAK811-LF and RAK811-HF have sligter differences in some i/o pins
 
 
 #### Antenna options
-JP2 1-2 J6 spring antenna
-JP2 2-3 U.FL
+Internal spring antena soldered on J6, JP2 1-2 pins must be shored.  
+External antenna using U.FL. connector, JP2 2-3 pins must be shorted. 
 
 #### Sample application
 
@@ -94,16 +94,21 @@ JP2 2-3 U.FL
 </figure>
 
 switch based sensor , vibrating sensors, ball sensors, fw descpription
-cut headers (link) silicon cable ( link)
+cut headers (link) PVDF cable dont melt soldering ( link)
+generic magnetic switch too big inside, so small reed switch used
+led lights on transmission can be turned off by downkink
+pushbutton test tx in case external sensor inaccesible
 
-##Additional components:
+## Additional components:
 
 | Component         | Get yours! | Datasheet                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| 30 AWG UL1423, UL3135 silicone cable    | [💸](#)     | [UL1423.pdf](/assets/pdf/UL1423.pdf)           |
+| 30 AWG wirewrap UL1423 PVDF cable    | [💸](#)     | [UL1423.pdf](/assets/pdf/UL1423.pdf)           |
+| U.FL smd external antenna conector    | [💸](#)     | [6474011114.pdf](/assets/pdf/6474011114.pdf)           |
+| plastic small red switch     | [💸](#)  | [GPS-11A.pdf](/assets/pdf/GPS-11A.pdf)                               |
+| magnet with screw tabs for wall mounting     | [💸](#)  | [MC-38.pdf](/assets/pdf/MC-38.pdf)                               |
 | vibration sensor (wall mounting tabs, clear cover options available)    | [💸](#)  | [SW-18015p.pdf](/assets/pdf/SW-18015p.pdf)                               |
-| plastic small red switch (wall mounting tabs, clear cover options available)    | [💸](#)  | [GPS-11A.pdf](/assets/pdf/GPS-11A.pdf)                               |
-| ball sensor (wall mounting tabs, clear cover options available)    | [💸](#)  | [SW-200D.pdf](/assets/pdf/SW-200D.pdf)                               |
+| ball sensor inclination sensor    | [💸](#)  | [SW-200D.pdf](/assets/pdf/SW-200D.pdf)                               |
 
                      
 
