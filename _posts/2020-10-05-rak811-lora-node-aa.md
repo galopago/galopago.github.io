@@ -7,6 +7,8 @@ categories:
 tags:
   - AN000
   - LoRaWAN
+header:
+     teaser: "/assets/images/RAK811_NODE_OPEN_TEASER.jpg"
 ---
 
 En un inicio este post ll children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this.
