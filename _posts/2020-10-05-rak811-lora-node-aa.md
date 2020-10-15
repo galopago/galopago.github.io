@@ -14,7 +14,7 @@ header:
 LoRa node conceived for experimentation. Easy to interface to multiple kind of sensors. Designed to fit
 inside a generic waterproof enclosure, just add a pair of AA alkaline batteries and deploy!
 
-Core component: [RAK811 LoRa module.](#)
+Core component: [RAK811 LoRa module.](https://s.click.aliexpress.com/e/_eOuZFX)
 {: .notice--danger}
 
 <figure>
@@ -37,14 +37,14 @@ Core component: [RAK811 LoRa module.](#)
 
 | Component         | Get yours! | Datasheet                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| RAK811 LoRa Module    | [💸](#)     | [RAK811.pdf](/assets/pdf/RAK811.pdf)           |
-| Generic 83x58x33mm waterproof enclosure box (wall mounting tabs, clear cover options available)    | [💸](#)  | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf)                               |
-| M2.6 self-tapping B-type screw    | [💸](#)     | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)           |
-| Single AA battery holder for PCB mounting | [💸](#)  | [BH311.pdf](/assets/pdf/BH311.pdf) | 
-| Screw terminal kf350 3.5mm 3 pin | [💸](#)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
-| Spring antenna for 433,868,915 MHz| [💸](#)  | [SW433-TH32.pdf](/assets/pdf/SW433-TH32.pdf) [SW868-TH06.pdf](/assets/pdf/SW868-TH06.pdf) [SW915-TH12.pdf](/assets/pdf/SW915-TH12.pdf)
-| Female header 2.54mm  | [💸](#)  | [FHA3-SXX.pdf](/assets/pdf/FHA3-S1XX.pdf)                           |
-| Male pin header 2.54mm  | [💸](#)  | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)                           |
+| RAK811 LoRa Module    | [💸](https://s.click.aliexpress.com/e/_eOuZFX)     | [RAK811.pdf](/assets/pdf/RAK811.pdf)           |
+| Generic 83x58x33mm waterproof enclosure box (wall mounting tabs, clear cover options available)    | [💸](https://s.click.aliexpress.com/e/_eNGM5X )  | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf)                               |
+| M2.6 self-tapping B-type screw    | [💸](https://s.click.aliexpress.com/e/_eOJ3Kd)     | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)           |
+| Single AA battery holder for PCB mounting | [💸](https://s.click.aliexpress.com/e/_eLS8qh)  | [BH311.pdf](/assets/pdf/BH311.pdf) | 
+| Screw terminal kf350 3.5mm 3 pin | [💸](https://s.click.aliexpress.com/e/_eKkaWv)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
+| Spring antenna for 433,868,915 MHz| [💸](https://s.click.aliexpress.com/e/_eNNciZ)  | [SW433-TH32.pdf](/assets/pdf/SW433-TH32.pdf) [SW868-TH06.pdf](/assets/pdf/SW868-TH06.pdf) [SW915-TH12.pdf](/assets/pdf/SW915-TH12.pdf)
+| Female header 2.54mm  | [💸](https://s.click.aliexpress.com/e/_eN8wK1)  | [FHA3-SXX.pdf](/assets/pdf/FHA3-S1XX.pdf)                           |
+| Male pin header 2.54mm  | [💸](https://s.click.aliexpress.com/e/_eMCUJv )  | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)                           |
 
 #### Printed Circuit Boards
 
@@ -109,13 +109,13 @@ For more information about the PCB or the firmware, don't forget to read the [li
 
 | Component         | Get yours! | Datasheet                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| 30 AWG wire wrap UL1423 PVDF cable    | [💸](#)     | [UL1423.pdf](/assets/pdf/UL1423.pdf)           |
-| U.FL smd external antenna conector    | [💸](#)     | [6474011114.pdf](/assets/pdf/6474011114.pdf)           |
-| Plastic small red switch     | [💸](#)  | [GPS-11A.pdf](/assets/pdf/GPS-11A.pdf)                               |
-| Magnet with screw tabs for wall mounting     | [💸](#)  | [MC-38.pdf](/assets/pdf/MC-38.pdf)                               |
-| Vibration spring sensor | [💸](#)  | [SW-18015p.pdf](/assets/pdf/SW-18015p.pdf)                               |
-| Tilt ball sensor     | [💸](#)  | [SW-200D.pdf](/assets/pdf/SW-200D.pdf)                               |
-| 1/4W 1%  TH Resistors    | [💸](#)  | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf)                               |
-| 3mm led    | [💸](#)  | [1254-10SYGD.pdf](/assets/pdf/1254-10SYGD.pdf)                               |
-| push button    | [💸](#)  | [TS-1301.pdf](/assets/pdf/TS-1301.pdf)                               |
+| 30 AWG wire wrap UL1423 PVDF cable    | [💸](https://s.click.aliexpress.com/e/_eMiimB )     | [UL1423.pdf](/assets/pdf/UL1423.pdf)           |
+| U.FL smd external antenna conector    | [💸](https://s.click.aliexpress.com/e/_eLJ9zD)     | [6474011114.pdf](/assets/pdf/6474011114.pdf)           |
+| Plastic small reed switch     | [💸](https://s.click.aliexpress.com/e/_eOoX6T)  | [GPS-11A.pdf](/assets/pdf/GPS-11A.pdf)                               |
+| Magnet with screw tabs for wall mounting     | [💸](https://s.click.aliexpress.com/e/_eOmX4J )  | [MC-38.pdf](/assets/pdf/MC-38.pdf)                               |
+| Vibration spring sensor | [💸](https://s.click.aliexpress.com/e/_etYDMP)  | [SW-18015p.pdf](/assets/pdf/SW-18015p.pdf)                               |
+| Tilt ball sensor     | [💸](https://s.click.aliexpress.com/e/_eNI7aF )  | [SW-200D.pdf](/assets/pdf/SW-200D.pdf)                               |
+| 1/4W 1%  TH Resistors    | [💸](https://s.click.aliexpress.com/e/_eMCbH1)  | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf)                               |
+| 3mm led    | [💸](https://s.click.aliexpress.com/e/_eMDYML)  | [1254-10SYGD.pdf](/assets/pdf/1254-10SYGD.pdf)                               |
+| Push button  6x6mm  | [💸](https://s.click.aliexpress.com/e/_eKd4YV)  | [TS-1301.pdf](/assets/pdf/TS-1301.pdf)                               |
                      
