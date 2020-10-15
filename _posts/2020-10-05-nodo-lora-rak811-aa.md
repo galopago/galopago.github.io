@@ -1,9 +1,9 @@
 ---
-title: "RAK811 based LoRa Node powered by AA batteries"
+title: "Nodo LoRa basado en RAK811 alimentado por baterias AA"
 excerpt_separator: "<!--more-->"
 classes: wide
 categories:
-  - english
+  - espanol
 tags:
   - AN000
   - LoRaWAN
