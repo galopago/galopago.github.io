@@ -37,14 +37,14 @@ Componente clave: [Modulo LoRa RAK811.](https://s.click.aliexpress.com/e/_eOuZFX
 
 | Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| Modulo LoRa RAK811    | [💸](https://s.click.aliexpress.com/e/_eOuZFX)     | [RAK811.pdf](/assets/pdf/RAK811.pdf)           |
-| Caja generica resistente al agua de 83x58x33mm  (varias opciones: tapa transparente, salientes para montaje en pared)    | [💸](https://s.click.aliexpress.com/e/_eNGM5X )  | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf)                               |
-| Tornillo autorroscante M2.6  tipo B    | [💸](https://s.click.aliexpress.com/e/_eOJ3Kd)     | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)           |
-| Soporte para bateria AA para montaje en PCB  | [💸](https://s.click.aliexpress.com/e/_eLS8qh)  | [BH311.pdf](/assets/pdf/BH311.pdf) | 
-| Bornera de tornillo kf350 3.5mm 3 pines | [💸](https://s.click.aliexpress.com/e/_eKkaWv)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
-| Antena de resorte para 433,868,915 MHz| [💸](https://s.click.aliexpress.com/e/_eNNciZ)  | [SW433-TH32.pdf](/assets/pdf/SW433-TH32.pdf) [SW868-TH06.pdf](/assets/pdf/SW868-TH06.pdf) [SW915-TH12.pdf](/assets/pdf/SW915-TH12.pdf)
-| Conector de hilera de pines hembra 2.54mm  | [💸](https://s.click.aliexpress.com/e/_eN8wK1)  | [FHA3-SXX.pdf](/assets/pdf/FHA3-S1XX.pdf)                           |
-| Conector de hilera de pines macho 2.54mm  | [💸](https://s.click.aliexpress.com/e/_eMCUJv )  | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)                           |
+| Modulo LoRa RAK811    | [💸](https://s.click.aliexpress.com/e/_eLfvcx)     | [RAK811.pdf](/assets/pdf/RAK811.pdf)           |
+| Caja generica resistente al agua de 83x58x33mm  (varias opciones: tapa transparente, salientes para montaje en pared)    | [💸](https://s.click.aliexpress.com/e/_etjbbv)  | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf)                               |
+| Tornillo autorroscante M2.6  tipo B    | [💸](https://s.click.aliexpress.com/e/_esHHyb)     | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)           |
+| Soporte para bateria AA para montaje en PCB  | [💸](https://s.click.aliexpress.com/e/_eLNd1H)  | [BH311.pdf](/assets/pdf/BH311.pdf) | 
+| Bornera de tornillo kf350 3.5mm 3 pines | [💸](https://s.click.aliexpress.com/e/_eLjzKB)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
+| Antena de resorte para 433,868,915 MHz| [💸](https://s.click.aliexpress.com/e/_eMkqgn)  | [SW433-TH32.pdf](/assets/pdf/SW433-TH32.pdf) [SW868-TH06.pdf](/assets/pdf/SW868-TH06.pdf) [SW915-TH12.pdf](/assets/pdf/SW915-TH12.pdf)
+| Conector de hilera de pines hembra 2.54mm  | [💸](https://s.click.aliexpress.com/e/_eNYVzN)  | [FHA3-SXX.pdf](/assets/pdf/FHA3-S1XX.pdf)                           |
+| Conector de hilera de pines macho 2.54mm  | [💸](https://s.click.aliexpress.com/e/_eP34IL)  | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)                           |
 
 #### Tarjetas de Circuito Impreso
 
@@ -111,13 +111,13 @@ Para mas informacion sobre el [PCB](#tarjetas-de-circuito-impreso) o el  [firmwa
 
 | Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| Alambre 30 AWG con recubrimiento PVDF UL1423     | [💸](https://s.click.aliexpress.com/e/_eMiimB )     | [UL1423.pdf](/assets/pdf/UL1423.pdf)           |
-| Conector para antena externa U.FL montaje superficial    | [💸](https://s.click.aliexpress.com/e/_eLJ9zD)     | [6474011114.pdf](/assets/pdf/6474011114.pdf)           |
-| Reed switch plastico pequeño     | [💸](https://s.click.aliexpress.com/e/_eOoX6T)  | [GPS-11A.pdf](/assets/pdf/GPS-11A.pdf)                               |
-| Iman para fijacion en pared mediante tornillos     | [💸](https://s.click.aliexpress.com/e/_eOmX4J )  | [MC-38.pdf](/assets/pdf/MC-38.pdf)                               |
-| Sensor de vibracion tipo resorte | [💸](https://s.click.aliexpress.com/e/_etYDMP)  | [SW-18015p.pdf](/assets/pdf/SW-18015p.pdf)                               |
-| Sensor de inclinacion por esferas     | [💸](https://s.click.aliexpress.com/e/_eNI7aF )  | [SW-200D.pdf](/assets/pdf/SW-200D.pdf)                               |
-| Resistencias TH 1/4W 1%    | [💸](https://s.click.aliexpress.com/e/_eMCbH1)  | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf)                               |
-| Led 3mm    | [💸](https://s.click.aliexpress.com/e/_eMDYML)  | [1254-10SYGD.pdf](/assets/pdf/1254-10SYGD.pdf)                               |
-| Interruptor momentaneo pulsador  6x6mm  | [💸](https://s.click.aliexpress.com/e/_eKd4YV)  | [TS-1301.pdf](/assets/pdf/TS-1301.pdf)                               |
+| Alambre 30 AWG con recubrimiento PVDF UL1423     | [💸](https://s.click.aliexpress.com/e/_eL2EYB)     | [UL1423.pdf](/assets/pdf/UL1423.pdf)           |
+| Conector para antena externa U.FL montaje superficial    | [💸](https://s.click.aliexpress.com/e/_esRDv9)     | [6474011114.pdf](/assets/pdf/6474011114.pdf)           |
+| Reed switch plastico pequeño     | [💸](https://s.click.aliexpress.com/e/_eMfNwB)  | [GPS-11A.pdf](/assets/pdf/GPS-11A.pdf)                               |
+| Iman para fijacion en pared mediante tornillos     | [💸](https://s.click.aliexpress.com/e/_eNjkcJ)  | [MC-38.pdf](/assets/pdf/MC-38.pdf)                               |
+| Sensor de vibracion tipo resorte | [💸](https://s.click.aliexpress.com/e/_eNnywb)  | [SW-18015p.pdf](/assets/pdf/SW-18015p.pdf)                               |
+| Sensor de inclinacion por esferas     | [💸](https://s.click.aliexpress.com/e/_eMEXVd)  | [SW-200D.pdf](/assets/pdf/SW-200D.pdf)                               |
+| Resistencias TH 1/4W 1%    | [💸](https://s.click.aliexpress.com/e/_etm4gJ)  | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf)                               |
+| Led 3mm    | [💸](https://s.click.aliexpress.com/e/_eN09ER)  | [1254-10SYGD.pdf](/assets/pdf/1254-10SYGD.pdf)                               |
+| Interruptor momentaneo pulsador  6x6mm  | [💸](https://s.click.aliexpress.com/e/_etiG5l)  | [TS-1301.pdf](/assets/pdf/TS-1301.pdf)                               |
                      

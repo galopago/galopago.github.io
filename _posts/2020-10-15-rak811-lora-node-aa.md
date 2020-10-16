@@ -105,7 +105,7 @@ PVDF wire was used to make connections because the insulation resists pretty wel
 For more information about the [PCB](#printed-circuit-boards) or the [firmware](#software), don't forget to read the [linked repositories.](#printed-circuit-boards)
  
 
-## Additional components:
+## Optional components:
 
 | Component         | Get yours! | Datasheet                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
