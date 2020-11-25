@@ -89,6 +89,9 @@ Antena interna de resorte soldada en el pad J6, se deberan cortocircuitar las po
 
 Antena externa usando conector U.FL, se deberan cortocircuitar las posiciones 2-3 del jumper JP2. 
 
+##### Aprovisionamiento
+Como el codigo es derivado de un producto existente de RAK Wireless, se usan los mismos comandos  AT para el aprovisionamiento del nodo en la red LoRa usando la UART. Para mayor informacion ver el  [manual](/assets/pdf/RAK811_AT_Command_Manual_V1.0.pdf) que contiene los comandos completos AT.
+
 ##### Aplicacion de ejemplo
 
 <figure class="third">
