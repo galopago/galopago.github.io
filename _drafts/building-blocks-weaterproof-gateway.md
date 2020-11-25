@@ -1,5 +1,5 @@
 ---
-title: "RAK811 based LoRa Node powered by AA batteries"
+title: "Building blocks for waterproof gateyas"
 excerpt_separator: "<!--more-->"
 classes: wide
 categories:
@@ -86,10 +86,6 @@ Notice that RAK811-LF and RAK811-HF have slighter differences in some i/o pins
 ##### Antenna options
 Internal spring antena soldered on J6, JP2  jumper positions 1-2 shorted.  
 External antenna using U.FL. connector, JP2 jumper positions 2-3 shorted. 
-
-##### Provisioning
-As the code was derived from a RAK Wireless existing product, it uses de same AT commands for provisioning using UART. Here is the  [manual](/assets/pdf/RAK811_AT_Command_Manual_V1.0.pdf) with the complete AT commands.
-
 
 ##### Sample application
 
