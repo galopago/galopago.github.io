@@ -26,6 +26,27 @@ Componente clave: [Tira de LED WS2811 a prueba de agua.](https://s.click.aliexpr
 {: .notice--danger}
 
 
+Con la llegada de los LED direccionables como el WS2812, WS2812b, WS2811, etc. fue posible controlar individualmente grandes
+cantidades de leds usando un solo pin de microcontrolador!. Esto contribuyo a que fuera cada vez mas facil encontrar estos dispositivos
+y a que estos se vendieran en diferentes presentaciones: leds individuales para montaje superficial, series de luces en tiras flexibles, extensiones
+de luces tipo "arbol de navidad" a prueba de agua, entre otras. Es precisamente estas ultimas las que seran usadas en este proyecto dado lo facil que
+pueden adaptarse a distintos tipos de proyectos como matrices de leds hasta adornos navideños, sin tener que soldar ni hacer modificaciones electricas a las luces.
+
+Como microcontrolador se uso un ESP8266, mas precisamente una tarjeta conocida como "NODE-MCU V" que incorpora ya todos los elementos adicionales para porder
+realizar la programacion inicial desde un computador. Utilizando en WiFi incorporado del ESP, no solo es posible controlar las secuencias y colores de las luces desde
+internet, sino que tambien es posible descargarle nuevos programas de forma remota (OTA) usando un combo poderoso: El sistema operativo Mongoose OS junto con
+plataforma para gestion remota de dispositivos mDASH. Mongoose OS usa una version restringida de JavaScript conocida como mJS, lo que probablemente
+resultara atractivo para programadores web que ya trabajan con este tipo de tecnologia. Mongoose OS esta construido por el ESP-IDF de Espressif, por lo tanto
+pueden hacerse llamados a funciones escritas en C, lo que sin duda tambien resultara atractivo para programadores de microcontroladores "tradicionales" que han
+trabajado con este lenguaje bastante maduro.
+
+En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware TUSISTEMITA que proporciona una serie de  modulos y elementos preconstruido que
+permiten realizar un proyecto electonico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va
+dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua, ademas de darle no solo un aspecto estetico "industrial"  sino suficiente
+entereza mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
+el sellamiento IP65.
+
+
 #### Principales Caracteristicas:
 * Sistema Operativo embebido [Mongoose OS](https://mongoose-os.com/) corriendo sobre ESP8266
 * Resistente al agua y montable en pared.
