@@ -61,6 +61,12 @@ Las salidas logicas de la CPU tendran entonces voltages de 0 a 3.3V, lo que debe
 a 5V. Es aqui donde entre cobra importancia el adaptador de nivel logico, pues los leds son alimentados a 5V y esperan una señal logica con esta misma amplitud. Como adaptador
 de nivel logico se uso la tarjeta TUSISTEMITA D06 que internamente usa un MOSFET BSS138 para realizar dicho trabajo. 
 
+<figure>
+	<a href="/assets/images/mos_wifi_iot_lights_blockdiag.png"> <img src="/assets/images/mos_wifi_iot_lights_blockdiag.png"> </a>
+	<figcaption>Diagrama simplificado de bloques</figcaption>
+</figure>
+
+
 La fuente de poder entrega aproximadamente 3.8 A y cada led WS2811 consume 60 mA como maximo, estando en capacidad de alimentar extensiones de hasta 63 leds. para
 tener cierto margen se ha decidido usar extensiones de maximo 50 leds. Cualquier tipo de extension de LED que use el mismo protocolo del WS2811 puede ser usada.
 
@@ -89,6 +95,13 @@ El prototipo del sistema fue montado usando varios componentes e TUSISTEMITA, co
 niveles logicos y borneras para conexion de salida. Una vez descargada la aplicacion por primera vez y comprobado que las conexiones electricas funcionan bien,
 se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamente hay que desconectar la alimentacion electrica de las borneras y la conexion
 de salida a los leds.
+
+<figure class="third">
+	<a href="/assets/images/RAK811_NODE_RESISTORS.jpg"> <img src="/assets/images/RAK811_NODE_RESISTORS_MEDIUM.jpg"> </a>
+	<a href="/assets/images/MOS_WIFI_LIGHTS_WIRED.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WIRED_MEDIUM.jpg"> </a>
+	<a href="/assets/images/MOS_WIFI_LIGHTS_WORKING.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WORKING_MEDIUM.jpg"> </a>
+	<figcaption>Nodo LoRa interruptor magnetico.</figcaption>
+</figure>
 
 Se recomienda cambiar los conectores originales de las tiras de led, por unos mucho mas robustos y a prueba de agua para evitar problemas de oxido en caso
 de estar expuesto a los elementos ambientales. Se recomienda el uso de termoencogible con pegamento para mayor proteccion en las uniones entre los cables
