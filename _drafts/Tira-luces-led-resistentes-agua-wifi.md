@@ -97,7 +97,7 @@ se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamen
 de salida a los leds.
 
 <figure class="third">
-	<a href="/assets/images/RAK811_NODE_RESISTORS.jpg"> <img src="/assets/images/RAK811_NODE_RESISTORS_MEDIUM.jpg"> </a>
+	<a href="/assets/images/MOS_WIFI_LIGHTS_PARTS.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_PARTS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_WIRED.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WIRED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_WORKING.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WORKING_MEDIUM.jpg"> </a>
 	<figcaption>Nodo LoRa interruptor magnetico.</figcaption>
@@ -106,6 +106,13 @@ de salida a los leds.
 Se recomienda cambiar los conectores originales de las tiras de led, por unos mucho mas robustos y a prueba de agua para evitar problemas de oxido en caso
 de estar expuesto a los elementos ambientales. Se recomienda el uso de termoencogible con pegamento para mayor proteccion en las uniones entre los cables
 de la tira led y los conectores.
+
+<figure class="third">
+	<a href="/assets/images/MOS_WIFI_LIGHTS_CABLEGLAND.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_CABLEGLAND_MEDIUM.jpg"> </a>
+	<a href="/assets/images/MOS_WIFI_LIGHTS_CONNECTOR.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_CONNECTOR_MEDIUM.jpg"> </a>
+	<a href="/assets/images/MOS_WIFI_LIGHTS_FINISHED.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_FINISHED_MEDIUM.jpg"> </a>
+	<figcaption>Nodo LoRa interruptor magnetico.</figcaption>
+</figure>
 
 Una vez la caja se encuentra cerrada, las actualizaciones a la aplicacion se pueden hacer inalambricamente mediante OTA por medio del dashboard de mongoose
 os mDash. 
@@ -119,6 +126,8 @@ os mDash.
 | Fuente de alimentacion conmutada 5V 3.8 A    | [💸](https://s.click.aliexpress.com/e/_eOJ3Kd)     | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)           |
 | Caja estanca generica resistente al agua de 200x120x75mm (varias opciones: tapa transparente, salientes para montaje en pared)| [💸](https://s.click.aliexpress.com/e/_eNNciZ)  | [SW433-TH32.pdf](/assets/pdf/SW433-TH32.pdf) [SW868-TH06.pdf](/assets/pdf/SW868-TH06.pdf) [SW915-TH12.pdf](/assets/pdf/SW915-TH12.pdf)
 | Tornillo autorroscante M2.6 tipo B | [💸](https://s.click.aliexpress.com/e/_eKkaWv)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
+| Tornillo 2 | [💸](https://s.click.aliexpress.com/e/_eKkaWv)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
+| Tuerca 2 | [💸](https://s.click.aliexpress.com/e/_eKkaWv)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
 | Espaciador separador de nylon G228  | [💸](https://s.click.aliexpress.com/e/_eMCUJv )  | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)                           |
 | Conector glandula o prensa estopa PG9 | [💸](https://s.click.aliexpress.com/e/_eLS8qh)  | [BH311.pdf](/assets/pdf/BH311.pdf) | 
 | Conector resistente al agua para tira led  | [💸](https://s.click.aliexpress.com/e/_eN8wK1)  | [FHA3-SXX.pdf](/assets/pdf/FHA3-S1XX.pdf)                           |
@@ -149,11 +158,3 @@ os mDash.
 | -------- | ------ | ------------------------------------------------------------ |
 | Brocas arbol 1    | [💸](https://s.click.aliexpress.com/e/_eMiimB )     | [UL1423.pdf](/assets/pdf/UL1423.pdf)           |
 | Brocas arbol 2    | [💸](https://s.click.aliexpress.com/e/_eLJ9zD)     | [6474011114.pdf](/assets/pdf/6474011114.pdf)           |
-| Plastic small reed switch     | [💸](https://s.click.aliexpress.com/e/_eOoX6T)  | [GPS-11A.pdf](/assets/pdf/GPS-11A.pdf)                               |
-| Magnet with screw tabs for wall mounting     | [💸](https://s.click.aliexpress.com/e/_eOmX4J )  | [MC-38.pdf](/assets/pdf/MC-38.pdf)                               |
-| Vibration spring sensor | [💸](https://s.click.aliexpress.com/e/_etYDMP)  | [SW-18015p.pdf](/assets/pdf/SW-18015p.pdf)                               |
-| Tilt ball sensor     | [💸](https://s.click.aliexpress.com/e/_eNI7aF )  | [SW-200D.pdf](/assets/pdf/SW-200D.pdf)                               |
-| 1/4W 1%  TH Resistors    | [💸](https://s.click.aliexpress.com/e/_eMCbH1)  | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf)                               |
-| 3mm led    | [💸](https://s.click.aliexpress.com/e/_eMDYML)  | [1254-10SYGD.pdf](/assets/pdf/1254-10SYGD.pdf)                               |
-| Push button  6x6mm  | [💸](https://s.click.aliexpress.com/e/_eKd4YV)  | [TS-1301.pdf](/assets/pdf/TS-1301.pdf)                               |
-                     
