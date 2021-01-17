@@ -22,7 +22,7 @@ a prueba de polvo y agua. Ideal para montajes en interiores: como fondo para tra
 	<figcaption>Caja de las luces destapada mostrando sus componentes internos</figcaption>
 </figure>
 
-Componente clave: [Tira de LED WS2811 a prueba de agua.](https://s.click.aliexpress.com/e/_eOuZFX)
+Componente clave: [Tira de LED WS2811 a prueba de agua.](https://s.click.aliexpress.com/e/_AFqDHl)
 {: .notice--danger}
 
 
@@ -121,34 +121,35 @@ os mDash.
 
 | Componente         | Consigue el tuyo! | Hoja de caracteristicas
 | -------- | ------ | ------------------------------------------------------------ |
-| ESP8266 NodeMCU V3    | [💸](https://s.click.aliexpress.com/e/_eOuZFX)     | [RAK811.pdf](/assets/pdf/RAK811.pdf)           |
-| Tira de LED WS2811 resistente al agua | [💸](https://s.click.aliexpress.com/e/_eNGM5X )  | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf)                               |
-| Fuente de alimentacion conmutada 5V 3.8 A    | [💸](https://s.click.aliexpress.com/e/_eOJ3Kd)     | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)           |
-| Caja estanca generica resistente al agua de 200x120x75mm (varias opciones: tapa transparente, salientes para montaje en pared)| [💸](https://s.click.aliexpress.com/e/_eNNciZ)  | [SW433-TH32.pdf](/assets/pdf/SW433-TH32.pdf) [SW868-TH06.pdf](/assets/pdf/SW868-TH06.pdf) [SW915-TH12.pdf](/assets/pdf/SW915-TH12.pdf)
-| Tornillo autorroscante M2.6 tipo B | [💸](https://s.click.aliexpress.com/e/_eKkaWv)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
-| Tornillo 2 | [💸](https://s.click.aliexpress.com/e/_eKkaWv)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
-| Tuerca 2 | [💸](https://s.click.aliexpress.com/e/_eKkaWv)  | [KF350.pdf](/assets/pdf/KF350.pdf)                           |
-| Espaciador separador de nylon G228  | [💸](https://s.click.aliexpress.com/e/_eMCUJv )  | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)                           |
-| Conector glandula o prensa estopa PG9 | [💸](https://s.click.aliexpress.com/e/_eLS8qh)  | [BH311.pdf](/assets/pdf/BH311.pdf) | 
-| Conector resistente al agua para tira led  | [💸](https://s.click.aliexpress.com/e/_eN8wK1)  | [FHA3-SXX.pdf](/assets/pdf/FHA3-S1XX.pdf)                           |
-| termoencogilbe pegante  | [💸](https://s.click.aliexpress.com/e/_eN8wK1)  | [FHA3-SXX.pdf](/assets/pdf/FHA3-S1XX.pdf)                           |
-| termoencogilbe sin pegante  | [💸](https://s.click.aliexpress.com/e/_eN8wK1)  | [FHA3-SXX.pdf](/assets/pdf/FHA3-S1XX.pdf)                           |
+| ESP8266 NodeMCU V3    | [💸](https://s.click.aliexpress.com/e/_AKwJKn)     | [NodeMCUV3.pdf](/assets/pdf/NodeMCUV3.pdf)           |
+| Tira de LED WS2811 resistente al agua | [💸](https://s.click.aliexpress.com/e/_AFqDHl )  | [WS2811_WATERPROOF_LED_STRING.pdf](/assets/pdf/WS2811_WATERPROOF_LED_STRING.pdf)                               |
+| Fuente de alimentacion conmutada 5V 3.8A 20W   | [💸](https://s.click.aliexpress.com/e/_A57h4j)     | [5V_4A_switching_power.pdf](/assets/pdf/5V_4A_switching_power.pdf)           |
+| Caja estanca generica resistente al agua de 200x120x75mm (varias opciones: tapa transparente, salientes para montaje en pared)| [💸](https://s.click.aliexpress.com/e/_A2ZqFz)  | [g373_g269.pdf](/assets/pdf/g373_g269.pdf)           |
+| Tornillo M2.6 autorroscante tipo B | [💸](https://s.click.aliexpress.com/e/_A6SvXp)  | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)                           |
+| Tornillo M3 cabeza avellanada en cruz | [💸](https://s.click.aliexpress.com/e/_AaJKaL)  | [M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf](/assets/pdf/M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf)                           |
+| Tuerca M3 hexagonal con brida DIN6923 | [💸](https://s.click.aliexpress.com/e/_9AB0mF)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FLANGED_NUT_3MM_DIN6923.pdf)                           |
+| Espaciador separador de nylon G228  | [💸](https://s.click.aliexpress.com/e/_AqHnWn)  | [G228.pdf](/assets/pdf/G228.pdf)                           |
+| Conector glandula o prensa estopa PG7 o PG9 | [💸](https://s.click.aliexpress.com/e/_9AvHyT)  | [pg_7.pdf](/assets/pdf/pg_7.pdf) | 
+| Conector resistente al agua para tira led  | [💸](https://s.click.aliexpress.com/e/_AMoPnv)  | [Waterproof_led_string_connector.pdf](/assets/pdf/Waterproof_led_string_connector.pdf)                           |
+| Tubo termoencogible 3:1 con pegamento  | [💸](https://s.click.aliexpress.com/e/_AEtntV)  | [3_1_heatshrink_tube_glue.pdf](/assets/pdf/3_1_heatshrink_tube_glue.pdf)                           |
+| Tubo termoencogible 2:1 multiples colores  | [💸](https://s.click.aliexpress.com/e/_Ar4Zmf)  | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf)                           |
 
 #### Componentes TUSISTEMITA
 
 | PCB    |  Archivos fuente                                          | 
 | -------- | ------------------------------------------------------------ |
-| Doble fondo A02 para caja de 200x120x75mm | [RAK811 LORA ADAPTABLE NODE](https://github.com/galopago/RAK811_LORA_ADAPTABLE_NODE)           |
-| Doble fondo A05 con agujeros espaciados 10.16mm para fuente 5V 3.8   | [RAK LORA ADAPTABLE NODE BREAKOUT 2AA](https://github.com/galopago/RAK_LORA_ADAPTABLE_NODE_BREAKOUT_2AA)        |
-| Tarjeta breakout C08 con salida a borneras para NODEMCU V3  | [RAK LORA ADAPTABLE NODE BREAKOUT 2AA](https://github.com/galopago/RAK_LORA_ADAPTABLE_NODE_BREAKOUT_2AA)        |
-| Tarjeta D06 de cambio de niveles logicos  | [RAK LORA ADAPTABLE NODE BREAKOUT 2AA](https://github.com/galopago/RAK_LORA_ADAPTABLE_NODE_BREAKOUT_2AA)        |
-| Tarjeta B01 de terminales de tornillos 2x4 3.5mm | [RAK LORA ADAPTABLE NODE BREAKOUT 2AA](https://github.com/galopago/RAK_LORA_ADAPTABLE_NODE_BREAKOUT_2AA)        |
+| Doble fondo A02 para caja de 200x120x75mm | [A02](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
+| Doble fondo A05 con agujeros espaciados 10.16mm para fuente 5V 3.8A   | [A05](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)        |
+| Tarjeta B01 de terminales de tornillos 2x4 3.5mm | [B01](https://github.com/galopago/TUSISTEMITA/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
+| Tarjeta breakout C08 con salida a borneras para NODEMCU V3  | [C08](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
+| Tarjeta D06 de cambio de niveles logicos  | [D06](https://github.com/galopago/TUSISTEMITA/tree/master/D_ELECTRONICS)        |
+
 
 #### Software
 
 | Software    | Archivos fuente                                          | 
 | -------- | ------------------------------------------------------------ |
-| Firmware    | [RAK811 RUI SWITCH SENSOR](https://github.com/galopago/RAK811_RUI_SWITCH_SENSOR)           |
+| Firmware    | [MOS_IOT_ADDRESSABLE_LEDS](https://github.com/galopago/MOS_IOT_ADDRESSABLE_LEDS)           |
 
  
 
@@ -156,5 +157,5 @@ os mDash.
 
 | Component         | Get yours! | Datasheet                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| Brocas arbol 1    | [💸](https://s.click.aliexpress.com/e/_eMiimB )     | [UL1423.pdf](/assets/pdf/UL1423.pdf)           |
-| Brocas arbol 2    | [💸](https://s.click.aliexpress.com/e/_eLJ9zD)     | [6474011114.pdf](/assets/pdf/6474011114.pdf)           |
+| Juego de 3 brocas escalonadas 3-20 mm + centropunto  | [💸](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
+| Broca escalonada de 8 pasos 10-45 mm    | [💸](https://s.click.aliexpress.com/e/_ATtnjt)     | [8_steps_10-45mm_incremental_drill_bit.pdf](/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf)           |
