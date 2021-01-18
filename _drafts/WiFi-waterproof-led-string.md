@@ -1,9 +1,9 @@
 ---
-title: "Tira de luces LED resistentes al agua controladas por WiFi"
+title: "WiFi controlled waterproof LED string"
 excerpt_separator: "<!--more-->"
 classes: wide
 categories:
-  - espanol
+  - english
 tags:
   - AN001
   - WiFi
@@ -12,21 +12,26 @@ header:
      teaser: "/assets/images/MOS_WIFI_IOT_LIGHTS_TEASER.jpg"
 ---
 
-Luces apropiadas para decoraciones navideñas, halloween, etc. No solamente la secuencia puede ser manejadas por internet, sino que
-tambien se pueden reprogramar completamente de forma inalambrica (OTA) mediante una conexion WiFi. Construccion robusta 
-a prueba de polvo y agua. Ideal para montajes en interiores: como fondo para transmisiones de youtubers/streamers 
-(manejadas en tiempo real por su audiencia), exteriores fijos como muros y avisos, o en exteriores moviles como carrozas de carnaval.
+Decorative lights suitable for Halloween, Christmas, parties, etc. Not only controlled over internet but, also completely reprogrammed 
+wirelessly using OTA over WiFi. Waterproof, dustproof and sturdy. Ideal for indoor projects like interactive backgrounds for youtubers/streamers
+controlled by their audience and for outdoor projects like advertizing signs in walls or vehicles.
+
 
 <figure>
 	<a href="/assets/images/MOS_WIFI_IOT_LIGHTS.jpg"> <img src="/assets/images/MOS_WIFI_IOT_LIGHTS_MEDIUM.jpg"> </a>
-	<figcaption>Caja de las luces destapada mostrando sus componentes internos</figcaption>
+	<figcaption>Open enclosure showing internal components</figcaption>
 </figure>
 
-Componente clave: [Tira de LED WS2811 a prueba de agua.](https://s.click.aliexpress.com/e/_AFqDHl)
+Key component: [WS2811 waterproof LED string.](https://s.click.aliexpress.com/e/_AFqDHl)
 {: .notice--danger}
 
 
-##### El concepto:
+##### Concept:
+
+With the advent of addressable LED like WS2812, WS2812b, WS2811, etc. is now possible for small microcontrollers to 
+handle large amounts of leds with only one I/O pin. That advantage popularized this component and a lot of variants appeared: surface mount 
+single leds, flexible strips, Christmas-like strings, etc. The last one will be used in this article due to its flexibility and strongness and could adapt
+easily to different project from Christmas ornaments to led matrix, without soldering or other electrical modiffications.
 
 Con la llegada de los LED direccionables como el WS2812, WS2812b, WS2811, etc. fue posible controlar individualmente grandes
 cantidades de leds usando un solo pin de microcontrolador!. Dicha facilidad de uso contribuyo a popularizar estos componentes
