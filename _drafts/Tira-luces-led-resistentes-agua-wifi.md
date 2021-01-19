@@ -35,7 +35,7 @@ de luces tipo "arbol de navidad" a prueba de agua, entre otras. Es precisamente 
 pueden adaptarse a distintos tipos de proyectos como matrices de leds hasta adornos navideños, sin tener que soldar ni hacer modificaciones electricas a las luces.
 
 Como microcontrolador se uso un ESP8266, mas precisamente una tarjeta conocida como "NODEMCU V3" que incorpora ya todos los elementos adicionales para poder
-realizar la programacion inicial desde un computador. Utilizando en WiFi incorporado del ESP8266, no solo es posible controlar las secuencias y colores de las luces desde
+realizar la programacion inicial desde un computador. Utilizando el WiFi incorporado del ESP8266, no solo es posible controlar las secuencias y colores de las luces desde
 internet, sino que tambien es posible descargarle nuevos programas de forma remota (OTA) usando un combo poderoso: El sistema operativo [Mongoose OS](https://mongoose-os.com/) junto con
 plataforma para gestion remota de dispositivos [mDASH](https://mdash.net/). Mongoose OS usa una version restringida de JavaScript conocida como [mJS](https://github.com/cesanta/mjs), lo que probablemente
 resultara atractivo para programadores web que ya trabajan con este tipo de tecnologia. Mongoose OS esta construido sobre el ESP-IDF de Espressif, por lo tanto

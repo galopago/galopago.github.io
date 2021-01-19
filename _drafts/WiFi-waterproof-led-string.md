@@ -29,23 +29,18 @@ Key component: [WS2811 waterproof LED string.](https://s.click.aliexpress.com/e/
 ##### Concept:
 
 With the advent of addressable LED like WS2812, WS2812b, WS2811, etc. is now possible for small microcontrollers to 
-handle large amounts of leds with only one I/O pin. That advantage popularized this component and a lot of variants appeared: surface mount 
-single leds, flexible strips, Christmas-like strings, etc. The last one will be used in this article due to its flexibility and strongness and could adapt
-easily to different project from Christmas ornaments to led matrix, without soldering or other electrical modiffications.
+handle large amounts of LEDs with only one I/O pin. That advantage popularized this component and a lot of variants appeared: surface mount 
+single leds, flexible strips, Christmas-like strings, etc. The last one will be used in this article due to its flexibility and strength and could adapt
+easily to different project from Christmas ornaments to led matrix, without soldering or other electrical modifications.
 
-Con la llegada de los LED direccionables como el WS2812, WS2812b, WS2811, etc. fue posible controlar individualmente grandes
-cantidades de leds usando un solo pin de microcontrolador!. Dicha facilidad de uso contribuyo a popularizar estos componentes
-y a que estos se vendieran en diferentes presentaciones: leds individuales para montaje superficial, series de luces en tiras flexibles, extensiones
-de luces tipo "arbol de navidad" a prueba de agua, entre otras. Es precisamente estas ultimas las que seran usadas en este proyecto dado lo facil que
-pueden adaptarse a distintos tipos de proyectos como matrices de leds hasta adornos navideños, sin tener que soldar ni hacer modificaciones electricas a las luces.
+The microcontroller chosen was an ESP8266, more exactly a development board known as "NODEMCU V3" which has all additional components necessary to start work on
+programming the MCU with a computer. The onboard WiFi of the ESP8266 is not only possible to to change light sequences, but also download a totally different
+firmware wirelessly (OTA), using a powerful combo: [Mongoose OS](https://mongoose-os.com/) and its remote device management dashboard [mDASH](https://mdash.net/).
+Mongoose OS uses a scaled down version of JavaScript known as [mJS](https://github.com/cesanta/mjs). This is an attractive language for web developers whom already 
+work with JS. Mongoose OS is built on top of Espressif's ESP-iDF, so it is possible to write functions in C, which is also attractive for more "traditional" embedded programmers.
 
-Como microcontrolador se uso un ESP8266, mas precisamente una tarjeta conocida como "NODEMCU V3" que incorpora ya todos los elementos adicionales para poder
-realizar la programacion inicial desde un computador. Utilizando en WiFi incorporado del ESP8266, no solo es posible controlar las secuencias y colores de las luces desde
-internet, sino que tambien es posible descargarle nuevos programas de forma remota (OTA) usando un combo poderoso: El sistema operativo [Mongoose OS](https://mongoose-os.com/) junto con
-plataforma para gestion remota de dispositivos [mDASH](https://mdash.net/). Mongoose OS usa una version restringida de JavaScript conocida como [mJS](https://github.com/cesanta/mjs), lo que probablemente
-resultara atractivo para programadores web que ya trabajan con este tipo de tecnologia. Mongoose OS esta construido sobre el ESP-IDF de Espressif, por lo tanto
-pueden hacerse llamados a funciones escritas en C, lo que sin duda tambien resultara atractivo para programadores de microcontroladores "tradicionales" que han
-trabajado con este lenguaje bastante maduro.
+The circuit is built using [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) hardware prototyping system which provides different kind of prebuilt modules which allows
+to build an electronic project without soldering, but very robust and expandible.
 
 En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) que proporciona una serie de  modulos y elementos preconstruido que
 permiten realizar un proyecto electonico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va
