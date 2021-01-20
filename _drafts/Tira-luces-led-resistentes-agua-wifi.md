@@ -76,7 +76,7 @@ tener cierto margen se ha decidido usar extensiones de maximo 50 leds. Cualquier
 ##### Que es Mongoose OS?:
 Mongoose OS es un sistema operativo para Internet De las Cosas, compatible con ESP8266, ESP32 entre otros. Combina facilidad con robustez. Es ideal para
 el prototipado rapido de productos IoT, pues trae incorporada la conectividad nativa con "nubes" publicas o privadas como AWS, Google, Azure, etc.
-Hay dos caracteristicas muy importantes que lo hacen tan versatil. Una de ella es la posibilidad de usarlo "online/offline". Online, que es la opcion por defecto, la compilacion
+Hay dos caracteristicas muy importantes que lo hacen tan versatil. Una de ella es la posibilidad de usarlo "remoto/local". Remoto, que es la opcion por defecto, la compilacion
 se realiza en la nube lo cual evita los problemas clasicos de instalacion de los SDK para desarrollo embebido. 
 Tambien existe la posibilidad de instalarlo localmente mediante dockers, en cuyo caso se puede compilar sin tener una conexion a internet.
 

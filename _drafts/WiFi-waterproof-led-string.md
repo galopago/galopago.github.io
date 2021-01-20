@@ -39,59 +39,49 @@ firmware wirelessly (OTA), using a powerful combo: [Mongoose OS](https://mongoos
 Mongoose OS uses a scaled down version of JavaScript known as [mJS](https://github.com/cesanta/mjs). This is an attractive language for web developers whom already 
 work with JS. Mongoose OS is built on top of Espressif's ESP-iDF, so it is possible to write functions in C, which is also attractive for more "traditional" embedded programmers.
 
-The circuit is built using [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) hardware prototyping system which provides different kind of prebuilt modules which allows
-to build an electronic project without soldering, but very robust and expandible.
+The circuit is built using [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) hardware prototyping system, which provides different kinds of prebuilt modules which allows
+to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an
+"industrial look" to the project and also adds mechanical strength to withstand abuses. The external electrical connections (AC, and LEDs) were fitted with IP accessories to provide
+a good seal.
 
-En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) que proporciona una serie de  modulos y elementos preconstruido que
-permiten realizar un proyecto electonico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va
-dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua, ademas de darle un aspecto estetico "industrial"  tambien le otorga suficiente
-robustez mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
-el sellamiento IP65.
+#### Key features:
+* Mongoose OS embedded operating system running on ESP8266.
+* Dustproof, waterproof and wall mountable.
+* Wireless remote firmware update, thanks to Mongoose OS management dashboard mDASH.
+* Built with TUSISTEMITA hardware prototyping blocks
+* 110/220V AC power
 
-
-#### Principales Caracteristicas:
-* Sistema Operativo embebido Mongoose OS corriendo sobre ESP8266
-* Resistente al agua y con pestaña para montaje en pared.
-* Actualizacion remota del Firmware gracias a la plataforma de gestion Mongoose OS dashboard mDASH
-* Montaje realizado mediante el sistema de prototipado robusto para hardware electronico TUSISTEMITA
-* Alimentacion 110/220V AC.
-
-
-El hardware esta compuesto por 4 elementos bien diferenciados: Fuente de alimentacion, CPU, adaptador de nivel logico y LEDS. La fuente de alimentacion es de
-tipo comutada con 20W de potencia, 5 voltios de salida y entrada de 110V a 220V, por lo tanto puede ser usada practicamente en cualquier lugar del mundo. Como CPU
-se uso un ESP8266 en una tarjeta NODEMCU V3. Esta tarjeta puede ser alimentada a 3.3V directamente al pin de alimentacion del procesador, o por 5V haciendo uso del regulador incorporado.
-Las salidas logicas de la CPU tendran voltajes de 0 a 3.3V, lo que debera ser tenido en cuenta si se desea instalar sensores u otros perifericos que trabajen
-a 5V. Es aqui donde entre cobra importancia el adaptador de nivel logico, pues los leds son alimentados a 5V y esperan una señal logica con esta misma amplitud. Como adaptador
-de nivel logico se uso la tarjeta TUSISTEMITA D06 que internamente usa un MOSFET BSS138 para realizar dicho trabajo. 
+The circuit is composed of 4 elements well differentiated: Power source, CPU, logic level shifter and LEDs. Power source is switched type, 20W power, 5V output and 110/220V input, so
+it could be used in any country of the world. ESP8266 was used as CPU (NODEMCU V3). This board can be powered by 3.3V directly to processor power pin or by 5V using the
+onboard regulator. The high logic level output of ESP8266 is 3.3V, so a logic level shifter is needed for working with 5V sensors. WS2812 works with 5V logic levels so TUSISTEMITA D06
+logic level board converter was used. This board is based on BSS138 MOSFET.
 
 <figure>
 	<a href="/assets/images/mos_wifi_iot_lights_blockdiag.png"> <img src="/assets/images/mos_wifi_iot_lights_blockdiag.png"> </a>
-	<figcaption>Diagrama simplificado de bloques</figcaption>
+	<figcaption>Simplified block diagram</figcaption>
 </figure>
 
+Power source output current is around 3.8A max, and each WS2811 LED consumes 60 mA max, so at least 63 LED could be powered. To stay below absolute maximum only 50
+LED is recommended. Any LED string that works with WS2811 compatible protocol could be used.
 
-La fuente de poder entrega aproximadamente 3.8 A y cada led WS2811 consume 60 mA como maximo, estando en capacidad de alimentar extensiones de hasta 63 leds. Para
-tener cierto margen se ha decidido usar extensiones de maximo 50 leds. Cualquier tipo de tira de LED que use el mismo protocolo del WS2811 puede ser usada.
+##### Mongoose OS:
 
-##### Que es Mongoose OS?:
-Mongoose OS es un sistema operativo para Internet De las Cosas, compatible con ESP8266, ESP32 entre otros. Combina facilidad con robustez. Es ideal para
-el prototipado rapido de productos IoT, pues trae incorporada la conectividad nativa con "nubes" publicas o privadas como AWS, Google, Azure, etc.
-Hay dos caracteristicas muy importantes que lo hacen tan versatil. Una de ella es la posibilidad de usarlo "online/offline". Online, que es la opcion por defecto, la compilacion
-se realiza en la nube lo cual evita los problemas clasicos de instalacion de los SDK para desarrollo embebido. 
-Tambien existe la posibilidad de instalarlo localmente mediante dockers, en cuyo caso se puede compilar sin tener una conexion a internet.
+Mongoose OS is an operating system for the Internet Of Things, it can run on ESP8266, ESP32 and others. Is a blend of easiness and robustness. Ideal for rapid prototyping
+of IoT products because of its native built-in cloud connectivity (AWS, Google, Azure).
+There are two characteristics that make Mongoose OS so versatile. One of them is the possibility to work "remote/local". Remote is the default option, and compiles
+the code in the cloud, this is good for beginners because avoids the problems related to SDK installations. Local option is based on docker containers and is good for automatic builds
+without internet connection.
 
-La otra caracteristica importante, es que usa como lenguaje de programacion un subconjuto de JavaScript llamado mJS (embedded javascript). Esto hace que se 
-puedan crear muchas funcionalidades avanzadas, sin necesidad de escribir tanto codigo como en otros lenguajes usados en sistemas embebidos (Assembler, C, Processing). Sin embargo
-nada impide que se puedan llamar funciones escritas en C puro para ganar desempeño, en especial al escribir controladores para sensores y perifericos que
-requieren un manejo eficiente de los recursos.
+Another important characteristic is the use of a scaled down version of JavaScript called mJS as programming language. Advanced functionalities could be written with
+few lines of code compared to other languages (Assembler, C, Processing). However, nothing prevents to call functions written in C, especially for time sensitive device drivers.
 
-##### El programa:
+##### Software:
 
-El firmware presentado en este proyecto realiza dos tareas: Encender cada uno de los leds con un color determinado y la otra se encarga de recibir datos
-desde la nube.
+Sample application presented here is composed of two tasks: Send color data for every LED in the string and listen to incoming data coming from the cloud.
 
-Para enviar el dato de color a cada uno de los LED , este se extrae aleatoriamente de una tabla de colores predefinida. La comunicacion con los LED se realiza
-mediante la biblioteca NEOPIXEL que incorpora Mongoose OS.
+
+To send data to each LED, the color code is randomly extracted from a predefined color table. Communication to the LED string is made using NEOPIXEL library bundled 
+with Mongoose OS.
 
 Para recibir los datos desde la nube, se realiza una conexion MQTT a un broker donde se escucha por un topico especifico. Una aplicacion cliente puede conectarse a este broker MQTT
 y enviar un determinado dato al topico que se esta escuchando, y con esto se puede cambiar la paleta de colores que se esta usando para los LED. De esta forma
