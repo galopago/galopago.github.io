@@ -79,45 +79,40 @@ few lines of code compared to other languages (Assembler, C, Processing). Howeve
 
 Sample application presented here is composed of two tasks: Send color data for every LED in the string and listen to incoming data coming from the cloud.
 
-
 To send data to each LED, the color code is randomly extracted from a predefined color table. Communication to the LED string is made using NEOPIXEL library bundled 
 with Mongoose OS.
 
-Para recibir los datos desde la nube, se realiza una conexion MQTT a un broker donde se escucha por un topico especifico. Una aplicacion cliente puede conectarse a este broker MQTT
-y enviar un determinado dato al topico que se esta escuchando, y con esto se puede cambiar la paleta de colores que se esta usando para los LED. De esta forma
-se presenta una aplicacion de ejemplo muy simple de como modificar la secuencia de forma remota a traves de internet. 
+An MQTT connection is established to a broker where the app subscribes to a specific topic. A third party client application must connect to the same MQTT broker and publish
+data to the same topic to change the color palette used. This is a very simple way to change the light pattern over the internet.
 
-##### Ensamblaje:
+##### Circuit assembly:
 
-El prototipo del sistema fue montado usando varios componentes de TUSISTEMITA, como la placa trasera para montaje, las tarjetas adaptadoras para la fuente y NODEMCU, tarjeta de 
-conversion niveles logicos y borneras de tornillos para conexiones de salida. Una vez descargada la aplicacion por primera vez y comprobado que las conexiones electricas funcionan bien,
-se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamente hay que desconectar la alimentacion electrica de las borneras y la conexion
-de salida a los leds, ajustar la placa a la caja y reconectar nuevamente.
+The circuit was built using components of TUSISTEMITA, like enclosure backplate, power source backplate, NODEMCU breakboard, logic level shifter board and screw
+ terminal board. Once the app is downloaded for the first time, and electrical connections verified, the backplate could be attached to the enclosure hassle free. Just unplug
+external cables from terminals, screw backplate to enclosure and reconnect cables again.
 
 <figure class="third">
 	<a href="/assets/images/MOS_WIFI_LIGHTS_PARTS.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_PARTS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_WIRED.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WIRED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_WORKING.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WORKING_MEDIUM.jpg"> </a>
-	<figcaption>Ensamblaje y cableado.</figcaption>
+	<figcaption>Assembly and wiring.</figcaption>
 </figure>
 
-Se recomienda cambiar los conectores originales de las tiras de led, por unos mucho mas robustos mecanicamente y a prueba de agua, para evitar problemas de oxido en caso
-de estar expuestos a los elementos ambientales. Se aconseja el uso de termoencogible con pegamento para mayor proteccion en las uniones entre los cables
-de la tira led y los conectores.
+It is recommended to change the connectors of the LED strip, for a more robust and waterproof connectors. Heatshrink tube with glue (double wall) should 
+be used to protect solder joints from the elements.
 
 <figure class="third">
 	<a href="/assets/images/MOS_WIFI_LIGHTS_CABLEGLAND.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_CABLEGLAND_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_CONNECTOR.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_CONNECTOR_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_FINISHED.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_FINISHED_MEDIUM.jpg"> </a>
-	<figcaption>Conectores para proteccion de los cables</figcaption>
+	<figcaption>Cable glands and waterproof connectors</figcaption>
 </figure>
 
-Una vez la caja se encuentra cerrada, las actualizaciones de firmware se pueden hacer inalambricamente mediante OTA por medio del dashboard de Mongoose
-OS mDash. 
+Once the enclosure is closed, firmware updates could be done via wirelessly via OTA, using Mongoose OS device management dashboard mDASH.
 
-#### Listado de materiales
+#### Bill of materials
 
-| Componente         | Consigue el tuyo! | Hoja de caracteristicas
+| Component         | Get yours! | Datasheet
 | -------- | ------ | ------------------------------------------------------------ |
 | ESP8266 NodeMCU V3    | [💸](https://s.click.aliexpress.com/e/_AKwJKn)     | [NodeMCUV3.pdf](/assets/pdf/NodeMCUV3.pdf)           |
 | Tira de LED WS2811 resistente al agua | [💸](https://s.click.aliexpress.com/e/_AFqDHl )  | [WS2811_WATERPROOF_LED_STRING.pdf](/assets/pdf/WS2811_WATERPROOF_LED_STRING.pdf)                               |
