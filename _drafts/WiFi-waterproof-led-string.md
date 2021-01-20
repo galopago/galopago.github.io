@@ -22,7 +22,7 @@ controlled by their audience and for outdoor projects like advertizing signs in 
 	<figcaption>Open enclosure showing internal components</figcaption>
 </figure>
 
-Key component: [WS2811 waterproof LED string.](https://s.click.aliexpress.com/e/_AFqDHl)
+Key component: [WS2811 waterproof LED string.](https://s.click.aliexpress.com/e/_AWaLpZ)
 {: .notice--danger}
 
 
@@ -114,33 +114,33 @@ Once the enclosure is closed, firmware updates could be done via wirelessly via 
 
 | Component         | Get yours! | Datasheet
 | -------- | ------ | ------------------------------------------------------------ |
-| ESP8266 NodeMCU V3    | [💸](https://s.click.aliexpress.com/e/_AKwJKn)     | [NodeMCUV3.pdf](/assets/pdf/NodeMCUV3.pdf)           |
-| Tira de LED WS2811 resistente al agua | [💸](https://s.click.aliexpress.com/e/_AFqDHl )  | [WS2811_WATERPROOF_LED_STRING.pdf](/assets/pdf/WS2811_WATERPROOF_LED_STRING.pdf)                               |
-| Fuente de alimentacion conmutada 5V 3.8A 20W   | [💸](https://s.click.aliexpress.com/e/_A57h4j)     | [5V_4A_switching_power.pdf](/assets/pdf/5V_4A_switching_power.pdf)           |
-| Caja estanca generica resistente al agua de 200x120x75mm (varias opciones: tapa transparente, salientes para montaje en pared)| [💸](https://s.click.aliexpress.com/e/_A2ZqFz)  | [g373_g269.pdf](/assets/pdf/g373_g269.pdf)           |
-| Tornillo M2.6 autorroscante tipo B | [💸](https://s.click.aliexpress.com/e/_A6SvXp)  | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)                           |
-| Tornillo M3 cabeza avellanada en cruz | [💸](https://s.click.aliexpress.com/e/_AaJKaL)  | [M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf](/assets/pdf/M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf)                           |
-| Tuerca M3 hexagonal con brida DIN6923 | [💸](https://s.click.aliexpress.com/e/_9AB0mF)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FLANGED_NUT_3MM_DIN6923.pdf)                           |
-| Espaciador separador de nylon G228  | [💸](https://s.click.aliexpress.com/e/_AqHnWn)  | [G228.pdf](/assets/pdf/G228.pdf)                           |
-| Conector glandula o prensa estopa PG7 o PG9 | [💸](https://s.click.aliexpress.com/e/_9AvHyT)  | [pg_7.pdf](/assets/pdf/pg_7.pdf) | 
-| Conector resistente al agua para tira led  | [💸](https://s.click.aliexpress.com/e/_AMoPnv)  | [Waterproof_led_string_connector.pdf](/assets/pdf/Waterproof_led_string_connector.pdf)                           |
-| Tubo termoencogible 3:1 con pegamento  | [💸](https://s.click.aliexpress.com/e/_AEtntV)  | [3_1_heatshrink_tube_glue.pdf](/assets/pdf/3_1_heatshrink_tube_glue.pdf)                           |
-| Tubo termoencogible 2:1 multiples colores  | [💸](https://s.click.aliexpress.com/e/_Ar4Zmf)  | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf)                           |
+| ESP8266 NodeMCU V3    | [💸](https://s.click.aliexpress.com/e/_As5zmb)     | [NodeMCUV3.pdf](/assets/pdf/NodeMCUV3.pdf)           |
+| WS2811 waterproof LED string | [💸](https://s.click.aliexpress.com/e/_AWaLpZ )  | [WS2811_WATERPROOF_LED_STRING.pdf](/assets/pdf/WS2811_WATERPROOF_LED_STRING.pdf)                               |
+| Switched power supply 5V 3.8A 20W   | [💸](https://s.click.aliexpress.com/e/_9gYBnH)     | [5V_4A_switching_power.pdf](/assets/pdf/5V_4A_switching_power.pdf)           |
+| Waterproof plastic enclosure 200x120x75mm (multiple options: transparent lid, wall mounting tabs)| [💸](https://s.click.aliexpress.com/e/_ASuE1N)  | [g373_g269.pdf](/assets/pdf/g373_g269.pdf)           |
+| M2.6 self-tapping B type screw | [💸](https://s.click.aliexpress.com/e/_98ymAB)  | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)                           |
+| M3 countersunk phillips screw | [💸](https://s.click.aliexpress.com/e/_AoOvPz)  | [M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf](/assets/pdf/M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf)                           |
+| M3 hex flanged nut DIN6923 | [💸](https://s.click.aliexpress.com/e/_9g89th)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FLANGED_NUT_3MM_DIN6923.pdf)                           |
+| Nylon spacer G228  | [💸](https://s.click.aliexpress.com/e/_A7PPYf)  | [G228.pdf](/assets/pdf/G228.pdf)                           |
+| Cable gland PG7 or PG9 | [💸](https://s.click.aliexpress.com/e/_9z6Z4r )  | [pg_7.pdf](/assets/pdf/pg_7.pdf) | 
+| 3 pin waterproof cable connector for LED string  | [💸](https://s.click.aliexpress.com/e/_AesJgr )  | [Waterproof_led_string_connector.pdf](/assets/pdf/Waterproof_led_string_connector.pdf)                           |
+| 3:1 Heatshrink tube with glue  | [💸](https://s.click.aliexpress.com/e/_AaW9bd)  | [3_1_heatshrink_tube_glue.pdf](/assets/pdf/3_1_heatshrink_tube_glue.pdf)                           |
+| 2:1 Heatshrink tube multiple colors  | [💸](https://s.click.aliexpress.com/e/_9ikkU7 )  | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf)                           |
 
-#### Componentes TUSISTEMITA
+#### TUSISTEMITA blocks
 
-| PCB    |  Archivos fuente                                          | 
+| PCB    |  Source file                                          | 
 | -------- | ------------------------------------------------------------ |
-| Placa trasera para montaje A02 para caja de 200x120x75mm | [A02](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| Placa adaptadora A05 con agujeros espaciados 10.16mm para fuente 5V 3.8A   | [A05](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)        |
-| Tarjeta B01 para conexiones mediante terminales de tornillos 2x4 3.5mm | [B01](https://github.com/galopago/TUSISTEMITA/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
-| Tarjeta breakout C08 con salida a terminales de tornillos para NODEMCU V3  | [C08](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
-| Tarjeta D06 de conversion de niveles logicos  | [D06](https://github.com/galopago/TUSISTEMITA/tree/master/D_ELECTRONICS)        |
+| A02 Backplate for 200x120x75mm enclosure | [A02](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
+| A05 adapterboard 10.16mm pitch for 5V 3.8A PSU  | [A05](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)        |
+| B01 2x4 3.5mm screw terminal board | [B01](https://github.com/galopago/TUSISTEMITA/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
+| C08 screw terminal breakout board for NODEMCU V3  | [C08](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
+| D06 logic level shifter board  | [D06](https://github.com/galopago/TUSISTEMITA/tree/master/D_ELECTRONICS)        |
 
 
 #### Software
 
-| Software    | Archivos fuente                                          | 
+| Software    | Source file                                          | 
 | -------- | ------------------------------------------------------------ |
 | Firmware    | [MOS_IOT_ADDRESSABLE_LEDS](https://github.com/galopago/MOS_IOT_ADDRESSABLE_LEDS)           |
 
@@ -148,7 +148,7 @@ Once the enclosure is closed, firmware updates could be done via wirelessly via 
 
 ## Componentes opcionales:
 
-| Componente         | Consigue el tuyo! | Datasheet                                          | 
+| Component         | Get yours! | Datasheet                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| Juego de 3 brocas escalonadas 3-20 mm + centropunto  | [💸](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
-| Broca escalonada de 8 pasos 10-45 mm    | [💸](https://s.click.aliexpress.com/e/_ATtnjt)     | [8_steps_10-45mm_incremental_drill_bit.pdf](/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf)           |
+| 3 pc step drill bit 3-20 mm + centerpunch | [💸](https://s.click.aliexpress.com/e/_9vxJV5 )     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
+| 8 Step drill bit 10-45 mm    | [💸](https://s.click.aliexpress.com/e/_9Ior51)     | [8_steps_10-45mm_incremental_drill_bit.pdf](/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf)           |

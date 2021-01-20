@@ -163,7 +163,7 @@ OS mDash.
 
 ## Componentes opcionales:
 
-| Componente         | Consigue el tuyo! | Datasheet                                          | 
+| Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
 | Juego de 3 brocas escalonadas 3-20 mm + centropunto  | [💸](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
 | Broca escalonada de 8 pasos 10-45 mm    | [💸](https://s.click.aliexpress.com/e/_ATtnjt)     | [8_steps_10-45mm_incremental_drill_bit.pdf](/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf)           |
