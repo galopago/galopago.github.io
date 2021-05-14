@@ -146,7 +146,7 @@ Once the enclosure is closed, firmware updates could be done via wirelessly via 
 
  
 
-## Componentes opcionales:
+## Optional Components:
 
 | Component         | Get yours! | Datasheet                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
