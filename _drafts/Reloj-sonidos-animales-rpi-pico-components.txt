@@ -1,0 +1,14 @@
+rpi pico
+female header
+battery holder
+speaker
+mosfet 2N7000
+transistor 2N2222A
+light sensor 
+push button
+th resistor
+th elec capacitor
+th ceramic capacitor
+trigger clock mechanism
+step drill bit
+wall hook clock
