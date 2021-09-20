@@ -61,24 +61,12 @@ Dicho en palabras de [Industrias Adafruit](https://learn.adafruit.com/bienvenido
 
 Otras razones para usar CircuitPython incluyen:
 
-*Quieres tener tu ambiente listo para trabajar, en poco tiempo. Creas un archivo, editas tu código, salvas el archivo y se ejecuta de inmediato. No hay proceso de compilado, sin descargas ni subidas necesarias.
+* Quieres tener tu ambiente listo para trabajar, en poco tiempo. Creas un archivo, editas tu código, salvas el archivo y se ejecuta de inmediato. No hay proceso de compilado, sin descargas ni subidas necesarias.
 * Eres nuevo en programación. CircuitPython es diseñado pensando en educación. Es sencillo comenzar a programar, y recibes retroalimentación inmediata de la tarjeta.
 * Actualiza sencillamente tu código. Dado que tu código vive en la unidad de disco, puedes editarlo cuando gustes, y puedes mantener varios archivos con diferentes archivos para fácil experimentación.
 * La consola serial y REPL. Estas te permiten recibir retroalimentación en vivo de tu código y programando de forma interactiva.
 * Almacenamiento de archivos. El almacenamiento interno de CircuitPython es un excelente lugar para bitácoras de datos, tocar archivos de audio o para interactuar con archivos.
 * Fuertes capacidades de hardware. Hay muchas librerías y controladores para sensores, tarjetas especificas y otros componentes externos.
-
-
-Mongoose OS es un sistema operativo para Internet De las Cosas, compatible con ESP8266, ESP32 entre otros. Combina facilidad con robustez. Es ideal para
-el prototipado rapido de productos IoT, pues trae incorporada la conectividad nativa con "nubes" publicas o privadas como AWS, Google, Azure, etc.
-Hay dos caracteristicas muy importantes que lo hacen tan versatil. Una de ella es la posibilidad de usarlo "remoto/local". Remoto, que es la opcion por defecto, la compilacion
-se realiza en la nube lo cual evita los problemas clasicos de instalacion de los SDK para desarrollo embebido. 
-Tambien existe la posibilidad de instalarlo localmente mediante dockers, en cuyo caso se puede compilar sin tener una conexion a internet.
-
-La otra caracteristica importante, es que usa como lenguaje de programacion un subconjuto de JavaScript llamado mJS (embedded javascript). Esto hace que se 
-puedan crear muchas funcionalidades avanzadas, sin necesidad de escribir tanto codigo como en otros lenguajes usados en sistemas embebidos (Assembler, C, Processing). Sin embargo
-nada impide que se puedan llamar funciones escritas en C puro para ganar desempeño, en especial al escribir controladores para sensores y perifericos que
-requieren un manejo eficiente de los recursos.
 
 ##### El programa:
 
