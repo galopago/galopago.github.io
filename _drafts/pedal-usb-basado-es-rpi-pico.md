@@ -12,20 +12,14 @@ header:
      teaser: "/assets/images/USB_PEDAL_RPI_PICO_TEASER.jpg"
 ---
 
-Pedal USB que emula la pulsacion de teclas o combinaciones de teclas mediante pedales u cualquier otro interruptor momentaneo. Util para usar con aplicaciones de edicion de video/audio para detener/reproducir sin tener que quitar las manos del teclado ni del raton, tambien puede usarse con aplicaciones de video conferencia para hacer mute rapidamente. No se requiere ninguna aplicacion especial para descargar el firmware inicial, ni tampoco para configurar las teclas (un simple editor de texto bastara). Funciona practicamente con cualquier sistema operativo
-
-
-Luces apropiadas para decoraciones navideñas, halloween, etc. No solamente la secuencia puede ser manejadas por internet, sino que
-tambien se pueden reprogramar completamente de forma inalambrica (OTA) mediante una conexion WiFi. Construccion robusta 
-a prueba de polvo y agua. Ideal para montajes en interiores: como fondo para transmisiones de youtubers/streamers 
-(manejadas en tiempo real por su audiencia), exteriores fijos como muros y avisos, o en exteriores moviles como carrozas de carnaval.
+Pedal USB que emula la pulsacion de teclas o combinaciones de teclas mediante pedales u cualquier otro interruptor momentaneo. Util para usar con aplicaciones de edicion de video/audio para detener/reproducir sin tener que quitar las manos del teclado ni del raton, tambien puede usarse con aplicaciones de video conferencia para hacer mute rapidamente. No se requiere ninguna aplicacion especial para descargar el firmware inicial, ni tampoco para configurar las teclas (un simple editor de texto bastara). Funciona practicamente con cualquier sistema operativo.
 
 <figure>
 	<a href="/assets/images/USB_PEDAL_RPI_PICO.jpg"> <img src="/assets/images/USB_PEDAL_RPI_PICO_MEDIUM.jpg"> </a>
-	<figcaption>Caja de las luces destapada mostrando sus componentes internos</figcaption>
+	<figcaption>Pedal USB instalado en una caja robusta</figcaption>
 </figure>
 
-Componente clave: [Rpi Pico.](https://s.click.aliexpress.com/e/_AXig1M)
+Componente clave: [Rpi Pico.](https://s.click.aliexpress.com/e/_9yrTG7)
 {: .notice--danger}
 
 
@@ -132,35 +126,31 @@ OS mDash.
 
 | Componente         | Consigue el tuyo! | Hoja de caracteristicas
 | -------- | ------ | ------------------------------------------------------------ |
-| ESP8266 NodeMCU V3    | [💸](https://s.click.aliexpress.com/e/_AKwJKn)     | [NodeMCUV3.pdf](/assets/pdf/NodeMCUV3.pdf)           |
-| Tira de LED WS2811 resistente al agua | [💸](https://s.click.aliexpress.com/e/_AFqDHl )  | [WS2811_WATERPROOF_LED_STRING.pdf](/assets/pdf/WS2811_WATERPROOF_LED_STRING.pdf)                               |
-| Fuente de alimentacion conmutada 5V 3.8A 20W   | [💸](https://s.click.aliexpress.com/e/_A57h4j)     | [5V_4A_switching_power.pdf](/assets/pdf/5V_4A_switching_power.pdf)           |
-| Caja estanca generica resistente al agua de 200x120x75mm (varias opciones: tapa transparente, salientes para montaje en pared)| [💸](https://s.click.aliexpress.com/e/_A2ZqFz)  | [g373_g269.pdf](/assets/pdf/g373_g269.pdf)           |
-| Tornillo M2.6 autorroscante tipo B | [💸](https://s.click.aliexpress.com/e/_A6SvXp)  | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)                           |
-| Tornillo M3 cabeza avellanada en cruz | [💸](https://s.click.aliexpress.com/e/_AaJKaL)  | [M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf](/assets/pdf/M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf)                           |
-| Tuerca M3 hexagonal con brida DIN6923 | [💸](https://s.click.aliexpress.com/e/_9AB0mF)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FLANGED_NUT_3MM_DIN6923.pdf)                           |
-| Espaciador separador de nylon G228  | [💸](https://s.click.aliexpress.com/e/_AqHnWn)  | [G228.pdf](/assets/pdf/G228.pdf)                           |
-| Conector glandula o prensa estopa PG7 o PG9 | [💸](https://s.click.aliexpress.com/e/_9AvHyT)  | [pg_7.pdf](/assets/pdf/pg_7.pdf) | 
-| Conector resistente al agua para tira led  | [💸](https://s.click.aliexpress.com/e/_AMoPnv)  | [Waterproof_led_string_connector.pdf](/assets/pdf/Waterproof_led_string_connector.pdf)                           |
-| Tubo termoencogible 3:1 con pegamento  | [💸](https://s.click.aliexpress.com/e/_AEtntV)  | [3_1_heatshrink_tube_glue.pdf](/assets/pdf/3_1_heatshrink_tube_glue.pdf)                           |
-| Tubo termoencogible 2:1 multiples colores  | [💸](https://s.click.aliexpress.com/e/_Ar4Zmf)  | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf)                           |
+| Tornillo M2.6 autorroscante tipo B | [💸] (https://s.click.aliexpress.com/e/_esHHyb) | [M2.6x5-6-8-12mm.pdf] (/assets/pdf/M2.6x5-6-8-12mm.pdf) |
+| Espaciador separador de nylon G228 | [💸] (https://s.click.aliexpress.com/e/_AqHnWn) | [G228.pdf] (/assets/pdf/G228.pdf) |
+| Tubo termoencogible 2:1 multiples colores| [💸] (https://s.click.aliexpress.com/e/_Ar4Zmf) | [2_1_heatshrink_tube_colors.pdf] (/assets/pdf/2_1_heatshrink_tube_colors.pdf) |
+| Caja estanca generica resistente al agua de 115x90x55 mm | [💸] (https://s.click.aliexpress.com/e/_9y9UWZ) | [KH-F3.pdf] (/assets/pdf/KH-F3.pdf) |
+| Raspberry Pi Pico | [💸] (https://s.click.aliexpress.com/e/_9yrTG7) | [pico-datasheet.pdf] (/assets/pdf/pico-datasheet.pdf) |
+| Conector USB Tipo B IP68 para panel | [💸] (https://s.click.aliexpress.com/e/_ATARh0) | [USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf] (/assets/pdf/USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf) |
+| Conector de aviacion 4 pines | [💸] (https://s.click.aliexpress.com/e/_9IMuVU) | [CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf] (/assets/pdf/CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf) |
+| Interruptor momentaneo de pedal Metalico  | [💸] (https://s.click.aliexpress.com/e/_AktOC6) | [METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf] (/assets/pdf/METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf) |
+| Cable de impresora USB tipo A | [💸] (https://s.click.aliexpress.com/e/_A596l4) | [USB_PRINTER_CABLE.pdf] (/assets/pdf/USB_PRINTER_CABLE.pdf) |
+| Cable Micro USB | [💸] (https://s.click.aliexpress.com/e/_AF0DcI) | [MICRO_USB_CABLE.pdf] (/assets/pdf/MICRO_USB_CABLE.pdf) |
 
 #### Componentes TUSISTEMITA
 
 | PCB    |  Archivos fuente                                          | 
 | -------- | ------------------------------------------------------------ |
-| Placa trasera para montaje A02 para caja de 200x120x75mm | [A02](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| Placa adaptadora A05 con agujeros espaciados 10.16mm para fuente 5V 3.8A   | [A05](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)        |
-| Tarjeta B01 para conexiones mediante terminales de tornillos 2x4 3.5mm | [B01](https://github.com/galopago/TUSISTEMITA/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
-| Tarjeta breakout C08 con salida a terminales de tornillos para NODEMCU V3  | [C08](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
-| Tarjeta D06 de conversion de niveles logicos  | [D06](https://github.com/galopago/TUSISTEMITA/tree/master/D_ELECTRONICS)        |
+| Placa trasera para montaje A01 para caja de 158x90x60mm | [A01](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
+| Tarjeta breakout C11 con salida a terminales de tornillos para Rpi Pico  | [C11](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
+
 
 
 #### Software
 
 | Software    | Archivos fuente                                          | 
 | -------- | ------------------------------------------------------------ |
-| Firmware    | [MOS_IOT_ADDRESSABLE_LEDS](https://github.com/galopago/MOS_IOT_ADDRESSABLE_LEDS)           |
+| Firmware    | [PEDAL_USB_RPI_PICO](https://github.com/galopago/RPI_PICO_USB_FOOT_SWITCH)           |
 
  
 
