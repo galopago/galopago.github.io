@@ -25,24 +25,13 @@ Componente clave: [Rpi Pico.](https://s.click.aliexpress.com/e/_9yrTG7)
 
 ##### El concepto:
 
-Con la llegada de los LED direccionables como el WS2812, WS2812b, WS2811, etc. fue posible controlar individualmente grandes
-cantidades de leds usando un solo pin de microcontrolador!. Dicha facilidad de uso contribuyo a popularizar estos componentes
-y a que estos se vendieran en diferentes presentaciones: leds individuales para montaje superficial, series de luces en tiras flexibles, extensiones
-de luces tipo "arbol de navidad" a prueba de agua, entre otras. Es precisamente estas ultimas las que seran usadas en este proyecto dado lo facil que
-pueden adaptarse a distintos tipos de proyectos como matrices de leds hasta adornos navideños, sin tener que soldar ni hacer modificaciones electricas a las luces.
+La gran mayoria de los pedales programables USB que se encuentran en el mercado poseen la gran desventaja de requerir inicialmente instalar una aplicacion para poder ser configurados. Esta plicacion solo existe para Windows y generalmente viene traducida a pocos idiomas(a veces no viene traducida!) y es poco intuitiva. Esto supone que para usuarios de Linux o Mac, se requiera instalar una maquina virtual para poder configurar dicho pedal, o pedir el favor a algun usuario de windows que nos ayude con esta tarea. 
 
-Como microcontrolador se uso un ESP8266, mas precisamente una tarjeta conocida como "NODEMCU V3" que incorpora ya todos los elementos adicionales para poder
-realizar la programacion inicial desde un computador. Utilizando el WiFi incorporado del ESP8266, no solo es posible controlar las secuencias y colores de las luces desde
-internet, sino que tambien es posible descargarle nuevos programas de forma remota (OTA) usando un combo poderoso: El sistema operativo [Mongoose OS](https://mongoose-os.com/) junto con
-plataforma para gestion remota de dispositivos [mDASH](https://mdash.net/). Mongoose OS usa una version restringida de JavaScript conocida como [mJS](https://github.com/cesanta/mjs), lo que probablemente
-resultara atractivo para programadores web que ya trabajan con este tipo de tecnologia. Mongoose OS esta construido sobre el ESP-IDF de Espressif, por lo tanto
-pueden hacerse llamados a funciones escritas en C, lo que sin duda tambien resultara atractivo para programadores de microcontroladores "tradicionales" que han
-trabajado con este lenguaje bastante maduro.
+Es aqui donde cobra importancia el [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/), por 2 grandes razones: Tiene interfaz nativa USB, por lo que no se requiere de programador ni hardware adicional para descargar los programas y la mas importante aun es que soporta [CircuitPython](https://learn.adafruit.com/bienvenido-a-circuitpython-2/que-es-circuitpython), por lo que se puede programar "en caliente" sin necesidad de estar permanentemente compilando y descargando firmware durante el proceso de depuracion.
 
-En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) que proporciona una serie de  modulos y elementos preconstruido que
-permiten realizar un proyecto electonico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va
-dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua, ademas de darle un aspecto estetico "industrial"  tambien le otorga suficiente
-robustez mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
+Otra ventaja adicional con respecto a los pedales USB comerciales, es que en este caso el pedal en si, puede ser reemplazado facilmente por uno de mejor calidad o resistencia. Tambien podria usarse otro tipo de interruptores diferentes para ser actuados con partes del cuerto diferentes a los pies. La cantidad de interruptores que se le pueden adicionar solo esta determinada por los GPIO disponibles del Rpi Pico y por el tamaño de la caja!
+
+En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) que proporciona una serie de  modulos y elementos preconstruido que permiten realizar un proyecto electonico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua, ademas de darle un aspecto estetico "industrial"  tambien le otorga suficiente robustez mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
 el sellamiento IP65.
 
 
@@ -50,9 +39,10 @@ el sellamiento IP65.
 
 * Desarrollado mediante CircuitPython, amigable y facil de entender
 * Compatible con con los sistemas operativos mas conocidos
-* No se requiere ninguna app para descargar el Firmware inicial
-* La configuracion de las teclas se realiza mediante la edicion de un archivo de texo
+* No se requiere instalar ninguna aplicacion para descargar el Firmware inicial
+* La configuracion de las teclas se realiza mediante la edicion de un archivo de texto
 * Resistente al agua y golpes.
+* Pedales reemplazables
 * Montaje realizado mediante el sistema de prototipado robusto para hardware electronico TUSISTEMITA
 * Alimentacion mediante puerto USB, no requiere fuente adicional.
 
