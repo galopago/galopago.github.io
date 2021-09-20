@@ -12,7 +12,7 @@ header:
      teaser: "/assets/images/USB_PEDAL_RPI_PICO_TEASER.jpg"
 ---
 
-Pedal USB que emula la pulsacion de teclas o combinaciones de teclas mediante pedales u cualquier otro interruptor momentaneo. Util para usar con aplicaciones de edicion de video/audio para detener/reproducir sin tener que quitar las manos del teclado ni del raton, tambien puede usarse con aplicaciones de video conferencia para hacer mute rapidamente. No se requiere ninguna aplicacion especial para descargar el firmware inicial, ni tampoco para configurar las teclas (un simple editor de texto bastara). Funciona practicamente con cualquier sistema operativo.
+Pedal USB que emula la pulsacion de teclas o combinaciones de teclas mediante pedales u cualquier otro interruptor momentaneo. Util para usar con aplicaciones de edicion de video/audio para detener/reproducir sin tener que quitar las manos del teclado ni del raton, tambien puede usarse con aplicaciones de video conferencia para hacer mute rapidamente. No se requiere ninguna aplicacion especial para descargar el firmware inicial, ni tampoco para configurar las teclas (un simple editor de texto bastara). Funciona practicamente con cualquier sistema operativo, incluso con dispositivos Android usando un adaptador USB OTG.
 
 <figure>
 	<a href="/assets/images/USB_PEDAL_RPI_PICO.jpg"> <img src="/assets/images/USB_PEDAL_RPI_PICO_MEDIUM.jpg"> </a>
@@ -46,22 +46,14 @@ el sellamiento IP65.
 * Montaje realizado mediante el sistema de prototipado robusto para hardware electronico TUSISTEMITA
 * Alimentacion mediante puerto USB, no requiere fuente adicional.
 
+El hardware es bastante simple,solo se requiere el Rpi Pico y los interruptores conectados cada uno a un GPIO y a tierra. Se usan las resistencias de pull-up internas. La alimentacion y los datos llegan por el conector USB
 
-El hardware esta compuesto por 4 elementos bien diferenciados: Fuente de alimentacion, CPU, adaptador de nivel logico y LEDS. La fuente de alimentacion es de
-tipo comutada con 20W de potencia, 5 voltios de salida y entrada de 110V a 220V, por lo tanto puede ser usada practicamente en cualquier lugar del mundo. Como CPU
-se uso un ESP8266 en una tarjeta NODEMCU V3. Esta tarjeta puede ser alimentada a 3.3V directamente al pin de alimentacion del procesador, o por 5V haciendo uso del regulador incorporado.
-Las salidas logicas de la CPU tendran voltajes de 0 a 3.3V, lo que debera ser tenido en cuenta si se desea instalar sensores u otros perifericos que trabajen
-a 5V. Es aqui donde entre cobra importancia el adaptador de nivel logico, pues los leds son alimentados a 5V y esperan una señal logica con esta misma amplitud. Como adaptador
-de nivel logico se uso la tarjeta TUSISTEMITA D06 que internamente usa un MOSFET BSS138 para realizar dicho trabajo. 
 
 <figure>
-	<a href="/assets/images/mos_wifi_iot_lights_blockdiag.png"> <img src="/assets/images/mos_wifi_iot_lights_blockdiag.png"> </a>
+	<a href="/assets/images/rpi_pico_usb_keyboard.png"> <img src="/assets/images/rpi_pico_usb_keyboard.png"> </a>
 	<figcaption>Diagrama simplificado de bloques</figcaption>
 </figure>
 
-
-La fuente de poder entrega aproximadamente 3.8 A y cada led WS2811 consume 60 mA como maximo, estando en capacidad de alimentar extensiones de hasta 63 leds. Para
-tener cierto margen se ha decidido usar extensiones de maximo 50 leds. Cualquier tipo de tira de LED que use el mismo protocolo del WS2811 puede ser usada.
 
 ##### Que es CircuitPython?:
 Mongoose OS es un sistema operativo para Internet De las Cosas, compatible con ESP8266, ESP32 entre otros. Combina facilidad con robustez. Es ideal para
