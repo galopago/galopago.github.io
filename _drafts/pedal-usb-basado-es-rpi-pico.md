@@ -27,7 +27,7 @@ Componente clave: [Rpi Pico.](https://s.click.aliexpress.com/e/_9yrTG7)
 
 La gran mayoria de los pedales programables USB que se encuentran en el mercado poseen la gran desventaja de requerir inicialmente instalar una aplicacion para poder ser configurados. Esta plicacion solo existe para Windows y generalmente viene traducida a pocos idiomas(a veces no viene traducida!) y es poco intuitiva. Esto supone que para usuarios de Linux o Mac, se requiera instalar una maquina virtual para poder configurar dicho pedal, o pedir el favor a algun usuario de windows que nos ayude con esta tarea. 
 
-Es aqui donde cobra importancia el [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/), por 2 grandes razones: Tiene interfaz nativa USB, por lo que no se requiere de programador ni hardware adicional para descargar los programas y la mas importante aun es que soporta [CircuitPython](https://learn.adafruit.com/bienvenido-a-circuitpython-2/que-es-circuitpython), por lo que se puede programar "en caliente" sin necesidad de estar permanentemente compilando y descargando firmware durante el proceso de depuracion.
+Es aqui donde cobra importancia el [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/), por 2 grandes razones: Tiene interfaz nativa USB, por lo que no se requiere de programador ni hardware adicional para descargar los programas y la mas importante aun es que soporta CircuitPython, por lo que se puede programar "en caliente" sin necesidad de estar permanentemente compilando y descargando firmware durante el proceso de depuracion.
 
 Otra ventaja adicional con respecto a los pedales USB comerciales, es que en este caso el pedal en si, puede ser reemplazado facilmente por uno de mejor calidad o resistencia. Tambien podria usarse otro tipo de interruptores diferentes para ser actuados con partes del cuerto diferentes a los pies. La cantidad de interruptores que se le pueden adicionar solo esta determinada por los GPIO disponibles del Rpi Pico y por el tamaño de la caja!
 
@@ -56,8 +56,18 @@ El hardware es bastante simple,solo se requiere el Rpi Pico y los interruptores 
 
 
 ##### Que es CircuitPython?:
-Dicho en palabras de Industrias Adafruit, creadores de CircuitPython: 
+Dicho en palabras de [Industrias Adafruit](https://learn.adafruit.com/bienvenido-a-circuitpython-2/que-es-circuitpython), creadores de CircuitPython: 
 > es un lenguaje de programación diseñado para simplificar la experimentación y aprendizaje de programar en microcontroladoras de bajo costo. Hace el iniciar más sencillo que nunca sin necesidad previa de descargar herramientas a la estación de trabajo. Una vez que tu tarjeta ha sido preparada, abres cualquier editor de texto, y puedes comenzar a escribir código. Es así de simple.
+
+Otras razones para usar CircuitPython incluyen:
+
+*Quieres tener tu ambiente listo para trabajar, en poco tiempo. Creas un archivo, editas tu código, salvas el archivo y se ejecuta de inmediato. No hay proceso de compilado, sin descargas ni subidas necesarias.
+* Eres nuevo en programación. CircuitPython es diseñado pensando en educación. Es sencillo comenzar a programar, y recibes retroalimentación inmediata de la tarjeta.
+* Actualiza sencillamente tu código. Dado que tu código vive en la unidad de disco, puedes editarlo cuando gustes, y puedes mantener varios archivos con diferentes archivos para fácil experimentación.
+* La consola serial y REPL. Estas te permiten recibir retroalimentación en vivo de tu código y programando de forma interactiva.
+* Almacenamiento de archivos. El almacenamiento interno de CircuitPython es un excelente lugar para bitácoras de datos, tocar archivos de audio o para interactuar con archivos.
+* Fuertes capacidades de hardware. Hay muchas librerías y controladores para sensores, tarjetas especificas y otros componentes externos.
+
 
 Mongoose OS es un sistema operativo para Internet De las Cosas, compatible con ESP8266, ESP32 entre otros. Combina facilidad con robustez. Es ideal para
 el prototipado rapido de productos IoT, pues trae incorporada la conectividad nativa con "nubes" publicas o privadas como AWS, Google, Azure, etc.
