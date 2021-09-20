@@ -47,11 +47,14 @@ el sellamiento IP65.
 
 
 #### Principales Caracteristicas:
-* Sistema Operativo embebido Mongoose OS corriendo sobre ESP8266
-* Resistente al agua y con pestaña para montaje en pared.
-* Actualizacion remota del Firmware gracias a la plataforma de gestion Mongoose OS dashboard mDASH
+
+* Desarrollado mediante CircuitPython, amigable y facil de entender
+* Compatible con con los sistemas operativos mas conocidos
+* No se requiere ninguna app para descargar el Firmware inicial
+* La configuracion de las teclas se realiza mediante la edicion de un archivo de texo
+* Resistente al agua y golpes.
 * Montaje realizado mediante el sistema de prototipado robusto para hardware electronico TUSISTEMITA
-* Alimentacion 110/220V AC.
+* Alimentacion mediante puerto USB, no requiere fuente adicional.
 
 
 El hardware esta compuesto por 4 elementos bien diferenciados: Fuente de alimentacion, CPU, adaptador de nivel logico y LEDS. La fuente de alimentacion es de
@@ -70,7 +73,7 @@ de nivel logico se uso la tarjeta TUSISTEMITA D06 que internamente usa un MOSFET
 La fuente de poder entrega aproximadamente 3.8 A y cada led WS2811 consume 60 mA como maximo, estando en capacidad de alimentar extensiones de hasta 63 leds. Para
 tener cierto margen se ha decidido usar extensiones de maximo 50 leds. Cualquier tipo de tira de LED que use el mismo protocolo del WS2811 puede ser usada.
 
-##### Que es Mongoose OS?:
+##### Que es CircuitPython?:
 Mongoose OS es un sistema operativo para Internet De las Cosas, compatible con ESP8266, ESP32 entre otros. Combina facilidad con robustez. Es ideal para
 el prototipado rapido de productos IoT, pues trae incorporada la conectividad nativa con "nubes" publicas o privadas como AWS, Google, Azure, etc.
 Hay dos caracteristicas muy importantes que lo hacen tan versatil. Una de ella es la posibilidad de usarlo "remoto/local". Remoto, que es la opcion por defecto, la compilacion
