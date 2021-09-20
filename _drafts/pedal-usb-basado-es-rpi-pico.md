@@ -56,6 +56,9 @@ El hardware es bastante simple,solo se requiere el Rpi Pico y los interruptores 
 
 
 ##### Que es CircuitPython?:
+Dicho en palabras de Industrias Adafruit, creadores de CircuitPython: 
+> es un lenguaje de programación diseñado para simplificar la experimentación y aprendizaje de programar en microcontroladoras de bajo costo. Hace el iniciar más sencillo que nunca sin necesidad previa de descargar herramientas a la estación de trabajo. Una vez que tu tarjeta ha sido preparada, abres cualquier editor de texto, y puedes comenzar a escribir código. Es así de simple.
+
 Mongoose OS es un sistema operativo para Internet De las Cosas, compatible con ESP8266, ESP32 entre otros. Combina facilidad con robustez. Es ideal para
 el prototipado rapido de productos IoT, pues trae incorporada la conectividad nativa con "nubes" publicas o privadas como AWS, Google, Azure, etc.
 Hay dos caracteristicas muy importantes que lo hacen tan versatil. Una de ella es la posibilidad de usarlo "remoto/local". Remoto, que es la opcion por defecto, la compilacion
