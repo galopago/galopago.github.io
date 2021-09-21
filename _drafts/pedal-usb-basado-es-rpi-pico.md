@@ -82,23 +82,21 @@ El ciclo principal del programa esta verificando cual de los GPIO se activa para
 El prototipo del sistema fue montado usando varios componentes de TUSISTEMITA, como la placa trasera para montaje, y la tarjeta de salida a borneras para el Rpi Pico
 
 Una vez descargada la aplicacion por primera vez y comprobado que las conexiones electricas funcionan bien,
-se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamente hay que desconectar el puerto USB y las borneras donde estan conectados los interruptores de prueba,ajustar la placa a la caja y reconectar nuevamente.
+se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamente hay que desconectar el puerto USB y las borneras donde estan conectados los interruptores de prueba,ajustar la placa a la caja y reconectar nuevamente. 
 
 <figure class="third">
 	<a href="/assets/images/USB_PEDAL_PICO_DEBUG.jpg"> <img src="/assets/images/USB_PEDAL_PICO_DEBUG_MEDIUM.jpg"> </a>
 	<a href="/assets/images/USB_PEDAL_PICO_PARTS.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PARTS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/USB_PEDAL_PICO_WIRED.jpg"> <img src="/assets/images/USB_PEDAL_PICO_WIRED_MEDIUM.jpg"> </a>
-	<figcaption>Pruebbas, ensamblaje y cableado.</figcaption>
+	<figcaption>Pruebas, ensamblaje y cableado.</figcaption>
 </figure>
 
-Se recomienda cambiar los conectores originales de las tiras de led, por unos mucho mas robustos mecanicamente y a prueba de agua, para evitar problemas de oxido en caso
-de estar expuestos a los elementos ambientales. Se aconseja el uso de termoencogible con pegamento para mayor proteccion en las uniones entre los cables
-de la tira led y los conectores.
+Los pedales usan conectores tipo aviacion, y para la conexion USB se uso un conector de panel tipo impresora. 
 
 <figure class="third">
-	<a href="/assets/images/MOS_WIFI_LIGHTS_CABLEGLAND.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_CABLEGLAND_MEDIUM.jpg"> </a>
-	<a href="/assets/images/MOS_WIFI_LIGHTS_CONNECTOR.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_CONNECTOR_MEDIUM.jpg"> </a>
-	<a href="/assets/images/MOS_WIFI_LIGHTS_FINISHED.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_FINISHED_MEDIUM.jpg"> </a>
+	<a href="/assets/images/USB_PEDAL_PICO_AVIATION.jpg"> <img src="/assets/images/USB_PEDAL_PICO_AVIATION_MEDIUM.jpg"> </a>
+	<a href="/assets/images/USB_PEDAL_PICO_PANEL.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PANEL_MEDIUM.jpg"> </a>
+	<a href="/assets/images/USB_PEDAL_PICO_PRINTER.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PRINTER_MEDIUM.jpg"> </a>
 	<figcaption>Conectores para proteccion de los cables</figcaption>
 </figure>
 
