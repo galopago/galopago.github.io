@@ -107,16 +107,16 @@ Una vez cerrada la caja, las actualizaciones al programa pueden hacerse modifica
 
 | Componente         | Consigue el tuyo! | Hoja de caracteristicas
 | -------- | ------ | ------------------------------------------------------------ |
-| Tornillo M2.6 autorroscante tipo B | [💸] (https://s.click.aliexpress.com/e/_esHHyb) | [M2.6x5-6-8-12mm.pdf] (/assets/pdf/M2.6x5-6-8-12mm.pdf) |
-| Espaciador separador de nylon G228 | [💸] (https://s.click.aliexpress.com/e/_AqHnWn) | [G228.pdf] (/assets/pdf/G228.pdf) |
-| Tubo termoencogible 2:1 multiples colores| [💸] (https://s.click.aliexpress.com/e/_Ar4Zmf) | [2_1_heatshrink_tube_colors.pdf] (/assets/pdf/2_1_heatshrink_tube_colors.pdf) |
-| Caja estanca generica resistente al agua de 115x90x55 mm | [💸] (https://s.click.aliexpress.com/e/_9y9UWZ) | [KH-F3.pdf] (/assets/pdf/KH-F3.pdf) |
-| Raspberry Pi Pico | [💸] (https://s.click.aliexpress.com/e/_9yrTG7) | [pico-datasheet.pdf] (/assets/pdf/pico-datasheet.pdf) |
-| Conector USB Tipo B IP68 para panel | [💸] (https://s.click.aliexpress.com/e/_ATARh0) | [USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf] (/assets/pdf/USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf) |
-| Conector de aviacion 4 pines | [💸] (https://s.click.aliexpress.com/e/_9IMuVU) | [CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf] (/assets/pdf/CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf) |
-| Interruptor momentaneo de pedal Metalico  | [💸] (https://s.click.aliexpress.com/e/_AktOC6) | [METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf] (/assets/pdf/METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf) |
-| Cable de impresora USB tipo A | [💸] (https://s.click.aliexpress.com/e/_A596l4) | [USB_PRINTER_CABLE.pdf] (/assets/pdf/USB_PRINTER_CABLE.pdf) |
-| Cable Micro USB | [💸] (https://s.click.aliexpress.com/e/_AF0DcI) | [MICRO_USB_CABLE.pdf] (/assets/pdf/MICRO_USB_CABLE.pdf) |
+| Tornillo M2.6 autorroscante tipo B | [💸](https://s.click.aliexpress.com/e/_esHHyb) | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf) |
+| Espaciador separador de nylon G228 | [💸](https://s.click.aliexpress.com/e/_AqHnWn) | [G228.pdf](/assets/pdf/G228.pdf) |
+| Tubo termoencogible 2:1 multiples colores| [💸](https://s.click.aliexpress.com/e/_Ar4Zmf) | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf) |
+| Caja estanca generica resistente al agua de 115x90x55 mm | [💸](https://s.click.aliexpress.com/e/_9y9UWZ) | [KH-F3.pdf](/assets/pdf/KH-F3.pdf) |
+| Raspberry Pi Pico | [💸](https://s.click.aliexpress.com/e/_9yrTG7) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
+| Conector USB Tipo B IP68 para panel | [💸](https://s.click.aliexpress.com/e/_ATARh0) | [USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf](/assets/pdf/USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf) |
+| Conector de aviacion 4 pines | [💸](https://s.click.aliexpress.com/e/_9IMuVU) | [CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf](/assets/pdf/CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf) |
+| Interruptor momentaneo de pedal Metalico  | [💸](https://s.click.aliexpress.com/e/_AktOC6) | [METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf](/assets/pdf/METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf) |
+| Cable de impresora USB tipo A | [💸](https://s.click.aliexpress.com/e/_A596l4) | [USB_PRINTER_CABLE.pdf](/assets/pdf/USB_PRINTER_CABLE.pdf) |
+| Cable Micro USB | [💸](https://s.click.aliexpress.com/e/_AF0DcI) | [MICRO_USB_CABLE.pdf](/assets/pdf/MICRO_USB_CABLE.pdf) |
 
 #### Componentes TUSISTEMITA
 
