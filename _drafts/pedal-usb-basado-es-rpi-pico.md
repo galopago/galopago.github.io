@@ -70,28 +70,25 @@ Otras razones para usar CircuitPython incluyen:
 
 ##### El programa:
 
-El firmware presentado en este proyecto realiza dos tareas: Encender cada uno de los leds con un color determinado y la otra se encarga de recibir datos
-desde la nube.
+El firmware presentado en este proyecto realiza dos tareas: Inicializar los GPIO dependiendo del archivo de configuracion y luego de esto estar verificando la pulsacion de cada tecla para enviar el respectivo codigo de tecla.
 
-Para enviar el dato de color a cada uno de los LED , este se extrae aleatoriamente de una tabla de colores predefinida. La comunicacion con los LED se realiza
-mediante la biblioteca NEOPIXEL que incorpora Mongoose OS.
+El archivo de configuracion tiene una estructura muy simple, en donde esta escrito cuales son los GPIO a usar, que codigo de tecla enviara cuando dicho GPIO se active y adicionalmente que modificador de tecla se usara, por ejemplo SHIFT, CONTROL, ALT. En caso de no encontrarse el archivo de configuracion, se asumiran unos valores por defecto. En dicho archivo no solo se puede modificar las teclas que se envian, sino que se pueden agregar tantos GPIO como se quiera, de esta forma se podrian tener 3 o 4 pedales.
 
-Para recibir los datos desde la nube, se realiza una conexion MQTT a un broker donde se escucha por un topico especifico. Una aplicacion cliente puede conectarse a este broker MQTT
-y enviar un determinado dato al topico que se esta escuchando, y con esto se puede cambiar la paleta de colores que se esta usando para los LED. De esta forma
-se presenta una aplicacion de ejemplo muy simple de como modificar la secuencia de forma remota a traves de internet. 
+El ciclo principal del programa esta verificando cual de los GPIO se activa para asi enviar la tecla o combinacion de teclas respectivas. Se ha hecho uso de un antirebote por sofware para evitar falsas pulsaciones.
+
 
 ##### Ensamblaje:
 
-El prototipo del sistema fue montado usando varios componentes de TUSISTEMITA, como la placa trasera para montaje, las tarjetas adaptadoras para la fuente y NODEMCU, tarjeta de 
-conversion niveles logicos y borneras de tornillos para conexiones de salida. Una vez descargada la aplicacion por primera vez y comprobado que las conexiones electricas funcionan bien,
-se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamente hay que desconectar la alimentacion electrica de las borneras y la conexion
-de salida a los leds, ajustar la placa a la caja y reconectar nuevamente.
+El prototipo del sistema fue montado usando varios componentes de TUSISTEMITA, como la placa trasera para montaje, y la tarjeta de salida a borneras para el Rpi Pico
+
+Una vez descargada la aplicacion por primera vez y comprobado que las conexiones electricas funcionan bien,
+se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamente hay que desconectar el puerto USB y las borneras donde estan conectados los interruptores de prueba,ajustar la placa a la caja y reconectar nuevamente.
 
 <figure class="third">
-	<a href="/assets/images/MOS_WIFI_LIGHTS_PARTS.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_PARTS_MEDIUM.jpg"> </a>
-	<a href="/assets/images/MOS_WIFI_LIGHTS_WIRED.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WIRED_MEDIUM.jpg"> </a>
-	<a href="/assets/images/MOS_WIFI_LIGHTS_WORKING.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WORKING_MEDIUM.jpg"> </a>
-	<figcaption>Ensamblaje y cableado.</figcaption>
+	<a href="/assets/images/USB_PEDAL_PICO_DEBUG.jpg"> <img src="/assets/images/USB_PEDAL_PICO_DEBUG_MEDIUM.jpg"> </a>
+	<a href="/assets/images/USB_PEDAL_PICO_PARTS.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PARTS_MEDIUM.jpg"> </a>
+	<a href="/assets/images/USB_PEDAL_PICO_WIRED.jpg"> <img src="/assets/images/USB_PEDAL_PICO_WIRED_MEDIUM.jpg"> </a>
+	<figcaption>Pruebbas, ensamblaje y cableado.</figcaption>
 </figure>
 
 Se recomienda cambiar los conectores originales de las tiras de led, por unos mucho mas robustos mecanicamente y a prueba de agua, para evitar problemas de oxido en caso
