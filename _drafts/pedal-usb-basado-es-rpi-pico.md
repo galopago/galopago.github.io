@@ -74,7 +74,7 @@ El firmware presentado en este proyecto realiza dos tareas: Inicializar los GPIO
 
 El archivo de configuracion tiene una estructura muy simple, en donde esta escrito cuales son los GPIO a usar, que codigo de tecla enviara cuando dicho GPIO se active y adicionalmente que modificador de tecla se usara, por ejemplo SHIFT, CONTROL, ALT. En caso de no encontrarse el archivo de configuracion, se asumiran unos valores por defecto. En dicho archivo no solo se puede modificar las teclas que se envian, sino que se pueden agregar tantos GPIO como se quiera, de esta forma se podrian tener 3 o 4 pedales.
 
-El ciclo principal del programa esta verificando cual de los GPIO se activa para asi enviar la tecla o combinacion de teclas respectivas. Se ha hecho uso de un antirebote por sofware para evitar falsas pulsaciones.
+El ciclo principal del programa esta verificando cual de los GPIO se activa para asi enviar la tecla o combinacion de teclas respectivas. Se ha hecho uso de un antirebote por sofware para evitar falsas pulsaciones. Cada vez que se activa cualquiera de las entradas, se encendera el led incorporado en la tarjeta Rpi Pico
 
 
 ##### Ensamblaje:
@@ -91,17 +91,17 @@ se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamen
 	<figcaption>Pruebas, ensamblaje y cableado.</figcaption>
 </figure>
 
-Los pedales usan conectores tipo aviacion, y para la conexion USB se uso un conector de panel tipo impresora. 
+Se escogio un conector USB tipo impresora, por ser uno de los mas robustos e intuitivos. El conector usado es del tipo para montaje en panel y
+tiene 4 pines para soldar los cables (VCC,USB+,USB-,GND). Este conector se soldo a una extension Micro USB que conectara al Rpi Pico. Los pedales usan conectores tipo aviacion
 
 <figure class="third">
 	<a href="/assets/images/USB_PEDAL_PICO_AVIATION.jpg"> <img src="/assets/images/USB_PEDAL_PICO_AVIATION_MEDIUM.jpg"> </a>
 	<a href="/assets/images/USB_PEDAL_PICO_PANEL.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PANEL_MEDIUM.jpg"> </a>
 	<a href="/assets/images/USB_PEDAL_PICO_PRINTER.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PRINTER_MEDIUM.jpg"> </a>
-	<figcaption>Conectores para proteccion de los cables</figcaption>
+	<figcaption>Conectores para pedales y computador</figcaption>
 </figure>
 
-Una vez la caja se encuentra cerrada, las actualizaciones de firmware se pueden hacer inalambricamente mediante OTA por medio del dashboard de Mongoose
-OS mDash. 
+Una vez cerrada la caja, las actualizaciones al programa pueden hacerse modificando el archivo de CircuitPython, o usando la interfaz interactiva. Si se requiere hacer una reinstalacion de CircuitPython o "formatear" el Rpi Pico, debera abrirse la caja para tener acceso al boton bootsel.
 
 #### Listado de materiales
 
