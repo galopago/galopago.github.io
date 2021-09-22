@@ -15,23 +15,22 @@ USB pedals (or any other momentary switches) who emulates keyboard keypress or c
 
 <figure>
 	<a href="/assets/images/USB_PEDAL_RPI_PICO.jpg"> <img src="/assets/images/USB_PEDAL_RPI_PICO_MEDIUM.jpg"> </a>
-	<figcaption>Pedal USB instalado en una caja robusta</figcaption>
+	<figcaption>USB Pedal circuit installed in a robust enclosure</figcaption>
 </figure>
 
 Componente clave: [Rpi Pico.](https://s.click.aliexpress.com/e/_AXStdl)
 {: .notice--danger}
 
 
-##### El concepto:
+##### Concept:
 
-La gran mayoria de los pedales programables USB que se encuentran en el mercado poseen la gran desventaja de requerir instalar una aplicacion para poder ser configurados. Esta aplicacion la mayoria de las veces solo funciona en Windows y generalmente viene traducida a muy pocos idiomas(a veces no viene traducida!). Esto supone que para usuarios de Linux o Mac, se requiera instalar una maquina virtual para poder configurar dicho pedal, o pedir el favor a algun usuario de windows que nos ayude con esta tarea. 
+A lot of USB programmable pedals in the market needs to install an application for configuration. Usually this app is only for Windows and came poorly translated (if translated at all). This is a pitfall for Linux or Mac users, who have only two options: Install a Windows virtual machine or ask a favor to a Windows user for pedal setup.
 
-Es aqui donde cobra importancia el [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/), por 2 grandes razones: Tiene interfaz nativa USB, por lo que no se requiere de programador ni hardware adicional para descargar los programas y la mas importante aun es que soporta CircuitPython, por lo que se puede programar "en caliente" sin necesidad de estar permanentemente compilando y descargando firmware durante el proceso de depuracion. ¡Por lo tanto es el candidato perfecto para hacer nuestro propio pedal!
+Here come to the rescue [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/), for two big reasons: USB native interface, so no programmer or additional hardware needed for firmware download and the most important: CircuitPython support. Programming could be "on the fly" without compiling-and-download during debug phase. So Rpi Pico is the best candidate for a DIY pedal.
 
-Otra ventaja adicional con respecto a los pedales USB comerciales, es que el propio pedal, puede ser reemplazado facilmente por uno de mejor calidad o resistencia, pero conservando el circuito original. Tambien podria usarse otro tipo de interruptores diferentes para ser activados con partes del cuerpo diferentes a los pies. ¡La cantidad de interruptores que se le pueden adicionar solo esta determinada por los GPIO disponibles del Rpi Pico y por el tamaño de la caja!
+Another additional advantage over commercial USB pedals, the pedal, itself can be replaced for a more robust one, without touching the circuit. Another kind of switches could be used, so operation with different parts of the body is possible. The amount of switches to be installed is only limited by Rpi Pico GPIO pins and space available on the enclosure.
 
-En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) que proporciona una serie de  modulos y elementos pre construidos que permiten realizar un proyecto electronico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua. Dicha caja ademas de proporcionarle un aspecto estetico "industrial"  tambien le otorga suficiente robustez mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
-el sellamiento IP65.
+The circuit is built using [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) hardware prototyping system, which provides different kinds of prebuilt modules which allows to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an “industrial look” to the project and also adds mechanical strength to withstand abuses. The external electrical connections (pedals, and USB) were fitted with IP accessories to provide a good seal.
 
 
 #### Principales Caracteristicas:
