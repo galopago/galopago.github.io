@@ -11,6 +11,7 @@ tags:
 header:
      teaser: "/assets/images/USB_PEDAL_RPI_PICO_TEASER.jpg"
 ---
+USB pedal (or any other momentary switch) who emulates keyboard keypresses or combination of keys. Handy to use with video edition sofware to pause/play without moving hands away from keyboard or mouse, it can also be used with videoconferencing software to mute quickly. There's no need for special application to download initial firmware nor for keys setup (only a simple text editor needed). Works with almos any operating system, even with android devices using an OTG USB adapter.
 
 Pedal USB (o cualquier otro interruptor momentaneo) que emula la pulsacion de teclas o combinaciones de teclas. Util para usar con aplicaciones de edicion de video para detener/reproducir sin tener que quitar las manos del teclado ni del raton, tambien puede usarse con aplicaciones de videoconferencia para hacer mute rapidamente. No se requiere ninguna aplicacion especial para descargar el firmware inicial, ni tampoco para configurar las teclas (un simple editor de texto bastara). Funciona practicamente con cualquier sistema operativo, incluso con dispositivos Android usando un adaptador USB OTG.
 
