@@ -18,7 +18,7 @@ USB pedals (or any other momentary switches) who emulates keyboard keypress or c
 	<figcaption>USB Pedal circuit installed in a robust enclosure</figcaption>
 </figure>
 
-Componente clave: [Rpi Pico.](https://s.click.aliexpress.com/e/_AXStdl)
+Key component: [Rpi Pico.](https://s.click.aliexpress.com/e/_AXStdl)
 {: .notice--danger}
 
 
