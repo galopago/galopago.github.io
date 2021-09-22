@@ -12,7 +12,7 @@ header:
      teaser: "/assets/images/USB_PEDAL_RPI_PICO_TEASER.jpg"
 ---
 
-Pedal USB que emula la pulsacion de teclas o combinaciones de teclas mediante pedales u cualquier otro interruptor momentaneo. Util para usar con aplicaciones de edicion de video/audio para detener/reproducir sin tener que quitar las manos del teclado ni del raton, tambien puede usarse con aplicaciones de video conferencia para hacer mute rapidamente. No se requiere ninguna aplicacion especial para descargar el firmware inicial, ni tampoco para configurar las teclas (un simple editor de texto bastara). Funciona practicamente con cualquier sistema operativo, incluso con dispositivos Android usando un adaptador USB OTG.
+Pedal USB (o cualquier otro interruptor momentaneo) que emula la pulsacion de teclas o combinaciones de teclas. Util para usar con aplicaciones de edicion de video para detener/reproducir sin tener que quitar las manos del teclado ni del raton, tambien puede usarse con aplicaciones de video conferencia para hacer mute rapidamente. No se requiere ninguna aplicacion especial para descargar el firmware inicial, ni tampoco para configurar las teclas (un simple editor de texto bastara). Funciona practicamente con cualquier sistema operativo, incluso con dispositivos Android usando un adaptador USB OTG.
 
 <figure>
 	<a href="/assets/images/USB_PEDAL_RPI_PICO.jpg"> <img src="/assets/images/USB_PEDAL_RPI_PICO_MEDIUM.jpg"> </a>
@@ -25,11 +25,11 @@ Componente clave: [Rpi Pico.](https://s.click.aliexpress.com/e/_9yrTG7)
 
 ##### El concepto:
 
-La gran mayoria de los pedales programables USB que se encuentran en el mercado poseen la gran desventaja de requerir inicialmente instalar una aplicacion para poder ser configurados. Esta plicacion solo existe para Windows y generalmente viene traducida a pocos idiomas(a veces no viene traducida!) y es poco intuitiva. Esto supone que para usuarios de Linux o Mac, se requiera instalar una maquina virtual para poder configurar dicho pedal, o pedir el favor a algun usuario de windows que nos ayude con esta tarea. 
+La gran mayoria de los pedales programables USB que se encuentran en el mercado poseen la gran desventaja de requerir instalar una aplicacion para poder ser configurados. Esta plicacion la mayoria de las veces solo funciona en Windows y generalmente viene traducida a muy pocos idiomas(a veces no viene traducida!). Esto supone que para usuarios de Linux o Mac, se requiera instalar una maquina virtual para poder configurar dicho pedal, o pedir el favor a algun usuario de windows que nos ayude con esta tarea. 
 
 Es aqui donde cobra importancia el [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/), por 2 grandes razones: Tiene interfaz nativa USB, por lo que no se requiere de programador ni hardware adicional para descargar los programas y la mas importante aun es que soporta CircuitPython, por lo que se puede programar "en caliente" sin necesidad de estar permanentemente compilando y descargando firmware durante el proceso de depuracion. Por lo tanto es el candidato perfecto para hacer nuestro propio pedal!
 
-Otra ventaja adicional con respecto a los pedales USB comerciales, es que el propio pedal, puede ser reemplazado facilmente por uno de mejor calidad o resistencia, pero conservando el circuito original. Tambien podria usarse otro tipo de interruptores diferentes para ser actuados con partes del cuerpo diferentes a los pies. La cantidad de interruptores que se le pueden adicionar solo esta determinada por los GPIO disponibles del Rpi Pico y por el tamaño de la caja!
+Otra ventaja adicional con respecto a los pedales USB comerciales, es que el propio pedal, puede ser reemplazado facilmente por uno de mejor calidad o resistencia, pero conservando el circuito original. Tambien podria usarse otro tipo de interruptores diferentes para ser activados con partes del cuerpo diferentes a los pies. La cantidad de interruptores que se le pueden adicionar solo esta determinada por los GPIO disponibles del Rpi Pico y por el tamaño de la caja!
 
 En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) que proporciona una serie de  modulos y elementos preconstruido que permiten realizar un proyecto electronico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua, ademas de darle un aspecto estetico "industrial"  tambien le otorga suficiente robustez mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
 el sellamiento IP65.
@@ -70,12 +70,9 @@ Otras razones para usar CircuitPython incluyen:
 
 ##### El programa:
 
-El firmware presentado en este proyecto realiza dos tareas: Inicializar los GPIO dependiendo del archivo de configuracion y luego de esto estar verificando la pulsacion de cada tecla para enviar el respectivo codigo de tecla.
+El firmware presentado en este proyecto realiza dos tareas: Inicializar los GPIO dependiendo del archivo de configuracion y luego de esto un cilo infinito estara verificando la pulsacion de cada interruptor para enviar el respectivo codigo de tecla. Se ha hecho uso de un antirebote por sofware para evitar falsas pulsaciones. Cada vez que se activa cualquiera de las entradas, se encendera el led incorporado en la tarjeta Rpi Pico
 
-El archivo de configuracion tiene una estructura muy simple, en donde esta escrito cuales son los GPIO a usar, que codigo de tecla enviara cuando dicho GPIO se active y adicionalmente que modificador de tecla se usara, por ejemplo SHIFT, CONTROL, ALT. En caso de no encontrarse el archivo de configuracion, se asumiran unos valores por defecto. En dicho archivo no solo se puede modificar las teclas que se envian, sino que se pueden agregar tantos GPIO como se quiera, de esta forma se podrian tener 3 o 4 pedales.
-
-El ciclo principal del programa esta verificando cual de los GPIO se activa para asi enviar la tecla o combinacion de teclas respectivas. Se ha hecho uso de un antirebote por sofware para evitar falsas pulsaciones. Cada vez que se activa cualquiera de las entradas, se encendera el led incorporado en la tarjeta Rpi Pico
-
+El archivo de configuracion tiene una estructura muy simple, en donde esta escrito cuales son los GPIO a usar, que codigo de tecla enviara cuando dicho GPIO se active y adicionalmente que modificador de tecla se usara (por ejemplo SHIFT, CONTROL, ALT). En caso de no encontrarse el archivo de configuracion, el programa asumira unos valores por defecto. En dicho archivo no solo se puede modificar las teclas que se envian, sino que se pueden agregar tantos GPIO como se quiera, de esta forma se podrian tener 3 o 4 pedales.
 
 ##### Ensamblaje:
 
