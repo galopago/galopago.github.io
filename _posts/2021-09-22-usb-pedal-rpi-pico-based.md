@@ -131,9 +131,9 @@ Once the enclosure is closed, firmware updates could be done modifying the Circu
 
  
 
-## Componentes opcionales:
+## Optional components:
 
-| Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          | 
+| Component         | Get yours! | Datasheet                                         | 
 | -------- | ------ | ------------------------------------------------------------ |
 | 3 pc step drill bit 3-20 mm + centerpunch  | [💸](https://s.click.aliexpress.com/e/_9vxJV5)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
 | 8 Step drill bit 10-45 mm    | [💸](https://s.click.aliexpress.com/e/_9Ior51)     | [8_steps_10-45mm_incremental_drill_bit.pdf](/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf)           |

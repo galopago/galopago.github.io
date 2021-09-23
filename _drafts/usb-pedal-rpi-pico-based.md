@@ -131,7 +131,7 @@ Once the enclosure is closed, firmware updates could be done modifying the Circu
 
  
 
-## Componentes opcionales:
+## Optional components:
 
 | Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
