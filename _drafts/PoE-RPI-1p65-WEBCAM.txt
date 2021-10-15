@@ -1,0 +1,5 @@
+sudo apt-get install motion
+
+
+motion stock fresh file:https://termbin.com/vjzuv
+motion modified working conf file: https://termbin.com/6iay
