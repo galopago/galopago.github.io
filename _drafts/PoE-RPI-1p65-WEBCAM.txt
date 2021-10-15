@@ -3,3 +3,10 @@ sudo apt-get install motion
 
 motion stock fresh file:https://termbin.com/vjzuv
 motion modified working conf file: https://termbin.com/6iay
+
+
+/etc/default/motion
+start_motion_daemon=no change to yes
+sudo chmod -R 777 /var/log
+sudo chmod -R 777 /var/log/motion
+sudo systemctl enable motion
