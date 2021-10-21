@@ -121,21 +121,21 @@ Para ajustar la hora, se deben retirar las baterias y todas las manecillas (hora
 
 | Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          |
 | -------- | ------ | ------------------------------------------------------------ |
-| Conector de hilera de pines hembra 2.54mm | [compralo aqui](https://s.click.aliexpress.com/e/_eNYVzN) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
-| Conector de hilera de pines macho 2.54mm | [compralo aqui](https://s.click.aliexpress.com/e/_eP34IL) | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf) |
-| Resistencias TH 1/4W 1% | [compralo aqui](https://s.click.aliexpress.com/e/_etm4gJ) | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf) |
-| Interruptor momentaneo pulsador 6x6mm | [compralo aqui](https://s.click.aliexpress.com/e/_etiG5l) | [TS-1301.pdf](/assets/pdf/TS-1301.pdf) |
-| Raspberry Pi Pico | [compralo aqui](https://s.click.aliexpress.com/e/_9yrTG7) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
-| Soporte para bateria AA para montaje en PCB | [compralo aqui]( https://s.click.aliexpress.com/e/_Anq4sJ) | [Comfortable_Catalog.pdf](/assets/pdf/Comfortable_Catalog.pdf) |
-| Bocina 8 Ohm 29 mm 0.25W | [compralo aqui](https://s.click.aliexpress.com/e/_A4pgQL) | [DXP29W-A.pdf](/assets/pdf/DXP29W-A.pdf) |
-| MOSFET 2N7000 | [compralo aqui](https://s.click.aliexpress.com/e/_9h3XmP) | [NDS7002A-D.pdf](/assets/pdf/NDS7002A-D.pdf) |
-| Transistor bipolar NPN 2N2222A | [compralo aqui](https://s.click.aliexpress.com/e/_A1K2OF) | [P2N2222A-D.pdf](/assets/pdf/P2N2222A-D.pdf) |
-| Capacitor TH electrolitico | [compralo aqui](https://s.click.aliexpress.com/e/_9J9jbZ) | [TS13DE-CD110X.pdf](/assets/pdf/TS13DE-CD110X.pdf) |
-| Capacitor TH Ceramico de disco | [compralo aqui](https://s.click.aliexpress.com/e/_9wCjd9) | [TS15.pdf](/assets/pdf/TS15.pdf) |
-| Maquinaria de reloj de pared con contacto externa | [compralo aqui](https://s.click.aliexpress.com/e/_ABHS4B) | [12888SE_TRIGGER_CLOCK_MOVEMENT.pdf](/assets/pdf/12888SE_TRIGGER_CLOCK_MOVEMENT.pdf) |
-| Gancho para colgar reloj en pared | [compralo aqui](https://s.click.aliexpress.com/e/_AT8Uph) | [wall_clock_hook.pdf](/assets/pdf/wall_clock_hook.pdf) |
-| Fotodiodo de luz visible TEPT5700 | [compralo aqui](https://s.click.aliexpress.com/e/_AKnaIM) | [tept5700.pdf](/assets/pdf/tept5700.pdf) |
-| Tira de alambre coblre con LED y caja de bateria | [compralo aqui](https://s.click.aliexpress.com/e/_AChdbd) | [LED_Copper_Wire_Battery_Box.pdf](/assets/pdf/LED_Copper_Wire_Battery_Box.pdf) |
+| Conector de hilera de pines hembra 2.54mm | [lo quiero comprar](https://s.click.aliexpress.com/e/_eNYVzN) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
+| Conector de hilera de pines macho 2.54mm | [lo quiero comprar](https://s.click.aliexpress.com/e/_eP34IL) | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf) |
+| Resistencias TH 1/4W 1% | [lo quiero comprar](https://s.click.aliexpress.com/e/_etm4gJ) | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf) |
+| Interruptor momentaneo pulsador 6x6mm | [lo quiero comprar](https://s.click.aliexpress.com/e/_etiG5l) | [TS-1301.pdf](/assets/pdf/TS-1301.pdf) |
+| Raspberry Pi Pico | [lo quiero comprar](https://s.click.aliexpress.com/e/_9yrTG7) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
+| Soporte para bateria AA para montaje en PCB | [lo quiero comprar]( https://s.click.aliexpress.com/e/_Anq4sJ) | [Comfortable_Catalog.pdf](/assets/pdf/Comfortable_Catalog.pdf) |
+| Bocina 8 Ohm 29 mm 0.25W | [lo quiero comprar](https://s.click.aliexpress.com/e/_A4pgQL) | [DXP29W-A.pdf](/assets/pdf/DXP29W-A.pdf) |
+| MOSFET 2N7000 | [lo quiero comprar](https://s.click.aliexpress.com/e/_9h3XmP) | [NDS7002A-D.pdf](/assets/pdf/NDS7002A-D.pdf) |
+| Transistor bipolar NPN 2N2222A | [lo quiero comprar](https://s.click.aliexpress.com/e/_A1K2OF) | [P2N2222A-D.pdf](/assets/pdf/P2N2222A-D.pdf) |
+| Capacitor TH electrolitico | [lo quiero comprar](https://s.click.aliexpress.com/e/_9J9jbZ) | [TS13DE-CD110X.pdf](/assets/pdf/TS13DE-CD110X.pdf) |
+| Capacitor TH Ceramico de disco | [lo quiero comprar](https://s.click.aliexpress.com/e/_9wCjd9) | [TS15.pdf](/assets/pdf/TS15.pdf) |
+| Maquinaria de reloj de pared con contacto externa | [lo quiero comprar](https://s.click.aliexpress.com/e/_ABHS4B) | [12888SE_TRIGGER_CLOCK_MOVEMENT.pdf](/assets/pdf/12888SE_TRIGGER_CLOCK_MOVEMENT.pdf) |
+| Gancho para colgar reloj en pared | [lo quiero comprar](https://s.click.aliexpress.com/e/_AT8Uph) | [wall_clock_hook.pdf](/assets/pdf/wall_clock_hook.pdf) |
+| Fotodiodo de luz visible TEPT5700 | [lo quiero comprar](https://s.click.aliexpress.com/e/_AKnaIM) | [tept5700.pdf](/assets/pdf/tept5700.pdf) |
+| Tira de alambre coblre con LED y caja de bateria | [lo quiero comprar](https://s.click.aliexpress.com/e/_AChdbd) | [LED_Copper_Wire_Battery_Box.pdf](/assets/pdf/LED_Copper_Wire_Battery_Box.pdf) |
 
 #### Circuito impreso
 
