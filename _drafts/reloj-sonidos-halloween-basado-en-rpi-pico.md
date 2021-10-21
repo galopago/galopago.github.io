@@ -92,24 +92,26 @@ La tarjeta cuenta con 4 orificios para montaje, donde puede ser sujetada a la pa
 
 
 <figure class="third">
-	<a href="/assets/SINSONTE_BOARD_HOMEMADE.jpg"> <img src="/assets/images/SINSONTE_BOARD_HOMEMADE_MEDIUM.jpg"> </a>
+	<a href="/assets/images/SINSONTE_BOARD_HOMEMADE.jpg"> <img src="/assets/images/SINSONTE_BOARD_HOMEMADE_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SINSONTE_BOARD_NOCONNECTOR.jpg"> <img src="/assets/images/SINSONTE_BOARD_NOCONNECTOR_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SINSONTE_BOARD_WITHCONNECTORS.jpg"> <img src="/assets/images/SINSONTE_BOARD_WITHCONNECTORS_MEDIUM.jpg"> </a>
 	<figcaption>Tarjeta casera, ejemplo de montaje directo y finalizada con conectores.</figcaption>
 </figure>
 
 
-Se escogio un conector USB tipo impresora, por ser uno de los mas robustos e intuitivos. El conector usado es del tipo para montaje en panel y
-tiene 4 pines para soldar los cables (VCC,USB+,USB-,GND). Este conector se soldo a una extension Micro USB que conectara al Rpi Pico. Los pedales usan conectores tipo aviacion
+Para la construccion del reloj se debe escoger un disco, o plato, que puede ser de madera o plastico lo suficientemente grande para que pueda ubicarse la maquinaria del reloj y la tarjeta reproductora de los sonidos. Se realiza la fijacion de los elementos asi como accesorios, en este caso luces led y se realiza el trabajo artistico final.
+
 
 <figure class="third">
-	<a href="/assets/images/USB_PEDAL_PICO_AVIATION.jpg"> <img src="/assets/images/USB_PEDAL_PICO_AVIATION_MEDIUM.jpg"> </a>
-	<a href="/assets/images/USB_PEDAL_PICO_PANEL.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PANEL_MEDIUM.jpg"> </a>
-	<a href="/assets/images/USB_PEDAL_PICO_PRINTER.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PRINTER_MEDIUM.jpg"> </a>
-	<figcaption>Conectores para pedales y computador</figcaption>
+	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM_MEDIUM.jpg"> </a>
+	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_COMPONENTS.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_COMPONENTS_MEDIUM.jpg"> </a>
+	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_BACK.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_BACK_MEDIUM.jpg"> </a>
+	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_FRONT.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_FRONT_MEDIUM.jpg"> </a>
+	<figcaption>Mecanismo con salida externa, elementos decorativos, finalizado por detras y finalizado de frente</figcaption>
 </figure>
 
-Una vez cerrada la caja, las actualizaciones al programa pueden hacerse modificando el archivo de CircuitPython, o usando la interfaz interactiva. Si se requiere hacer una reinstalacion de CircuitPython o "formatear" el Rpi Pico, debera abrirse la caja para tener acceso al boton bootsel.
+Para ajustar las manecillas, se deben retirar las baterias, todas las manecillas (horario, minutero y segundero). Girar muy lentamente la perilla de ajuste del mecanismo de reloj hasta escuchar un "click". En ese momento poner todas las manecillas apuntando a las 12. Poner las baterias. Al presionar el interruptor pulsador de la tarjeta se puede "avanzar" sonidos una hora con cada pulsacion.
+
 
 #### Listado de materiales
 
