@@ -8,6 +8,7 @@ tags:
   - AN003
   - RPI PICO  
   - C/C++ SDK
+  - CIRCUITPHYTON
 header:
      teaser: "/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg.jpg"
 ---
@@ -115,25 +116,30 @@ Para ajustar las manecillas, se deben retirar las baterias, todas las manecillas
 
 #### Listado de materiales
 
-| Componente         | Consigue el tuyo! | Hoja de caracteristicas
+| Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          |
 | -------- | ------ | ------------------------------------------------------------ |
-| Tornillo M2.6 autorroscante tipo B | [💸](https://s.click.aliexpress.com/e/_esHHyb) | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf) |
-| Espaciador separador de nylon G228 | [💸](https://s.click.aliexpress.com/e/_AqHnWn) | [G228.pdf](/assets/pdf/G228.pdf) |
-| Tubo termoencogible 2:1 multiples colores| [💸](https://s.click.aliexpress.com/e/_Ar4Zmf) | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf) |
-| Caja estanca generica resistente al agua de 115x90x55 mm | [💸](https://s.click.aliexpress.com/e/_9y9UWZ) | [KH-F2.pdf](/assets/pdf/KH-F2.pdf) |
-| Raspberry Pi Pico | [💸](https://s.click.aliexpress.com/e/_9yrTG7) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
-| Conector USB Tipo B IP68 para panel | [💸](https://s.click.aliexpress.com/e/_ATARh0) | [USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf](/assets/pdf/USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf) |
-| Conector de aviacion 4 pines | [💸](https://s.click.aliexpress.com/e/_9IMuVU) | [CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf](/assets/pdf/CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf) |
-| Interruptor momentaneo de pedal Metalico  | [💸](https://s.click.aliexpress.com/e/_AktOC6) | [METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf](/assets/pdf/METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf) |
-| Cable de impresora USB tipo A | [💸](https://s.click.aliexpress.com/e/_A596l4) | [USB_PRINTER_CABLE.pdf](/assets/pdf/USB_PRINTER_CABLE.pdf) |
-| Cable Micro USB | [💸](https://s.click.aliexpress.com/e/_AF0DcI) | [MICRO_USB_CABLE.pdf](/assets/pdf/MICRO_USB_CABLE.pdf) |
+| Conector de hilera de pines hembra 2.54mm | [compralo aqui](https://s.click.aliexpress.com/e/_eNNciZ) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
+| Conector de hilera de pines macho 2.54mm | [compralo aqui](https://s.click.aliexpress.com/e/_eMCUJv) | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf) |
+| Resistencias TH 1/4W 1% | [compralo aqui](https://s.click.aliexpress.com/e/_eMCbH1) | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf) |
+| Interruptor momentaneo pulsador 6x6mm | [compralo aqui](https://s.click.aliexpress.com/e/_eKd4YV) | [TS-1301.pdf](/assets/pdf/TS-1301.pdf) |
+| Raspberry Pi Pico | [compralo aqui](https://s.click.aliexpress.com/e/_AXStdl) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
+| Soporte para bateria AA para montaje en PCB | [compralo aqui](https://s.click.aliexpress.com/e/_AoI96B) | [Comfortable_Catalog.pdf](/assets/pdf/Comfortable_Catalog.pdf) |
+| Bocina 8 Ohm 29 mm 0.25W | [compralo aqui](https://s.click.aliexpress.com/e/_ATihaX) | [DXP29W-A.pdf](/assets/pdf/DXP29W-A.pdf) |
+| MOSFET 2N7000 | [compralo aqui](https://s.click.aliexpress.com/e/_9j8Bgx) | [NDS7002A-D.pdf](/assets/pdf/NDS7002A-D.pdf) |
+| Transistor bipolar NPN 2N2222A | [compralo aqui](https://s.click.aliexpress.com/e/_ANvtiX) | [P2N2222A-D.pdf](/assets/pdf/P2N2222A-D.pdf) |
+| Capacitor TH electrolitico | [compralo aqui](https://s.click.aliexpress.com/e/_9gn4vh) | [TS13DE-CD110X.pdf](/assets/pdf/TS13DE-CD110X.pdf) |
+| Capacitor TH Ceramico de disco | [compralo aqui](https://s.click.aliexpress.com/e/_Apm6Pd) | [TS15.pdf](/assets/pdf/TS15.pdf) |
+| Maquinaria de reloj de pared con contacto externa | [compralo aqui](https://s.click.aliexpress.com/e/_AfCGIL) | [12888SE_TRIGGER_CLOCK_MOVEMENT.pdf](/assets/pdf/12888SE_TRIGGER_CLOCK_MOVEMENT.pdf) |
+| Gancho para colgar reloj en pared | [compralo aqui](https://s.click.aliexpress.com/e/_A0tg3V) | [wall_clock_hook.pdf](/assets/pdf/wall_clock_hook.pdf) |
+| Fotodiodo de luz visible TEPT5700 | [compralo aqui](https://s.click.aliexpress.com/e/_AM6wDK) | [tept5700.pdf](/assets/pdf/tept5700.pdf) |
+| Tira de alambre coblre con LED y caja de bateria | [compralo aqui](https://s.click.aliexpress.com/e/_9vylbl) | [LED_Copper_Wire_Battery_Box.pdf](/assets/pdf/LED_Copper_Wire_Battery_Box.pdf) |
 
-#### Componentes TUSISTEMITA
+
+#### Circuito impreso
 
 | PCB    |  Archivos fuente                                          | 
 | -------- | ------------------------------------------------------------ |
-| Placa trasera para montaje A01 para caja de 158x90x60mm | [A01](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| Tarjeta breakout C11 con salida a terminales de tornillos para Rpi Pico  | [C11](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
+| Tarjeta de reproduccion de sonido (carpeta hardware) | [SINSONTE](https://github.com/galopago/SINSONTE)           |
 
 
 
@@ -141,7 +147,7 @@ Para ajustar las manecillas, se deben retirar las baterias, todas las manecillas
 
 | Software    | Archivos fuente                                          | 
 | -------- | ------------------------------------------------------------ |
-| Firmware    | [PEDAL_USB_RPI_PICO](https://github.com/galopago/RPI_PICO_USB_FOOT_SWITCH)           |
+| Firmware (carpeta software)   | [SINSONTE](https://github.com/galopago/SINSONTE)           |
 
  
 
@@ -149,5 +155,4 @@ Para ajustar las manecillas, se deben retirar las baterias, todas las manecillas
 
 | Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| Juego de 3 brocas escalonadas 3-20 mm + centropunto  | [💸](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
-| Broca escalonada de 8 pasos 10-45 mm    | [💸](https://s.click.aliexpress.com/e/_ATtnjt)     | [8_steps_10-45mm_incremental_drill_bit.pdf](/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf)           |
+| Juego de 3 brocas escalonadas 3-20 mm + centropunto  | [compralo aqui](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
