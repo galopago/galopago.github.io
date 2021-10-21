@@ -19,36 +19,34 @@ Halloween talking clock that plays sounds every O'clock hour. Only a few externa
 	<figcaption>Customized clock hanging on a wall</figcaption>
 </figure>
 
-Componente clave: [Quartz clock movement with trigger](https://s.click.aliexpress.com/e/_AfCGIL)
+Key component: [Quartz clock movement with trigger](https://s.click.aliexpress.com/e/_AfCGIL)
 {: .notice--danger}
 
 
-##### El concepto:
+##### Concepto:
 
-La gran mayoria de los relojes de pared musicales que se encuentran en el mercado vienen con sonidos que no pueden ser cambiados ni modificados. Esto podria solucionarse con infinidad de microcontroladores y/o sistemas embebidos que hay actualmente en el mercado. Como la idea del proyecto es hacer que sea lo mas facil posible modificar los sonidos, el proyecto se decanto por el Raspberry Pi Pico por 3 razones principalmente: 
+A lot of musical wall clocks on the market lacks the possibility of change original sounds. A clock with that capability can be built with an embedded system. But wich one to choose? Raspberry Pi Pico was choose for the 3 following reasons: 
 
-* No se requiere instalar **ninguna** aplicacion ni driver para descargar el firmware. 
-* La tarjeta cuenta con 2 MegaBytes de memoria flash, por lo tanto se podrian grabar algunos sonidos en dicha memoria sin necesitar hardware adicional como memorias SPI o Micro SD.
-* La alimentacion se puede hacer mediante dos baterias AA directamente sin requerir componentes adicionales!
+* There's no need to install software for initial firmware dowload
+* Onboard memory 2 MegaBytes of flash can store some amount of sounds withour requiring external memory
+* Can be powered by 2xAA batteries without additional components
 
-La tarjeta Raspberry Pi Pico, tiene un consumo aproximado de 1.6 mA en su rango mas bajo (en modo sueño profundo). Aunque parece poco, es demasiado alto para un circuito alimentado con baterias AA, pues estas se descargarian aproximadamente en 2 meses. Por esta razon fue necesario agregar un circuito externo que apagara totalmente la tarjeta, cayendo el consumo a 70 uA aproximadamente, lo cual le otorgaria una autonomia de un año mas o menos.
+Rpi Pico draws about 1.6 mA in it's lowest power mode (deep sleep). Seems not much, but is too high for a battery powered circuit, because they will eshaust in around two months. For that reason an external power circuit that can shut off the board completely was added. After that power compsumpion lowered to 70 uA, so batteries will last for a year.
 
-La funcionalidad principal del Raspberry Pi Pico es almacenar archivos de sonido y reproducirlos. Para mostrar las horas y generar una señal cada hora en punto, se usa una maquinaria de reloj de pared que tiene una salida de contacto. Combinando estos 2 elementos se obtiene el reloj que reproduce sonidos cada hora en punto!
+The Rpi Pico acts as as sound storage and player. To show the time and generate an O'clock signal, a quartz clock movement with trigger was used. Combining this 2 elements a talking sound clock was born
 
+#### Key features:
 
-
-#### Principales Caracteristicas:
-
-* Se han desarrollado 2 versiones que hacen practicamente lo mismo: una en [CircuitPython](https://learn.adafruit.com/bienvenido-a-circuitpython-2/que-es-circuitpython) y la otra en el [SDK de C/C++](https://github.com/raspberrypi/pico-sdk).
-* Compatible con los sistemas operativos mas conocidos.
-* No se requiere instalar ninguna aplicacion para descargar el Firmware inicial.
-* La modificacion de los sonidos (en la version CircuitPython) no requiere recompilar codigo.
-* Hasta 3 años de duracion de las baterias AA en modo espera.
-* Componentes muy faciles de conseguir y ensamblar.
+* Two versions of the (almost) same application: One developed in [CircuitPython](https://www.adafruit.com/circuitpython) and the other in [C/C++ SDK](https://github.com/raspberrypi/pico-sdk).
+* Compatible with the most common operating systems.
+* No need to install apps for initial firmware download
+* There's no need to recompile code (in the app developed in CircuitPython) to change sounds
+* Up to 3 years in standby mode using a pair of AA batteries.
+* Easy to source, and easy to solder components.
 
 <figure>
 	<a href="/assets/images/rpi_pico_sound_clock.png"> <img src="/assets/images/rpi_pico_sound_clock.png"> </a>
-	<figcaption>Diagrama simplificado del sistema encendido/apagado</figcaption>
+	<figcaption>Simplified diagram of power circuit</figcaption>
 </figure>
 
 ##### El programa:
@@ -117,6 +115,7 @@ Para ajustar la hora, se deben retirar las baterias y todas las manecillas (hora
 
 
 #### Listado de materiales
+
 | Component         | Get yours! | Datasheet                                          |
 | -------- | ------ | ------------------------------------------------------------ |
 | Female header 2.54mm | [shop now](https://s.click.aliexpress.com/e/_eNNciZ) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
@@ -134,24 +133,6 @@ Para ajustar la hora, se deben retirar las baterias y todas las manecillas (hora
 | Wall Clock hooks DIY | [shop now](https://s.click.aliexpress.com/e/_A0tg3V) | [wall_clock_hook.pdf](/assets/pdf/wall_clock_hook.pdf) |
 | TEPT5700 visible light photodiode | [shop now](https://s.click.aliexpress.com/e/_AM6wDK) | [tept5700.pdf](/assets/pdf/tept5700.pdf) |
 | LED Copper Wire with battery box | [shop now](https://s.click.aliexpress.com/e/_9vylbl) | [LED_Copper_Wire_Battery_Box.pdf](/assets/pdf/LED_Copper_Wire_Battery_Box.pdf) |
-
-| Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          |
-| -------- | ------ | ------------------------------------------------------------ |
-| Conector de hilera de pines hembra 2.54mm | [compralo aqui](https://s.click.aliexpress.com/e/_eNNciZ) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
-| Conector de hilera de pines macho 2.54mm | [compralo aqui](https://s.click.aliexpress.com/e/_eMCUJv) | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf) |
-| Resistencias TH 1/4W 1% | [compralo aqui](https://s.click.aliexpress.com/e/_eMCbH1) | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf) |
-| Interruptor momentaneo pulsador 6x6mm | [compralo aqui](https://s.click.aliexpress.com/e/_eKd4YV) | [TS-1301.pdf](/assets/pdf/TS-1301.pdf) |
-| Raspberry Pi Pico | [compralo aqui](https://s.click.aliexpress.com/e/_AXStdl) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
-| Soporte para bateria AA para montaje en PCB | [compralo aqui](https://s.click.aliexpress.com/e/_AoI96B) | [Comfortable_Catalog.pdf](/assets/pdf/Comfortable_Catalog.pdf) |
-| Bocina 8 Ohm 29 mm 0.25W | [compralo aqui](https://s.click.aliexpress.com/e/_ATihaX) | [DXP29W-A.pdf](/assets/pdf/DXP29W-A.pdf) |
-| MOSFET 2N7000 | [compralo aqui](https://s.click.aliexpress.com/e/_9j8Bgx) | [NDS7002A-D.pdf](/assets/pdf/NDS7002A-D.pdf) |
-| Transistor bipolar NPN 2N2222A | [compralo aqui](https://s.click.aliexpress.com/e/_ANvtiX) | [P2N2222A-D.pdf](/assets/pdf/P2N2222A-D.pdf) |
-| Capacitor TH electrolitico | [compralo aqui](https://s.click.aliexpress.com/e/_9gn4vh) | [TS13DE-CD110X.pdf](/assets/pdf/TS13DE-CD110X.pdf) |
-| Capacitor TH Ceramico de disco | [compralo aqui](https://s.click.aliexpress.com/e/_Apm6Pd) | [TS15.pdf](/assets/pdf/TS15.pdf) |
-| Maquinaria de reloj de pared con contacto externa | [compralo aqui](https://s.click.aliexpress.com/e/_AfCGIL) | [12888SE_TRIGGER_CLOCK_MOVEMENT.pdf](/assets/pdf/12888SE_TRIGGER_CLOCK_MOVEMENT.pdf) |
-| Gancho para colgar reloj en pared | [compralo aqui](https://s.click.aliexpress.com/e/_A0tg3V) | [wall_clock_hook.pdf](/assets/pdf/wall_clock_hook.pdf) |
-| Fotodiodo de luz visible TEPT5700 | [compralo aqui](https://s.click.aliexpress.com/e/_AM6wDK) | [tept5700.pdf](/assets/pdf/tept5700.pdf) |
-| Tira de alambre coblre con LED y caja de bateria | [compralo aqui](https://s.click.aliexpress.com/e/_9vylbl) | [LED_Copper_Wire_Battery_Box.pdf](/assets/pdf/LED_Copper_Wire_Battery_Box.pdf) |
 
 
 #### Circuito impreso
