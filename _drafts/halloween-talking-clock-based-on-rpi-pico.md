@@ -23,7 +23,7 @@ Key component: [Quartz clock movement with trigger](https://s.click.aliexpress.c
 {: .notice--danger}
 
 
-##### Concepto:
+##### Concept:
 
 A lot of musical wall clocks on the market lacks the possibility of change original sounds. A clock with that capability can be built with an embedded system. But wich one to choose? Raspberry Pi Pico was choose for the 3 following reasons: 
 
@@ -49,54 +49,53 @@ The Rpi Pico acts as as sound storage and player. To show the time and generate 
 	<figcaption>Simplified diagram of power circuit</figcaption>
 </figure>
 
-##### El programa:
+##### Software:
 
-Al encenderse el Rpi Pico lo primero que este hace es poner en nivel bajo el GPIO que esta conectado al circuito de encendido para mantenerlo enganchado, luego determina cual debe ser el archivo a reproducir y al final de la reproducion pone el GPIO del circuito de encendido en nivel alto con lo que hace que el sistema se apague totalmente. Adicionalmente se cuenta con un sensor de luz conectado a una entrada analoga para determinar si es de noche y no reproducir sonidos.
+Right after power on, Rpi Pico puts a low level on the GPIO that is wired to the power circuit to keep it powered, then decides which file should be played, and after the sound finishes, a high level is put on the GPIO powering off the Pico. Additionaly a light sensor is readed to not play sound when is dark (night).
 
-Los archivos se reproducen en forma secuencial, uno a uno con cada encendido de la tarjeta, y para poder guardar la informacion del proximo archivo a reproducir se usa la memoria no volatil, asi que se debera ser cuidadoso al modificar el programa para evitar desgastes acelerados!
+Sound files are played sequentially, one by one on each power on. A pointer to the next file is stored in non volatile memory, be carefully modyifing the program to keep writtings at minimum.
 
-###### PARTICULARIDADES DE LA VERSION EN SDK C/C++:
+###### PECULIARITIES OF THE SDK C/C++ VERSION:
 
-Los sonidos a reproducir deberan ser convertidos a formato .WAV 16 bit monofonicos a 44100 Hz. Una vez hecho esto, se deberan procesar para generar archivos .h que contendran arrays[] de C e incluirlos en el codigo antes de compilar. El programa usa una salida digital mediante PWM e interrupciones para la reproduccion de los sonidos. 
+Sounds to be played must be converted first to WAV format 16 bit mono @ 44100 Hz, then converted to C arrays[] before compiling. The application uses a PWM via digital output and interupts to play sounds.
 
-La principal virtud es que la ejecucion es inmediata al encender la tarjeta. La principal desventaja es que por ahora solo reproduce archivos .WAV que consumen bastante memoria, y para cambiarlos se requiere recompilar el programa.
+The program execution starts almost inmediately after power on. The main disadvantage of the application for now, it only supports .WAV files which are big, and cannot be changed without recompiling code
 
-###### PARTICULARIDADES DE LA VERSION EN CIRCUITPYTHON:
+###### PECULIARITIES OF THE CIRCUITPYTHON VERSION:
 
-Los sonidos a reproducir deberan ser convertidos a formato .MP3 monofonicos. El programa usa los modulos audiopwmio y audiomp3 para la reproduccion de los archivos, que son leidos desde el sistema de archivos que viene incorporado. simplemente descargarlos al Rpi Pico y listo! 
+Sounds to be played must be converted to MP3 mono format, The app uses audiomp3 and audiopwmio modules to output audio out of a digital pin (PWM). This files are stored in the filesystem provided by CP, so modifying them is straigthforward, just drag and drop.
 
-La principal virtud es la facilidad para cambiar los archivos de sonido: solo hay que arrastrar los nuevos archivos y reemplazar los actuales, ademas por ser en formato MP3 se puede almacenar unas 10 veces mas tiempo de sonido que en formato WAV. La principal desventaja es que la tarjeta toma algo mas de un segundo en ejecutar el codigo despues de encenderse, esto podria ser inadmisible en algunas aplicaciones.
+MP3 files can store about 10 more sound time than WAV for the same filesize, however CircuitPython runtime execution takes more than a second after power on, so probably it  wont be a good thing for some kind of final application
 
-##### El circuito:
-Los componentes externos adicionales al Rpi Pico componen tres diferentes funcionalidades:
+##### Hardware:
+External components are part of one of the three different functionalities:
 
-* __Encendido/Apagado__: El circuito esta compuesto principalmente por un MOSFET, el Drain se conecta a la señal 3V3_EN y el source a GND. En la compuerta hay 2 elementos un capacitor conectado a tierra y una resistencia conectada a V+. Este circuito funciona en 3 pasos que se repiten ciclicamente:
+* __On/Off__ : The circuit is made up by a MOSFET, Drain terminal connected to 3V3_EN and Source terminal to GND. Connected to the gathe are 2 elements: A capacitor to ground, and a resistor to V+. The circuit works in the following way:
 
-  * Paso 1: El condensador esta totalmente cargado, haciendo que el MOSFET entre en conduccion, llevando la señal 3V3_EN a tierra y apagando completamente la tarjeta.
+  * Step 1: Capacitor is fully charged turning on the MOSFET and tying 3V3_EN to ground totally powering off Rpi Pico board
 
-  * Paso 2: El condensador se descarga rapidamente mediante un pulsador o señal de contacto proveniente de la maquinaria del reloj, haciendo que momentaneamente el MOSFET entre en estado de no conduccion y se encienda la tarjeta. Al encenderse la tarjeta, lo primero que hace el programa es mantener dicho condensador descargado mediante un GPIO que pone en nivel bajo
+  * Step 2: Capacitor is quickly discharged by the brief closure of the contacts of the clock movement, turning off the MOSFET, and powering on the Rpi Pico. The first thing to do after power up, is keep the capacitor discharged with the aid of a GPIO ouput in low level.
   
-  * paso 3: La tarjeta mantendra el nivel bajo del GPIO durante la ejecucion del sonido. Al finalizar pondra dicho GPIO en nivel alto, haciendo que el condensador se cargue rapidamente y que el MOSFET entre en conducion y se apague la tarjeta. La tarjeta quedara apagada totalmente hasta una nueva pulsacion.
+  * Step 3: While sound is played, low level on the GPIO is keept. Once sound finishes, GPIO output turned high level, so MOSFET turns on again, powering off the Rpi Pico until the next switch closure
 
-* __Amplificador de audio__: Consta de una sola etapa, mediante un unico transistor NPN conectado a una bocina de 8 Ohm. Posee una etapa previa de filtrado mediante condensador y resistencia, para evitar posible ruido de la salida digital PWM
+* __Audio amplifier__: Single-stage, single NPN transistor powers a small 8 Ohm speaker. There is also an input RC low pass filter to smoth noise due to the PWM output.
 
-* __Deteccion dia/noche__: Sensor de luz para determinar si los sonidos deben reproducirse ( en el dia ) o no se deben reproducir ( noche ), esto para evitar ruidos molestor a la madrugada!
+* __Day/night detection__: Visible light sensor to avoid playing sounds at night. Connected to an ADC pin
 
 
-##### Ensamblaje:
 
-El Rpi Pico puede ser soldado directamente a la tarjeta de circuito impreso, con lo cual se obtendra un conjunto de poca altura, o se podran soldar pines tipo header al Rpi Pico y conector hembra en la PCB para lograr un sistema flexible donde se puede extraer el Pico a voluntad. Todos los demas componentes no representan mucho problema, pues son de montaje Thru-hole. Finalmente la bocina, el sensor de luz y el interruptor de reloj podrian montarse mediante conectores para poder removerlos a voluntad, o directamente los cables al PCB para mayor ahorro de espacio.
+##### Board assembly:
 
-El diseño de la tarjeta es de una sola capa y puede hacerse de forma casera en caso de ser necesario. Se han dejado pads libres para conexion a la mayoria de los GPIO del Rpi Pico, con lo cual se puede expandir sin mucho esfuerzo.
+Rpi Pico, speaker, light sensor, and clock contacts could be soldered directly to the PCB to get a very small height profile, or add pin headers and female sockets for a more flexible option.
 
-La tarjeta cuenta con 4 orificios para montaje, donde puede ser sujetada a la parte trasera del reloj de pared
-
+Single sided board can be etched at home. There are some free gpio pads for experimentation and also mounting holes near the corners
+ 
 
 <figure class="third">
 	<a href="/assets/images/SINSONTE_BOARD_HOMEMADE.jpg"> <img src="/assets/images/SINSONTE_BOARD_HOMEMADE_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SINSONTE_BOARD_NOCONNECTOR.jpg"> <img src="/assets/images/SINSONTE_BOARD_NOCONNECTOR_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SINSONTE_BOARD_WITHCONNECTORS.jpg"> <img src="/assets/images/SINSONTE_BOARD_WITHCONNECTORS_MEDIUM.jpg"> </a>
-	<figcaption>Tarjeta casera, ejemplo de montaje directo y finalizada con conectores.</figcaption>
+	<figcaption>Home etched board, direct soldering example and finished with connector headers.</figcaption>
 </figure>
 
 
