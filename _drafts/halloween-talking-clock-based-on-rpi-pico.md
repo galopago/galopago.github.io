@@ -98,22 +98,21 @@ Single sided board can be etched at home. There are some free gpio pads for expe
 	<figcaption>Home etched board, direct soldering example and finished with connector headers.</figcaption>
 </figure>
 
-
-Para la construccion del reloj se debe escoger un disco, o plato, que puede ser de madera o plastico lo suficientemente grande para que pueda ubicarse la maquinaria del reloj y la tarjeta reproductora de los sonidos. Se debera realizar la fijacion de los elementos electronicos, seguido a esto se pueden agregar algunos accesorios como luces led y finalmente se realiza el trabajo artistico.
-
+To build the wall clock, choose a plate or disk made of plastic or wood, with enought diameter to hide the clock movement and sound board. Fix all electronic componentes and then decorative accessories like led lights. Finish it with paint work
 
 <figure class="third">
 	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM_MEDIUM.jpg"> </a>
 	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_COMPONENTS.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_COMPONENTS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_BACK.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_BACK_MEDIUM.jpg"> </a>
 	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_FRONT.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_FRONT_MEDIUM.jpg"> </a>
-	<figcaption>Mecanismo con salida externa, elementos decorativos, finalizado por atras y finalizado de frente</figcaption>
+	<figcaption>clock movement with external contacts, decorative elements, finished back and finished front</figcaption>
 </figure>
 
-Para ajustar la hora, se deben retirar las baterias y todas las manecillas (horario, minutero y segundero). Girar muy lentamente la perilla de ajuste del mecanismo de reloj hasta escuchar un "click". En ese momento poner todas las manecillas apuntando a las 12. Poner las baterias. Al presionar el interruptor pulsador de la tarjeta se puede "avanzar" sonidos una hora con cada pulsacion.
+For hour adjustment, remove all batteries and clock hands (hour, minute, second). Slowly turn clock adjustment knob until a "click" sound is heared. Put all clock hands pointing to 12 O'clock. Put the batteries. Sounds can be shifted pressing the momentary push button switch in the board.
 
 
-#### Listado de materiales
+
+#### Bill of materials
 
 | Component         | Get yours! | Datasheet                                          |
 | -------- | ------ | ------------------------------------------------------------ |
@@ -134,24 +133,24 @@ Para ajustar la hora, se deben retirar las baterias y todas las manecillas (hora
 | LED Copper Wire with battery box | [shop now](https://s.click.aliexpress.com/e/_9vylbl) | [LED_Copper_Wire_Battery_Box.pdf](/assets/pdf/LED_Copper_Wire_Battery_Box.pdf) |
 
 
-#### Circuito impreso
+#### Circuit board
 
-| PCB    |  Archivos fuente                                          | 
+| PCB    |  Source files                                        | 
 | -------- | ------------------------------------------------------------ |
-| Tarjeta de reproduccion de sonido (carpeta hardware) | [SINSONTE](https://github.com/galopago/SINSONTE)           |
+| Sound board (hardware directory) | [SINSONTE](https://github.com/galopago/SINSONTE)           |
 
 
 
 #### Software
 
-| Software    | Archivos fuente                                          | 
+| Software    | Source files                                         | 
 | -------- | ------------------------------------------------------------ |
-| Firmware en CircuitPython & SDK C/C++ (carpeta software)   | [SINSONTE](https://github.com/galopago/SINSONTE)           |
+| Firmware CircuitPython & SDK C/C++ (software folder)   | [SINSONTE](https://github.com/galopago/SINSONTE)           |
 
  
 
-## Componentes opcionales:
+## Optional components:
 
 | Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| Juego de 3 brocas escalonadas 3-20 mm + centropunto  | [compralo aqui](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
+| 3 pc step drill bit 3-20 mm + centerpunch  | [compralo aqui](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
