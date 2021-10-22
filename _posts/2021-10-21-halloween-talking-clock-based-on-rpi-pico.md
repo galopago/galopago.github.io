@@ -10,7 +10,7 @@ tags:
   - C/C++ SDK
   - CIRCUITPHYTON
 header:
-     teaser: "/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg.jpg"
+     teaser: "/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg"
 ---
 Halloween talking clock that plays sounds every O'clock hour. Only a few external components (easy to source and solder) needed. The single side board could be manufactured at home. Very customizable project than involves multiple knowledge areas ([STEAM](https://en.wikipedia.org/wiki/STEAM_fields)): Electronics, programming, woodworking, arts, etc.
 
