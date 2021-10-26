@@ -1,0 +1,929 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Reloj sonoro para halloween basado en Rpi Pico - Galopago projects</title>
+<meta name="description" content="Reloj con sonidos de halloween que son reproducidos cada hora en punto. Requiere pocos componentes externos, los cuales son faciles de conseguir y de soldar. La tarjeta de circuito impreso es de una sola cara y puede hacerse de forma casera. Proyecto bastante personalizable y que involucra multiples areas (STEAM):Montaje electronico, programacion, carpinteria, arte, manualidades, etc.   	   	Reloj personalizado instalado en la pared   Componente clave: Maquinaria para reloj de pared con contacto externo  El concepto:  La gran mayoria de los relojes de pared musicales que se encuentran en el mercado vienen con sonidos que no pueden ser cambiados ni modificados. Esto podria solucionarse con infinidad de microcontroladores y/o sistemas embebidos que hay actualmente en el mercado. Como la idea del proyecto es hacer que sea lo mas facil posible modificar los sonidos, el proyecto se decanto por el Raspberry Pi Pico por 3 razones principalmente:     No se requiere instalar ninguna aplicacion ni driver para descargar el firmware.   La tarjeta cuenta con 2 MegaBytes de memoria flash, por lo tanto se podrian grabar algunos sonidos en dicha memoria sin necesitar hardware adicional como memorias SPI o Micro SD.   La alimentacion se puede hacer mediante dos baterias AA directamente sin requerir componentes adicionales!   La tarjeta Raspberry Pi Pico, tiene un consumo aproximado de 1.6 mA en su rango mas bajo (en modo sueño profundo). Aunque parece poco, es demasiado alto para un circuito alimentado con baterias AA, pues estas se descargarian aproximadamente en 2 meses. Por esta razon fue necesario agregar un circuito externo que apagara totalmente la tarjeta, cayendo el consumo a 70 uA aproximadamente, lo cual le otorgaria una autonomia de un año mas o menos.  La funcionalidad principal del Raspberry Pi Pico es almacenar archivos de sonido y reproducirlos. Para mostrar las horas y generar una señal cada hora en punto, se usa una maquinaria de reloj de pared que tiene una salida de contacto. Combinando estos 2 elementos se obtiene el reloj que reproduce sonidos cada hora en punto!  Principales Caracteristicas:     Se han desarrollado 2 versiones que hacen practicamente lo mismo: una en CircuitPython y la otra en el SDK de C/C++.   Compatible con los sistemas operativos mas conocidos.   No se requiere instalar ninguna aplicacion para descargar el Firmware inicial.   La modificacion de los sonidos (en la version CircuitPython) no requiere recompilar codigo.   Hasta 3 años de duracion de las baterias AA en modo espera.   Componentes muy faciles de conseguir y ensamblar.    	   	Diagrama simplificado del sistema encendido/apagado   El programa:  Al encenderse el Rpi Pico lo primero que este hace es poner en nivel bajo el GPIO que esta conectado al circuito de encendido para mantenerlo enganchado, luego determina cual debe ser el archivo a reproducir y al final de la reproducion pone el GPIO del circuito de encendido en nivel alto con lo que hace que el sistema se apague totalmente. Adicionalmente se cuenta con un sensor de luz conectado a una entrada analoga para determinar si es de noche y no reproducir sonidos.  Los archivos se reproducen en forma secuencial, uno a uno con cada encendido de la tarjeta, y para poder guardar la informacion del proximo archivo a reproducir se usa la memoria no volatil, asi que se debera ser cuidadoso al modificar el programa para evitar desgastes acelerados!  PARTICULARIDADES DE LA VERSION EN SDK C/C++:  Los sonidos a reproducir deberan ser convertidos a formato .WAV 16 bit monofonicos a 44100 Hz. Una vez hecho esto, se deberan procesar para generar archivos .h que contendran arrays[] de C e incluirlos en el codigo antes de compilar. El programa usa una salida digital mediante PWM e interrupciones para la reproduccion de los sonidos.  La principal virtud es que la ejecucion es inmediata al encender la tarjeta. La principal desventaja es que por ahora solo reproduce archivos .WAV que consumen bastante memoria, y para cambiarlos se requiere recompilar el programa.  PARTICULARIDADES DE LA VERSION EN CIRCUITPYTHON:  Los sonidos a reproducir deberan ser convertidos a formato .MP3 monofonicos. El programa usa los modulos audiopwmio y audiomp3 para la reproduccion de los archivos, que son leidos desde el sistema de archivos que viene incorporado. simplemente descargarlos al Rpi Pico y listo!  La principal virtud es la facilidad para cambiar los archivos de sonido: solo hay que arrastrar los nuevos archivos y reemplazar los actuales, ademas por ser en formato MP3 se puede almacenar unas 10 veces mas tiempo de sonido que en formato WAV. La principal desventaja es que la tarjeta toma algo mas de un segundo en ejecutar el codigo despues de encenderse, esto podria ser inadmisible en algunas aplicaciones.  El circuito: Los componentes externos adicionales al Rpi Pico componen tres diferentes funcionalidades:          Encendido/Apagado: El circuito esta compuesto principalmente por un MOSFET, el Drain se conecta a la señal 3V3_EN y el source a GND. En la compuerta hay 2 elementos un capacitor conectado a tierra y una resistencia conectada a V+. Este circuito funciona en 3 pasos que se repiten ciclicamente:                      Paso 1: El condensador esta totalmente cargado, haciendo que el MOSFET entre en conduccion, llevando la señal 3V3_EN a tierra y apagando completamente la tarjeta.                       Paso 2: El condensador se descarga rapidamente mediante un pulsador o señal de contacto proveniente de la maquinaria del reloj, haciendo que momentaneamente el MOSFET entre en estado de no conduccion y se encienda la tarjeta. Al encenderse la tarjeta, lo primero que hace el programa es mantener dicho condensador descargado mediante un GPIO que pone en nivel bajo                       paso 3: La tarjeta mantendra el nivel bajo del GPIO durante la ejecucion del sonido. Al finalizar pondra dicho GPIO en nivel alto, haciendo que el condensador se cargue rapidamente y que el MOSFET entre en conducion y se apague la tarjeta. La tarjeta quedara apagada totalmente hasta una nueva pulsacion.                       Amplificador de audio: Consta de una sola etapa, mediante un unico transistor NPN conectado a una bocina de 8 Ohm. Posee una etapa previa de filtrado mediante condensador y resistencia, para evitar posible ruido de la salida digital PWM           Deteccion dia/noche: Sensor de luz para determinar si los sonidos deben reproducirse ( en el dia ) o no se deben reproducir ( noche ), esto para evitar ruidos molestor a la madrugada!      Ensamblaje:  El Rpi Pico puede ser soldado directamente a la tarjeta de circuito impreso, con lo cual se obtendra un conjunto de poca altura, o se podran soldar pines tipo header al Rpi Pico y conector hembra en la PCB para lograr un sistema flexible donde se puede extraer el Pico a voluntad. Todos los demas componentes no representan mucho problema, pues son de montaje Thru-hole. Finalmente la bocina, el sensor de luz y el interruptor de reloj podrian montarse mediante conectores para poder removerlos a voluntad, o directamente los cables al PCB para mayor ahorro de espacio.  El diseño de la tarjeta es de una sola capa y puede hacerse de forma casera en caso de ser necesario. Se han dejado pads libres para conexion a la mayoria de los GPIO del Rpi Pico, con lo cual se puede expandir sin mucho esfuerzo.  La tarjeta cuenta con 4 orificios para montaje, donde puede ser sujetada a la parte trasera del reloj de pared   	   	   	   	Tarjeta casera, ejemplo de montaje directo y finalizada con conectores.   Para la construccion del reloj se debe escoger un disco, o plato, que puede ser de madera o plastico lo suficientemente grande para que pueda ubicarse la maquinaria del reloj y la tarjeta reproductora de los sonidos. Se debera realizar la fijacion de los elementos electronicos, seguido a esto se pueden agregar algunos accesorios como luces led y finalmente se realiza el trabajo artistico.   	   	   	   	   	Mecanismo con salida externa, elementos decorativos, finalizado por atras y finalizado de frente   Para ajustar la hora, se deben retirar las baterias y todas las manecillas (horario, minutero y segundero). Girar muy lentamente la perilla de ajuste del mecanismo de reloj hasta escuchar un “click”. En ese momento poner todas las manecillas apuntando a las 12. Poner las baterias. Al presionar el interruptor pulsador de la tarjeta se puede “avanzar” sonidos una hora con cada pulsacion.  Listado de materiales                 Componente       Consigue el tuyo!       Hoja de caracteristicas                       Conector de hilera de pines hembra 2.54mm       lo quiero comprar       FHA3-S1XX.pdf                 Conector de hilera de pines macho 2.54mm       lo quiero comprar       PHA1-S3XX.pdf                 Resistencias TH 1/4W 1%       lo quiero comprar       MGR-SERIES.pdf                 Interruptor momentaneo pulsador 6x6mm       lo quiero comprar       TS-1301.pdf                 Raspberry Pi Pico       lo quiero comprar       pico-datasheet.pdf                 Soporte para bateria AA para montaje en PCB       lo quiero comprar       Comfortable_Catalog.pdf                 Bocina 8 Ohm 29 mm 0.25W       lo quiero comprar       DXP29W-A.pdf                 MOSFET 2N7000       lo quiero comprar       NDS7002A-D.pdf                 Transistor bipolar NPN 2N2222A       lo quiero comprar       P2N2222A-D.pdf                 Capacitor TH electrolitico       lo quiero comprar       TS13DE-CD110X.pdf                 Capacitor TH Ceramico de disco       lo quiero comprar       TS15.pdf                 Maquinaria de reloj de pared con contacto externa       lo quiero comprar       12888SE_TRIGGER_CLOCK_MOVEMENT.pdf                 Gancho para colgar reloj en pared       lo quiero comprar       wall_clock_hook.pdf                 Fotodiodo de luz visible TEPT5700       lo quiero comprar       tept5700.pdf                 Tira de alambre coblre con LED y caja de bateria       lo quiero comprar       LED_Copper_Wire_Battery_Box.pdf           Circuito impreso                 PCB       Archivos fuente                       Tarjeta de reproduccion de sonido (carpeta hardware)       SINSONTE           Software                 Software       Archivos fuente                       Firmware en CircuitPython &amp; SDK C/C++ (carpeta software)       SINSONTE           Componentes opcionales:                 Componente       Consigue el tuyo!       Hoja de caracteristicas                       Juego de 3 brocas escalonadas 3-20 mm + centropunto       compralo aqui       3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf">
+
+
+  <meta name="author" content="Editor">
+  
+  <meta property="article:author" content="Editor">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Galopago projects">
+<meta property="og:title" content="Reloj sonoro para halloween basado en Rpi Pico">
+<meta property="og:url" content="https://galopago.github.io/espanol/reloj-sonidos-halloween-basado-en-rpi-pico/">
+
+
+  <meta property="og:description" content="Reloj con sonidos de halloween que son reproducidos cada hora en punto. Requiere pocos componentes externos, los cuales son faciles de conseguir y de soldar. La tarjeta de circuito impreso es de una sola cara y puede hacerse de forma casera. Proyecto bastante personalizable y que involucra multiples areas (STEAM):Montaje electronico, programacion, carpinteria, arte, manualidades, etc.   	   	Reloj personalizado instalado en la pared   Componente clave: Maquinaria para reloj de pared con contacto externo  El concepto:  La gran mayoria de los relojes de pared musicales que se encuentran en el mercado vienen con sonidos que no pueden ser cambiados ni modificados. Esto podria solucionarse con infinidad de microcontroladores y/o sistemas embebidos que hay actualmente en el mercado. Como la idea del proyecto es hacer que sea lo mas facil posible modificar los sonidos, el proyecto se decanto por el Raspberry Pi Pico por 3 razones principalmente:     No se requiere instalar ninguna aplicacion ni driver para descargar el firmware.   La tarjeta cuenta con 2 MegaBytes de memoria flash, por lo tanto se podrian grabar algunos sonidos en dicha memoria sin necesitar hardware adicional como memorias SPI o Micro SD.   La alimentacion se puede hacer mediante dos baterias AA directamente sin requerir componentes adicionales!   La tarjeta Raspberry Pi Pico, tiene un consumo aproximado de 1.6 mA en su rango mas bajo (en modo sueño profundo). Aunque parece poco, es demasiado alto para un circuito alimentado con baterias AA, pues estas se descargarian aproximadamente en 2 meses. Por esta razon fue necesario agregar un circuito externo que apagara totalmente la tarjeta, cayendo el consumo a 70 uA aproximadamente, lo cual le otorgaria una autonomia de un año mas o menos.  La funcionalidad principal del Raspberry Pi Pico es almacenar archivos de sonido y reproducirlos. Para mostrar las horas y generar una señal cada hora en punto, se usa una maquinaria de reloj de pared que tiene una salida de contacto. Combinando estos 2 elementos se obtiene el reloj que reproduce sonidos cada hora en punto!  Principales Caracteristicas:     Se han desarrollado 2 versiones que hacen practicamente lo mismo: una en CircuitPython y la otra en el SDK de C/C++.   Compatible con los sistemas operativos mas conocidos.   No se requiere instalar ninguna aplicacion para descargar el Firmware inicial.   La modificacion de los sonidos (en la version CircuitPython) no requiere recompilar codigo.   Hasta 3 años de duracion de las baterias AA en modo espera.   Componentes muy faciles de conseguir y ensamblar.    	   	Diagrama simplificado del sistema encendido/apagado   El programa:  Al encenderse el Rpi Pico lo primero que este hace es poner en nivel bajo el GPIO que esta conectado al circuito de encendido para mantenerlo enganchado, luego determina cual debe ser el archivo a reproducir y al final de la reproducion pone el GPIO del circuito de encendido en nivel alto con lo que hace que el sistema se apague totalmente. Adicionalmente se cuenta con un sensor de luz conectado a una entrada analoga para determinar si es de noche y no reproducir sonidos.  Los archivos se reproducen en forma secuencial, uno a uno con cada encendido de la tarjeta, y para poder guardar la informacion del proximo archivo a reproducir se usa la memoria no volatil, asi que se debera ser cuidadoso al modificar el programa para evitar desgastes acelerados!  PARTICULARIDADES DE LA VERSION EN SDK C/C++:  Los sonidos a reproducir deberan ser convertidos a formato .WAV 16 bit monofonicos a 44100 Hz. Una vez hecho esto, se deberan procesar para generar archivos .h que contendran arrays[] de C e incluirlos en el codigo antes de compilar. El programa usa una salida digital mediante PWM e interrupciones para la reproduccion de los sonidos.  La principal virtud es que la ejecucion es inmediata al encender la tarjeta. La principal desventaja es que por ahora solo reproduce archivos .WAV que consumen bastante memoria, y para cambiarlos se requiere recompilar el programa.  PARTICULARIDADES DE LA VERSION EN CIRCUITPYTHON:  Los sonidos a reproducir deberan ser convertidos a formato .MP3 monofonicos. El programa usa los modulos audiopwmio y audiomp3 para la reproduccion de los archivos, que son leidos desde el sistema de archivos que viene incorporado. simplemente descargarlos al Rpi Pico y listo!  La principal virtud es la facilidad para cambiar los archivos de sonido: solo hay que arrastrar los nuevos archivos y reemplazar los actuales, ademas por ser en formato MP3 se puede almacenar unas 10 veces mas tiempo de sonido que en formato WAV. La principal desventaja es que la tarjeta toma algo mas de un segundo en ejecutar el codigo despues de encenderse, esto podria ser inadmisible en algunas aplicaciones.  El circuito: Los componentes externos adicionales al Rpi Pico componen tres diferentes funcionalidades:          Encendido/Apagado: El circuito esta compuesto principalmente por un MOSFET, el Drain se conecta a la señal 3V3_EN y el source a GND. En la compuerta hay 2 elementos un capacitor conectado a tierra y una resistencia conectada a V+. Este circuito funciona en 3 pasos que se repiten ciclicamente:                      Paso 1: El condensador esta totalmente cargado, haciendo que el MOSFET entre en conduccion, llevando la señal 3V3_EN a tierra y apagando completamente la tarjeta.                       Paso 2: El condensador se descarga rapidamente mediante un pulsador o señal de contacto proveniente de la maquinaria del reloj, haciendo que momentaneamente el MOSFET entre en estado de no conduccion y se encienda la tarjeta. Al encenderse la tarjeta, lo primero que hace el programa es mantener dicho condensador descargado mediante un GPIO que pone en nivel bajo                       paso 3: La tarjeta mantendra el nivel bajo del GPIO durante la ejecucion del sonido. Al finalizar pondra dicho GPIO en nivel alto, haciendo que el condensador se cargue rapidamente y que el MOSFET entre en conducion y se apague la tarjeta. La tarjeta quedara apagada totalmente hasta una nueva pulsacion.                       Amplificador de audio: Consta de una sola etapa, mediante un unico transistor NPN conectado a una bocina de 8 Ohm. Posee una etapa previa de filtrado mediante condensador y resistencia, para evitar posible ruido de la salida digital PWM           Deteccion dia/noche: Sensor de luz para determinar si los sonidos deben reproducirse ( en el dia ) o no se deben reproducir ( noche ), esto para evitar ruidos molestor a la madrugada!      Ensamblaje:  El Rpi Pico puede ser soldado directamente a la tarjeta de circuito impreso, con lo cual se obtendra un conjunto de poca altura, o se podran soldar pines tipo header al Rpi Pico y conector hembra en la PCB para lograr un sistema flexible donde se puede extraer el Pico a voluntad. Todos los demas componentes no representan mucho problema, pues son de montaje Thru-hole. Finalmente la bocina, el sensor de luz y el interruptor de reloj podrian montarse mediante conectores para poder removerlos a voluntad, o directamente los cables al PCB para mayor ahorro de espacio.  El diseño de la tarjeta es de una sola capa y puede hacerse de forma casera en caso de ser necesario. Se han dejado pads libres para conexion a la mayoria de los GPIO del Rpi Pico, con lo cual se puede expandir sin mucho esfuerzo.  La tarjeta cuenta con 4 orificios para montaje, donde puede ser sujetada a la parte trasera del reloj de pared   	   	   	   	Tarjeta casera, ejemplo de montaje directo y finalizada con conectores.   Para la construccion del reloj se debe escoger un disco, o plato, que puede ser de madera o plastico lo suficientemente grande para que pueda ubicarse la maquinaria del reloj y la tarjeta reproductora de los sonidos. Se debera realizar la fijacion de los elementos electronicos, seguido a esto se pueden agregar algunos accesorios como luces led y finalmente se realiza el trabajo artistico.   	   	   	   	   	Mecanismo con salida externa, elementos decorativos, finalizado por atras y finalizado de frente   Para ajustar la hora, se deben retirar las baterias y todas las manecillas (horario, minutero y segundero). Girar muy lentamente la perilla de ajuste del mecanismo de reloj hasta escuchar un “click”. En ese momento poner todas las manecillas apuntando a las 12. Poner las baterias. Al presionar el interruptor pulsador de la tarjeta se puede “avanzar” sonidos una hora con cada pulsacion.  Listado de materiales                 Componente       Consigue el tuyo!       Hoja de caracteristicas                       Conector de hilera de pines hembra 2.54mm       lo quiero comprar       FHA3-S1XX.pdf                 Conector de hilera de pines macho 2.54mm       lo quiero comprar       PHA1-S3XX.pdf                 Resistencias TH 1/4W 1%       lo quiero comprar       MGR-SERIES.pdf                 Interruptor momentaneo pulsador 6x6mm       lo quiero comprar       TS-1301.pdf                 Raspberry Pi Pico       lo quiero comprar       pico-datasheet.pdf                 Soporte para bateria AA para montaje en PCB       lo quiero comprar       Comfortable_Catalog.pdf                 Bocina 8 Ohm 29 mm 0.25W       lo quiero comprar       DXP29W-A.pdf                 MOSFET 2N7000       lo quiero comprar       NDS7002A-D.pdf                 Transistor bipolar NPN 2N2222A       lo quiero comprar       P2N2222A-D.pdf                 Capacitor TH electrolitico       lo quiero comprar       TS13DE-CD110X.pdf                 Capacitor TH Ceramico de disco       lo quiero comprar       TS15.pdf                 Maquinaria de reloj de pared con contacto externa       lo quiero comprar       12888SE_TRIGGER_CLOCK_MOVEMENT.pdf                 Gancho para colgar reloj en pared       lo quiero comprar       wall_clock_hook.pdf                 Fotodiodo de luz visible TEPT5700       lo quiero comprar       tept5700.pdf                 Tira de alambre coblre con LED y caja de bateria       lo quiero comprar       LED_Copper_Wire_Battery_Box.pdf           Circuito impreso                 PCB       Archivos fuente                       Tarjeta de reproduccion de sonido (carpeta hardware)       SINSONTE           Software                 Software       Archivos fuente                       Firmware en CircuitPython &amp; SDK C/C++ (carpeta software)       SINSONTE           Componentes opcionales:                 Componente       Consigue el tuyo!       Hoja de caracteristicas                       Juego de 3 brocas escalonadas 3-20 mm + centropunto       compralo aqui       3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf">
+
+
+
+  <meta property="og:image" content="https://galopago.github.io/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-10-21T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://galopago.github.io/espanol/reloj-sonidos-halloween-basado-en-rpi-pico/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Galopago Consulting",
+      "url": "https://galopago.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Galopago projects Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/site.webmanifest">
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/galopagologo_200x201.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Galopago projects
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">All / Todos</a>
+            </li><li class="masthead__menu-item">
+              <a href="/english">English</a>
+            </li><li class="masthead__menu-item">
+              <a href="/espanol">Español</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/galopagologo_200x201.png" alt="Editor" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Editor</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Electronics projects, Open source &amp; Open hardware</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+        
+          
+        
+          
+            <li><a href="https://twitter.com/galopago" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/galopago" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Reloj sonoro para halloween basado en Rpi Pico">
+    <meta itemprop="description" content="Reloj con sonidos de halloween que son reproducidos cada hora en punto. Requiere pocos componentes externos, los cuales son faciles de conseguir y de soldar. La tarjeta de circuito impreso es de una sola cara y puede hacerse de forma casera. Proyecto bastante personalizable y que involucra multiples areas (STEAM):Montaje electronico, programacion, carpinteria, arte, manualidades, etc.	  	Reloj personalizado instalado en la paredComponente clave: Maquinaria para reloj de pared con contacto externoEl concepto:La gran mayoria de los relojes de pared musicales que se encuentran en el mercado vienen con sonidos que no pueden ser cambiados ni modificados. Esto podria solucionarse con infinidad de microcontroladores y/o sistemas embebidos que hay actualmente en el mercado. Como la idea del proyecto es hacer que sea lo mas facil posible modificar los sonidos, el proyecto se decanto por el Raspberry Pi Pico por 3 razones principalmente:  No se requiere instalar ninguna aplicacion ni driver para descargar el firmware.  La tarjeta cuenta con 2 MegaBytes de memoria flash, por lo tanto se podrian grabar algunos sonidos en dicha memoria sin necesitar hardware adicional como memorias SPI o Micro SD.  La alimentacion se puede hacer mediante dos baterias AA directamente sin requerir componentes adicionales!La tarjeta Raspberry Pi Pico, tiene un consumo aproximado de 1.6 mA en su rango mas bajo (en modo sueño profundo). Aunque parece poco, es demasiado alto para un circuito alimentado con baterias AA, pues estas se descargarian aproximadamente en 2 meses. Por esta razon fue necesario agregar un circuito externo que apagara totalmente la tarjeta, cayendo el consumo a 70 uA aproximadamente, lo cual le otorgaria una autonomia de un año mas o menos.La funcionalidad principal del Raspberry Pi Pico es almacenar archivos de sonido y reproducirlos. Para mostrar las horas y generar una señal cada hora en punto, se usa una maquinaria de reloj de pared que tiene una salida de contacto. Combinando estos 2 elementos se obtiene el reloj que reproduce sonidos cada hora en punto!Principales Caracteristicas:  Se han desarrollado 2 versiones que hacen practicamente lo mismo: una en CircuitPython y la otra en el SDK de C/C++.  Compatible con los sistemas operativos mas conocidos.  No se requiere instalar ninguna aplicacion para descargar el Firmware inicial.  La modificacion de los sonidos (en la version CircuitPython) no requiere recompilar codigo.  Hasta 3 años de duracion de las baterias AA en modo espera.  Componentes muy faciles de conseguir y ensamblar.	  	Diagrama simplificado del sistema encendido/apagadoEl programa:Al encenderse el Rpi Pico lo primero que este hace es poner en nivel bajo el GPIO que esta conectado al circuito de encendido para mantenerlo enganchado, luego determina cual debe ser el archivo a reproducir y al final de la reproducion pone el GPIO del circuito de encendido en nivel alto con lo que hace que el sistema se apague totalmente. Adicionalmente se cuenta con un sensor de luz conectado a una entrada analoga para determinar si es de noche y no reproducir sonidos.Los archivos se reproducen en forma secuencial, uno a uno con cada encendido de la tarjeta, y para poder guardar la informacion del proximo archivo a reproducir se usa la memoria no volatil, asi que se debera ser cuidadoso al modificar el programa para evitar desgastes acelerados!PARTICULARIDADES DE LA VERSION EN SDK C/C++:Los sonidos a reproducir deberan ser convertidos a formato .WAV 16 bit monofonicos a 44100 Hz. Una vez hecho esto, se deberan procesar para generar archivos .h que contendran arrays[] de C e incluirlos en el codigo antes de compilar. El programa usa una salida digital mediante PWM e interrupciones para la reproduccion de los sonidos.La principal virtud es que la ejecucion es inmediata al encender la tarjeta. La principal desventaja es que por ahora solo reproduce archivos .WAV que consumen bastante memoria, y para cambiarlos se requiere recompilar el programa.PARTICULARIDADES DE LA VERSION EN CIRCUITPYTHON:Los sonidos a reproducir deberan ser convertidos a formato .MP3 monofonicos. El programa usa los modulos audiopwmio y audiomp3 para la reproduccion de los archivos, que son leidos desde el sistema de archivos que viene incorporado. simplemente descargarlos al Rpi Pico y listo!La principal virtud es la facilidad para cambiar los archivos de sonido: solo hay que arrastrar los nuevos archivos y reemplazar los actuales, ademas por ser en formato MP3 se puede almacenar unas 10 veces mas tiempo de sonido que en formato WAV. La principal desventaja es que la tarjeta toma algo mas de un segundo en ejecutar el codigo despues de encenderse, esto podria ser inadmisible en algunas aplicaciones.El circuito:Los componentes externos adicionales al Rpi Pico componen tres diferentes funcionalidades:      Encendido/Apagado: El circuito esta compuesto principalmente por un MOSFET, el Drain se conecta a la señal 3V3_EN y el source a GND. En la compuerta hay 2 elementos un capacitor conectado a tierra y una resistencia conectada a V+. Este circuito funciona en 3 pasos que se repiten ciclicamente:                  Paso 1: El condensador esta totalmente cargado, haciendo que el MOSFET entre en conduccion, llevando la señal 3V3_EN a tierra y apagando completamente la tarjeta.                    Paso 2: El condensador se descarga rapidamente mediante un pulsador o señal de contacto proveniente de la maquinaria del reloj, haciendo que momentaneamente el MOSFET entre en estado de no conduccion y se encienda la tarjeta. Al encenderse la tarjeta, lo primero que hace el programa es mantener dicho condensador descargado mediante un GPIO que pone en nivel bajo                    paso 3: La tarjeta mantendra el nivel bajo del GPIO durante la ejecucion del sonido. Al finalizar pondra dicho GPIO en nivel alto, haciendo que el condensador se cargue rapidamente y que el MOSFET entre en conducion y se apague la tarjeta. La tarjeta quedara apagada totalmente hasta una nueva pulsacion.                  Amplificador de audio: Consta de una sola etapa, mediante un unico transistor NPN conectado a una bocina de 8 Ohm. Posee una etapa previa de filtrado mediante condensador y resistencia, para evitar posible ruido de la salida digital PWM        Deteccion dia/noche: Sensor de luz para determinar si los sonidos deben reproducirse ( en el dia ) o no se deben reproducir ( noche ), esto para evitar ruidos molestor a la madrugada!  Ensamblaje:El Rpi Pico puede ser soldado directamente a la tarjeta de circuito impreso, con lo cual se obtendra un conjunto de poca altura, o se podran soldar pines tipo header al Rpi Pico y conector hembra en la PCB para lograr un sistema flexible donde se puede extraer el Pico a voluntad. Todos los demas componentes no representan mucho problema, pues son de montaje Thru-hole. Finalmente la bocina, el sensor de luz y el interruptor de reloj podrian montarse mediante conectores para poder removerlos a voluntad, o directamente los cables al PCB para mayor ahorro de espacio.El diseño de la tarjeta es de una sola capa y puede hacerse de forma casera en caso de ser necesario. Se han dejado pads libres para conexion a la mayoria de los GPIO del Rpi Pico, con lo cual se puede expandir sin mucho esfuerzo.La tarjeta cuenta con 4 orificios para montaje, donde puede ser sujetada a la parte trasera del reloj de pared	  	  	  	Tarjeta casera, ejemplo de montaje directo y finalizada con conectores.Para la construccion del reloj se debe escoger un disco, o plato, que puede ser de madera o plastico lo suficientemente grande para que pueda ubicarse la maquinaria del reloj y la tarjeta reproductora de los sonidos. Se debera realizar la fijacion de los elementos electronicos, seguido a esto se pueden agregar algunos accesorios como luces led y finalmente se realiza el trabajo artistico.	  	  	  	  	Mecanismo con salida externa, elementos decorativos, finalizado por atras y finalizado de frentePara ajustar la hora, se deben retirar las baterias y todas las manecillas (horario, minutero y segundero). Girar muy lentamente la perilla de ajuste del mecanismo de reloj hasta escuchar un “click”. En ese momento poner todas las manecillas apuntando a las 12. Poner las baterias. Al presionar el interruptor pulsador de la tarjeta se puede “avanzar” sonidos una hora con cada pulsacion.Listado de materiales            Componente      Consigue el tuyo!      Hoja de caracteristicas                  Conector de hilera de pines hembra 2.54mm      lo quiero comprar      FHA3-S1XX.pdf              Conector de hilera de pines macho 2.54mm      lo quiero comprar      PHA1-S3XX.pdf              Resistencias TH 1/4W 1%      lo quiero comprar      MGR-SERIES.pdf              Interruptor momentaneo pulsador 6x6mm      lo quiero comprar      TS-1301.pdf              Raspberry Pi Pico      lo quiero comprar      pico-datasheet.pdf              Soporte para bateria AA para montaje en PCB      lo quiero comprar      Comfortable_Catalog.pdf              Bocina 8 Ohm 29 mm 0.25W      lo quiero comprar      DXP29W-A.pdf              MOSFET 2N7000      lo quiero comprar      NDS7002A-D.pdf              Transistor bipolar NPN 2N2222A      lo quiero comprar      P2N2222A-D.pdf              Capacitor TH electrolitico      lo quiero comprar      TS13DE-CD110X.pdf              Capacitor TH Ceramico de disco      lo quiero comprar      TS15.pdf              Maquinaria de reloj de pared con contacto externa      lo quiero comprar      12888SE_TRIGGER_CLOCK_MOVEMENT.pdf              Gancho para colgar reloj en pared      lo quiero comprar      wall_clock_hook.pdf              Fotodiodo de luz visible TEPT5700      lo quiero comprar      tept5700.pdf              Tira de alambre coblre con LED y caja de bateria      lo quiero comprar      LED_Copper_Wire_Battery_Box.pdf      Circuito impreso            PCB      Archivos fuente                  Tarjeta de reproduccion de sonido (carpeta hardware)      SINSONTE      Software            Software      Archivos fuente                  Firmware en CircuitPython &amp; SDK C/C++ (carpeta software)      SINSONTE      Componentes opcionales:            Componente      Consigue el tuyo!      Hoja de caracteristicas                  Juego de 3 brocas escalonadas 3-20 mm + centropunto      compralo aqui      3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf      ">
+    <meta itemprop="datePublished" content="2021-10-21T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Reloj sonoro para halloween basado en Rpi Pico
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Reloj con sonidos de halloween que son reproducidos cada hora en punto. Requiere pocos componentes externos, los cuales son faciles de conseguir y de soldar. La tarjeta de circuito impreso es de una sola cara y puede hacerse de forma casera. Proyecto bastante personalizable y que involucra multiples areas (<a href="https://es.wikipedia.org/wiki/STEAM">STEAM</a>):Montaje electronico, programacion, carpinteria, arte, manualidades, etc.</p>
+
+<figure>
+	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_MEDIUM.jpg" /> </a>
+	<figcaption>Reloj personalizado instalado en la pared</figcaption>
+</figure>
+
+<p class="notice--danger">Componente clave: <a href="https://s.click.aliexpress.com/e/_ABHS4B">Maquinaria para reloj de pared con contacto externo</a></p>
+
+<h5 id="el-concepto">El concepto:</h5>
+
+<p>La gran mayoria de los relojes de pared musicales que se encuentran en el mercado vienen con sonidos que no pueden ser cambiados ni modificados. Esto podria solucionarse con infinidad de microcontroladores y/o sistemas embebidos que hay actualmente en el mercado. Como la idea del proyecto es hacer que sea lo mas facil posible modificar los sonidos, el proyecto se decanto por el Raspberry Pi Pico por 3 razones principalmente:</p>
+
+<ul>
+  <li>No se requiere instalar <strong>ninguna</strong> aplicacion ni driver para descargar el firmware.</li>
+  <li>La tarjeta cuenta con 2 MegaBytes de memoria flash, por lo tanto se podrian grabar algunos sonidos en dicha memoria sin necesitar hardware adicional como memorias SPI o Micro SD.</li>
+  <li>La alimentacion se puede hacer mediante dos baterias AA directamente sin requerir componentes adicionales!</li>
+</ul>
+
+<p>La tarjeta Raspberry Pi Pico, tiene un consumo aproximado de 1.6 mA en su rango mas bajo (en modo sueño profundo). Aunque parece poco, es demasiado alto para un circuito alimentado con baterias AA, pues estas se descargarian aproximadamente en 2 meses. Por esta razon fue necesario agregar un circuito externo que apagara totalmente la tarjeta, cayendo el consumo a 70 uA aproximadamente, lo cual le otorgaria una autonomia de un año mas o menos.</p>
+
+<p>La funcionalidad principal del Raspberry Pi Pico es almacenar archivos de sonido y reproducirlos. Para mostrar las horas y generar una señal cada hora en punto, se usa una maquinaria de reloj de pared que tiene una salida de contacto. Combinando estos 2 elementos se obtiene el reloj que reproduce sonidos cada hora en punto!</p>
+
+<h4 id="principales-caracteristicas">Principales Caracteristicas:</h4>
+
+<ul>
+  <li>Se han desarrollado 2 versiones que hacen practicamente lo mismo: una en <a href="https://learn.adafruit.com/bienvenido-a-circuitpython-2/que-es-circuitpython">CircuitPython</a> y la otra en el <a href="https://github.com/raspberrypi/pico-sdk">SDK de C/C++</a>.</li>
+  <li>Compatible con los sistemas operativos mas conocidos.</li>
+  <li>No se requiere instalar ninguna aplicacion para descargar el Firmware inicial.</li>
+  <li>La modificacion de los sonidos (en la version CircuitPython) no requiere recompilar codigo.</li>
+  <li>Hasta 3 años de duracion de las baterias AA en modo espera.</li>
+  <li>Componentes muy faciles de conseguir y ensamblar.</li>
+</ul>
+
+<figure>
+	<a href="/assets/images/rpi_pico_sound_clock.png"> <img src="/assets/images/rpi_pico_sound_clock.png" /> </a>
+	<figcaption>Diagrama simplificado del sistema encendido/apagado</figcaption>
+</figure>
+
+<h5 id="el-programa">El programa:</h5>
+
+<p>Al encenderse el Rpi Pico lo primero que este hace es poner en nivel bajo el GPIO que esta conectado al circuito de encendido para mantenerlo enganchado, luego determina cual debe ser el archivo a reproducir y al final de la reproducion pone el GPIO del circuito de encendido en nivel alto con lo que hace que el sistema se apague totalmente. Adicionalmente se cuenta con un sensor de luz conectado a una entrada analoga para determinar si es de noche y no reproducir sonidos.</p>
+
+<p>Los archivos se reproducen en forma secuencial, uno a uno con cada encendido de la tarjeta, y para poder guardar la informacion del proximo archivo a reproducir se usa la memoria no volatil, asi que se debera ser cuidadoso al modificar el programa para evitar desgastes acelerados!</p>
+
+<h6 id="particularidades-de-la-version-en-sdk-cc">PARTICULARIDADES DE LA VERSION EN SDK C/C++:</h6>
+
+<p>Los sonidos a reproducir deberan ser convertidos a formato .WAV 16 bit monofonicos a 44100 Hz. Una vez hecho esto, se deberan procesar para generar archivos .h que contendran arrays[] de C e incluirlos en el codigo antes de compilar. El programa usa una salida digital mediante PWM e interrupciones para la reproduccion de los sonidos.</p>
+
+<p>La principal virtud es que la ejecucion es inmediata al encender la tarjeta. La principal desventaja es que por ahora solo reproduce archivos .WAV que consumen bastante memoria, y para cambiarlos se requiere recompilar el programa.</p>
+
+<h6 id="particularidades-de-la-version-en-circuitpython">PARTICULARIDADES DE LA VERSION EN CIRCUITPYTHON:</h6>
+
+<p>Los sonidos a reproducir deberan ser convertidos a formato .MP3 monofonicos. El programa usa los modulos audiopwmio y audiomp3 para la reproduccion de los archivos, que son leidos desde el sistema de archivos que viene incorporado. simplemente descargarlos al Rpi Pico y listo!</p>
+
+<p>La principal virtud es la facilidad para cambiar los archivos de sonido: solo hay que arrastrar los nuevos archivos y reemplazar los actuales, ademas por ser en formato MP3 se puede almacenar unas 10 veces mas tiempo de sonido que en formato WAV. La principal desventaja es que la tarjeta toma algo mas de un segundo en ejecutar el codigo despues de encenderse, esto podria ser inadmisible en algunas aplicaciones.</p>
+
+<h5 id="el-circuito">El circuito:</h5>
+<p>Los componentes externos adicionales al Rpi Pico componen tres diferentes funcionalidades:</p>
+
+<ul>
+  <li>
+    <p><strong>Encendido/Apagado</strong>: El circuito esta compuesto principalmente por un MOSFET, el Drain se conecta a la señal 3V3_EN y el source a GND. En la compuerta hay 2 elementos un capacitor conectado a tierra y una resistencia conectada a V+. Este circuito funciona en 3 pasos que se repiten ciclicamente:</p>
+
+    <ul>
+      <li>
+        <p>Paso 1: El condensador esta totalmente cargado, haciendo que el MOSFET entre en conduccion, llevando la señal 3V3_EN a tierra y apagando completamente la tarjeta.</p>
+      </li>
+      <li>
+        <p>Paso 2: El condensador se descarga rapidamente mediante un pulsador o señal de contacto proveniente de la maquinaria del reloj, haciendo que momentaneamente el MOSFET entre en estado de no conduccion y se encienda la tarjeta. Al encenderse la tarjeta, lo primero que hace el programa es mantener dicho condensador descargado mediante un GPIO que pone en nivel bajo</p>
+      </li>
+      <li>
+        <p>paso 3: La tarjeta mantendra el nivel bajo del GPIO durante la ejecucion del sonido. Al finalizar pondra dicho GPIO en nivel alto, haciendo que el condensador se cargue rapidamente y que el MOSFET entre en conducion y se apague la tarjeta. La tarjeta quedara apagada totalmente hasta una nueva pulsacion.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Amplificador de audio</strong>: Consta de una sola etapa, mediante un unico transistor NPN conectado a una bocina de 8 Ohm. Posee una etapa previa de filtrado mediante condensador y resistencia, para evitar posible ruido de la salida digital PWM</p>
+  </li>
+  <li>
+    <p><strong>Deteccion dia/noche</strong>: Sensor de luz para determinar si los sonidos deben reproducirse ( en el dia ) o no se deben reproducir ( noche ), esto para evitar ruidos molestor a la madrugada!</p>
+  </li>
+</ul>
+
+<h5 id="ensamblaje">Ensamblaje:</h5>
+
+<p>El Rpi Pico puede ser soldado directamente a la tarjeta de circuito impreso, con lo cual se obtendra un conjunto de poca altura, o se podran soldar pines tipo header al Rpi Pico y conector hembra en la PCB para lograr un sistema flexible donde se puede extraer el Pico a voluntad. Todos los demas componentes no representan mucho problema, pues son de montaje Thru-hole. Finalmente la bocina, el sensor de luz y el interruptor de reloj podrian montarse mediante conectores para poder removerlos a voluntad, o directamente los cables al PCB para mayor ahorro de espacio.</p>
+
+<p>El diseño de la tarjeta es de una sola capa y puede hacerse de forma casera en caso de ser necesario. Se han dejado pads libres para conexion a la mayoria de los GPIO del Rpi Pico, con lo cual se puede expandir sin mucho esfuerzo.</p>
+
+<p>La tarjeta cuenta con 4 orificios para montaje, donde puede ser sujetada a la parte trasera del reloj de pared</p>
+
+<figure class="third">
+	<a href="/assets/images/SINSONTE_BOARD_HOMEMADE.jpg"> <img src="/assets/images/SINSONTE_BOARD_HOMEMADE_MEDIUM.jpg" /> </a>
+	<a href="/assets/images/SINSONTE_BOARD_NOCONNECTOR.jpg"> <img src="/assets/images/SINSONTE_BOARD_NOCONNECTOR_MEDIUM.jpg" /> </a>
+	<a href="/assets/images/SINSONTE_BOARD_WITHCONNECTORS.jpg"> <img src="/assets/images/SINSONTE_BOARD_WITHCONNECTORS_MEDIUM.jpg" /> </a>
+	<figcaption>Tarjeta casera, ejemplo de montaje directo y finalizada con conectores.</figcaption>
+</figure>
+
+<p>Para la construccion del reloj se debe escoger un disco, o plato, que puede ser de madera o plastico lo suficientemente grande para que pueda ubicarse la maquinaria del reloj y la tarjeta reproductora de los sonidos. Se debera realizar la fijacion de los elementos electronicos, seguido a esto se pueden agregar algunos accesorios como luces led y finalmente se realiza el trabajo artistico.</p>
+
+<figure class="third">
+	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM_MEDIUM.jpg" /> </a>
+	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_COMPONENTS.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_COMPONENTS_MEDIUM.jpg" /> </a>
+	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_BACK.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_BACK_MEDIUM.jpg" /> </a>
+	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_FRONT.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_FRONT_MEDIUM.jpg" /> </a>
+	<figcaption>Mecanismo con salida externa, elementos decorativos, finalizado por atras y finalizado de frente</figcaption>
+</figure>
+
+<p>Para ajustar la hora, se deben retirar las baterias y todas las manecillas (horario, minutero y segundero). Girar muy lentamente la perilla de ajuste del mecanismo de reloj hasta escuchar un “click”. En ese momento poner todas las manecillas apuntando a las 12. Poner las baterias. Al presionar el interruptor pulsador de la tarjeta se puede “avanzar” sonidos una hora con cada pulsacion.</p>
+
+<h4 id="listado-de-materiales">Listado de materiales</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Componente</th>
+      <th>Consigue el tuyo!</th>
+      <th>Hoja de caracteristicas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Conector de hilera de pines hembra 2.54mm</td>
+      <td><a href="https://s.click.aliexpress.com/e/_eNYVzN">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/FHA3-S1XX.pdf">FHA3-S1XX.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Conector de hilera de pines macho 2.54mm</td>
+      <td><a href="https://s.click.aliexpress.com/e/_eP34IL">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/PHA1-S3XX.pdf">PHA1-S3XX.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Resistencias TH 1/4W 1%</td>
+      <td><a href="https://s.click.aliexpress.com/e/_etm4gJ">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/MGR-SERIES.pdf">MGR-SERIES.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Interruptor momentaneo pulsador 6x6mm</td>
+      <td><a href="https://s.click.aliexpress.com/e/_etiG5l">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/TS-1301.pdf">TS-1301.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Raspberry Pi Pico</td>
+      <td><a href="https://s.click.aliexpress.com/e/_9yrTG7">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/pico-datasheet.pdf">pico-datasheet.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Soporte para bateria AA para montaje en PCB</td>
+      <td><a href="https://s.click.aliexpress.com/e/_Anq4sJ">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/Comfortable_Catalog.pdf">Comfortable_Catalog.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Bocina 8 Ohm 29 mm 0.25W</td>
+      <td><a href="https://s.click.aliexpress.com/e/_A4pgQL">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/DXP29W-A.pdf">DXP29W-A.pdf</a></td>
+    </tr>
+    <tr>
+      <td>MOSFET 2N7000</td>
+      <td><a href="https://s.click.aliexpress.com/e/_9h3XmP">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/NDS7002A-D.pdf">NDS7002A-D.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Transistor bipolar NPN 2N2222A</td>
+      <td><a href="https://s.click.aliexpress.com/e/_A1K2OF">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/P2N2222A-D.pdf">P2N2222A-D.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Capacitor TH electrolitico</td>
+      <td><a href="https://s.click.aliexpress.com/e/_9J9jbZ">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/TS13DE-CD110X.pdf">TS13DE-CD110X.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Capacitor TH Ceramico de disco</td>
+      <td><a href="https://s.click.aliexpress.com/e/_9wCjd9">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/TS15.pdf">TS15.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Maquinaria de reloj de pared con contacto externa</td>
+      <td><a href="https://s.click.aliexpress.com/e/_ABHS4B">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/12888SE_TRIGGER_CLOCK_MOVEMENT.pdf">12888SE_TRIGGER_CLOCK_MOVEMENT.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Gancho para colgar reloj en pared</td>
+      <td><a href="https://s.click.aliexpress.com/e/_AT8Uph">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/wall_clock_hook.pdf">wall_clock_hook.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Fotodiodo de luz visible TEPT5700</td>
+      <td><a href="https://s.click.aliexpress.com/e/_AKnaIM">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/tept5700.pdf">tept5700.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Tira de alambre coblre con LED y caja de bateria</td>
+      <td><a href="https://s.click.aliexpress.com/e/_AChdbd">lo quiero comprar</a></td>
+      <td><a href="/assets/pdf/LED_Copper_Wire_Battery_Box.pdf">LED_Copper_Wire_Battery_Box.pdf</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="circuito-impreso">Circuito impreso</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>PCB</th>
+      <th>Archivos fuente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tarjeta de reproduccion de sonido (carpeta hardware)</td>
+      <td><a href="https://github.com/galopago/SINSONTE">SINSONTE</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="software">Software</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Software</th>
+      <th>Archivos fuente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Firmware en CircuitPython &amp; SDK C/C++ (carpeta software)</td>
+      <td><a href="https://github.com/galopago/SINSONTE">SINSONTE</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="componentes-opcionales">Componentes opcionales:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Componente</th>
+      <th>Consigue el tuyo!</th>
+      <th>Hoja de caracteristicas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Juego de 3 brocas escalonadas 3-20 mm + centropunto</td>
+      <td><a href="https://s.click.aliexpress.com/e/_AalUrz">compralo aqui</a></td>
+      <td><a href="/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf">3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf</a></td>
+    </tr>
+  </tbody>
+</table>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#an003" class="page__taxonomy-item" rel="tag">AN003</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#c-c-sdk" class="page__taxonomy-item" rel="tag">C/C++ SDK</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#circuitphyton" class="page__taxonomy-item" rel="tag">CIRCUITPHYTON</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#rpi-pico" class="page__taxonomy-item" rel="tag">RPI PICO</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#espanol" class="page__taxonomy-item" rel="tag">espanol</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-10-21T00:00:00-05:00">October 21, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Reloj+sonoro+para+halloween+basado+en+Rpi+Pico%20https%3A%2F%2Fgalopago.github.io%2Fespanol%2Freloj-sonidos-halloween-basado-en-rpi-pico%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgalopago.github.io%2Fespanol%2Freloj-sonidos-halloween-basado-en-rpi-pico%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgalopago.github.io%2Fespanol%2Freloj-sonidos-halloween-basado-en-rpi-pico%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/english/halloween-talking-clock-based-on-rpi-pico/" class="pagination--pager" title="Halloween talking clock based on Rpi Pico
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/english/halloween-talking-clock-based-on-rpi-pico/" rel="permalink">Halloween talking clock based on Rpi Pico
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Halloween talking clock that plays sounds every O’clock hour. Only a few external components (easy to source and solder) needed. The single side board could ...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/USB_PEDAL_RPI_PICO_TEASER.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/english/usb-pedal-rpi-pico-based/" rel="permalink">USB Pedal based on Rpi Pico
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">USB pedals (or any other momentary switches) who emulates keyboard keypress or combination of keys. Handy to use with video edition software to pause/play wi...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/USB_PEDAL_RPI_PICO_TEASER.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/espanol/pedal-usb-basado-en-rpi-pico/" rel="permalink">Pedal USB basado en Rpi Pico
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Pedal USB (o cualquier otro interruptor momentaneo) que emula la pulsacion de teclas o combinaciones de teclas. Util para usar con aplicaciones de edicion de...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/MOS_WIFI_IOT_LIGHTS_TEASER.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/espanol/tira-luces-led-resistentes-agua-wifi/" rel="permalink">Tira de luces LED resistentes al agua controladas por WiFi
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Luces apropiadas para decoraciones navideñas, halloween, etc. No solamente la secuencia puede ser manejadas por internet, sino que
+tambien se pueden reprogra...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/galopago" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/galopago" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Galopago Consulting. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

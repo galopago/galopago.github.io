@@ -1,0 +1,881 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>USB Pedal based on Rpi Pico - Galopago projects</title>
+<meta name="description" content="USB pedals (or any other momentary switches) who emulates keyboard keypress or combination of keys. Handy to use with video edition software to pause/play without moving the hands away from the keyboard or mouse, it can also be used by videoconferencing software to mute quickly. There’s no need for special application to download initial firmware nor for keys setup (only a simple text editor needed). Works with almost any operating system, even with android devices using an OTG USB adapter.   	   	USB Pedal circuit installed in a robust enclosure   Key component: Rpi Pico.  Concept:  A lot of USB programmable pedals on the market need to install an application for configuration. Usually this app is only for Windows and came poorly translated (if translated at all). This is a pitfall for Linux or Mac users, who have only two options: To install a Windows virtual machine or ask a favor to a Windows user for pedal setup.  Here come to the rescue Raspberry Pi Pico, for two big reasons: USB native interface, so no programmer or additional hardware needed for firmware download and the most important: CircuitPython support. Programming could be “on the fly” without compiling-and-download during the debug phase. So Rpi Pico is the best candidate for a DIY pedal.  Another additional advantage over commercial USB pedals, the pedal itself can be replaced for a more robust one, without touching the circuit. Another kind of switches could be used, so operation with different parts of the body is possible. The amount of switches to be installed is only limited by Rpi Pico GPIO pins and the space available on the enclosure.  The circuit is built using TUSISTEMITA hardware prototyping system, which provides different kinds of prebuilt modules which allows to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an “industrial look” to the project and also adds mechanical strength to withstand abuses. The external electrical connections (pedals, and USB) were fitted with IP accessories to provide a good seal.  Key features:     Developed using CircuitPython, friendly and easy to learn   Compatible with the most common operating systems   No need to install apps for initial firmware download   Key configuration done in a text file   Splash resistant and shockproof   Detachable and replaceable pedals   Built using hardware prototyping system   Powered by USB, no additional power source needed   The hardware is pretty simple, only requires a Rpi Pico and switches connected between GPIO and ground. Internal pull-up resistors used. Power and data via USB cable   	   	Simplified block diagram   What is CircuitPython?: In Adafruit Industres words, makers of CircuitPython:    CircuitPython is a programming language designed to simplify experimenting and learning to program on low-cost microcontroller boards. It makes getting started easier than ever with no upfront desktop downloads needed. Once you get your board set up, open any text editor, and get started editing code. It’s that simple.   Other reasons to use CircuitPython include:     You want to get up and running quickly. Create a file, edit your code, save the file, and it runs immediately. There is no compiling, no downloading and no uploading needed.   You’re new to programming. CircuitPython is designed with education in mind. It’s easy to start learning how to program and you get immediate feedback from the board.   Easily update your code. Since your code lives on the disk drive, you can edit it whenever you like, you can also keep multiple files around for easy experimentation.   The serial console and REPL. These allow for live feedback from your code and interactive programming.   File storage. The internal storage for CircuitPython makes it great for data-logging, playing audio clips, and otherwise interacting with files.   Strong hardware support. There are many libraries and drivers for sensors, breakout boards and other external components.   It’s Python! Python is the fastest-growing programming language. It’s taught in schools and universities. CircuitPython is almost-completely compatible with Python. It simply adds hardware support.   Software:  Sample application presented here is composed of two tasks: Initialize GPIO according to the configuration file and then runs an endless loop verifying for switch closing to send its respective keycode. Software debouncing function was used to avoid false key press. Rpi Pico onboard LED lights when whatever configured switch closes.  The configuration file structure is very simple. First line GPIOS to use, second line keycode to send, and third line modifier keycode (I.E SHIFT, CONTROL, ALT). If during initialization the config file isn’t found, the program will assume some default values. More GPIOS can be added to the config file, so 3, 4 or mode pedals could be plugged.  Circuit assembly:  The circuit was built using components of TUSISTEMITA, like enclosure backplate, and Rpi Pico screw terminal breakboard.  Once the app is downloaded for the first time, and electrical connections verified, the backplate could be attached to the enclosure hassle free. Just unplug USB cable and debug switches’ screw terminals, screw backplate to enclosure and reconnect cables again.   	   	   	   	Debug, wiring and assembly.   USB printer connector (Type B) was chosen because is very robust and intuitive. This specific connector is designed for panel mounting and sports 4 metal pins (VCC,USB+,USB-,GND) that must be soldered to a Micro USB extension cable to plug to the Rpi Pico. Pedals use circular aviation connectors.   	   	   	   	Connectors for computer and pedals   Once the enclosure is closed, firmware updates could be done modifying the CircuitPython file, or via interactive environment. For a CircuitPython re-installation or Rpi Pico “format”, the enclosure must be open to access bootsel button.  Bill of materials                 Component       Get yours!       Datasheet                       M2.6 self-tapping B-type screw       💸       M2.6x5-6-8-12mm.pdf                 2:1 Heatshrink tube multiple colors       💸       2_1_heatshrink_tube_colors.pdf                 115x90x55 mm enclosure box       💸       KH-F3.pdf                 Raspberry Pi Pico       💸       pico-datasheet.pdf                 USB Type B IP68 panel connector       💸       USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf                 4 pin aviation connector       💸       CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf                 Metal electric foot switch       💸       METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf                 USB printer cable A type       💸       USB_PRINTER_CABLE.pdf                 Micro USB cable       💸       MICRO_USB_CABLE.pdf           TUSISTEMITA blocks                 PCB       Source file                       A01 Backplate for 158x90x60mm enclosure       A01                 C11 screw terminal breakout board for Rpi Pico       C11           Software                 Software       Source file                       Firmware       PEDAL_USB_RPI_PICO           Optional components:                 Component       Get yours!       Datasheet                       3 pc step drill bit 3-20 mm + centerpunch       💸       3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf                 8 Step drill bit 10-45 mm       💸       8_steps_10-45mm_incremental_drill_bit.pdf">
+
+
+  <meta name="author" content="Editor">
+  
+  <meta property="article:author" content="Editor">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Galopago projects">
+<meta property="og:title" content="USB Pedal based on Rpi Pico">
+<meta property="og:url" content="https://galopago.github.io/english/usb-pedal-rpi-pico-based/">
+
+
+  <meta property="og:description" content="USB pedals (or any other momentary switches) who emulates keyboard keypress or combination of keys. Handy to use with video edition software to pause/play without moving the hands away from the keyboard or mouse, it can also be used by videoconferencing software to mute quickly. There’s no need for special application to download initial firmware nor for keys setup (only a simple text editor needed). Works with almost any operating system, even with android devices using an OTG USB adapter.   	   	USB Pedal circuit installed in a robust enclosure   Key component: Rpi Pico.  Concept:  A lot of USB programmable pedals on the market need to install an application for configuration. Usually this app is only for Windows and came poorly translated (if translated at all). This is a pitfall for Linux or Mac users, who have only two options: To install a Windows virtual machine or ask a favor to a Windows user for pedal setup.  Here come to the rescue Raspberry Pi Pico, for two big reasons: USB native interface, so no programmer or additional hardware needed for firmware download and the most important: CircuitPython support. Programming could be “on the fly” without compiling-and-download during the debug phase. So Rpi Pico is the best candidate for a DIY pedal.  Another additional advantage over commercial USB pedals, the pedal itself can be replaced for a more robust one, without touching the circuit. Another kind of switches could be used, so operation with different parts of the body is possible. The amount of switches to be installed is only limited by Rpi Pico GPIO pins and the space available on the enclosure.  The circuit is built using TUSISTEMITA hardware prototyping system, which provides different kinds of prebuilt modules which allows to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an “industrial look” to the project and also adds mechanical strength to withstand abuses. The external electrical connections (pedals, and USB) were fitted with IP accessories to provide a good seal.  Key features:     Developed using CircuitPython, friendly and easy to learn   Compatible with the most common operating systems   No need to install apps for initial firmware download   Key configuration done in a text file   Splash resistant and shockproof   Detachable and replaceable pedals   Built using hardware prototyping system   Powered by USB, no additional power source needed   The hardware is pretty simple, only requires a Rpi Pico and switches connected between GPIO and ground. Internal pull-up resistors used. Power and data via USB cable   	   	Simplified block diagram   What is CircuitPython?: In Adafruit Industres words, makers of CircuitPython:    CircuitPython is a programming language designed to simplify experimenting and learning to program on low-cost microcontroller boards. It makes getting started easier than ever with no upfront desktop downloads needed. Once you get your board set up, open any text editor, and get started editing code. It’s that simple.   Other reasons to use CircuitPython include:     You want to get up and running quickly. Create a file, edit your code, save the file, and it runs immediately. There is no compiling, no downloading and no uploading needed.   You’re new to programming. CircuitPython is designed with education in mind. It’s easy to start learning how to program and you get immediate feedback from the board.   Easily update your code. Since your code lives on the disk drive, you can edit it whenever you like, you can also keep multiple files around for easy experimentation.   The serial console and REPL. These allow for live feedback from your code and interactive programming.   File storage. The internal storage for CircuitPython makes it great for data-logging, playing audio clips, and otherwise interacting with files.   Strong hardware support. There are many libraries and drivers for sensors, breakout boards and other external components.   It’s Python! Python is the fastest-growing programming language. It’s taught in schools and universities. CircuitPython is almost-completely compatible with Python. It simply adds hardware support.   Software:  Sample application presented here is composed of two tasks: Initialize GPIO according to the configuration file and then runs an endless loop verifying for switch closing to send its respective keycode. Software debouncing function was used to avoid false key press. Rpi Pico onboard LED lights when whatever configured switch closes.  The configuration file structure is very simple. First line GPIOS to use, second line keycode to send, and third line modifier keycode (I.E SHIFT, CONTROL, ALT). If during initialization the config file isn’t found, the program will assume some default values. More GPIOS can be added to the config file, so 3, 4 or mode pedals could be plugged.  Circuit assembly:  The circuit was built using components of TUSISTEMITA, like enclosure backplate, and Rpi Pico screw terminal breakboard.  Once the app is downloaded for the first time, and electrical connections verified, the backplate could be attached to the enclosure hassle free. Just unplug USB cable and debug switches’ screw terminals, screw backplate to enclosure and reconnect cables again.   	   	   	   	Debug, wiring and assembly.   USB printer connector (Type B) was chosen because is very robust and intuitive. This specific connector is designed for panel mounting and sports 4 metal pins (VCC,USB+,USB-,GND) that must be soldered to a Micro USB extension cable to plug to the Rpi Pico. Pedals use circular aviation connectors.   	   	   	   	Connectors for computer and pedals   Once the enclosure is closed, firmware updates could be done modifying the CircuitPython file, or via interactive environment. For a CircuitPython re-installation or Rpi Pico “format”, the enclosure must be open to access bootsel button.  Bill of materials                 Component       Get yours!       Datasheet                       M2.6 self-tapping B-type screw       💸       M2.6x5-6-8-12mm.pdf                 2:1 Heatshrink tube multiple colors       💸       2_1_heatshrink_tube_colors.pdf                 115x90x55 mm enclosure box       💸       KH-F3.pdf                 Raspberry Pi Pico       💸       pico-datasheet.pdf                 USB Type B IP68 panel connector       💸       USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf                 4 pin aviation connector       💸       CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf                 Metal electric foot switch       💸       METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf                 USB printer cable A type       💸       USB_PRINTER_CABLE.pdf                 Micro USB cable       💸       MICRO_USB_CABLE.pdf           TUSISTEMITA blocks                 PCB       Source file                       A01 Backplate for 158x90x60mm enclosure       A01                 C11 screw terminal breakout board for Rpi Pico       C11           Software                 Software       Source file                       Firmware       PEDAL_USB_RPI_PICO           Optional components:                 Component       Get yours!       Datasheet                       3 pc step drill bit 3-20 mm + centerpunch       💸       3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf                 8 Step drill bit 10-45 mm       💸       8_steps_10-45mm_incremental_drill_bit.pdf">
+
+
+
+  <meta property="og:image" content="https://galopago.github.io/assets/images/USB_PEDAL_RPI_PICO_TEASER.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2021-09-22T00:00:00-05:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://galopago.github.io/english/usb-pedal-rpi-pico-based/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Galopago Consulting",
+      "url": "https://galopago.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Galopago projects Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/site.webmanifest">
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/galopagologo_200x201.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Galopago projects
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">All / Todos</a>
+            </li><li class="masthead__menu-item">
+              <a href="/english">English</a>
+            </li><li class="masthead__menu-item">
+              <a href="/espanol">Español</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/galopagologo_200x201.png" alt="Editor" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Editor</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Electronics projects, Open source &amp; Open hardware</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+        
+          
+        
+          
+            <li><a href="https://twitter.com/galopago" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/galopago" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="USB Pedal based on Rpi Pico">
+    <meta itemprop="description" content="USB pedals (or any other momentary switches) who emulates keyboard keypress or combination of keys. Handy to use with video edition software to pause/play without moving the hands away from the keyboard or mouse, it can also be used by videoconferencing software to mute quickly. There’s no need for special application to download initial firmware nor for keys setup (only a simple text editor needed). Works with almost any operating system, even with android devices using an OTG USB adapter.	  	USB Pedal circuit installed in a robust enclosureKey component: Rpi Pico.Concept:A lot of USB programmable pedals on the market need to install an application for configuration. Usually this app is only for Windows and came poorly translated (if translated at all). This is a pitfall for Linux or Mac users, who have only two options: To install a Windows virtual machine or ask a favor to a Windows user for pedal setup.Here come to the rescue Raspberry Pi Pico, for two big reasons: USB native interface, so no programmer or additional hardware needed for firmware download and the most important: CircuitPython support. Programming could be “on the fly” without compiling-and-download during the debug phase. So Rpi Pico is the best candidate for a DIY pedal.Another additional advantage over commercial USB pedals, the pedal itself can be replaced for a more robust one, without touching the circuit. Another kind of switches could be used, so operation with different parts of the body is possible. The amount of switches to be installed is only limited by Rpi Pico GPIO pins and the space available on the enclosure.The circuit is built using TUSISTEMITA hardware prototyping system, which provides different kinds of prebuilt modules which allows to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an “industrial look” to the project and also adds mechanical strength to withstand abuses. The external electrical connections (pedals, and USB) were fitted with IP accessories to provide a good seal.Key features:  Developed using CircuitPython, friendly and easy to learn  Compatible with the most common operating systems  No need to install apps for initial firmware download  Key configuration done in a text file  Splash resistant and shockproof  Detachable and replaceable pedals  Built using hardware prototyping system  Powered by USB, no additional power source neededThe hardware is pretty simple, only requires a Rpi Pico and switches connected between GPIO and ground. Internal pull-up resistors used. Power and data via USB cable	  	Simplified block diagramWhat is CircuitPython?:In Adafruit Industres words, makers of CircuitPython:  CircuitPython is a programming language designed to simplify experimenting and learning to program on low-cost microcontroller boards. It makes getting started easier than ever with no upfront desktop downloads needed. Once you get your board set up, open any text editor, and get started editing code. It’s that simple.Other reasons to use CircuitPython include:  You want to get up and running quickly. Create a file, edit your code, save the file, and it runs immediately. There is no compiling, no downloading and no uploading needed.  You’re new to programming. CircuitPython is designed with education in mind. It’s easy to start learning how to program and you get immediate feedback from the board.  Easily update your code. Since your code lives on the disk drive, you can edit it whenever you like, you can also keep multiple files around for easy experimentation.  The serial console and REPL. These allow for live feedback from your code and interactive programming.  File storage. The internal storage for CircuitPython makes it great for data-logging, playing audio clips, and otherwise interacting with files.  Strong hardware support. There are many libraries and drivers for sensors, breakout boards and other external components.  It’s Python! Python is the fastest-growing programming language. It’s taught in schools and universities. CircuitPython is almost-completely compatible with Python. It simply adds hardware support.Software:Sample application presented here is composed of two tasks: Initialize GPIO according to the configuration file and then runs an endless loop verifying for switch closing to send its respective keycode. Software debouncing function was used to avoid false key press. Rpi Pico onboard LED lights when whatever configured switch closes.The configuration file structure is very simple. First line GPIOS to use, second line keycode to send, and third line modifier keycode (I.E SHIFT, CONTROL, ALT). If during initialization the config file isn’t found, the program will assume some default values. More GPIOS can be added to the config file, so 3, 4 or mode pedals could be plugged.Circuit assembly:The circuit was built using components of TUSISTEMITA, like enclosure backplate, and Rpi Pico screw terminal breakboard.Once the app is downloaded for the first time, and electrical connections verified, the backplate could be attached to the enclosure hassle free. Just unplug USB cable and debug switches’ screw terminals, screw backplate to enclosure and reconnect cables again.	  	  	  	Debug, wiring and assembly.USB printer connector (Type B) was chosen because is very robust and intuitive. This specific connector is designed for panel mounting and sports 4 metal pins (VCC,USB+,USB-,GND) that must be soldered to a Micro USB extension cable to plug to the Rpi Pico. Pedals use circular aviation connectors.	  	  	  	Connectors for computer and pedalsOnce the enclosure is closed, firmware updates could be done modifying the CircuitPython file, or via interactive environment. For a CircuitPython re-installation or Rpi Pico “format”, the enclosure must be open to access bootsel button.Bill of materials            Component      Get yours!      Datasheet                  M2.6 self-tapping B-type screw      💸      M2.6x5-6-8-12mm.pdf              2:1 Heatshrink tube multiple colors      💸      2_1_heatshrink_tube_colors.pdf              115x90x55 mm enclosure box      💸      KH-F3.pdf              Raspberry Pi Pico      💸      pico-datasheet.pdf              USB Type B IP68 panel connector      💸      USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf              4 pin aviation connector      💸      CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf              Metal electric foot switch      💸      METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf              USB printer cable A type      💸      USB_PRINTER_CABLE.pdf              Micro USB cable      💸      MICRO_USB_CABLE.pdf      TUSISTEMITA blocks            PCB      Source file                  A01 Backplate for 158x90x60mm enclosure      A01              C11 screw terminal breakout board for Rpi Pico      C11      Software            Software      Source file                  Firmware      PEDAL_USB_RPI_PICO      Optional components:            Component      Get yours!      Datasheet                  3 pc step drill bit 3-20 mm + centerpunch      💸      3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf              8 Step drill bit 10-45 mm      💸      8_steps_10-45mm_incremental_drill_bit.pdf      ">
+    <meta itemprop="datePublished" content="2021-09-22T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">USB Pedal based on Rpi Pico
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>USB pedals (or any other momentary switches) who emulates keyboard keypress or combination of keys. Handy to use with video edition software to pause/play without moving the hands away from the keyboard or mouse, it can also be used by videoconferencing software to mute quickly. There’s no need for special application to download initial firmware nor for keys setup (only a simple text editor needed). Works with almost any operating system, even with android devices using an OTG USB adapter.</p>
+
+<figure>
+	<a href="/assets/images/USB_PEDAL_RPI_PICO.jpg"> <img src="/assets/images/USB_PEDAL_RPI_PICO_MEDIUM.jpg" /> </a>
+	<figcaption>USB Pedal circuit installed in a robust enclosure</figcaption>
+</figure>
+
+<p class="notice--danger">Key component: <a href="https://s.click.aliexpress.com/e/_AXStdl">Rpi Pico.</a></p>
+
+<h5 id="concept">Concept:</h5>
+
+<p>A lot of USB programmable pedals on the market need to install an application for configuration. Usually this app is only for Windows and came poorly translated (if translated at all). This is a pitfall for Linux or Mac users, who have only two options: To install a Windows virtual machine or ask a favor to a Windows user for pedal setup.</p>
+
+<p>Here come to the rescue <a href="https://www.raspberrypi.org/products/raspberry-pi-pico/">Raspberry Pi Pico</a>, for two big reasons: USB native interface, so no programmer or additional hardware needed for firmware download and the most important: CircuitPython support. Programming could be “on the fly” without compiling-and-download during the debug phase. So Rpi Pico is the best candidate for a DIY pedal.</p>
+
+<p>Another additional advantage over commercial USB pedals, the pedal itself can be replaced for a more robust one, without touching the circuit. Another kind of switches could be used, so operation with different parts of the body is possible. The amount of switches to be installed is only limited by Rpi Pico GPIO pins and the space available on the enclosure.</p>
+
+<p>The circuit is built using <a href="https://github.com/galopago/TUSISTEMITA">TUSISTEMITA</a> hardware prototyping system, which provides different kinds of prebuilt modules which allows to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an “industrial look” to the project and also adds mechanical strength to withstand abuses. The external electrical connections (pedals, and USB) were fitted with IP accessories to provide a good seal.</p>
+
+<h4 id="key-features">Key features:</h4>
+
+<ul>
+  <li>Developed using CircuitPython, friendly and easy to learn</li>
+  <li>Compatible with the most common operating systems</li>
+  <li>No need to install apps for initial firmware download</li>
+  <li>Key configuration done in a text file</li>
+  <li>Splash resistant and shockproof</li>
+  <li>Detachable and replaceable pedals</li>
+  <li>Built using hardware prototyping system</li>
+  <li>Powered by USB, no additional power source needed</li>
+</ul>
+
+<p>The hardware is pretty simple, only requires a Rpi Pico and switches connected between GPIO and ground. Internal pull-up resistors used. Power and data via USB cable</p>
+
+<figure>
+	<a href="/assets/images/rpi_pico_usb_keyboard.png"> <img src="/assets/images/rpi_pico_usb_keyboard.png" /> </a>
+	<figcaption>Simplified block diagram</figcaption>
+</figure>
+
+<h5 id="what-is-circuitpython">What is CircuitPython?:</h5>
+<p>In <a href="https://learn.adafruit.com/bienvenido-a-circuitpython-2/que-es-circuitpython">Adafruit Industres</a> words, makers of CircuitPython:</p>
+<blockquote>
+  <p>CircuitPython is a programming language designed to simplify experimenting and learning to program on low-cost microcontroller boards. It makes getting started easier than ever with no upfront desktop downloads needed. Once you get your board set up, open any text editor, and get started editing code. It’s that simple.</p>
+</blockquote>
+
+<p>Other reasons to use CircuitPython include:</p>
+
+<ul>
+  <li>You want to get up and running quickly. Create a file, edit your code, save the file, and it runs immediately. There is no compiling, no downloading and no uploading needed.</li>
+  <li>You’re new to programming. CircuitPython is designed with education in mind. It’s easy to start learning how to program and you get immediate feedback from the board.</li>
+  <li>Easily update your code. Since your code lives on the disk drive, you can edit it whenever you like, you can also keep multiple files around for easy experimentation.</li>
+  <li>The serial console and REPL. These allow for live feedback from your code and interactive programming.</li>
+  <li>File storage. The internal storage for CircuitPython makes it great for data-logging, playing audio clips, and otherwise interacting with files.</li>
+  <li>Strong hardware support. There are many libraries and drivers for sensors, breakout boards and other external components.</li>
+  <li>It’s Python! Python is the fastest-growing programming language. It’s taught in schools and universities. CircuitPython is almost-completely compatible with Python. It simply adds hardware support.</li>
+</ul>
+
+<h5 id="software">Software:</h5>
+
+<p>Sample application presented here is composed of two tasks: Initialize GPIO according to the configuration file and then runs an endless loop verifying for switch closing to send its respective keycode. Software debouncing function was used to avoid false key press. Rpi Pico onboard LED lights when whatever configured switch closes.</p>
+
+<p>The configuration file structure is very simple. First line GPIOS to use, second line keycode to send, and third line modifier keycode (I.E SHIFT, CONTROL, ALT). If during initialization the config file isn’t found, the program will assume some default values. More GPIOS can be added to the config file, so 3, 4 or mode pedals could be plugged.</p>
+
+<h5 id="circuit-assembly">Circuit assembly:</h5>
+
+<p>The circuit was built using components of TUSISTEMITA, like enclosure backplate, and Rpi Pico screw terminal breakboard.</p>
+
+<p>Once the app is downloaded for the first time, and electrical connections verified, the backplate could be attached to the enclosure hassle free. Just unplug USB cable and debug switches’ screw terminals, screw backplate to enclosure and reconnect cables again.</p>
+
+<figure class="third">
+	<a href="/assets/images/USB_PEDAL_PICO_DEBUG.jpg"> <img src="/assets/images/USB_PEDAL_PICO_DEBUG_MEDIUM.jpg" /> </a>
+	<a href="/assets/images/USB_PEDAL_PICO_PARTS.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PARTS_MEDIUM.jpg" /> </a>
+	<a href="/assets/images/USB_PEDAL_PICO_WIRED.jpg"> <img src="/assets/images/USB_PEDAL_PICO_WIRED_MEDIUM.jpg" /> </a>
+	<figcaption>Debug, wiring and assembly.</figcaption>
+</figure>
+
+<p>USB printer connector (Type B) was chosen because is very robust and intuitive. This specific connector is designed for panel mounting and sports 4 metal pins (VCC,USB+,USB-,GND) that must be soldered to a Micro USB extension cable to plug to the Rpi Pico. Pedals use circular aviation connectors.</p>
+
+<figure class="third">
+	<a href="/assets/images/USB_PEDAL_PICO_AVIATION.jpg"> <img src="/assets/images/USB_PEDAL_PICO_AVIATION_MEDIUM.jpg" /> </a>
+	<a href="/assets/images/USB_PEDAL_PICO_PANEL.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PANEL_MEDIUM.jpg" /> </a>
+	<a href="/assets/images/USB_PEDAL_PICO_PRINTER.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PRINTER_MEDIUM.jpg" /> </a>
+	<figcaption>Connectors for computer and pedals</figcaption>
+</figure>
+
+<p>Once the enclosure is closed, firmware updates could be done modifying the CircuitPython file, or via interactive environment. For a CircuitPython re-installation or Rpi Pico “format”, the enclosure must be open to access bootsel button.</p>
+
+<h4 id="bill-of-materials">Bill of materials</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Get yours!</th>
+      <th>Datasheet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>M2.6 self-tapping B-type screw</td>
+      <td><a href="https://s.click.aliexpress.com/e/_eOJ3Kd">💸</a></td>
+      <td><a href="/assets/pdf/M2.6x5-6-8-12mm.pdf">M2.6x5-6-8-12mm.pdf</a></td>
+    </tr>
+    <tr>
+      <td>2:1 Heatshrink tube multiple colors</td>
+      <td><a href="https://s.click.aliexpress.com/e/_9ikkU7">💸</a></td>
+      <td><a href="/assets/pdf/2_1_heatshrink_tube_colors.pdf">2_1_heatshrink_tube_colors.pdf</a></td>
+    </tr>
+    <tr>
+      <td>115x90x55 mm enclosure box</td>
+      <td><a href="https://s.click.aliexpress.com/e/_AFnqxL">💸</a></td>
+      <td><a href="/assets/pdf/KH-F3.pdf">KH-F3.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Raspberry Pi Pico</td>
+      <td><a href="https://s.click.aliexpress.com/e/_AXStdl">💸</a></td>
+      <td><a href="/assets/pdf/pico-datasheet.pdf">pico-datasheet.pdf</a></td>
+    </tr>
+    <tr>
+      <td>USB Type B IP68 panel connector</td>
+      <td><a href="https://s.click.aliexpress.com/e/_AbHdB8">💸</a></td>
+      <td><a href="/assets/pdf/USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf">USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf</a></td>
+    </tr>
+    <tr>
+      <td>4 pin aviation connector</td>
+      <td><a href="https://s.click.aliexpress.com/e/_9yPVWE">💸</a></td>
+      <td><a href="/assets/pdf/CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf">CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Metal electric foot switch</td>
+      <td><a href="https://s.click.aliexpress.com/e/_97Yt4m">💸</a></td>
+      <td><a href="/assets/pdf/METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf">METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf</a></td>
+    </tr>
+    <tr>
+      <td>USB printer cable A type</td>
+      <td><a href="https://s.click.aliexpress.com/e/_A1mCwQ">💸</a></td>
+      <td><a href="/assets/pdf/USB_PRINTER_CABLE.pdf">USB_PRINTER_CABLE.pdf</a></td>
+    </tr>
+    <tr>
+      <td>Micro USB cable</td>
+      <td><a href="https://s.click.aliexpress.com/e/_97vmPY">💸</a></td>
+      <td><a href="/assets/pdf/MICRO_USB_CABLE.pdf">MICRO_USB_CABLE.pdf</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="tusistemita-blocks">TUSISTEMITA blocks</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>PCB</th>
+      <th>Source file</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A01 Backplate for 158x90x60mm enclosure</td>
+      <td><a href="https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES">A01</a></td>
+    </tr>
+    <tr>
+      <td>C11 screw terminal breakout board for Rpi Pico</td>
+      <td><a href="https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS">C11</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="software-1">Software</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Software</th>
+      <th>Source file</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Firmware</td>
+      <td><a href="https://github.com/galopago/RPI_PICO_USB_FOOT_SWITCH">PEDAL_USB_RPI_PICO</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="optional-components">Optional components:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Get yours!</th>
+      <th>Datasheet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3 pc step drill bit 3-20 mm + centerpunch</td>
+      <td><a href="https://s.click.aliexpress.com/e/_9vxJV5">💸</a></td>
+      <td><a href="/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf">3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf</a></td>
+    </tr>
+    <tr>
+      <td>8 Step drill bit 10-45 mm</td>
+      <td><a href="https://s.click.aliexpress.com/e/_9Ior51">💸</a></td>
+      <td><a href="/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf">8_steps_10-45mm_incremental_drill_bit.pdf</a></td>
+    </tr>
+  </tbody>
+</table>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#an002" class="page__taxonomy-item" rel="tag">AN002</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#circuitpython" class="page__taxonomy-item" rel="tag">CIRCUITPYTHON</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#rpi-pico" class="page__taxonomy-item" rel="tag">RPI PICO</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#english" class="page__taxonomy-item" rel="tag">english</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-22T00:00:00-05:00">September 22, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=USB+Pedal+based+on+Rpi+Pico%20https%3A%2F%2Fgalopago.github.io%2Fenglish%2Fusb-pedal-rpi-pico-based%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgalopago.github.io%2Fenglish%2Fusb-pedal-rpi-pico-based%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgalopago.github.io%2Fenglish%2Fusb-pedal-rpi-pico-based%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/espanol/pedal-usb-basado-en-rpi-pico/" class="pagination--pager" title="Pedal USB basado en Rpi Pico
+">Previous</a>
+    
+    
+      <a href="/english/halloween-talking-clock-based-on-rpi-pico/" class="pagination--pager" title="Halloween talking clock based on Rpi Pico
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/espanol/reloj-sonidos-halloween-basado-en-rpi-pico/" rel="permalink">Reloj sonoro para halloween basado en Rpi Pico
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Reloj con sonidos de halloween que son reproducidos cada hora en punto. Requiere pocos componentes externos, los cuales son faciles de conseguir y de soldar....</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/english/halloween-talking-clock-based-on-rpi-pico/" rel="permalink">Halloween talking clock based on Rpi Pico
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Halloween talking clock that plays sounds every O’clock hour. Only a few external components (easy to source and solder) needed. The single side board could ...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/USB_PEDAL_RPI_PICO_TEASER.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/espanol/pedal-usb-basado-en-rpi-pico/" rel="permalink">Pedal USB basado en Rpi Pico
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Pedal USB (o cualquier otro interruptor momentaneo) que emula la pulsacion de teclas o combinaciones de teclas. Util para usar con aplicaciones de edicion de...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/MOS_WIFI_IOT_LIGHTS_TEASER.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/espanol/tira-luces-led-resistentes-agua-wifi/" rel="permalink">Tira de luces LED resistentes al agua controladas por WiFi
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Luces apropiadas para decoraciones navideñas, halloween, etc. No solamente la secuencia puede ser manejadas por internet, sino que
+tambien se pueden reprogra...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/galopago" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/galopago" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Galopago Consulting. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
