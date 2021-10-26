@@ -105,7 +105,7 @@ Para la construccion de la figura se debe escoger un trozo de madera o plastico 
 
 
 <figure class="third">
-	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM_MEDIUM.jpg"> </a>
+	<a href="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_SENSOR.jpg"> <img src="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_SENSOR_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_COMPONENTS.jpg"> <img src="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_COMPONENTS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_BACK.jpg"> <img src="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_FRONT.jpg"> <img src="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_FRONT_MEDIUM.jpg"> </a>
