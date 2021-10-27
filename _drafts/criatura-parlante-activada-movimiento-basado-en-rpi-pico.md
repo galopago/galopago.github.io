@@ -146,7 +146,7 @@ Al sensor de movimiento PIR se le ha agregado un transistor NPN para invertir la
 
 | Software    | Archivos fuente                                          | 
 | -------- | ------------------------------------------------------------ |
-| Firmware en CircuitPython & SDK C/C++ (carpeta software app random)   | [SINSONTE](https://github.com/galopago/SINSONTE)           |
+| Firmware en CircuitPython & SDK C/C++ (carpeta software, app random)   | [SINSONTE](https://github.com/galopago/SINSONTE)           |
 
  
 
