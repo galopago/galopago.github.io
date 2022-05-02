@@ -31,7 +31,7 @@ Es aqui donde cobra importancia el [Raspberry Pi Pico](https://www.raspberrypi.o
 
 Otra ventaja adicional con respecto a los pedales USB comerciales, es que el propio pedal, puede ser reemplazado facilmente por uno de mejor calidad o resistencia, pero conservando el circuito original. Tambien podria usarse otro tipo de interruptores diferentes para ser activados con partes del cuerpo diferentes a los pies. ¡La cantidad de interruptores que se le pueden adicionar solo esta determinada por los GPIO disponibles del Rpi Pico y por el tamaño de la caja!
 
-En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) que proporciona una serie de  modulos y elementos pre construidos que permiten realizar un proyecto electronico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua. Dicha caja ademas de proporcionarle un aspecto estetico "industrial"  tambien le otorga suficiente robustez mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
+En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [MISISTEMITA](https://github.com/galopago/misistemita) que proporciona una serie de  modulos y elementos pre construidos que permiten realizar un proyecto electronico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua. Dicha caja ademas de proporcionarle un aspecto estetico "industrial"  tambien le otorga suficiente robustez mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
 el sellamiento IP65.
 
 
@@ -43,7 +43,7 @@ el sellamiento IP65.
 * La configuracion de las teclas se realiza mediante la edicion de un archivo de texto
 * Resistente al agua y golpes.
 * Pedales reemplazables
-* Montaje realizado mediante el sistema de prototipado robusto para hardware electronico TUSISTEMITA
+* Montaje realizado mediante el sistema de prototipado robusto para hardware electronico MISISTEMITA
 * Alimentacion mediante puerto USB, no requiere fuente adicional.
 
 El hardware es bastante simple, solo se requiere el Rpi Pico y los interruptores conectados cada uno a un GPIO y a tierra. Se usan las resistencias de pull-up internas. La alimentacion y los datos llegan por el conector USB
@@ -76,7 +76,7 @@ El archivo de configuracion tiene una estructura muy simple, en donde esta escri
 
 ##### Ensamblaje:
 
-El prototipo del sistema fue montado usando varios componentes de TUSISTEMITA, como la placa trasera para montaje, y la tarjeta de salida a terminales de tornillo para el Rpi Pico
+El prototipo del sistema fue montado usando varios componentes de MISISTEMITA, como la placa trasera para montaje, y la tarjeta de salida a terminales de tornillo para el Rpi Pico
 
 Una vez descargada la aplicacion por primera vez y comprobado que las conexiones electricas funcionan bien,
 se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamente hay que desconectar el puerto USB y las terminales de tornillo donde estan conectados los interruptores de prueba, fijar la placa a la caja y reconectar nuevamente. 
@@ -115,12 +115,12 @@ Una vez cerrada la caja, las actualizaciones al programa pueden hacerse modifica
 | Cable de impresora USB tipo A | [💸](https://s.click.aliexpress.com/e/_A596l4) | [USB_PRINTER_CABLE.pdf](/assets/pdf/USB_PRINTER_CABLE.pdf) |
 | Cable Micro USB | [💸](https://s.click.aliexpress.com/e/_AF0DcI) | [MICRO_USB_CABLE.pdf](/assets/pdf/MICRO_USB_CABLE.pdf) |
 
-#### Componentes TUSISTEMITA
+#### Componentes MISISTEMITA
 
 | PCB    |  Archivos fuente                                          | 
 | -------- | ------------------------------------------------------------ |
-| Placa trasera para montaje A01 para caja de 158x90x60mm | [A01](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| Tarjeta breakout C11 con salida a terminales de tornillos para Rpi Pico  | [C11](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
+| Placa trasera para montaje A01 para caja de 158x90x60mm | [A01](https://github.com/galopago/misistemita/tree/master/a-backplates)           |
+| Tarjeta breakout C11 con salida a terminales de tornillos para Rpi Pico  | [C11](https://github.com/galopago/misistemita/tree/master/c-breakouts)        |
 
 
 
