@@ -42,7 +42,7 @@ resultara atractivo para programadores web que ya trabajan con este tipo de tecn
 pueden hacerse llamados a funciones escritas en C, lo que sin duda tambien resultara atractivo para programadores de microcontroladores "tradicionales" que han
 trabajado con este lenguaje bastante maduro.
 
-En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) que proporciona una serie de  modulos y elementos preconstruido que
+En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [MISISTEMITA](https://github.com/galopago/misistemita) que proporciona una serie de  modulos y elementos preconstruido que
 permiten realizar un proyecto electonico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va
 dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua, ademas de darle un aspecto estetico "industrial"  tambien le otorga suficiente
 robustez mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
@@ -53,7 +53,7 @@ el sellamiento IP65.
 * Sistema Operativo embebido Mongoose OS corriendo sobre ESP8266
 * Resistente al agua y con pestaña para montaje en pared.
 * Actualizacion remota del Firmware gracias a la plataforma de gestion Mongoose OS dashboard mDASH
-* Montaje realizado mediante el sistema de prototipado robusto para hardware electronico TUSISTEMITA
+* Montaje realizado mediante el sistema de prototipado robusto para hardware electronico MISISTEMITA
 * Alimentacion 110/220V AC.
 
 
@@ -62,7 +62,7 @@ tipo comutada con 20W de potencia, 5 voltios de salida y entrada de 110V a 220V,
 se uso un ESP8266 en una tarjeta NODEMCU V3. Esta tarjeta puede ser alimentada a 3.3V directamente al pin de alimentacion del procesador, o por 5V haciendo uso del regulador incorporado.
 Las salidas logicas de la CPU tendran voltajes de 0 a 3.3V, lo que debera ser tenido en cuenta si se desea instalar sensores u otros perifericos que trabajen
 a 5V. Es aqui donde entre cobra importancia el adaptador de nivel logico, pues los leds son alimentados a 5V y esperan una señal logica con esta misma amplitud. Como adaptador
-de nivel logico se uso la tarjeta TUSISTEMITA D06 que internamente usa un MOSFET BSS138 para realizar dicho trabajo. 
+de nivel logico se uso la tarjeta MISISTEMITA D06 que internamente usa un MOSFET BSS138 para realizar dicho trabajo. 
 
 <figure>
 	<a href="/assets/images/mos_wifi_iot_lights_blockdiag.png"> <img src="/assets/images/mos_wifi_iot_lights_blockdiag.png"> </a>
@@ -99,7 +99,7 @@ se presenta una aplicacion de ejemplo muy simple de como modificar la secuencia 
 
 ##### Ensamblaje:
 
-El prototipo del sistema fue montado usando varios componentes de TUSISTEMITA, como la placa trasera para montaje, las tarjetas adaptadoras para la fuente y NODEMCU, tarjeta de 
+El prototipo del sistema fue montado usando varios componentes deMISISTEMITA, como la placa trasera para montaje, las tarjetas adaptadoras para la fuente y NODEMCU, tarjeta de 
 conversion niveles logicos y borneras de tornillos para conexiones de salida. Una vez descargada la aplicacion por primera vez y comprobado que las conexiones electricas funcionan bien,
 se puede pasar a la caja para montaje definitivo sin ningun traumatismo. Solamente hay que desconectar la alimentacion electrica de las borneras y la conexion
 de salida a los leds, ajustar la placa a la caja y reconectar nuevamente.
@@ -142,15 +142,15 @@ OS mDash.
 | Tubo termoencogible 3:1 con pegamento  | [💸](https://s.click.aliexpress.com/e/_AEtntV)  | [3_1_heatshrink_tube_glue.pdf](/assets/pdf/3_1_heatshrink_tube_glue.pdf)                           |
 | Tubo termoencogible 2:1 multiples colores  | [💸](https://s.click.aliexpress.com/e/_Ar4Zmf)  | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf)                           |
 
-#### Componentes TUSISTEMITA
+#### Componentes MISISTEMITA
 
 | PCB    |  Archivos fuente                                          | 
 | -------- | ------------------------------------------------------------ |
-| Placa trasera para montaje A02 para caja de 200x120x75mm | [A02](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| Placa adaptadora A05 con agujeros espaciados 10.16mm para fuente 5V 3.8A   | [A05](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)        |
-| Tarjeta B01 para conexiones mediante terminales de tornillos 2x4 3.5mm | [B01](https://github.com/galopago/TUSISTEMITA/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
-| Tarjeta breakout C08 con salida a terminales de tornillos para NODEMCU V3  | [C08](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
-| Tarjeta D06 de conversion de niveles logicos  | [D06](https://github.com/galopago/TUSISTEMITA/tree/master/D_ELECTRONICS)        |
+| Placa trasera para montaje A02 para caja de 200x120x75mm | [A02](https://github.com/galopago/misistemita/tree/master/a-backplates)           |
+| Placa adaptadora A05 con agujeros espaciados 10.16mm para fuente 5V 3.8A   | [A05](https://github.com/galopago/misistemita/tree/master/a-backplates)        |
+| Tarjeta B01 para conexiones mediante terminales de tornillos 2x4 3.5mm | [B01](https://github.com/galopago/misistemita/tree/master/b-screw-terminal-wire-connectors)        |
+| Tarjeta breakout C08 con salida a terminales de tornillos para NODEMCU V3  | [C08](https://github.com/galopago/misistemita/tree/master/c-breakouts)        |
+| Tarjeta D06 de conversion de niveles logicos  | [D06](https://github.com/galopago/misistemita/tree/master/d-electronics)        |
 
 
 #### Software
