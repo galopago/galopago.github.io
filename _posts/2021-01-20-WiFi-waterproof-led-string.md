@@ -39,7 +39,7 @@ firmware wirelessly (OTA), using a powerful combo: [Mongoose OS](https://mongoos
 Mongoose OS uses a scaled down version of JavaScript known as [mJS](https://github.com/cesanta/mjs). This is an attractive language for web developers whom already 
 work with JS. Mongoose OS is built on top of Espressif's ESP-iDF, so it is possible to write functions in C, which is also attractive for more "traditional" embedded programmers.
 
-The circuit is built using [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) hardware prototyping system, which provides different kinds of prebuilt modules which allows
+The circuit is built using [MISISTEMITA](https://github.com/galopago/misistemita) hardware prototyping system, which provides different kinds of prebuilt modules which allows
 to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an
 "industrial look" to the project and also adds mechanical strength to withstand abuses. The external electrical connections (AC, and LEDs) were fitted with IP accessories to provide
 a good seal.
@@ -48,12 +48,12 @@ a good seal.
 * Mongoose OS embedded operating system running on ESP8266.
 * Dustproof, waterproof and wall mountable.
 * Wireless remote firmware update, thanks to Mongoose OS management dashboard mDASH.
-* Built with TUSISTEMITA hardware prototyping blocks
+* Built with MISISTEMITA hardware prototyping blocks
 * 110/220V AC power
 
 The circuit is composed of 4 elements well differentiated: Power source, CPU, logic level shifter and LEDs. Power source is switched type, 20W power, 5V output and 110/220V input, so
 it could be used in any country of the world. ESP8266 was used as CPU (NODEMCU V3). This board can be powered by 3.3V directly to processor power pin or by 5V using the
-onboard regulator. The high logic level output of ESP8266 is 3.3V, so a logic level shifter is needed for working with 5V sensors. WS2812 works with 5V logic levels so TUSISTEMITA D06
+onboard regulator. The high logic level output of ESP8266 is 3.3V, so a logic level shifter is needed for working with 5V sensors. WS2812 works with 5V logic levels so MISISTEMITA D06
 logic level board converter was used. This board is based on BSS138 MOSFET.
 
 <figure>
@@ -87,7 +87,7 @@ data to the same topic to change the color palette used. This is a very simple w
 
 ##### Circuit assembly:
 
-The circuit was built using components of TUSISTEMITA, like enclosure backplate, power source backplate, NODEMCU breakboard, logic level shifter board and screw
+The circuit was built using components of MISISTEMITA, like enclosure backplate, power source backplate, NODEMCU breakboard, logic level shifter board and screw
  terminal board. Once the app is downloaded for the first time, and electrical connections verified, the backplate could be attached to the enclosure hassle free. Just unplug
 external cables from terminals, screw backplate to enclosure and reconnect cables again.
 
@@ -127,15 +127,15 @@ Once the enclosure is closed, firmware updates could be done via wirelessly via 
 | 3:1 Heatshrink tube with glue  | [💸](https://s.click.aliexpress.com/e/_AaW9bd)  | [3_1_heatshrink_tube_glue.pdf](/assets/pdf/3_1_heatshrink_tube_glue.pdf)                           |
 | 2:1 Heatshrink tube multiple colors  | [💸](https://s.click.aliexpress.com/e/_9ikkU7 )  | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf)                           |
 
-#### TUSISTEMITA blocks
+#### MISISTEMITA blocks
 
 | PCB    |  Source file                                          | 
 | -------- | ------------------------------------------------------------ |
-| A02 Backplate for 200x120x75mm enclosure | [A02](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| A05 adapterboard 10.16mm pitch for 5V 3.8A PSU  | [A05](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)        |
-| B01 2x4 3.5mm screw terminal board | [B01](https://github.com/galopago/TUSISTEMITA/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
-| C08 screw terminal breakout board for NODEMCU V3  | [C08](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
-| D06 logic level shifter board  | [D06](https://github.com/galopago/TUSISTEMITA/tree/master/D_ELECTRONICS)        |
+| A02 Backplate for 200x120x75mm enclosure | [A02](https://github.com/galopago/misistemita/tree/master/a-backplates)           |
+| A05 adapterboard 10.16mm pitch for 5V 3.8A PSU  | [A05](https://github.com/galopago/misistemita/tree/master/a-backplates)        |
+| B01 2x4 3.5mm screw terminal board | [B01](https://github.com/galopago/misistemita/tree/master/b-screw-terminal-wire-connectors)        |
+| C08 screw terminal breakout board for NODEMCU V3  | [C08](https://github.com/galopago/misistemita/tree/master/c-breakouts)        |
+| D06 logic level shifter board  | [D06](https://github.com/galopago/misistemita/tree/master/d-electronics)        |
 
 
 #### Software
