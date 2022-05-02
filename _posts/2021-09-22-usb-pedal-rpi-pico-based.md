@@ -30,7 +30,7 @@ Here come to the rescue [Raspberry Pi Pico](https://www.raspberrypi.org/products
 
 Another additional advantage over commercial USB pedals, the pedal itself can be replaced for a more robust one, without touching the circuit. Another kind of switches could be used, so operation with different parts of the body is possible. The amount of switches to be installed is only limited by Rpi Pico GPIO pins and the space available on the enclosure.
 
-The circuit is built using [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) hardware prototyping system, which provides different kinds of prebuilt modules which allows to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an “industrial look” to the project and also adds mechanical strength to withstand abuses. The external electrical connections (pedals, and USB) were fitted with IP accessories to provide a good seal.
+The circuit is built using [MISISTEMITA](https://github.com/galopago/misistemita) hardware prototyping system, which provides different kinds of prebuilt modules which allows to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an “industrial look” to the project and also adds mechanical strength to withstand abuses. The external electrical connections (pedals, and USB) were fitted with IP accessories to provide a good seal.
 
 
 #### Key features:
@@ -76,7 +76,7 @@ The configuration file structure is very simple. First line GPIOS to use, second
 
 ##### Circuit assembly:
 
-The circuit was built using components of TUSISTEMITA, like enclosure backplate, and Rpi Pico screw terminal breakboard.
+The circuit was built using components of MISISTEMITA, like enclosure backplate, and Rpi Pico screw terminal breakboard.
 
 Once the app is downloaded for the first time, and electrical connections verified, the backplate could be attached to the enclosure hassle free. Just unplug USB cable and debug switches' screw terminals, screw backplate to enclosure and reconnect cables again.
 
@@ -114,12 +114,12 @@ Once the enclosure is closed, firmware updates could be done modifying the Circu
 | Micro USB cable | [💸](https://s.click.aliexpress.com/e/_97vmPY) | [MICRO_USB_CABLE.pdf](/assets/pdf/MICRO_USB_CABLE.pdf) |
 
 
-#### TUSISTEMITA blocks
+#### MISISTEMITA blocks
 
 | PCB    |  Source file                                          | 
 | -------- | ------------------------------------------------------------ |
-| A01 Backplate for 158x90x60mm enclosure| [A01](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| C11 screw terminal breakout board for Rpi Pico  | [C11](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
+| A01 Backplate for 158x90x60mm enclosure| [A01](https://github.com/galopago/misistemita/tree/master/a-backplates)           |
+| C11 screw terminal breakout board for Rpi Pico  | [C11](https://github.com/galopago/misistemita/tree/master/c-breakouts)        |
 
 
 
