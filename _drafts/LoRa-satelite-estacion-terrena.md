@@ -12,41 +12,35 @@ header:
      teaser: "/assets/images/LORA_GROUND_STATION_TEASER.jpg"
 ---
 
-Los satelites que en la actualidad usan tecnologia [LoRa](https://en.wikipedia.org/wiki/LoRa) han logrado que personas con pocos conocimientos tecnicos y con un bajo presupuesto puedan recibir sus señales, algo que era imposible hace algunos años. Gracias a la iniciativa [TinyGS](https://tinygs.com) se ha construido una red abierta de estaciones terrenas distribuidas por todo el mundo y que pueden ser construidas facilmente para ampliar dicha cobertura. El proyecto aqui presentado es una implementacion razonalmente robusta a prueba de polvo y agua, basada en componentes comerciales listos para usar. Ideal para montajes en exteriores.
+Los satelites que en la actualidad usan tecnologia [LoRa](https://en.wikipedia.org/wiki/LoRa) han logrado que personas con pocos conocimientos tecnicos y con un bajo presupuesto puedan recibir sus señales, algo que era imposible hace algunos años. Gracias a la iniciativa [TinyGS](https://tinygs.com) se ha construido una red abierta de estaciones terrenas distribuidas por todo el mundo y que pueden ser construidas facilmente para ampliar dicha cobertura. El proyecto aqui presentado es una implementacion razonalmente robusta, a prueba de polvo y agua, basada en componentes comerciales listos para usar. Ideal para montajes en exteriores.
 
 <figure>
 	<a href="/assets/images/LORA_GROUND_STATION.jpg"> <img src="/assets/images/LORA_GROUND_STATION_MEDIUM.jpg"> </a>
-	<figcaption>Caja de las luces destapada mostrando sus componentes internos</figcaption>
+	<figcaption>Estacion de tierra lista para ser montada en exteriores</figcaption>
 </figure>
 
-Componente clave: [Tira de LED WS2811 a prueba de agua.](https://s.click.aliexpress.com/e/_AFqDHl)
+Componente clave: [Heltec WiFi LoRa kit 32 v2 433mhz](https://s.click.aliexpress.com/e/_A0wUdR)
 {: .notice--danger}
 
 
-##### El concepto:
+##### ¿Por que?:
 
-Con la llegada de los LED direccionables como el WS2812, WS2812b, WS2811, etc. fue posible controlar individualmente grandes
-cantidades de leds usando un solo pin de microcontrolador!. Dicha facilidad de uso contribuyo a popularizar estos componentes
-y a que estos se vendieran en diferentes presentaciones: leds individuales para montaje superficial, series de luces en tiras flexibles, extensiones
-de luces tipo "arbol de navidad" a prueba de agua, entre otras. Es precisamente estas ultimas las que seran usadas en este proyecto dado lo facil que
-pueden adaptarse a distintos tipos de proyectos como matrices de leds hasta adornos navideños, sin tener que soldar ni hacer modificaciones electricas a las luces.
+La idea de usar LoRa para comunicacion satelital fue evidente para muchas personas por estas razones:
 
-Como microcontrolador se uso un ESP8266, mas precisamente una tarjeta conocida como "NODEMCU V3" que incorpora ya todos los elementos adicionales para poder
-realizar la programacion inicial desde un computador. Utilizando el WiFi incorporado del ESP8266, no solo es posible controlar las secuencias y colores de las luces desde
-internet, sino que tambien es posible descargarle nuevos programas de forma remota (OTA) usando un combo poderoso: El sistema operativo [Mongoose OS](https://mongoose-os.com/) junto con
-plataforma para gestion remota de dispositivos [mDASH](https://mdash.net/). Mongoose OS usa una version restringida de JavaScript conocida como [mJS](https://github.com/cesanta/mjs), lo que probablemente
-resultara atractivo para programadores web que ya trabajan con este tipo de tecnologia. Mongoose OS esta construido sobre el ESP-IDF de Espressif, por lo tanto
-pueden hacerse llamados a funciones escritas en C, lo que sin duda tambien resultara atractivo para programadores de microcontroladores "tradicionales" que han
-trabajado con este lenguaje bastante maduro.
+* Uso de bandas sin licensia (ISM)
+* Modulos listos para usar, faciles de conseguir y a relativamente bajo costo.
+* Comunicacion a muy larga distancia, con bajo consumo de potencia.
+* Se puede establecer comunicacion con un nivel de señal tan bajo como -120dBm.
 
-En cuanto al montaje fisico, se utilizo el sistema de prototipado de hardware [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) que proporciona una serie de  modulos y elementos preconstruido que
-permiten realizar un proyecto electonico sin necesidad de soldaduras, haciendolo facilmente modificable y flexible, pero a la vez robusto. Todo el conjunto va
-dentro de una caja a prueba de agua IP65, la cual le proporciona resistencia al polvo y al agua, ademas de darle un aspecto estetico "industrial"  tambien le otorga suficiente
-robustez mecanica para soportar uno que otro abuso. Los cables de conexiones electricas externas de la caja, fueron complementadas con accesorios para garantizar
-el sellamiento IP65.
+Este ultimo punto es de vital importancia, pues permite usar una gran cantidad de antenas comerciales, e incluso de construccion casera, que aunque
+no muy eficientes, estas pueden llegar a cumplir la funcion de recibir dichas señales. Este en general habia sido uno de los grandes talones de aquiles en
+las comunicaciones satelitales hasta entonces.
 
 
-#### Principales Caracteristicas:
+#### ¿De que trata este proyecto?
+
+Este proyecto es un Gateway o Pasarela entre internet WiFI y LoRa a 433Mhz, usando la mayor cantidad posible de elementos comerciales (off the shelf) de forma tal que no se requiera mucha experticia para su construccion. 
+
 * Sistema Operativo embebido Mongoose OS corriendo sobre ESP8266
 * Resistente al agua y con pestaña para montaje en pared.
 * Actualizacion remota del Firmware gracias a la plataforma de gestion Mongoose OS dashboard mDASH
