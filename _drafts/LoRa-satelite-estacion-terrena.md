@@ -42,18 +42,25 @@ las comunicaciones satelitales hasta entonces.
 Este proyecto es un Gateway o Pasarela entre internet (WiFI) y LoRa @ 433Mhz, usando la mayor cantidad posible de elementos comerciales listos para usar (off the shelf) de forma tal que no se requiera mucha experticia para su construccion. El toque final sera agregar el [firmware de TinyGS](https://github.com/G4lile0/tinyGS) el cual permitira entre otras cosas:
 
 * Recibir actualizaciones de firmware inalambricamente (OTA) automaticamente.
-* El receptor se sintonizara automagicamente para recibir las señales del satelite que este mas cerca "a la vista"
-* Configuracion de parametros via interfaz web (local) 
+* El receptor se sintonizara automagicamente para recibir las señales del satelite que este mas cerca "a la vista".
+* Configuracion de parametros via interfaz web (local).
 
 <figure>
 	<a href="/assets/images/LORA_GROUND_STATION_TINYGS.png"> <img src="/assets/images/LORA_GROUND_STATION_TINYGS.png"> </a>
 	<figcaption>Arquitectura de la red TinyGS (tomado del sitio de TinyGS)</figcaption>
 </figure>
 
-* Resistente al agua y con pestaña para montaje en pared.
-* Actualizacion remota del Firmware gracias a la plataforma de gestion Mongoose OS dashboard mDASH
-* Montaje realizado mediante el sistema de prototipado robusto para hardware electronico TUSISTEMITA
-* Alimentacion 110/220V AC.
+#### Listado de materiales
+
+<figure>
+	<a href="/assets/images/LORA_GROUND_STATION.jpg"> <img src="/assets/images/LORA_GROUND_STATION_MEDIUM.jpg"> </a>
+	<figcaption>Estacion de tierra lista para ser montada en exteriores</figcaption>
+</figure>
+
+##### Ensamblaje:
+
+Si bien el articulo no pretende ser una guia de ensamblaje paso a paso, si tratara de explicar lo mas posible algunos pasos claves. Dependiendo
+de los materiales obtenidos algunas instrucciones podrian cambiar un poco!
 
 
 El hardware esta compuesto por 4 elementos bien diferenciados: Fuente de alimentacion, CPU, adaptador de nivel logico y LEDS. La fuente de alimentacion es de
