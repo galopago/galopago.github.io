@@ -53,9 +53,26 @@ Este proyecto es un Gateway o Pasarela entre internet (WiFI) y LoRa @ 433Mhz, us
 #### Listado de materiales
 
 <figure>
-	<a href="/assets/images/LORA_GROUND_STATION.jpg"> <img src="/assets/images/LORA_GROUND_STATION_MEDIUM.jpg"> </a>
-	<figcaption>Estacion de tierra lista para ser montada en exteriores</figcaption>
+	<a href="/assets/images/LORA_GROUND_STATION_PARTS.jpg"> <img src="/assets/images/LORA_GROUND_STATION_PARTS_MEDIUM.jpg"> </a>
+	<figcaption>Un poquito de knolling. No es mucho, pero es trabajo honesto!</figcaption>
 </figure>
+
+| Componente        | Enlace de compra | Hoja de datos                                   |
+| -------- | ------ | ------------------------------------------------------------ |
+| kit LoRa Heltec WiFi 32 v2 433mhz | [compralo aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
+| RP-SMA flange to U.FL pigtail | [compralo aqui](https://s.click.aliexpress.com/e/_9vbEjm) | [Catalog_SMA.pdf](/assets/pdf/Catalog_SMA.pdf) |
+| Antena SMA 433 Mhz  | [compralo aqui](https://s.click.aliexpress.com/e/_AYvZau) | [433_MHZ_SMA_ANTENNA.pdf](/assets/pdf/433_MHZ_SMA_ANTENNA.pdf) |
+| Caja generica a prueba de agua "Sonoff" 100x68x50mm | [compralo aqui](https://s.click.aliexpress.com/e/_AtukwZ) | [SONOFF-IP66-waterproof-case.pdf](/assets/pdf/SONOFF-IP66-waterproof-case.pdf) |
+| Tornillo phillips M2.5 avellanado | [compralo aqui](https://s.click.aliexpress.com/e/_AEYxys) | [M2-5_COUNTERSUNK_SCREW.pdf](/assets/pdf/M2-5_COUNTERSUNK_SCREW.pdf) |
+| Tuerca de seguridad M2.5 | [compralo aqui](https://s.click.aliexpress.com/e/_9RIfcu) | [M2-5_NYLON_LOCK_NUT.pdf](/assets/pdf/M2-5_NYLON_LOCK_NUT.pdf) |
+| Tornillo tipo B M2.6 autorroscante | [compralo aqui](https://s.click.aliexpress.com/e/_esHHyb) | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf) |
+| Terminal de tornillo para PCB kf350 3.5mm 3 pines | [compralo aqui](https://s.click.aliexpress.com/e/_eLjzKB) | [KF350.pdf](/assets/pdf/KF350.pdf) |
+| Conector tipo header hembra 2.54mm | [compralo aqui](https://s.click.aliexpress.com/e/_eNYVzN) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
+| Cable calibre 30 AWG tipo UL1423 PVDF | [compralo aqui](https://s.click.aliexpress.com/e/_eL2EYB) | [UL1423.pdf](/assets/pdf/UL1423.pdf) |
+| Modulo PoE Splitter D1398 5V 2A  | [compralo aqui](https://s.click.aliexpress.com/e/_Al2dql) | [WC-PD13C050I.pdf](/assets/pdf/WC-PD13C050I.pdf)|
+| Adaptador SMA hembra a RP-SMA Macho | [compralo aqui](https://s.click.aliexpress.com/e/_9JKRaz) | [SMA-Female-To-RP-SMA-Male-adapter.pdf](/assets/pdf/SMA-Female-To-RP-SMA-Male-adapter.pdf) |
+| Sellante de silicona Neutro | [compralo aqui](https://s.click.aliexpress.com/e/_ANKQnb) | [Neutral-cure-silicone.pdf](/assets/pdf/Neutral-cure-silicone.pdf) |
+
 
 ##### Ensamblaje:
 
