@@ -12,7 +12,7 @@ header:
      teaser: "/assets/images/LORA_GROUND_STATION_TEASER.jpg"
 ---
 
-Los satelites que en la actualidad usan tecnologia [LoRa](https://en.wikipedia.org/wiki/LoRa) han logrado que personas con pocos conocimientos tecnicos y con un bajo presupuesto puedan recibir sus señales, algo que era imposible hace algunos años. Gracias a la iniciativa [TinyGS](https://tinygs.com) se ha construido una red abierta de estaciones terrenas distribuidas por todo el mundo y que pueden ser construidas facilmente para ampliar dicha cobertura. El proyecto aqui presentado es una implementacion razonalmente robusta, a prueba de polvo y agua, basada en componentes comerciales listos para usar. Ideal para montajes en exteriores.
+Los [pequeños satelites](https://es.wikipedia.org/wiki/Sat%C3%A9lite_peque%C3%B1o) que en la actualidad usan tecnologia [LoRa](https://en.wikipedia.org/wiki/LoRa) han logrado que personas con pocos conocimientos tecnicos y con un bajo presupuesto puedan recibir sus señales, algo que era imposible hace algunos años. Gracias a la iniciativa [TinyGS](https://tinygs.com) se ha construido una red abierta de estaciones terrenas distribuidas por todo el mundo y que pueden ser construidas facilmente para ampliar dicha cobertura. El proyecto aqui presentado es una implementacion razonalmente robusta, a prueba de polvo y agua, basada en componentes comerciales listos para usar. Ideal para montajes en exteriores.
 
 <figure>
 	<a href="/assets/images/LORA_GROUND_STATION.jpg"> <img src="/assets/images/LORA_GROUND_STATION_MEDIUM.jpg"> </a>
@@ -39,9 +39,17 @@ las comunicaciones satelitales hasta entonces.
 
 #### ¿De que trata este proyecto?
 
-Este proyecto es un Gateway o Pasarela entre internet WiFI y LoRa a 433Mhz, usando la mayor cantidad posible de elementos comerciales (off the shelf) de forma tal que no se requiera mucha experticia para su construccion. 
+Este proyecto es un Gateway o Pasarela entre internet (WiFI) y LoRa @ 433Mhz, usando la mayor cantidad posible de elementos comerciales listos para usar (off the shelf) de forma tal que no se requiera mucha experticia para su construccion. El toque final sera agregar el [firmware de TinyGS](https://github.com/G4lile0/tinyGS) el cual permitira entre otras cosas:
 
-* Sistema Operativo embebido Mongoose OS corriendo sobre ESP8266
+* Recibir actualizaciones de firmware inalambricamente (OTA) automaticamente.
+* El receptor se sintonizara automagicamente para recibir las señales del satelite que este mas cerca "a la vista"
+* Configuracion de parametros via interfaz web (local) 
+
+<figure>
+	<a href="/assets/images/LORA_GROUND_STATION_TINYGS.png"> <img src="/assets/images/LORA_GROUND_STATION_TINYGS.png"> </a>
+	<figcaption>Arquitectura de la red TinyGS (tomado del sitio de TinyGS)</figcaption>
+</figure>
+
 * Resistente al agua y con pestaña para montaje en pared.
 * Actualizacion remota del Firmware gracias a la plataforma de gestion Mongoose OS dashboard mDASH
 * Montaje realizado mediante el sistema de prototipado robusto para hardware electronico TUSISTEMITA
