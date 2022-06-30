@@ -77,11 +77,12 @@ Este proyecto es un Gateway o Pasarela entre internet (WiFI) y LoRa @ 433Mhz, us
 ##### Ensamblaje:
 
 Si bien el articulo no pretende ser una guia de ensamblaje paso a paso, si tratara de explicar lo mas posible algunos pasos claves. Dependiendo
-de los materiales obtenidos algunas instrucciones podrian cambiar un poco!
+de los materiales obtenidos algunas instrucciones y el orden de ejecucion de ellas podrian cambiar un poco!
 
 ###### Perforaciones para el conector de antena:
 
-Realizar 4 perforaciones con una broca de diametro ligeramente superior a 2.5 mm por donde pasaran los tornillos de fijacion. Realizar otra perforacion en la mitad por donde pasara el cable del conector de antena con una broca de aproximadamente 4mm de diametro. La plantilla para la perforacion de dichos agujeros puede hallarse [aqui](https://github.com/galopago/panel-mount-drill-layouts/tree/main/sma-flange-4-holes).
+* Realizar 4 perforaciones con una broca de diametro ligeramente superior a 2.5 mm por donde pasaran los tornillos de fijacion. 
+* Realizar otra perforacion en la mitad por donde pasara el cable del conector de antena con una broca de aproximadamente 4mm de diametro. La plantilla para la perforacion de dichos agujeros puede hallarse [aqui](https://github.com/galopago/panel-mount-drill-layouts/tree/main/sma-flange-4-holes).
 
 <figure class="third">
 	<a href="/assets/images/SMA_FLANGE_TEMPLATE.jpg"> <img src="/assets/images/SMA_FLANGE_TEMPLATE_MEDIUM.jpg"> </a>
@@ -92,19 +93,29 @@ Realizar 4 perforaciones con una broca de diametro ligeramente superior a 2.5 mm
 
 ###### Soldar conectores y cables a la tarjeta de circuito impreso:
 
-Soldar conectores header para el modulo LoRa. Esto no es 100% necesario, pues el modulo podria soldarse directamente a la tarjeta de circuito impreso, sinembargo usar los headers permite que el modulo pueda ser retirado en cualquier momento. Igualmente soldar conectores header al modulo
-splitter PoE (en caso que se use uno!). Soldar terminales de tornillo a PCB para permitir una conexion/desconexion de forma facil. Finalmente hacer las conexiones electricas por debajo de la tarjeta, en lo posible usando cable PVDF, entre las terminales de tornillo y los pines de de poder del modulo PoE y el modulo LoRa.
+<figure>
+	<a href="/assets/images/tinygs_power_wires_blockdiag.png"> <img src="/assets/images/tinygs_power_wires_blockdiag.png"> </a>
+	<figcaption>Diagrama simplificado de las conexiones electricas</figcaption>
+</figure>
+
+* Soldar conectores header para el modulo LoRa. Esto no es 100% necesario, pues el modulo podria soldarse directamente a la tarjeta de circuito impreso, sinembargo usar los headers permite que el modulo pueda ser retirado en cualquier momento. 
+* Soldar conectores header al modulo splitter PoE (en caso que se use uno!).
+* Soldar terminales de tornillo a PCB para permitir una conexion/desconexion de forma facil. 
+* Realizar las conexiones electricas por debajo de la tarjeta, en lo posible usando cable con recubrimiento PVDF, entre las terminales de tornillo y los pines de de poder del modulo PoE y el modulo LoRa.
 
 <figure class="third">
 	<a href="/assets/images/PCB_BARE.jpg"> <img src="/assets/images/PCB_BARE_MEDIUM.jpg"> </a>
 	<a href="/assets/images/PCB_CONNECTORS.jpg"> <img src="/assets/images/PCB_CONNECTORS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/PCB_POWER_WIRES.jpg"> <img src="/assets/images/PCB_POWER_WIRES_MEDIUM.jpg"> </a>
-	<figcaption>Conexiones electricas realizadas</figcaption>
+	<figcaption>Soldaduras realizadas</figcaption>
 </figure>
 
 ###### Fijar conector de antena, tarjeta de circuito impreso y cables de poder.
 
-Fijar el conector de antena mediante las 4 tuercas de seguridad. Introducir los cables de alimentacion por dentro de los conectores pasacables y dejar un poco flojas las tuercas plasticas de ajuste. introducir la tarjeta de circuito impreso, ajustarla a la caja mediante los tornillos autorroscantes. Finalmente conectar los cables de alimentacion a las bornera tornillo, el cable de la antena al modulo LoRa y ajustar los conectores pasacables. Es probable que se tenga que experimentar un poco con los pasos anteriormente mencionados para buscar la forma mas comoda de ensamblar!
+* Fijar el conector de antena mediante las 4 tuercas de seguridad. 
+* Introducir los cables de alimentacion por dentro de los conectores pasacables y dejar un poco flojas las tuercas plasticas de ajuste.
+* Introducir la tarjeta de circuito impreso, ajustarla a la caja mediante los tornillos autorroscantes.
+* Conectar los cables de alimentacion a las bornera tornillo, el cable de la antena al modulo LoRa y ajustar los conectores pasacables. Es probable que se tenga que experimentar un poco con los pasos anteriormente mencionados para buscar la forma mas comoda de ensamblar!
 
 <figure class="third">
 	<a href="/assets/images/TINYGS_ANT_CONNECTOR_FRONT.jpg"> <img src="/assets/images/TINYGS_ANT_CONNECTOR_FRONT_MEDIUM.jpg"> </a>
@@ -112,6 +123,10 @@ Fijar el conector de antena mediante las 4 tuercas de seguridad. Introducir los 
 	<a href="/assets/images/TINYGS_PCB_FIXED.jpg"> <img src="/assets/images/TINYGS_PCB_FIXED_MEDIUM.jpg"> </a>
 	<figcaption>todos los componentes fijos dentro de la caja</figcaption>
 </figure>
+
+###### Descargar firmware.
+
+Una vez verifida la correcta conexion electrica al modulo LoRa, (generalmente estos modulos vienen con un fimrware de prueba y deberia mostrarse algun tipo de logo/imagen/datos en la pantalla LCD), conectar el modulo LoRa mediante un cable Micro USB a un computador personal. Seguir las instrucciones que se encuentran en la [Wiki de TinyGS](https://github.com/G4lile0/tinyGS/wiki).
 
 El hardware esta compuesto por 4 elementos bien diferenciados: Fuente de alimentacion, CPU, adaptador de nivel logico y LEDS. La fuente de alimentacion es de
 tipo comutada con 20W de potencia, 5 voltios de salida y entrada de 110V a 220V, por lo tanto puede ser usada practicamente en cualquier lugar del mundo. Como CPU
