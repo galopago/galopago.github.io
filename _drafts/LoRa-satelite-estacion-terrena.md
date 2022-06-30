@@ -79,6 +79,37 @@ Este proyecto es un Gateway o Pasarela entre internet (WiFI) y LoRa @ 433Mhz, us
 Si bien el articulo no pretende ser una guia de ensamblaje paso a paso, si tratara de explicar lo mas posible algunos pasos claves. Dependiendo
 de los materiales obtenidos algunas instrucciones podrian cambiar un poco!
 
+###### Perforaciones para el conector de antena:
+
+Realizar 4 perforaciones con una broca de diametro ligeramente superior a 2.5 mm por donde pasaran los tornillos de fijacion. Realizar otra perforacion en la mitad por donde pasara el cable del conector de antena con una broca de aproximadamente 4mm de diametro. La plantilla para la perforacion de dichos agujeros puede hallarse [aqui](https://github.com/galopago/panel-mount-drill-layouts/tree/main/sma-flange-4-holes).
+
+<figure class="third">
+	<a href="/assets/images/SMA_FLANGE_TEMPLATE.jpg"> <img src="/assets/images/SMA_FLANGE_TEMPLATE_MEDIUM.jpg"> </a>
+	<a href="/assets/images/SMA_FLANGE_FRONT.jpg"> <img src="/assets/images/SMA_FLANGE_FRONT_MEDIUM.jpg"> </a>
+	<a href="/assets/images/SMA_FLANTE_DIAG.jpg"> <img src="/assets/images/SMA_FLANTE_DIAG_MEDIUM.jpg"> </a>
+	<figcaption>Perforaciones para el conector de antena</figcaption>
+</figure>
+
+###### Soldar conectores y cables a la tarjeta de circuito impreso:
+
+Soldar conectores header para el modulo LoRa. Esto no es 100% necesario, pues el modulo podria soldarse directamente a la tarjeta de circuito impreso, sinembargo usar los headers permite que el modulo pueda ser retirado en cualquier momento. Igualmente soldar conectores header al modulo
+splitter PoE (en caso que se use uno!). Soldar terminales de tornillo a PCB para permitir una conexion/desconexion de forma facil. Finalmente hacer las conexiones electricas por debajo de la tarjeta, en lo posible usando cable PVDF, entre las terminales de tornillo y los pines de de poder del modulo PoE y el modulo LoRa.
+
+<figure class="third">
+	<a href="/assets/images/PCB_BARE.jpg"> <img src="/assets/images/PCB_BARE_MEDIUM.jpg"> </a>
+	<a href="/assets/images/PCB_CONNECTORS.jpg"> <img src="/assets/images/PCB_CONNECTORS_MEDIUM.jpg"> </a>
+	<a href="/assets/images/PCB_POWER_WIRES.jpg"> <img src="/assets/images/PCB_POWER_WIRES_MEDIUM.jpg"> </a>
+	<figcaption>Conexiones electricas realizadas</figcaption>
+</figure>
+
+###### Fijar conector de antena, tarjeta de circuito impreso y cables de poder.
+
+<figure class="third">
+	<a href="/assets/images/PCB_BARE.jpg"> <img src="/assets/images/PCB_BARE_MEDIUM.jpg"> </a>
+	<a href="/assets/images/PCB_CONNECTORS.jpg"> <img src="/assets/images/PCB_CONNECTORS_MEDIUM.jpg"> </a>
+	<a href="/assets/images/PCB_POWER_WIRES.jpg"> <img src="/assets/images/PCB_POWER_WIRES_MEDIUM.jpg"> </a>
+	<figcaption>todos los componentes fijos dentro de la caja</figcaption>
+</figure>
 
 El hardware esta compuesto por 4 elementos bien diferenciados: Fuente de alimentacion, CPU, adaptador de nivel logico y LEDS. La fuente de alimentacion es de
 tipo comutada con 20W de potencia, 5 voltios de salida y entrada de 110V a 220V, por lo tanto puede ser usada practicamente en cualquier lugar del mundo. Como CPU
