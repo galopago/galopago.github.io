@@ -104,10 +104,12 @@ splitter PoE (en caso que se use uno!). Soldar terminales de tornillo a PCB para
 
 ###### Fijar conector de antena, tarjeta de circuito impreso y cables de poder.
 
+Fijar el conector de antena mediante las 4 tuercas de seguridad. Introducir los cables de alimentacion por dentro de los conectores pasacables y dejar un poco flojas las tuercas plasticas de ajuste. introducir la tarjeta de circuito impreso, ajustarla a la caja mediante los tornillos autorroscantes. Finalmente conectar los cables de alimentacion a las bornera tornillo, el cable de la antena al modulo LoRa y ajustar los conectores pasacables. Es probable que se tenga que experimentar un poco con los pasos anteriormente mencionados para buscar la forma mas comoda de ensamblar!
+
 <figure class="third">
-	<a href="/assets/images/PCB_BARE.jpg"> <img src="/assets/images/PCB_BARE_MEDIUM.jpg"> </a>
-	<a href="/assets/images/PCB_CONNECTORS.jpg"> <img src="/assets/images/PCB_CONNECTORS_MEDIUM.jpg"> </a>
-	<a href="/assets/images/PCB_POWER_WIRES.jpg"> <img src="/assets/images/PCB_POWER_WIRES_MEDIUM.jpg"> </a>
+	<a href="/assets/images/TINYGS_ANT_CONNECTOR_FRONT.jpg"> <img src="/assets/images/TINYGS_ANT_CONNECTOR_FRONT_MEDIUM.jpg"> </a>
+	<a href="/assets/images/TINYGS_POWER_CABLES.jpg"> <img src="/assets/images/TINYGS_POWER_CABLES_MEDIUM.jpg"> </a>
+	<a href="/assets/images/TINYGS_PCB_FIXED.jpg"> <img src="/assets/images/TINYGS_PCB_FIXED_MEDIUM.jpg"> </a>
 	<figcaption>todos los componentes fijos dentro de la caja</figcaption>
 </figure>
 
