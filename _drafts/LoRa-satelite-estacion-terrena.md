@@ -143,16 +143,23 @@ La antena debera ubicarse donde tenga una mayor vista del cielo (en el techo o m
 
 Dadas las condiciones logisticas especificas de esta prueba, no era posible acceder al techo de la edificacion, ni instalar estructuras permanentes por fuera de las ventanas, se decidio probar el siguiente configuracion: La caja con el receptor estaria dentro de la edificacion y la antena, la cual tiene un iman y puede ser montada/desmontada con facilidad, estaria afuera de la ventana sobre la reja. Dicha antena fue comprada en un comercio electronico local, no tiene ningun tipo de ajuste ni optimizacion. La prueba fue realizada en Cali, Colombia y el registro de mayor distancia recibida hasta la fecha fue desde el satelite NORBY cuando volaba sobre Arequipa, Peru, aproximadamente 2265 Kilometros en linea recta hacia el satelite!, nada mal para un receptor satelital cuyo costo es ~40 EUR, ensamblado en casa y que no requirio ningun tipo de ajuste!
 
-
 <figure class="third">
-	<a href="/assets/images/TINYGS_WINDOW_SETUP.jpg"> <img src="/assets/images/TINYGS_WINDOW_SETUP.jpg"> </a>
+	<a href="/assets/images/TINYGS_WINDOW_SETUP.jpg"> <img src="/assets/images/TINYGS_WINDOW_SETUP_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TINYGS_WINDOW_ANTENNA.jpg"> <img src="/assets/images/TINYGS_WINDOW_ANTENNA_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TYNYGS_ANTENNA_RECEPTION.jpg"> <img src="/assets/images/TYNYGS_ANTENNA_RECEPTION_MEDIUM.jpg"> </a>
 	<figcaption>Setup de la estacion terrena en funcionamiento</figcaption>
 </figure>
 
+###### Variantes.
 
+Se desarrollo una version portatil de la estacion terrena, que usa una caja un poco mas pequeña y se alimenta mediante una bateria. Esta pensada para ser una estacion movil-temporal que se conecte a un WiFi de un telefono celular. Utiliza una bateria [LiFePo4](https://es.wikipedia.org/wiki/Bater%C3%ADa_de_litio-ferrofosfato) de 3.2 voltios, por lo tanto no se requiere un regulador, y la bateria va directamente conectada al pin de 3.3v del modulo lora. Este mismo hardware (tanfo el fijo, como el portatil) pueden ser usados para otro tipo de proyectos, por ejemplo para el proyecto [aprs.fi](https://aprs.fi/), el cual es de especial interes para radioaficionados. El hardware es 100% compatible y solo requiere cambiar el firmware por [este](https://github.com/lora-aprs/LoRa_APRS_iGate).
 
+<figure class="third">
+	<a href="/assets/images/TINYGS_PORTABLE_PCB.jpg"> <img src="/assets/images/TINYGS_PORTABLE_PCB_MEDIUM.jpg"> </a>
+	<a href="/assets/images/TINYGS_PORTABLE_WIRED.jpg"> <img src="/assets/images/TINYGS_PORTABLE_WIRED_MEDIUM.jpg"> </a>
+	<a href="/assets/images/TINYGS_PORTABLE_FW.jpg"> <img src="/assets/images/TINYGS_PORTABLE_FW_MEDIUM.jpg"> </a>
+	<figcaption>Detalle de la estacion terrena portatil</figcaption>
+</figure>
 
 #### Componentes MISISTEMOTE
 
