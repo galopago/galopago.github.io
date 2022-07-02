@@ -59,8 +59,8 @@ Este proyecto es un Gateway o Pasarela entre internet (WiFI) y LoRa @ 433Mhz, us
 
 | Componente        | Enlace de compra | Hoja de datos                                   |
 | -------- | ------ | ------------------------------------------------------------ |
-| kit LoRa Heltec WiFi 32 v2 433mhz | [compralo aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
-| RP-SMA flange to U.FL pigtail | [compralo aqui](https://s.click.aliexpress.com/e/_9vbEjm) | [Catalog_SMA.pdf](/assets/pdf/Catalog_SMA.pdf) |
+| Kit LoRa Heltec WiFi 32 v2 433mhz | [compralo aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
+| Brida RP-SMA con extension de cable a U.FL | [compralo aqui](https://s.click.aliexpress.com/e/_9vbEjm) | [Catalog_SMA.pdf](/assets/pdf/Catalog_SMA.pdf) |
 | Antena SMA 433 Mhz  | [compralo aqui](https://s.click.aliexpress.com/e/_AYvZau) | [433_MHZ_SMA_ANTENNA.pdf](/assets/pdf/433_MHZ_SMA_ANTENNA.pdf) |
 | Caja generica a prueba de agua "Sonoff" 100x68x50mm | [compralo aqui](https://s.click.aliexpress.com/e/_AtukwZ) | [SONOFF-IP66-waterproof-case.pdf](/assets/pdf/SONOFF-IP66-waterproof-case.pdf) |
 | Tornillo phillips M2.5 avellanado | [compralo aqui](https://s.click.aliexpress.com/e/_AEYxys) | [M2-5_COUNTERSUNK_SCREW.pdf](/assets/pdf/M2-5_COUNTERSUNK_SCREW.pdf) |
@@ -72,16 +72,20 @@ Este proyecto es un Gateway o Pasarela entre internet (WiFI) y LoRa @ 433Mhz, us
 | Modulo PoE Splitter D1398 5V 2A  | [compralo aqui](https://s.click.aliexpress.com/e/_Al2dql) | [WC-PD13C050I.pdf](/assets/pdf/WC-PD13C050I.pdf)|
 | Adaptador SMA hembra a RP-SMA Macho | [compralo aqui](https://s.click.aliexpress.com/e/_9JKRaz) | [SMA-Female-To-RP-SMA-Male-adapter.pdf](/assets/pdf/SMA-Female-To-RP-SMA-Male-adapter.pdf) |
 | Sellante de silicona Neutro | [compralo aqui](https://s.click.aliexpress.com/e/_ANKQnb) | [Neutral-cure-silicone.pdf](/assets/pdf/Neutral-cure-silicone.pdf) |
-
+| Cinta auto fundente | [compralo aqui](https://s.click.aliexpress.com/e/_DlbGSST) | [Waterproof-silicone-self-fusing-vulcanizing-tape.pdf](/assets/pdf/Waterproof-silicone-self-fusing-vulcanizing-tape.pdf) |
 
 
 | Tarjeta de circuito impreso (PCB) | Enlace de compra | Repositorio con archivos fuente  |
 | --------------------------------- | ---------------- | ------------------------------- |
 | Tarjeta prototipo para caja de 100x68mm | [compralo aqui](https://www.pcbway.com/project/shareproject/mcu_proto_100x68mm_6ae31333.html) | [mcu-proto-100x68mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-100x68mm) |
 
+| Software | repositorio |
+| ----------------------- | ---------------- |
+| Firmware estacion terrena TingyGS | [descargalo aqui](https://github.com/G4lile0/tinyGS) |
+
 | Herramientas opcionales | Enlace de compra | Hoja de datos |
 | ----------------------- | ---------------- | ------------------------------- |
-| Taladro manual y juego de brocas de multiples diametros 0.5-3mm | [compralo aqui](https://s.click.aliexpress.com/e/_ANKQnb) | [Neutral-cure-silicone.pdf](/assets/pdf/Neutral-cure-silicone.pdf) |
+| Taladro manual y juego de brocas de multiples diametros 0.5-3mm | [compralo aqui](https://s.click.aliexpress.com/e/_DBPw6on) | [Hand-drill-set-mini.pdf](/assets/pdf/Hand-drill-set-mini.pdf) |
 
 
 ##### Ensamblaje:
@@ -173,10 +177,13 @@ Se desarrollo una version portatil de la estacion terrena, que usa una caja un p
 
 | Componente adicionales para version movil| Enlace de compra | Hoja de datos           |
 | ------------ | ------ | ------------------------------------------------------------ |
-| caja pequeña 83x58mm  | [compralo aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
-| Conector para bateria AA para PCB | [compralo aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
+| Caja generica a prueba de agua 83x58x33mm  | [compralo aqui](https://s.click.aliexpress.com/e/_Ad6Gxn) | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf) |
+| Conector para bateria AA para PCB | [compralo aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [BH311.pdf](/assets/pdf/BH311.pdf) |
+| Bateria recargable Lifepo4 3.2V 14500 AA | [compralo aqui](https://s.click.aliexpress.com/e/_Asl8pn) | [Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf](/assets/pdf/Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf) |
 
 
 | Tarjeta de circuito impreso (PCB) | Enlace de compra | Repositorio con archivos fuente  |
 | --------------------------------- | ---------------- | ------------------------------- |
 | Tarjeta prototipo para caja de 83x58mm | [compralo aqui](https://www.pcbway.com/project/shareproject/mcu_proto_83x58mm_16815998.html) | [mcu-proto-100x68mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-83x58mm) |
+
+
