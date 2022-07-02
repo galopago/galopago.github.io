@@ -74,6 +74,16 @@ Este proyecto es un Gateway o Pasarela entre internet (WiFI) y LoRa @ 433Mhz, us
 | Sellante de silicona Neutro | [compralo aqui](https://s.click.aliexpress.com/e/_ANKQnb) | [Neutral-cure-silicone.pdf](/assets/pdf/Neutral-cure-silicone.pdf) |
 
 
+
+| Tarjeta de circuito impreso (PCB) | Enlace de compra | Repositorio con archivos fuente  |
+| --------------------------------- | ---------------- | ------------------------------- |
+| Tarjeta prototipo para caja de 100x68mm | [compralo aqui](https://www.pcbway.com/project/shareproject/mcu_proto_100x68mm_6ae31333.html) | [mcu-proto-100x68mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-100x68mm) |
+
+| Herramientas opcionales | Enlace de compra | Hoja de datos |
+| ----------------------- | ---------------- | ------------------------------- |
+| Taladro manual y juego de brocas de multiples diametros 0.5-3mm | [compralo aqui](https://s.click.aliexpress.com/e/_ANKQnb) | [Neutral-cure-silicone.pdf](/assets/pdf/Neutral-cure-silicone.pdf) |
+
+
 ##### Ensamblaje:
 
 Si bien el articulo no pretende ser una guia de ensamblaje paso a paso, si tratara de explicar lo mas posible algunos pasos claves. Dependiendo
@@ -161,28 +171,12 @@ Se desarrollo una version portatil de la estacion terrena, que usa una caja un p
 	<figcaption>Detalle de la estacion terrena portatil</figcaption>
 </figure>
 
-#### Componentes MISISTEMOTE
-
-| PCB    |  Archivos fuente                                          | 
-| -------- | ------------------------------------------------------------ |
-| Placa trasera para montaje A02 para caja de 200x120x75mm | [A02](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| Placa adaptadora A05 con agujeros espaciados 10.16mm para fuente 5V 3.8A   | [A05](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)        |
-| Tarjeta B01 para conexiones mediante terminales de tornillos 2x4 3.5mm | [B01](https://github.com/galopago/TUSISTEMITA/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
-| Tarjeta breakout C08 con salida a terminales de tornillos para NODEMCU V3  | [C08](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
-| Tarjeta D06 de conversion de niveles logicos  | [D06](https://github.com/galopago/TUSISTEMITA/tree/master/D_ELECTRONICS)        |
+| Componente adicionales para version movil| Enlace de compra | Hoja de datos           |
+| ------------ | ------ | ------------------------------------------------------------ |
+| caja pequeña 83x58mm  | [compralo aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
+| Conector para bateria AA para PCB | [compralo aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
 
 
-#### Software
-
-| Software    | Archivos fuente                                          | 
-| -------- | ------------------------------------------------------------ |
-| Firmware    | [MOS_IOT_ADDRESSABLE_LEDS](https://github.com/galopago/MOS_IOT_ADDRESSABLE_LEDS)           |
-
- 
-
-## Componentes opcionales:
-
-| Componente         | Consigue el tuyo! | Hoja de caracteristicas                                          | 
-| -------- | ------ | ------------------------------------------------------------ |
-| Juego de 3 brocas escalonadas 3-20 mm + centropunto  | [💸](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
-| Broca escalonada de 8 pasos 10-45 mm    | [💸](https://s.click.aliexpress.com/e/_ATtnjt)     | [8_steps_10-45mm_incremental_drill_bit.pdf](/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf)           |
+| Tarjeta de circuito impreso (PCB) | Enlace de compra | Repositorio con archivos fuente  |
+| --------------------------------- | ---------------- | ------------------------------- |
+| Tarjeta prototipo para caja de 83x58mm | [compralo aqui](https://www.pcbway.com/project/shareproject/mcu_proto_83x58mm_16815998.html) | [mcu-proto-100x68mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-83x58mm) |
