@@ -1,5 +1,5 @@
 ---
-title: "LoRa satellite ground station"
+title: "Ground station for LoRa satellites"
 excerpt_separator: "<!--more-->"
 classes: wide
 categories:
