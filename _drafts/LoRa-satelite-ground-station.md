@@ -164,45 +164,47 @@ Once the power connection was verified (usually the modules came with some sort 
 
 ###### Antenna placement.
 
-La antena debera ubicarse donde tenga una mayor vista del cielo (en el techo o mediante un poste muy largo) y en lo posible alejada de paredes y de estructuras metalicas. Dependiendo de nuestra vivienda esto podria no ser posible, asi que se debera hacer varias pruebas en ventanas para ver cual nos da mejor resultado. 
+The antenna must be placed where there is the clearest view of the sky (on the roof or on a long pole) and away from walls or metal structures. In some houses it is not possible so, many tests on the windows must be carried out to obtain the best result
 
-Si se quiere poner la caja a la intemperie, se debera sellar el segundo agujero de la caja con un trozo de caucho, igualmente se debera usar cinta de caucho autofundente para cubrir las partes metalicas de la antena y usar un poco de silicona neutra en los tornillos. Evitar usar silicona acida (la que tiene un olor a vinagre) pues esta tiende a oxidar los tornillos y partes metalicas
+For outdoor installation, seal the second cable gland with a piece of rubber, wrap some self fusing tape around antenna metallic parts, and put a bit of neutral cure silicone sealant over the screws. Avoid using an acidic silicone sealant (those that smell like vinegar) as it oxidizes screws and metallic parts
 
-###### Resultados obtenidos.
 
-Dadas las condiciones logisticas especificas de esta prueba, no era posible acceder al techo de la edificacion, ni instalar estructuras permanentes por fuera de las ventanas, por lo tanto, se decidio probar el siguiente configuracion: La caja con el receptor estaria dentro de la edificacion y la antena, la cual tiene un iman y puede ser montada/desmontada con facilidad, estaria afuera de la ventana sobre la reja. 
+###### Results
 
-La antena fue comprada en un comercio electronico local, no tiene ningun tipo de ajuste ni optimizacion. La prueba fue realizada en Cali, Colombia y el registro de mayor distancia recibida hasta la fecha fue desde el satelite [NORBY](https://tinygs.com/satellite/Norbi) cuando volaba sobre Arequipa, Peru, aproximadamente 2265 Kilometros en linea recta hacia el satelite, ¡nada mal para un receptor satelital cuyo costo ronda los 40 EUR, fue ensamblado en casa y que no requirio ningun tipo de ajuste!
+Due to the specific logistic conditions of this test, access to the roof was not possible and permanent structures could not be installed outside the windows, so the following configuration was tested: the receiver box would be placed inside, and a temporary magnetic mounted antenna on the outside.
+
+The antenna was purchased at a local store without any optimization or adjustment. The test was carried out in Cali, Colombia, the longest range transmission was received from [NORBY](https://tinygs.com/satellite/Norbi) satellite over Arequipa, Peru. The distance is about 2265 Km in line of sight, nothing bad for a home-assembled satellite receiver, with a budget of approximately 40 EUR and no adjustment required
 
 <figure class="third">
 	<a href="/assets/images/TINYGS_WINDOW_SETUP.jpg"> <img src="/assets/images/TINYGS_WINDOW_SETUP_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TINYGS_WINDOW_ANTENNA.jpg"> <img src="/assets/images/TINYGS_WINDOW_ANTENNA_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TYNYGS_ANTENNA_RECEPTION.jpg"> <img src="/assets/images/TYNYGS_ANTENNA_RECEPTION_MEDIUM.jpg"> </a>
-	<figcaption>Setup de la estacion terrena en funcionamiento</figcaption>
+	<figcaption>Ground station setup working</figcaption>
 </figure>
 
-###### Variantes.
+###### Variants.
 
-Se desarrollo una version portatil de la estacion terrena, que usa una caja un poco mas pequeña y se alimenta mediante una bateria. Esta pensada para ser una estacion movil-temporal que se conecte a un WiFi de un telefono celular. Utiliza una bateria [LiFePo4](https://es.wikipedia.org/wiki/Bater%C3%ADa_de_litio-ferrofosfato) de 3.2 voltios, por lo tanto, no se requiere un regulador, la bateria va directamente conectada al pin de 3.3v del modulo LoRa. 
+A portable version of the ground station has been developed, it uses a smaller enclosure and is powered by a battery. It was designed to be a temporary-mobile station which connects to a mobile phone via WiFi. It uses a 3.2v [LiFePo4](https://es.wikipedia.org/wiki/Bater%C3%ADa_de_litio-ferrofosfato) battery, therefore no voltage regulator was required, the battery is connected directly to the 3.3v power pin of the LoRa module
 
-Este mismo hardware (tanto el fijo, como el portatil) pueden ser usados para otro tipo de proyectos, por ejemplo para el proyecto [aprs.fi](https://aprs.fi/), el cual es de especial interes para radioaficionados. El hardware es 100% compatible y solo requiere cambiar el firmware por [este](https://github.com/lora-aprs/LoRa_APRS_iGate).
+The same hardware (fixed or mobile versions) could be used for another type of projects, such as [aprs.fi](https://aprs.fi/), which is of particular interest to amateur radio operators. The hardware is 100% compatible and only requires a [firmware change](https://github.com/lora-aprs/LoRa_APRS_iGate)
+
 
 <figure class="third">
 	<a href="/assets/images/TINYGS_PORTABLE_PCB.jpg"> <img src="/assets/images/TINYGS_PORTABLE_PCB_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TINYGS_PORTABLE_WIRED.jpg"> <img src="/assets/images/TINYGS_PORTABLE_WIRED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TINYGS_PORTABLE_FW.jpg"> <img src="/assets/images/TINYGS_PORTABLE_FW_MEDIUM.jpg"> </a>
-	<figcaption>Detalle de la estacion terrena portatil</figcaption>
+	<figcaption>Detail of portable ground station</figcaption>
 </figure>
 
-| Componentes adicionales para version movil| Enlace de compra | Hoja de datos           |
+| Optional components for mobile version| Buy link | Datasheet           |
 | ------------ | ------ | ------------------------------------------------------------ |
-| Caja generica a prueba de agua 83x58x33mm  | [compralo aqui](https://s.click.aliexpress.com/e/_Ad6Gxn) | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf) |
-| Conector para bateria AA para PCB | [compralo aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [BH311.pdf](/assets/pdf/BH311.pdf) |
-| Bateria recargable Lifepo4 3.2V 14500 AA | [compralo aqui](https://s.click.aliexpress.com/e/_Asl8pn) | [Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf](/assets/pdf/Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf) |
+| Generic 83x58x33mm waterproof enclosure box | [buy it](https://s.click.aliexpress.com/e/_Ad6Gxn) | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf) |
+| AA Battery holder for PCB | [buy it](https://s.click.aliexpress.com/e/_A0wUdR) | [BH311.pdf](/assets/pdf/BH311.pdf) |
+| LiFePo4 3.2V 14500 AA Rechargeable battery| [buy it](https://s.click.aliexpress.com/e/_Asl8pn) | [Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf](/assets/pdf/Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf) |
 
 
-| Tarjeta de circuito impreso (PCB) | Enlace de compra | Repositorio con archivos fuente  |
+| Printed Circuit Board | Buy link | Source files repository  |
 | --------------------------------- | ---------------- | ------------------------------- |
-| Tarjeta prototipo para caja de 83x58mm | [compralo aqui](https://www.pcbway.com/project/shareproject/mcu_proto_83x58mm_16815998.html) | [mcu-proto-100x68mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-83x58mm) |
+| Prototype circuit board for 83x58mm enclosure | [buy it](https://www.pcbway.com/project/shareproject/mcu_proto_83x58mm_16815998.html) | [mcu-proto-83x58mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-83x58mm) |
 
 
