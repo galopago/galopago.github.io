@@ -119,7 +119,7 @@ author:
       # url: "https://instagram.com/"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/company/80487632"
+      url: "https://linkedin.com/company/galopago"
 
 # Site Footer
 footer:
@@ -144,7 +144,7 @@ footer:
       # url:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/company/80487632"
+      url: "https://linkedin.com/company/galopago"
 
 
 # Reading Files
