@@ -69,6 +69,27 @@ Se agrego un soporte para bateria AAA, conectores hembra para conectar/desconect
 	<figcaption>Tarjeta con sus componentes</figcaption>
 </figure>
 
+##### Cosechador de energia
+
+La camara obtiene energia de paneles solares que van instalados dentro de la carcasa, esto significa que el area de dichos paneles sera pequeña y se requerira maximizar su eficiencia. Para ello se uso un modulo de cosecha de energia basado en el integrado BQ25504. Este modulo eleva la tension de los paneles solares y es capaz de hacerlo con valores de voltaje tan bajos como 130mV!. Por lo tanto es capaz de producir corriente que sera almacenada en la bateria incluso si los paneles no reciben luz directa. 
+<figure>
+	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_HARVESTER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_HARVESTER_MEDIUM.jpg"> </a>
+	<figcaption>Circuito cosechador de energia adherido mediante cinta doble faz</figcaption>
+</figure>
+
+Este modulo tambien hace la funcion de cargador de bateria, pues se le configura un voltaje maximo de carga que nunca sera superado, ademas genera una señal en caso de bajo voltaje de bateria. La configuracion de estos parametros se hace mediante resistencias. El fabricante provee una hoja de calculo para facilitar dicho trabajo.
+
+Dado que la carcasa es transparente es posible ubicar distintos paneles solares dentro de ella en diferentes sitios y conectarlos ya sea en serie o paralelo. Probalmenente sea necesario poner diodos de alta eficiencia al hacer dichas conexiones, para no perder tanta potencia en caso de obtener sombras muy fuertes sobre alguno de los paneles.
+
+<figure class="third">
+	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_TWOPANELS.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_TWOPANELS_MEDIUM.jpg"> </a>
+	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDINSTALLED.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDINSTALLED_MEDIUM.jpg"> </a>
+	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BACKPANEL.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BACKPANEL_MEDIUM.jpg"> </a>
+	<figcaption>Paneles y tarjeta instalados dentro</figcaption>
+</figure>
+
+##### Presupesto energetico
+
 ##### Resistencias
 Valores de resistencias:
 
