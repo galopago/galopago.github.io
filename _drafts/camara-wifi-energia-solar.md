@@ -90,6 +90,52 @@ Dado que la carcasa es transparente es posible ubicar distintos paneles solares 
 
 ##### Presupesto energetico
 
+Advertencia: Se simplificaran aqui muchos datos para poder dar un resultado de forma simple y rapida!
+
+El esp32 requiere aproximadamente 200 mA a 3.3 V para enviar datos via WiFi, esto se traduce en 0.66 W. Un panel solar de 40x40mm que cabe dentro de la carcasa mencionada con anterioridad produce 65mA a 2 V a pleno sol, esto se traduce en 0.13 W. Con los anteriores datos es evidente que es imposible usar el esp32 en transmision WiFi continua con dicho panel, incluso a pleno sol. 
+
+La solucion implica el uso de un elemento de almacenamiento de energia como una bateria y el uso del modulo esp 32 de forma intermitente, consumiendo la menor energia posible cuando se encuentre en "modo sueño".
+
+El modulo en "sueño profundo" consume aproximadamente 0.88 mA a 3.3 V lo que se traduce en 0.003 W. Asumiendo 12 horas de luz al dia, se requeririan 0.006 W promedio en el dia solo para mantener el modulo dormido. Si el conjunto panel/cosechador puede al menos entregar promedio en el dia el 4.6% de la potencia maxima del panel solar a pleno sol, ya se puede mantener alimentado el esp 32 en modo sueño profundo por un tiempo muy largo (hasta que se desgaste la bateria!)
+
+Asumiendo 100.000 Lux como pleno sol y 100% de potencia del panel de 40x40mm como 0.13 W, se estimaria que la iluminacion promedio que se requiere en un dia para que el esp 32 permanezca alimentado en modo sueño profundo seria de unos 4600 Lux.
+
+##### Cuanta energia se requiere para tomar una fotografia y enviarla por internet
+
+Al modulo esp 32, despues de despertar de sueño profundo le toma aproximadamente 4 segundos para tomar una fotografia y enviarla por internet. Durante esos cuatro segundos la corriente exigida a la bateria es en promedio 200 mA a 3.3 V. La corriente que sebera acumular durante 12 horas para lograr tomar una foto sera:
+
+esp 32
+200 mA x 4 S
+
+se necesita:
+X mA x 12 H
+X ma x 12 (3600) S
+X ma x 43200 S  (redondeando a 40000 para facilitar los calculos)
+
+factor = 4 S / 40000 S = 0.0001
+
+200 mA * 0.0001 = 10 uA (a 3.3 V)
+
+Se requiere acumular un promedio de 10 uA durante doce horas para tomar una fotografia y enviarla via WiFi. Lo cual es perfectamente posible en exteriores incluso en dias nublados.
+
+Haciendo un comparativo con Lux y el panel de 40x40mm y 0.13 W
+
+100.000 Lux	=> 0.13 W
+   0.77 Lux => 1 uW
+
+
+10uA * 3.3V = 33 uW
+
+(0.77 Lux /uW ) 33 uW = 25.4 Lux (redondeando a 26 Lux)
+
+Se requeriran 26 Lux de promedio al dia para tomar una fotografia y enviarla por WiFi
+
+Por lo tanto para tomar al menos una fotografia al dia y enviarla por WiFi se requerira 4600 Lux + 26 Lux = 4626 Lux. Para tomar y enviar dos fotografias al dia se requeriran 4652 Lux de promedio al dia y asi sucesivamente!.
+
+
+
+
+
 ##### Resistencias
 Valores de resistencias:
 
