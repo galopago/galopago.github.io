@@ -12,7 +12,7 @@ header:
      teaser: "/assets/images/ENERGY_HARVESTING_CAMERA_TEASER.jpg"
 ---
 
-El modulo ESP32 CAM es un dispositivo economico basado en el modulo ESP32-S,un sensor de imagen OV2640 y un conector para tarjeta MicroSD. Si bien este dispositivo no viene diseñado para un bajo consumo de energia, tras una serie de modificaciones se puede llegar a un nivel aceptable para que funcione de modo intermitente alimentado por energia solar. El proyecto aqui presentado es una plataforma para experimentacion razonablemente robusta, a prueba de polvo y agua, basada en componentes comerciales listos para usar. Ideal para montajes en exteriores.
+El modulo ESP32-CAM es un dispositivo economico basado en el modulo ESP32-S,un sensor de imagen OV2640 y un conector para tarjeta MicroSD. Si bien este dispositivo no viene diseñado para un bajo consumo de energia, tras una serie de modificaciones se puede llegar a un nivel aceptable para que funcione de modo intermitente alimentado por energia solar. El proyecto aqui presentado es una plataforma para experimentacion razonablemente robusta, a prueba de polvo y agua, basada en componentes comerciales listos para usar. Ideal para montajes en exteriores.
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_MEDIUM.jpg"> </a>
@@ -23,9 +23,14 @@ Componente clave: [ESP 32 CAM](https://s.click.aliexpress.com/e/_Dde4rkL)
 {: .notice--danger}
 
 
+<figure>
+	<a href="/assets/images/solar_wificamera_wires.png"> <img src="/assets/images/solar_wificamera_wires.png"> </a>
+	<figcaption>Diagrama simplificado del proyecto</figcaption>
+</figure>
+
 ##### Reduciendo el consumo energetico
 
-EL ESP 32 CAM no esta diseñado para ser un dispositivo de bajo consumo, sin modificacion alguna, al poner el ESP32 en deep sleep, el consumo electrico medido es de 2.8 mA lo cual deja mucho que desear. 
+El ESP-32 CAM no esta diseñado para ser un dispositivo de bajo consumo, sin modificacion alguna, al poner el ESP32 en deep sleep, el consumo electrico medido es de 2.8 mA lo cual deja mucho que desear. 
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_POWER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_POWER_MEDIUM.jpg"> </a>
@@ -47,6 +52,30 @@ Estas modificaciones bajan el consumo en deep sleep hasta los 0.8 mA que es esca
 	<figcaption>Modificaciones y resultado final</figcaption>
 </figure>
 
+##### Listado de materiales
+
+<figure>
+	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS_MEDIUM.jpg"> </a>
+	<figcaption>Partes usadas en la construccion</figcaption>
+</figure>
+
+| Componente        | Enlace de compra | Hoja de datos                                   |
+| ----------------- | ---------------- | ----------------------------------------------- |
+| ESP 32-CAM        | [compralo aqui](https://s.click.aliexpress.com/e/_Dde4rkL) | [esp-32-cam.pdf](/assets/pdf/esp-32-cam.pdf) |
+
+| Tarjeta de circuito impreso (PCB) | Enlace de compra | Repositorio con archivos fuente  |
+| --------------------------------- | ---------------- | ------------------------------- |
+| Tarjeta prototipo ESP32-CAM para caja de camara deportiva | [compralo aqui](https://www.pcbway.com/project/shareproject/ESP32_CAM_HOST_BOARD_THAT_FITS_INSIDE_WATERPROOF_SPORTSCAM_HOUSING_d06579a9.html) | [esp32cam-proto-sportcam](https://github.com/galopago/misistemote/tree/main/esp32cam-proto-sportcam) |
+
+| Software | repositorio |
+| ----------------------- | ---------------- |
+| Firmware de ejemplo para envio de fotografias mediante HTTP POST | [descargalo aqui](https://github.com/galopago/esp32cam-upload) |
+| Servidor para envio de imagenes mediante HTTP POST | [descargalo aqui](https://github.com/galopago/golang-upload-server) |
+
+| Herramientas opcionales | Enlace de compra | Hoja de datos |
+| ----------------------- | ---------------- | ------------------------------- |
+| Taladro manual y juego de brocas de multiples diametros 0.5-3mm | [compralo aqui](https://s.click.aliexpress.com/e/_DBPw6on) | [Hand-drill-set-mini.pdf](/assets/pdf/Hand-drill-set-mini.pdf) |
+
 ##### Construccion de la plataforma
 
 La plataforma consta de una carcasa a prueba de agua para una camara deportiva y una tarjeta de circuito impreso con las dimensiones adecuadas para ser ubicada adentro. 
@@ -58,7 +87,7 @@ La plataforma consta de una carcasa a prueba de agua para una camara deportiva y
 
 La carcasa usada es bastante comun, facil de conseguir y economica. Se abre y cierra sin necesidad de tornillos y posee un punto donde se le pueden agregar diferentes tipos de accesorios para ser montada. 
 
-La tarjeta de circuito impreso fue diseñada para ubicar el modulo ESP 32 CAM en la ventana que la carcasa dispone para la ubicacion del lente. El modulo puede ser montado en dos posiciones diferentes para maximizar el area dependiendo de los componentes a usar.
+La tarjeta de circuito impreso fue diseñada para ubicar el modulo ESP32-CAM en la ventana que la carcasa dispone para la ubicacion del lente. El modulo puede ser montado en dos posiciones diferentes para maximizar el area dependiendo de los componentes a usar.
 
 Se agrego un soporte para bateria AAA, conectores hembra para conectar/desconectar facilmente el modulo y pines en donde conectar el programador, pues esta tarjeta no cuenta con dicho circuito. Tambien se agrego un led a la tarjeta para depuracion.
 
@@ -91,8 +120,9 @@ Dado que la carcasa es transparente es posible ubicar distintos paneles solares 
 ##### Presupesto energetico
 
 Advertencia: Se simplificaran aqui muchos datos para poder dar un resultado de forma simple y rapida!
+{: .notice--danger}
 
-El esp32 requiere aproximadamente 200 mA a 3.3 V para enviar datos via WiFi, esto se traduce en 0.66 W. Un panel solar de 40x40mm que cabe dentro de la carcasa mencionada con anterioridad produce 65mA a 2 V a pleno sol, esto se traduce en 0.13 W. Con los anteriores datos es evidente que es imposible usar el esp32 en transmision WiFi continua con dicho panel, incluso a pleno sol. 
+El ESP32 requiere aproximadamente 200 mA a 3.3 V para enviar datos via WiFi, esto se traduce en 0.66 W. Un panel solar de 40x40mm que cabe dentro de la carcasa mencionada con anterioridad produce 65mA a 2 V a pleno sol, esto se traduce en 0.13 W. Con los anteriores datos es evidente que es imposible usar el esp32 en transmision WiFi continua con dicho panel, incluso a pleno sol. 
 
 La solucion implica el uso de un elemento de almacenamiento de energia como una bateria y el uso del modulo esp 32 de forma intermitente, consumiendo la menor energia posible cuando se encuentre en "modo sueño".
 
