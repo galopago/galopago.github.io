@@ -41,7 +41,7 @@ Algunas personas en internet ya se han aventurado a hacer este tipo de modificac
 
 * Remover el regulador de voltaje de 5V a 3.3 V, la camara se alimentara directamente mediante bateria LiFePO4
 * Cortar la pista que alimenta la camara a 3.3 V y conectarla al MOSFET que conmuta los reguladores de 2.8V y 1.2V
-* Retirar el led y conectar el GPIO33 al pin de alimentacion de 5V para poder utilizar este GPIO de forma externa.
+* Retirar el led y conectar el GPIO33 al pin de alimentacion de 5V (este pin quedo aislado luego de retirar el regulador) para poder utilizar este GPIO de forma externa.
 
 Estas modificaciones bajan el consumo en deep sleep hasta los 0.8 mA que es escandaloso para ser llamado bajo consumo, sinembargo es un avance sustancial sobre los 2.8 mA sin modificacion alguna.
 
@@ -136,7 +136,7 @@ Asumiendo 100.000 Lux como pleno sol y 100% de potencia del panel de 40x40mm com
 
 Al modulo esp 32, despues de despertar de sueño profundo le toma aproximadamente 4 segundos para tomar una fotografia y enviarla por internet. Durante esos cuatro segundos la corriente exigida a la bateria es en promedio 200 mA a 3.3 V. La corriente que sebera acumular durante 12 horas para lograr tomar una foto sera:
 
-esp 32
+ESP 32
 200 mA x 4 S
 
 se necesita:
@@ -153,7 +153,8 @@ Se requiere acumular un promedio de 10 uA durante doce horas para tomar una foto
 Haciendo un comparativo con Lux y el panel de 40x40mm y 0.13 W
 
 100.000 Lux	=> 0.13 W
-   0.77 Lux => 1 uW
+
+0.77 Lux => 1 uW
 
 
 10uA * 3.3V = 33 uW
@@ -163,6 +164,8 @@ Haciendo un comparativo con Lux y el panel de 40x40mm y 0.13 W
 Se requeriran 26 Lux de promedio al dia para tomar una fotografia y enviarla por WiFi
 
 Por lo tanto para tomar al menos una fotografia al dia y enviarla por WiFi se requerira 4600 Lux + 26 Lux = 4626 Lux. Para tomar y enviar dos fotografias al dia se requeriran 4652 Lux de promedio al dia y asi sucesivamente!.
+
+En caso de usarse un panel mas pequeño como el que se encuentra en frente de la camara de 30x25mm, cuya potencia es aproximadamente un cuarto del de la parte trasera, los requerimientos luminicos deberan ser de al menos cuatro veces mas, por lo que solo seria posible usarlo en lugares con mucha iluminacion, especialmente directa.
 
 ##### Firmware y Software
 
