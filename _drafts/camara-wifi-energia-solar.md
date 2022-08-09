@@ -62,6 +62,22 @@ Estas modificaciones bajan el consumo en deep sleep hasta los 0.8 mA que es esca
 | Componente        | Enlace de compra | Hoja de datos                                   |
 | ----------------- | ---------------- | ----------------------------------------------- |
 | ESP 32-CAM        | [compralo aqui](https://s.click.aliexpress.com/e/_Dde4rkL) | [esp-32-cam.pdf](/assets/pdf/esp-32-cam.pdf) |
+| Carcasa para camara deportiva SJ4000 | [compralo aqui](https://s.click.aliexpress.com/e/_DFtVPpl) | [sj-4000-sport-cam-waterproof-case.pdf](/assets/pdf/sj-4000-sport-cam-waterproof-case.pdf) |
+| Modulo cosechador de energia BQ25504 |[compralo aqui](https://s.click.aliexpress.com/e/_DDgPnXv)|[bq25504-energy-harvesting-module.pdf](/assets/pdf/bq25504-energy-harvesting-module.pdf)|
+| Panel solar 39.5x39.5mm | [compralo aqui](https://s.click.aliexpress.com/e/_DCzYmzh) | [solar-panel-39-5x39-5.pdf](/assets/pdf/solar-panel-39-5x39-5.pdf)|
+| Panel solar 30x25mm |[compralo aqui](https://s.click.aliexpress.com/e/_DFMaS0r)|[solar-panel-30x25.pdf](/assets/pdf/solar-panel-30x25.pdf)|
+| Panel solar 53x18mm |[compralo aqui](https://s.click.aliexpress.com/e/_DCbT3Mb)|[solar-panel-53x18.pdf](/assets/pdf/solar-panel-53x18.pdf)|
+| Bateria AAA 10440 3.2V LiFePO4 |[compralo aqui](https://s.click.aliexpress.com/e/_DCA8kGr) |[lifepo4-3-2v-10440-rechargeable-battery-aaa.pdf](/assets/pdf/lifepo4-3-2v-10440-rechargeable-battery-aaa.pdf) |
+| Tarjeta Micro SD |[compralo aqui](https://s.click.aliexpress.com/e/_De2Jybl)|[micro-sd-card.pdf](/assets/pdf/micro-sd-card.pdf)|
+| Diodo Schottky 1N5817|[compralo aqui](https://s.click.aliexpress.com/e/_DewOC9v)|[1n5817.pdf](/assets/pdf/1n5817.pdf)|
+| Soporte para bateria AAA en PCB |[compralo aqui](https://s.click.aliexpress.com/e/_DmApqEj)|[bh-411.pdf](/assets/pdf/bh-411.pdf)|
+| Kit resistencias SMD 0603 | [compralo aqui](https://s.click.aliexpress.com/e/_DF6FuyR) | [4250-pcs-0603-smd-resistor-kit.pdf](/assets/pdf/4250-pcs-0603-smd-resistor-kit.pdf) |
+| Conector hembra regleta 2.54mm|[compralo aqui](https://s.click.aliexpress.com/e/_eNYVzN)|[FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf)|
+| Conector macho regleta 2.54mm |[compralo aqui](https://s.click.aliexpress.com/e/_eMCUJv)|[PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)|
+| Puente conexion 2, pines | [compralo aqui](https://s.click.aliexpress.com/e/_DCCHLqX) | [pin-header-jumper-block.pdf](/assets/pdf/pin-header-jumper-block.pdf)|
+| Cable de alta temperatura 30 AWG UL1423 PVDF| [compralo aqui](https://s.click.aliexpress.com/e/_eMiimB) | [UL1423.pdf](/assets/pdf/UL1423.pdf) |
+| Alambre de cobre recubierto para reparacion | [compralo aqui](https://s.click.aliexpress.com/e/_DEHlzoj) | [repair-copper-enamelled-wire.pdf](/assets/pdf/repair-copper-enamelled-wire.pdf) |
+|Cinta de poliamida para alta temperatura |[compralo aqui](https://s.click.aliexpress.com/e/_Dkf4nOR)|[high-temperature-polyimide-insulation-tape.pdf](/assets/pdf/high-temperature-polyimide-insulation-tape.pdf)|
 
 | Tarjeta de circuito impreso (PCB) | Enlace de compra | Repositorio con archivos fuente  |
 | --------------------------------- | ---------------- | ------------------------------- |
@@ -74,7 +90,7 @@ Estas modificaciones bajan el consumo en deep sleep hasta los 0.8 mA que es esca
 
 | Herramientas opcionales | Enlace de compra | Hoja de datos |
 | ----------------------- | ---------------- | ------------------------------- |
-| Taladro manual y juego de brocas de multiples diametros 0.5-3mm | [compralo aqui](https://s.click.aliexpress.com/e/_DBPw6on) | [Hand-drill-set-mini.pdf](/assets/pdf/Hand-drill-set-mini.pdf) |
+| Luxometro digital LCD | [compralo aqui](https://s.click.aliexpress.com/e/_DkDfxFp) | [digital-lcd-lux-meter.pdf](/assets/pdf/digital-lcd-lux-meter.pdf) |
 
 ##### Construccion de la plataforma
 
