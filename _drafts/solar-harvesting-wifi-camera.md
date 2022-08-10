@@ -55,7 +55,7 @@ These modifications lowered deep sleep current to 0.8 mA, which is scandalous fo
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS_MEDIUM.jpg"> </a>
-	<figcaption>Parts usaded </figcaption>
+	<figcaption>Parts used </figcaption>
 </figure>
 
 | Component        | Buy link | Datasheet                                   |
@@ -92,26 +92,27 @@ These modifications lowered deep sleep current to 0.8 mA, which is scandalous fo
 | USB to TTL 3.3 V 5 V interface| [buy it](https://s.click.aliexpress.com/e/_Dc9HbCx) | [usb-ttl-converter-3-3v-5v.pdf](/assets/pdf/usb-ttl-converter-3-3v-5v.pdf) |
 | Digital LCD Lux meter | [buy it](https://s.click.aliexpress.com/e/_DkDfxFp) | [digital-lcd-lux-meter.pdf](/assets/pdf/digital-lcd-lux-meter.pdf) |
 
-##### Construccion de la plataforma
+##### Assembly
 
-La plataforma consta de una carcasa a prueba de agua para una camara deportiva y una tarjeta de circuito impreso con las dimensiones adecuadas para ser ubicada adentro. 
+The basic platform consists of a waterproof enclosure for sport cam and a printed circuit board with the appropriate size to fit inside.
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_PLATFORM.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_PLATFORM_MEDIUM.jpg"> </a>
-	<figcaption>Componentes de la plataforma basica</figcaption>
+	<figcaption>Basic platform components</figcaption>
 </figure>
 
-La carcasa usada es bastante comun, facil de conseguir y economica. Se abre y cierra sin necesidad de tornillos y posee un punto donde se le pueden agregar diferentes tipos de accesorios para ser montada. 
+The proposed enclosure is pretty common, easy to find and inexpensive. Opens and closes without screws and has a mounting point where different mounting accessories can be installed.
 
-La tarjeta de circuito impreso fue diseñada para ubicar el modulo ESP32-CAM en la ventana que la carcasa dispone para la ubicacion del lente. El modulo puede ser montado en dos posiciones diferentes para maximizar el area dependiendo de los componentes a usar.
+The printed circuit board was designed to place ESP32-CAM near the window where the camera lens was to be located. The module can be positioned in two different orientations to maximize area, depending on the selected components.
 
-Se agrego un soporte para bateria AAA, conectores hembra para conectar/desconectar facilmente el modulo y pines en donde conectar el programador, pues esta tarjeta no cuenta con dicho circuito. Tambien se agrego un led a la tarjeta para depuracion.
+AAA battery clip added, female connectors to plug/unplug module easily and header pins for programming, because the board does not have such circuitry. Also, a red LED for debugging purposes was added.
+
 
 <figure class="third">
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDFRONT.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDFRONT_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDBACK.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDBACK_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_WITHMODULE.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_WITHMODULE_MEDIUM.jpg"> </a>
-	<figcaption>Tarjeta con sus componentes</figcaption>
+	<figcaption>Board with all components</figcaption>
 </figure>
 
 ##### Cosechador de energia
