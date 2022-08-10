@@ -12,7 +12,7 @@ header:
      teaser: "/assets/images/ENERGY_HARVESTING_CAMERA_TEASER.jpg"
 ---
 
-El modulo ESP32-CAM es un dispositivo economico basado en el modulo ESP32-S,un sensor de imagen OV2640 y un conector para tarjeta MicroSD. Si bien este dispositivo no viene diseñado para un bajo consumo de energia, tras una serie de modificaciones se puede llegar a un nivel aceptable para que funcione de modo intermitente alimentado por energia solar. El proyecto aqui presentado es una plataforma para experimentacion razonablemente robusta, a prueba de polvo y agua, basada en componentes comerciales listos para usar. Ideal para montajes en exteriores.
+El modulo [ESP32-CAM](https://programarfacil.com/esp32/esp32-cam/) es un dispositivo economico basado en el modulo ESP32-S,un [sensor de imagen OV2640](https://www.ourpcb.com/ov2640.html) y un conector para tarjeta MicroSD. Si bien este dispositivo no viene diseñado para un bajo consumo de energia, tras una serie de modificaciones se puede llegar a un nivel aceptable para que funcione de modo intermitente alimentado por energia solar. El proyecto aqui presentado es una plataforma para experimentacion razonablemente robusta, a prueba de polvo y agua, basada en componentes comerciales listos para usar. Ideal para montajes en exteriores.
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_MEDIUM.jpg"> </a>
@@ -30,17 +30,17 @@ Componente clave: [ESP 32 CAM](https://s.click.aliexpress.com/e/_Dde4rkL)
 
 ##### Reduciendo el consumo energetico
 
-El ESP-32 CAM no esta diseñado para ser un dispositivo de bajo consumo, sin modificacion alguna, al poner el ESP32 en deep sleep, el consumo electrico medido es de 2.8 mA lo cual deja mucho que desear. 
+El ESP-32 CAM no esta diseñado para ser un dispositivo de bajo consumo, sin modificacion alguna, al poner el ESP32 en sueño profundo, el consumo electrico medido es de 2.8 mA lo cual deja mucho que desear. 
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_POWER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_POWER_MEDIUM.jpg"> </a>
-	<figcaption>Medicion de consumo en deep sleep del modulo sin modificar</figcaption>
+	<figcaption>Medicion de consumo del modulo sin modificar en sueño profundo </figcaption>
 </figure>
 
-Algunas personas en internet ya se han aventurado a hacer este tipo de modificaciones las cuales son las siguientes:
+Algunas [personas en internet](https://brettbeeson.com.au/mini-battery-and-solar-powered-timelapse-camera/) ya se han aventurado a hacer este tipo de modificaciones las cuales son las siguientes:
 
-* Remover el regulador de voltaje de 5V a 3.3 V, la camara se alimentara directamente mediante bateria LiFePO4
-* Cortar la pista que alimenta la camara a 3.3 V y conectarla al MOSFET que conmuta los reguladores de 2.8V y 1.2V
+* Remover el regulador de voltaje de 5V a 3.3 V, la camara se alimentara directamente mediante bateria LiFePO4 que entrega 3.2V
+* Cortar la pista que alimenta la camara a 3.3 V y conectarla al [MOSFET Q2](https://github.com/SeeedDocument/forum_doc/blob/master/reg/ESP32_CAM_V1.6.pdf) que conmuta los reguladores de 2.8V y 1.2V
 * Retirar el led y conectar el GPIO33 al pin de alimentacion de 5V (este pin quedo aislado luego de retirar el regulador) para poder utilizar este GPIO de forma externa.
 
 Estas modificaciones bajan el consumo en deep sleep hasta los 0.8 mA que es escandaloso para ser llamado bajo consumo, sinembargo es un avance sustancial sobre los 2.8 mA sin modificacion alguna.
@@ -49,7 +49,7 @@ Estas modificaciones bajan el consumo en deep sleep hasta los 0.8 mA que es esca
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_SWTICH.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_SWTICH_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_NOREGULATORLED.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_NOREGULATORLED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_LOWPOWER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_LOWPOWER_MEDIUM.jpg"> </a>
-	<figcaption>Modificaciones y resultado final</figcaption>
+	<figcaption>Modificaciones y resultado final, se uso cinta de poliamida para proteger el delicado alambre</figcaption>
 </figure>
 
 ##### Listado de materiales
@@ -116,15 +116,15 @@ Se agrego un soporte para bateria AAA, conectores hembra para conectar/desconect
 
 ##### Cosechador de energia
 
-La camara obtiene energia de paneles solares que van instalados dentro de la carcasa, esto significa que el area de dichos paneles sera pequeña y se requerira maximizar su eficiencia. Para ello se uso un modulo de cosecha de energia basado en el integrado BQ25504. Este modulo eleva la tension de los paneles solares y es capaz de hacerlo con valores de voltaje tan bajos como 130mV!. Por lo tanto es capaz de producir corriente que sera almacenada en la bateria incluso si los paneles no reciben luz directa. 
+La camara obtiene energia de paneles solares que van instalados dentro de la carcasa, esto significa que el area de dichos paneles sera pequeña y se requerira maximizar su eficiencia. Para ello se uso un modulo de cosecha de energia basado en el integrado [BQ25504](https://www.lab4iot.com/2019/07/29/energy-harvesting-tutorial-with-the-ti-bq25570-part-1/). Este modulo eleva la tension de los paneles solares y es capaz de hacerlo con valores de voltaje tan bajos como 130mV!. Por lo tanto es capaz de producir corriente que sera almacenada en la bateria incluso si los paneles no reciben luz directa. 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_HARVESTER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_HARVESTER_MEDIUM.jpg"> </a>
 	<figcaption>Circuito cosechador de energia adherido mediante cinta doble faz</figcaption>
 </figure>
 
-Este modulo tambien hace la funcion de cargador de bateria, pues se le configura un voltaje maximo de carga que nunca sera superado, ademas genera una señal en caso de bajo voltaje de bateria. La configuracion de estos parametros se hace mediante resistencias. El fabricante provee una hoja de calculo para facilitar dicho trabajo.
+Este modulo tambien hace la funcion de cargador de bateria, pues se le configura un voltaje maximo de carga que nunca sera superado, ademas genera una señal en caso de bajo voltaje de bateria. La [configuracion de estos parametros](https://github.com/galopago/electronic-modules-helper/tree/main/cjmcu-25504) se hace mediante resistencias. El fabricante provee una hoja de calculo para facilitar dicho trabajo.
 
-Dado que la carcasa es transparente es posible ubicar distintos paneles solares dentro de ella en diferentes sitios y conectarlos ya sea en serie o paralelo. Probalmenente sea necesario poner diodos de alta eficiencia al hacer dichas conexiones, para no perder tanta potencia en caso de obtener sombras muy fuertes sobre alguno de los paneles.
+Dado que la carcasa es transparente es posible ubicar distintos paneles solares dentro de ella en diferentes sitios y conectarlos ya sea en serie o paralelo. Probalmenente sea necesario poner [diodos de alta eficiencia al hacer dichas conexiones](https://www.dsisolar.com/info/pv-junction-box-s-bypass-diode-for-solar-panel-54221810.html), para no perder tanta potencia en caso de obtener sombras muy fuertes sobre alguno de los paneles.
 
 Otra funcion importante del modulo cosechador es generar una señal de NIVEL DE VOLTAJE OK, para que la MCU pueda ser operada cuando todo esta bajo control, o para que por el contrario se mantenga en modo RESET en caso que el nivel de la bateria sea demasiado bajo. 
 
@@ -132,7 +132,7 @@ Otra funcion importante del modulo cosechador es generar una señal de NIVEL DE 
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_TWOPANELS.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_TWOPANELS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDINSTALLED.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDINSTALLED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BACKPANEL.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BACKPANEL_MEDIUM.jpg"> </a>
-	<figcaption>Paneles y tarjeta instalados dentro</figcaption>
+	<figcaption>Paneles y tarjeta instalados dentro. Usar un poco de espuma elastica para lograr el ajuste de las tarjetas</figcaption>
 </figure>
 
 ##### Presupesto energetico
@@ -150,28 +150,25 @@ Asumiendo 100.000 Lux como pleno sol y 100% de potencia del panel de 40x40mm com
 
 ##### Cuanta energia se requiere para tomar una fotografia y enviarla por internet
 
-Al modulo esp 32, despues de despertar de sueño profundo le toma aproximadamente 4 segundos para tomar una fotografia y enviarla por internet. Durante esos cuatro segundos la corriente exigida a la bateria es en promedio 200 mA a 3.3 V. La corriente que sebera acumular durante 12 horas para lograr tomar una foto sera:
+Al modulo esp 32, despues de despertar de sueño profundo le toma aproximadamente 4 segundos para tomar una fotografia y enviarla por internet. Durante esos cuatro segundos la corriente exigida a la bateria es en promedio 200 mA a 3.3 V. La corriente que se debera acumular durante 12 horas para lograr tomar una foto sera:
 
-ESP 32
+ESP 32:  
 200 mA x 4 S
 
-se necesita:
-X mA x 12 H
-X ma x 12 (3600) S
-X ma x 43200 S  (redondeando a 40000 para facilitar los calculos)
+se necesita:  
+? mA x 12 H  
+? ma x 12 (3600) S  
+? ma x 43200 S  (redondeando a 40000 para facilitar los calculos)  
 
-factor = 4 S / 40000 S = 0.0001
-
-200 mA * 0.0001 = 10 uA (a 3.3 V)
+factor = 4 S / 40000 S = 0.0001  
+200 mA * 0.0001 = 10 uA  
 
 Se requiere acumular un promedio de 10 uA durante doce horas para tomar una fotografia y enviarla via WiFi. Lo cual es perfectamente posible en exteriores incluso en dias nublados.
 
 Haciendo un comparativo con Lux y el panel de 40x40mm y 0.13 W
 
-100.000 Lux	=> 0.13 W
-
-0.77 Lux => 1 uW
-
+100.000 Lux	=> 0.13 W  
+0.77 Lux => 1 uW  
 
 10uA * 3.3V = 33 uW
 
