@@ -138,14 +138,17 @@ Another important function of the energy harvesting module is the ability to out
 
 ##### Energy budget
 
-Advertencia:¡Se simplificaran aqui muchos datos para poder dar un resultado de forma simple y rapida!
+Warning: Some data will be simplified to yield simpler and faster results!
 {: .notice--danger}
 
-El ESP32 requiere aproximadamente 200 mA a 3.3 V para enviar datos via WiFi, esto se traduce en 0.66 W. Un panel solar de 40x40 mm que cabe dentro de la carcasa mencionada con anterioridad produce 65 mA a 2 V a pleno sol, esto se traduce en 0.13 W.  
 
-Con los anteriores datos es evidente que es imposible usar el ESP32 en transmision WiFi continua con dicho panel, incluso a pleno sol. 
+ESP32 draws about 200 mA at 3.3 V to send data over Wi-Fi, which is equivalent to 0.66 W. A 40x40 mm solar panel that fits inside the aforementioned enclosure yields around 65 mA at 2 V at full sun, which is equivalent to 0.13 W.
 
-La solucion al anterior problema implica el uso de un elemento de almacenamiento de energia como una bateria y el uso del modulo ESP32 de forma intermitente, consumiendo la menor energia posible cuando se encuentre en modo sueño.
+With this data, it is clear that it is not possible to use ESP32 sending data over Wi-Fi continuously with that panel, even in full sunlight.
+
+To deal with this problem, two things are needed: a storage element, and the use of the ESP32 module in non continuous (duty cycled) mode.
+
+The module in deep sleep mode draws about 0.88 mA at 3.3 V, which is equivalent to 0.003 W. Assuming 12 hours of daylight, it will take an average of 0.006 W average per day, just to keep the module energized up in sleep mode.
 
 El modulo en sueño profundo consume aproximadamente 0.88 mA a 3.3 V lo que se traduce en 0.003 W. Asumiendo 12 horas de luz al dia, se requeririan 0.006 W promedio en el dia solo para mantener el modulo dormido. Si el conjunto panel/cosechador puede al menos entregar promedio en el dia el 4.6% de la potencia maxima del panel solar a pleno sol, ya se puede mantener alimentado el ESP32 en modo sueño profundo por un tiempo muy largo (hasta que se desgaste la bateria!)
 
