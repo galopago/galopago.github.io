@@ -107,7 +107,6 @@ The printed circuit board was designed to place ESP32-CAM near the window where 
 
 AAA battery clip added, female connectors to plug/unplug module easily and header pins for programming, because the board does not have such circuitry. Also, a red LED for debugging purposes was added.
 
-
 <figure class="third">
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDFRONT.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDFRONT_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDBACK.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDBACK_MEDIUM.jpg"> </a>
@@ -115,28 +114,29 @@ AAA battery clip added, female connectors to plug/unplug module easily and heade
 	<figcaption>Board with all components</figcaption>
 </figure>
 
-##### Cosechador de energia
+##### Energy harvester
 
-La camara obtiene energia de paneles solares que van instalados dentro de la carcasa, esto significa que el area de dichos paneles sera pequeña y se requerira maximizar su eficiencia. Para ello se uso un modulo de cosecha de energia basado en el integrado [BQ25504](https://www.lab4iot.com/2019/07/29/energy-harvesting-tutorial-with-the-ti-bq25570-part-1/). Este modulo eleva la tension de los paneles solares y es capaz de hacerlo con valores de voltaje tan bajos como 130 mV!. Por lo tanto, es capaz de producir corriente que sera almacenada en la bateria incluso si los paneles no reciben luz directa. 
+The camera gets its energy from solar panels installed inside the enclosure, which means that the area available is small, so a way to maximize its efficiency is needed. A harvesting module based on [BQ25504](https://www.lab4iot.com/2019/07/29/energy-harvesting-tutorial-with-the-ti-bq25570-part-1/) chip was used. This device boosts solar panel voltage and is able to do that with voltages down to 130 mV!, is therefore able to supply current for storage in the battery, even without direct light hitting the panel.
+
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_HARVESTER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_HARVESTER_MEDIUM.jpg"> </a>
-	<figcaption>Circuito cosechador de energia adherido mediante cinta doble faz</figcaption>
+	<figcaption>Energy harvesting module attached with double sided-tape</figcaption>
 </figure>
 
-Este modulo tambien realiza la funcion de cargador de bateria, pues se le configura un voltaje maximo de carga que nunca sera superado, ademas genera una señal en caso de bajo voltaje de bateria. La [configuracion de estos parametros](https://github.com/galopago/electronic-modules-helper/tree/main/cjmcu-25504) se hace mediante resistencias. El fabricante provee una [hoja de calculo](https://www.ti.com/product/BQ25504) para facilitar dicho trabajo.
+The module also works as a battery charger with over voltage and under voltage protection. In order to [set voltage values](https://github.com/galopago/electronic-modules-helper/tree/main/cjmcu-25504), some resistors must be modified. The module's manufacturer provides a [spreadsheet](https://www.ti.com/product/BQ25504) to make the process easier.
 
-Dado que la carcasa es transparente, es posible ubicar distintos paneles solares dentro de ella en diferentes sitios y conectarlos, ya sea en serie o paralelo. Probablemente, sea necesario poner [diodos de alta eficiencia al hacer dichas conexiones](https://www.dsisolar.com/info/pv-junction-box-s-bypass-diode-for-solar-panel-54221810.html), para no perder tanta potencia en caso de obtener sombras muy fuertes sobre alguno de los paneles.
+Because the enclosure is transparent, it is possible to put a few solar panels in various places inside, and wire them in parallel or series. Maybe some [diodes](https://www.electronics-tutorials.ws/diode/bypass-diodes.html) will be required to not lose a lot of efficiency when some panels are shaded.
 
-Otra funcion importante del modulo cosechador es generar una señal de NIVEL DE VOLTAJE OK, para que la MCU pueda ser operada cuando todo esta bajo control, o para que, por el contrario, se mantenga en modo RESET en caso de que el nivel de la bateria sea demasiado bajo. 
+Another important function of the energy harvesting module is the ability to output a VOLTAGE OK SIGNAL, so the MCU could be kept in reset state when the battery voltage is too low to operate. 
 
 <figure class="third">
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_TWOPANELS.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_TWOPANELS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDINSTALLED.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDINSTALLED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BACKPANEL.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BACKPANEL_MEDIUM.jpg"> </a>
-	<figcaption>Paneles y tarjeta instalados dentro. Usar un poco de espuma elastica para lograr el ajuste de las tarjetas</figcaption>
+	<figcaption>Solar panels and board installed in the interior. Use a piece of EVA foam to keep things in place</figcaption>
 </figure>
 
-##### Presupuesto energetico
+##### Energy budget
 
 Advertencia:¡Se simplificaran aqui muchos datos para poder dar un resultado de forma simple y rapida!
 {: .notice--danger}
