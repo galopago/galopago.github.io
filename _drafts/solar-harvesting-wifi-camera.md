@@ -148,37 +148,35 @@ With this data, it is clear that it is not possible to use ESP32 sending data ov
 
 To deal with this problem, two things are needed: a storage element, and the use of the ESP32 module in non continuous (duty cycled) mode.
 
-The module in deep sleep mode draws about 0.88 mA at 3.3 V, which is equivalent to 0.003 W. Assuming 12 hours of daylight, it will take an average of 0.006 W average per day, just to keep the module energized up in sleep mode.
+The module in deep sleep mode draws about 0.88 mA at 3.3 V, which is equivalent to 0.003 W. Assuming 12 hours of daylight, it will take an average of 0.006 W average per day, just to keep the module energized up in sleep mode. If the pair panel/harvester can yield an average of 4.6% of the maximum power of the solar panel at full sun, it is enough to keep energized the ESP32 in deep sleep mode for a very long time (until battery degradation!).
 
-El modulo en sueño profundo consume aproximadamente 0.88 mA a 3.3 V lo que se traduce en 0.003 W. Asumiendo 12 horas de luz al dia, se requeririan 0.006 W promedio en el dia solo para mantener el modulo dormido. Si el conjunto panel/cosechador puede al menos entregar promedio en el dia el 4.6% de la potencia maxima del panel solar a pleno sol, ya se puede mantener alimentado el ESP32 en modo sueño profundo por un tiempo muy largo (hasta que se desgaste la bateria!)
+Assuming 100.000 Lux as a full sun and 100% of the 40x40 mm solar panel power as 0.13 W, it is estimated that the average irradiance required per day to keep the ESP32 energized in deep sleep is around 4600 Lux. 
 
-Asumiendo 100.000 Lux como pleno sol y 100% de potencia del panel de 40x40 mm como 0.13 W, se estima que la iluminacion promedio que se requiere en un dia para que el ESP32 permanezca alimentado en modo sueño profundo seria de unos 4600 Lux.
+##### How much energy is required to take a picture and upload it over the internet?
 
-##### Cuanta energia se requiere para tomar una fotografia y enviarla por internet
+After waking up from a deep sleep, it takes about 4 seconds for the ESP32 to take a picture, store it in the SD card, and bring it online. The average power consumption of these 4 seconds is 200 mA at 3.3 V. The current to be accumulated for 12 hours to is:
 
-Al modulo ESP32, despues de despertar de sueño profundo le toma aproximadamente 4 segundos para tomar una fotografia, almacenarla en la tarjeta SD y enviarla por internet. Durante esos cuatro segundos la corriente exigida a la bateria es en promedio 200 mA a 3.3 V. La corriente que se debera acumular durante 12 horas para lograr tomar una foto sera:
-
-Ciclo del ESP 32:  
+ESP 32 Cycle:  
 200 mA x 4 S
 
-se necesita:  
+It is needed:  
 ? mA x 12 H  
 ? ma x 12 (3600) S  
-? ma x 43200 S  (redondeando a 40000 para facilitar los calculos)  
+? ma x 43200 S  (rounding down to 40000 to make calculations easier)  
 
 factor = 4 S / 40000 S = 0.0001  
 200 mA * 0.0001 = 10 uA  
 
-Se requiere acumular un promedio de 10 uA durante doce horas para tomar una fotografia y enviarla via WiFi. Lo cual es perfectamente posible en exteriores, incluso en dias nublados.
+It is required an average of 10 uA for 12 hours to take a picture and send it to a server, which is perfectly feasible in the outdoors, even on cloudy days.
 
-Hallando la relacion entre Lux y potencia para el panel de 40x40 mm y 0.13 W
+Finding the relation between Lux and output power of the 40x40 mm and 0.13 W solar panel.
 
 100.000 Lux	=> 0.13 W  
 0.77 Lux => 1 uW  
 
 10uA * 3.3V = 33 uW
 
-(0.77 Lux /uW ) 33 uW = 25.4 Lux (redondeando a 26 Lux)
+(0.77 Lux /uW ) 33 uW = 25.4 Lux (rounding up to 26 Lux)
 
 Se requeriran 26 Lux de promedio al dia para tomar una fotografia y enviarla por WiFi
 
