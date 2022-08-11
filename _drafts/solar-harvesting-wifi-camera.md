@@ -138,9 +138,8 @@ Another important function of the energy harvesting module is the ability to out
 
 ##### Energy budget
 
-Warning: Some data will be simplified to yield simpler and faster results!
+Warning: Some data and procedures will be simplified to yield simpler and faster results!
 {: .notice--danger}
-
 
 ESP32 draws about 200 mA at 3.3 V to send data over Wi-Fi, which is equivalent to 0.66 W. A 40x40 mm solar panel that fits inside the aforementioned enclosure yields around 65 mA at 2 V at full sun, which is equivalent to 0.13 W.
 
@@ -162,7 +161,7 @@ ESP 32 Cycle:
 It is needed:  
 ? mA x 12 H  
 ? ma x 12 (3600) S  
-? ma x 43200 S  (rounding down to 40000 to make calculations easier)  
+? ma x 43200 S  (Approximating to 40000 to make calculations easier)  
 
 factor = 4 S / 40000 S = 0.0001  
 200 mA * 0.0001 = 10 uA  
@@ -176,22 +175,23 @@ Finding the relation between Lux and output power of the 40x40 mm and 0.13 W sol
 
 10uA * 3.3V = 33 uW
 
-(0.77 Lux /uW ) 33 uW = 25.4 Lux (rounding up to 26 Lux)
+(0.77 Lux /uW ) 33 uW = 25.4 Lux (Approximating to 26 Lux)
 
-Se requeriran 26 Lux de promedio al dia para tomar una fotografia y enviarla por WiFi
+It will take an average of 26 Lux per day to take a photo and send it over Wi-Fi
 
-Por lo tanto, para tomar al menos una fotografia al dia y enviarla por WiFi se requerira un promedio diario de 4600 Lux + 26 Lux = 4626 Lux. ¡Para tomar y enviar dos fotografias al dia se requeriran 4652 Lux de promedio al dia y asi sucesivamente!.
+In short, to take at least one photo a day and send it over Wi-Fi, it will take a daily average of 4600 Lux + 26 Lux = 4626 Lux. For two pictures a day it will take a daily average of 4652 Lux, and so on.
 
-En caso de usarse un panel mas pequeño como el que se encuentra en frente de la camara de 30x25 mm, cuya potencia es aproximadamente una cuarta parte del que esta instalado en la parte trasera, los requerimientos luminicos deberan ser de al menos cuatro veces mas.
+If a smaller panel is used, such as the 30x25 mm in the front of the camera, whose power is about a quarter of that installed on the back, the irradiance should be 4 times stronger.
+
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_PANELCOMPARE.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_PANELCOMPARE_MEDIUM.jpg"> </a>
-	<figcaption>Comparacion entre panel solar trasero y delantero</figcaption>
+	<figcaption>Solar panel in the front vs. solar panel in the back</figcaption>
 </figure>
 
-Para usar la camara con dicho panel se debera ubicarla en lugares con mucha iluminacion, especialmente luz directa.
+To use the camera with such a small panel, a lot of light is required, especially direct light.
 
-##### Firmware y Software
+##### Firmware and Software
 
 Se presenta como ejemplo un firmware cuya funcion es la siguiente: tomar una fotografia y almacenarla en la memoria Micro SD, enviarla mediante WiFI haciendo una peticion HTTP POST multi-parte, luego de esto entrar en modo de sueño profundo por X tiempo  para luego despertar y repetir el proceso. El codigo puede ser usado para construir un firmware mucho mas robusto y flexible dependiendo de las necesidades individuales. 
 
