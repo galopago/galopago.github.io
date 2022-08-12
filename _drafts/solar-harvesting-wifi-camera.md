@@ -193,19 +193,19 @@ To use the camera with such a small panel, a lot of light is required, especiall
 
 ##### Firmware and Software
 
-Se presenta como ejemplo un firmware cuya funcion es la siguiente: tomar una fotografia y almacenarla en la memoria Micro SD, enviarla mediante WiFI haciendo una peticion HTTP POST multi-parte, luego de esto entrar en modo de sueño profundo por X tiempo  para luego despertar y repetir el proceso. El codigo puede ser usado para construir un firmware mucho mas robusto y flexible dependiendo de las necesidades individuales. 
+The firmware released here does the following things: take a picture and store in the Micro SD card, then send it over Wi-Fi to a server doing a multipart HTTP POST request and then, enters deep sleep for X amount of seconds before starting the cycle again. The code could serve as a starting point in the creation of a more robust application adapted to individual needs.
 
-Por el lado del servidor, se presenta una pequeña aplicacion escrita en Golang, cuya finalidad es eschuchar peticiones HTTP POST y recibir los datos de imagen enviados por el ESP32-CAM y guardarlos en una carpeta local. Esta aplicacion debera estarse ejecutando en un PC, o en un Raspberry Pi dentro de la misma red local del ESP32-CAM. Puesto que es un ejemplo basico y no cuenta con ningun tipo de autenticacion, no se recomienda para su uso en un servidor publico en internet.
+On the server side, there is a small app written in Golang, which listens HTTP POST requests and receives the images sent by the ESP32-CAM and stores them in a local folder. This app should run on a PC, or a Raspberry Pi in the same LAN of the ESP32-CAM. Due to being a basic starter example, there is no authentication method developed, so it is not recommended for deploying in a public server in the Internet.
 
-Para programar el modulo, es necesario una interfaz USB a TTL serial,  pues este modulo no incorpora dicho chip. Tambien sera necesario poner el GPIO a GND durante la programacion. 
+To program the module, a USB to TTL serial converter is needed, because the module hasn’t an onboard chip for that task. In addition, GPIO0 should be tied to GND during programming.
 
-El GPIO33 ha sido liberado del led que usaba la tarjeta internamente y alambrado externamente, el firmware lo usa para depuracion, pero podria ser utilizado con otros fines como:
+GPIO33 was freed from the onboard LED and wired externally. The supplied firmware uses it for debugging, but it may be used for other purposes like:
 
-* ADC para determinar el voltaje de la bateria.
-* Configurado como pin de RTC podria ser usado para despertar la tarjeta del sueño profundo, por ejemplo con un sensor PIR.
-* Conectar un pulsador para realizar algun tipo de configuracion local sin requerir computador ni conectividad.
+* ADC for battery voltage measurement
+* Set up as an RTC pin to wake up the MCU from deep sleep, i.e., PIR sensor
+* Wire to a pushbutton to make local changes without a computer or Wi-Fi connectivity
 
-##### Resultados
+##### Resuls
 
 La calidad de la imagen no es grandiosa, cosa que era de esperarse por el bajo precio del modulo. Jugando con los diferentes parametros de configuracion de la imagen podria mejorarse la calidad, dependiendo de las condiciones de iluminacion especificas. La imagen mostrada a continuacion ha sido almacenada de forma automatica via WiFi por el modulo, en un Raspberry Pi donde se ejectuaba la aplicacion de [servidor de carga de fotografias](https://github.com/galopago/golang-upload-server).
 
