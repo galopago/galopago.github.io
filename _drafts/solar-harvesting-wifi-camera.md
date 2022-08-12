@@ -205,23 +205,23 @@ GPIO33 was freed from the onboard LED and wired externally. The supplied firmwar
 * Set up as an RTC pin to wake up the MCU from deep sleep, i.e., PIR sensor
 * Wire to a pushbutton to make local changes without a computer or Wi-Fi connectivity
 
-##### Resuls
+##### Results
 
-La calidad de la imagen no es grandiosa, cosa que era de esperarse por el bajo precio del modulo. Jugando con los diferentes parametros de configuracion de la imagen podria mejorarse la calidad, dependiendo de las condiciones de iluminacion especificas. La imagen mostrada a continuacion ha sido almacenada de forma automatica via WiFi por el modulo, en un Raspberry Pi donde se ejectuaba la aplicacion de [servidor de carga de fotografias](https://github.com/galopago/golang-upload-server).
+Image quality isn't great, which was expected due to the cost of the module. Quality could be improved, modifying several parameters of the chip depending on the specific lighting conditions. The image shown below was uploaded automatically by the module through Wi-Fi to a Raspberry Pi where the [Golang upload server](https://github.com/galopago/golang-upload-server) was running
 
 <figure class="half">
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_TESTRIG.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_TESTRIG_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_TESTPIC.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_TESTPIC_MEDIUM.jpg"> </a>
-	<figcaption>Montaje de prueba e imagen obtenida</figcaption>
+	<figcaption>Test rig and uploaded picture</figcaption>
 </figure>
 
-##### Posibles mejoras
+##### Possible improvements
 
-Tanto el firmware, como el servidor para carga de fotografias, tienen como funcion servir de esqueleto para producir aplicaciones mas robustas, por lo tanto algunas cosas se han obviado, queda como tarea para el lector llevar a cabo algunas mejoras propuestas como:
+Since firmware and upload server are very basic examples, there are some tasks proposed to the reader like:
 
-* WiFi manager para poder cambiar los parametros de conexion sin requerir reconexion.
-* Agregar algun tipo de autenticacion al enviar datos al servidor
-* Poder cambiar parametros como el intervalo de sueño profundo, calidad de las fotografias, etc, desde el servidor en cada envio de fotografias.
-* Implementar algun tipo de scheduler mediante el RTC, para que el modulo tome fotografias en fechas y horas especificas.
-* Usar una mejor antena WiFI (externa al modulo pero ubicada dentro de la carcasa), y ponerla en un sitio con menos obstrucciones dentro de la carcasa, para ello hay que realizar algunos cambios en los componentes cercanos al conector U.FL 
-
+* Wi-Fi manager to set up credentials without reprogramming.
+* Implement some form of authentication when communicating with the server.
+* A mechanism to change the deep sleep time, image settings, etc. from the server on every picture exchange.
+* Develop an RTC-based scheduler to take pictures on specific dates.
+* Use of a better Wi-Fi antenna (external to the module, but placed inside the enclosure), and place it in a place with less obstructions. Certain changes are needed in the components near the U.FL connector.
+ 
