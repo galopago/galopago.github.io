@@ -161,7 +161,7 @@ Ciclo del ESP 32:
 se necesita:  
 ? mA x 12 H  
 ? ma x 12 (3600) S  
-? ma x 43200 S  (redondeando a 40000 para facilitar los calculos)  
+? ma x 43200 S  (aproximando a 40000 para facilitar los calculos)  
 
 factor = 4 S / 40000 S = 0.0001  
 200 mA * 0.0001 = 10 uA  
@@ -175,7 +175,7 @@ Hallando la relacion entre Lux y potencia para el panel de 40x40 mm y 0.13 W
 
 10uA * 3.3V = 33 uW
 
-(0.77 Lux /uW ) 33 uW = 25.4 Lux (redondeando a 26 Lux)
+(0.77 Lux /uW ) 33 uW = 25.4 Lux (aproximando a 26 Lux)
 
 Se requeriran 26 Lux de promedio al dia para tomar una fotografia y enviarla por Wi-Fi
 
@@ -196,7 +196,7 @@ Se presenta como ejemplo un firmware cuya funcion es la siguiente: tomar una fot
 
 Por el lado del servidor, se presenta una pequeña aplicacion escrita en Golang, cuya finalidad es eschuchar peticiones HTTP POST y recibir los datos de imagen enviados por el ESP32-CAM y guardarlos en una carpeta local. Esta aplicacion debera estarse ejecutando en un PC, o en un Raspberry Pi dentro de la misma red local del ESP32-CAM. Puesto que es un ejemplo basico y no cuenta con ningun tipo de autenticacion, no se recomienda para su uso en un servidor publico en internet.
 
-Para programar el modulo, es necesario una interfaz USB a TTL serial,  pues este modulo no incorpora dicho chip. Tambien sera necesario poner el GPIO a GND durante la programacion. 
+Para programar el modulo, es necesario una interfaz USB a TTL serial,  pues este modulo no incorpora dicho chip. Tambien sera necesario poner el GPIO0 a GND durante la programacion. 
 
 El GPIO33 ha sido liberado del led que usaba la tarjeta internamente y alambrado externamente, el firmware lo usa para depuracion, pero podria ser utilizado con otros fines como:
 
