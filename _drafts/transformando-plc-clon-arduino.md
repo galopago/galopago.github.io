@@ -12,30 +12,204 @@ header:
      teaser: "/assets/images/AN007/PLC_CLONE_ARDUINO_TEASER.jpg"
 ---
 
-El modulo [ESP32-CAM](https://programarfacil.com/esp32/esp32-cam/) es un dispositivo economico basado en el modulo ESP32-S, un [sensor de imagen OV2640](https://www.ourpcb.com/ov2640.html) y un conector para tarjeta MicroSD. Si bien este dispositivo no viene diseñado para un bajo consumo de energia, tras una serie de modificaciones se puede llegar a un nivel aceptable para que funcione de modo intermitente alimentado por energia solar. El proyecto aqui presentado es una plataforma para experimentacion razonablemente robusta, a prueba de polvo y agua, basada en componentes comerciales listos para usar. Ideal para montajes en exteriores.
+Es bastante comun encontrarse en las plataformas de venta en linea con esta tipo de anuncio: "Tarjeta de control industrial, compatible con FX1N, FX2N, FX3U, y programable mediante software GX".Tienen precios muy conventientes, sinembargo la documentacion es nula, y no se menciona su compatibilidad para ser programadas con otro tipo de herramientas como Arduino. Este articulo tratara de resolver en cierto modo este problema
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_MEDIUM.jpg"> </a>
-	<figcaption>Camara Wi-Fi alimentada por energia solar lista para ser ubicada en exteriores</figcaption>
+	<figcaption>Tarjeta de control industrial compatible con software de programacion PLC de determinado fabricante</figcaption>
 </figure>
 
-Componente clave: [ESP 32 CAM](https://s.click.aliexpress.com/e/_Dde4rkL)
+Componente clave: [ZZZ](https://s.click.aliexpress.com/e/_Dde4rkL)
 {: .notice--danger}
 
 
-<figure>
-	<a href="/assets/images/solar_wificamera_wires.png"> <img src="/assets/images/solar_wificamera_wires.png"> </a>
-	<figcaption>Diagrama simplificado del proyecto</figcaption>
-</figure>
+##### El ataque de los clones
 
-##### Reduciendo el consumo energetico
-
-El ESP32-CAM no esta diseñado para ser un dispositivo de bajo consumo, sin modificacion alguna, al poner el ESP32 en sueño profundo, el consumo electrico medido es de 2.8 mA lo cual deja mucho que desear. 
+Estas tarjetas mencionan compatibilidad con el software producido por una empresa Japonesa que fabrica PLC y tambien automoviles. A simple vista se puede ver que la compatibilidad con dicha marca no es oficial. El origen es bastante incierto, podria ser una copia simplificada basandose en planos y codigo fuente original, o que de alguna manera se realizo ingenieria inversa al formato binario del PLC original y se construyo un interpretador, dentro del micrcontrolador. En su mayoria estas tarjetas microcontroladores STM32, y segun algunos articulos y videos, definitivamente el software de programacion logra reconocerlas como PLC originales!
 
 <figure>
-	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_POWER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_POWER_MEDIUM.jpg"> </a>
-	<figcaption>Medicion de consumo del modulo sin modificar en sueño profundo </figcaption>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_DINRAIL.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_DINRAIL_MEDIUM.jpg"> </a>
+	<figcaption>Carcasa plastica y compatible con montaje de riel DIN </figcaption>
 </figure>
+
+Por su bajo precio, y por disponer de reles de salida, entradas opto-acoplada puerto RS232 y fuente de poder regulada, serian ideales para realizar pequeños proyectos, si estas pudieran programarse con otro tipo de herramienta libre como Arduino o la suite de STM, adicional a esto se requeriria del esquematico para saber que pines de I/O del microcontrolador coinciden con los perifericos de la tarjeta!
+
+##### Listado de materiales
+
+<figure>
+	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS_MEDIUM.jpg"> </a>
+	<figcaption>Partes usadas en la construccion</figcaption>
+</figure>
+
+| Componente        | Enlace de compra | Hoja de datos
+|-------------------|------------------|---------------
+| tarjeta           | Enlace de compra | Hoja de datos
+| fuente riel 24v   | Enlace de compra | Hoja de datos
+| usb232            | Enlace de compra | Hoja de datos
+| Conectores db9 to | Enlace de compra | Hoja de datos
+| cable pvc         | Enlace de compra | Hoja de datos
+| dupont            | Enlace de compra | Hoja de datos
+| header macho      | Enlace de compra | Hoja de datos
+
+
+| Mapa de pines para tarjetas de control industrial | repositorio 
+| ------------------------------------------------- | ----------- 
+| tarjetas de control industrial basadas en stm32   |https://github.com/galopago/stm32-industrial-control-boards
+
+| Herramientas opcionales | Enlace de compra | Hoja de datos 
+| ----------------------- | ---------------- | ------------------------------- 
+| lentes relojero         | a                | b 
+| microscopio usb         | a                | b 
+| Multimetro AA  UT139C   | a                | b 
+
+##### Reprogramando
+
+La tarjeta en cuestion, cuenta con un procesador STM32F103, por lo tanto instintivamente se buscara un header con los pines para conectar un programador SWD
+
+<figure>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_PROGHEADER.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_PROGHEADER_MEDIUM.jpg"> </a>
+	<figcaption>Posible header para programacion en la derecha abajo del terminal de tornillos</figcaption>
+</figure>
+
+Despues de seguir las pistas de este header, se encontro que no estaban conectados a los pines SWD del microcontrolador, sino a los pines PC10 y PC11. Tampoco se encontro pistas visibles saliendo de los pines SWD desde el procesador, ni tampoco de los pines USB, por lo tanto la unica alternativa para lograr reprogramar el micro seria desde la UART1 usando el bootloader almacenado en la ROM.
+
+<figure>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_UART1.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_UART1_MEDIUM.jpg"> </a>
+	<figcaption>Componentes involucrados en el puerto serial</figcaption>
+</figure>
+
+Haciendo el seguimiento desde el conector DB9, las pistas llegan a un circuito integrado que tiene la referencia borrada, sinembargo tratandose de un puerto serial, y por los condensadores que hay cerca, se puede deducir que es un MAX232 o similar. Siguiendo las pistas desde este integrado al procesador, efectivamente esta conectado a los pines PA9 y PA10 que corresponden a la UART1.
+
+Afortunadamente en esta tarjeta esta claramente marcada la resistencia que esta conectada al BOOT0, lo que sera necesario para ingresar al modo bootloader y poder empezar a reprogramar la tarjeta. Para lograrlo se soldo unos pines al header donde hay 3.3 V y mediante un cable dupont, se conecta manual y temporalmente el pin BOOT0 al positivo mietras se aplica poder a la tarjeta
+
+<figure>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_BOOT0.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_BOOT0_MEDIUM.jpg"> </a>
+	<figcaption>Metodo usado para entrar en modo bootloader</figcaption>
+</figure>
+
+Una vez ejecutandose el bootloader, se procedio mediante STM32CubeProg y se constato la comunicacion con el microcontrolador. Se observo que este estaba en modo de proteccion de lectura, por lo que no se podria hacer un backup y dejar la tarjeta en su estado original. Se procedio a borrar toda la memoria flash del dispositivo.
+
+Mediante el IDE de Arduino, se instalo el STM32duino core y se realizo una pequeña aplicacion que enviaba datos por el puerto serial. Se descargo el programa y se verifico que estos datos llegaban al computador. Ahora empieza lo bueno!
+
+<figure>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_USB232.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_USB232_MEDIUM.jpg"> </a>
+	<figcaption>Convertidor USB a RS232 y conectores usados para la comunicacion entre el PC y la tarjeta</figcaption>
+</figure>
+
+
+##### Identificando los pines de I/O
+
+Dado que no existe esquematico de la tarjeta, ni marcas en el silscreen que indiquen cuales pines de I/O del microcontrolador van a que periferico, este trabajo se debera hacer manualmente, con paciencia siguiendo las pistas. Afortunadamente la tarjeta es de solo 2 caras, asi que armado con lentes de aumento y multimetro se inicia la travesia.
+
+###### LEDs e interruptor
+
+La tarjeta posee dos indicadores LED, uno etiquetado como RUN y el otro etiquetado como ERR. Tambien posee un interruptor que era usado por el antiguo firmware del PLC para detener la ejecucion del programa. Dado que estos perifericos tienen muy pocos elementos involucrados hasta llegar al procesador, seran los mas faciles para iniciar.
+
+<figure>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_SWITCHLEDS.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_SWITCHLEDS_MEDIUM.jpg"> </a>
+	<figcaption>Pines de I/O para los LED e interruptor identificados</figcaption>
+</figure>
+
+Los pines se encontraron mapeados de la siguiente manera:
+
+|ELEMENTO              |PIN
+|----------------------|-----
+| LED RUN              | PB12
+| LED ERR              | PB13
+| INTERRUPTOR RUN/STOP | PC9
+
+###### Entradas digitales
+
+Las entradas son relativamente sencillas de encontrar, pues las pistas que salen del optoacoplador llegan directamente al microcontrolador. Solo unas pocas fueron problematicas pues saltan a la otra cara y otras pasan debajo de componentes grandes.
+
+
+<figure>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_INPUTS.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_INPUTS_MEDIUM.jpg"> </a>
+	<figcaption>Siguiendo las pistas de entrada</figcaption>
+</figure>
+
+Los pines se encontraron mapeados de la siguiente manera:
+
+|ELEMENTO   |PIN
+|-----------|-----
+| X0        | PA0
+| X1        | PA1
+| X2        | PB9
+| X3        | PA6
+| X4        | PA7
+| X5        | PB5
+| X6        | PB4
+| X7        | PD2
+
+###### Salidas digitales
+
+Las salidas tomaron la mayor cantidad de esfuerzo, pues estas van primero a un integrado UL2003 y de alli a cada uno de los reles, pasando por debajo de componentes e incluso cambiando de cara, aqui se uso el multimetro para poder seguir los caminos.
+
+<figure>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_OUTPUTS.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_OUTPUTS_MEDIUM.jpg"> </a>
+	<figcaption>Siguiendo las pistas de salida</figcaption>
+</figure>
+
+Los pines se encontraron mapeados de la siguiente manera:
+
+|ELEMENTO   |PIN
+|-----------|-----
+| Y0        | PB8
+| Y1        | PB1
+| Y2        | PB10
+| Y3        | PB0
+| Y4        | PC5
+| Y5        | PC4
+| X6        | PB4
+| X7        | PD2
+
+
+###### Entradas analogas
+
+Las entradas analogas tambien son relativamente faciles de encontrar, pues son pocas (3) y estan conectadas solamente mediante dos resistencias que conforman un divisor de voltaje ( 15K/30 ) antes de ingresar al microcontrolador.
+
+<figure>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_AINPUTS.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_AINPUTS_MEDIUM.jpg"> </a>
+	<figcaption>Siguiendo las pistas de entradas analogas</figcaption>
+</figure>
+
+Los pines se encontraron mapeados de la siguiente manera:
+
+|ELEMENTO   |PIN
+|-----------|-----
+| AD1       | PC1
+| AD2       | PC2
+| AD3       | PC0
+
+##### Toques finales
+
+En este momento ya se tienen mapeados todos los perifericos a los pines de I/O del microcontrolador, sinembargo cada que se requiere programar, se debera hacer el puente entre los 3.3V y el pin BOOT0. Lo que implica abrir la carcasa. Una solucion rapida seria cablear el interruptor que usaba el PLC para la funcion de RUN/STOP al pin BOOT0, de esta forma se podria activar/desactivar el bootloader de forma externa sin tener que quitar la tapa cada vez que se requiera reprogramarlo
+
+<figure>
+	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_BOOTSWITCH.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_BOOTSWITCH_MEDIUM.jpg"> </a>
+	<figcaption>Interruptor para BOOT0 ahora accionable de forma externa</figcaption>
+</figure>
+
+
+##### Resumiendo
+
+En este punto se tiene una tarjeta de bajo costo y con perifericos suficentes para realizar pequeños proyectos y experimentos sin requerir hardware adicional, y que puede ser programada mediante Arduino o la suite de STM. En caso de querer replicar esta experiencia con una tarjeta diferente se deberan seguir los siguientes pasos:
+
+* Buscar un posible header de programacion SWD (4 pines) y seguir las pistas para corroborar que si lo sea.
+* Si el paso anterior falla, seguir los pines de la UART1 y agregar el hardware necesario para conectar al computador (convertidores de nivel, conectores, etc)
+* Buscar el pin BOOT0, generalmente va conectado a tierra mediante una resistencia, esta servira como "testpoint"
+* Mediante STM32CubeProg borrar la memoria del microcontrolador. Si se usa la UART1 como medio de conexion, se debera ejecutar el Bootloader almacenado en la ROM poniendo el pin BOOT0 a 3.3v cuando se conecta la alimentacion de la tarjeta.
+* Mediante el IDE de arduino o el de STM generar una pequeña aplicacion de transmision por puerto serial, para comprobar que la tarjeta puede ser programada.
+* Seguir las pistas para encontrar los pines de I/O del microcontrolador conectados a los diversos perifericos
+* Realizar una conexion entre el pin BOOT0 y el interruptor RUN/STOP para poder reprogramar con facilidad
+
+##### Posibles mejoras
+
+Crear una aplicacion esqueleto, sobre la que se escribiran todos los programas, esta aplicacion tendra algun tipo de mecanismo para verificar el estado del interruptor RUN/STOP cada vez que se inicia el programa, y saltar al bootloader para programacion o ejecutar el programa almacenado, de forma tal que no se requiera hacer la conexion electrica mediante el cable que uno el BOOT0 con el interruptor de RUN/STOP.
+
+Otra alternativa, si no se quiere tener una aplicacion esqueleto con lineas de codigo adicionales, seria desarrollar un bootloader que use la UART1, similar al que hay almacenado en la ROM, pero almacenado en la FLASH, de forma tal que se ejecute siempre al alimentar el microcontrolador, revise el estado del interruptor RUN/STOP, para descargar un nuevo programa, o para ejecutar el que ya hay almacenado.
+
+
 
 Algunas [personas en internet](https://brettbeeson.com.au/mini-battery-and-solar-powered-timelapse-camera/) ya se han aventurado a hacer este tipo de modificaciones, las cuales son las siguientes:
 
