@@ -100,41 +100,39 @@ Using Arduino IDE, it was proceeded to the installation [STM32duino core](https:
 	<figcaption>USB to RS232 converter and connectors used for communication check between PC and board</figcaption>
 </figure>
 
+##### Identifying I/O pins
 
-##### Identificando los pines de I/O
+Because of the lack of a schematic diagram, or marks in the silkscreen showing which microcontroller I/O pins goes to which peripheral, this work must be done manually, with a lot of patience to follow the tracks. Fortunately the board has only 2 layers, so it is possible to start with only a double-eye magnifier for jewelry and a multimeter.
 
-Dado que no existe esquematico de la tarjeta, ni marcas en la serigrafia que indiquen cuales pines de I/O del microcontrolador van a que periferico, este trabajo se debera hacer manualmente, con paciencia siguiendo las pistas. Afortunadamente, la tarjeta es de solo 2 caras, asi,  haciendo uso de lentes de aumento y multimetro se inicia la aventura.
+###### LED and switch
 
-###### LED e interruptor
-
-La tarjeta posee dos indicadores LED, uno etiquetado como RUN y el otro etiquetado como ERR. Tambien posee un interruptor que era usado por el antiguo firmware del PLC para detener la ejecucion del programa. Dado que estos perifericos tienen muy pocos elementos involucrados hasta llegar al microcontrolador, seran los mas faciles para iniciar.
+The board has two LED indicators, one labeled as RUN an the other labeled as ERR. Additionally, there is a switch that was used by the old PLC firmware to stop program execution. Due to these peripherals have a few elements between them and the microcontroller, they are very easy to start with.
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_SWITCHLEDS.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_SWITCHLEDS_MEDIUM.jpg"> </a>
-	<figcaption>Pines de I/O para LED e interruptor identificados</figcaption>
+	<figcaption>Microcontroller I/O pins connected to LED indicators and switch identified</figcaption>
 </figure>
 
-Los pines se encontraron mapeados de la siguiente manera:
+The pins were found mapped as follows:
 
-|ELEMENTO              |PIN
+
+|ELEMENT               |PIN
 |----------------------|-----
 | LED RUN              | PB12
 | LED ERR              | PB13
 | INTERRUPTOR RUN/STOP | PC9
 
-###### Entradas digitales
-
-Las entradas son relativamente sencillas de encontrar, pues las pistas que salen del optoacoplador llegan directamente al microcontrolador. Solo unas pocas fueron problematicas, pues saltan a la otra cara y otras pasan debajo de componentes grandes.
-
+###### Digital inputs
+Digital inputs were relatively easy to find, because the tracks leaving the optocuplers went directly to the microcontroller. Only a few ones were tricky because they jumped to the opposite layer or traveled under a big component.
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_INPUTS.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_INPUTS_MEDIUM.jpg"> </a>
-	<figcaption>Siguiendo las pistas de entrada</figcaption>
+	<figcaption>Following input tracks</figcaption>
 </figure>
 
-Los pines se encontraron mapeados de la siguiente manera:
+The pins were found mapped as follows:
 
-|ELEMENTO   |PIN
+|ELEMENT    |PIN
 |-----------|-----
 | X0        | PA0
 | X1        | PA1
@@ -145,18 +143,19 @@ Los pines se encontraron mapeados de la siguiente manera:
 | X6        | PB4
 | X7        | PD2
 
-###### Salidas digitales
+###### Digital outputs
 
-Las salidas tomaron la mayor cantidad de esfuerzo, pues estas van primero a un integrado UL2003 y de alli a cada uno de los reles, pasando por debajo de componentes e incluso cambiando de cara, aqui se uso el multimetro para poder seguir los caminos.
+The digital outputs took the most effort, because the tracks went first to an UL2003 chip, and from there to each relay, traveling under components or jumping to the opposite layer. Multimeter was crucial to follow the tracks.
+
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_OUTPUTS.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_OUTPUTS_MEDIUM.jpg"> </a>
-	<figcaption>Siguiendo las pistas de salida</figcaption>
+	<figcaption>Following output tracks</figcaption>
 </figure>
 
-Los pines se encontraron mapeados de la siguiente manera:
+The pins were found mapped as follows:
 
-|ELEMENTO   |PIN
+|ELEMENT    |PIN
 |-----------|-----
 | Y0        | PB8
 | Y1        | PB1
@@ -167,19 +166,18 @@ Los pines se encontraron mapeados de la siguiente manera:
 | X6        | PB4
 | X7        | PD2
 
+###### Analog inputs
 
-###### Entradas analogas
-
-Las entradas analogas tambien son relativamente faciles de encontrar, pues son pocas (3) y estan conectadas solamente mediante dos resistencias que conforman un divisor de voltaje (15 K/30 K) antes de ingresar al microcontrolador.
+The analog inputs were relatively easy to find, because they are only 3 and they are connected only to a voltage resistor divider (15 K/30 K) between them and the microcontroller.
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_AINPUTS.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_AINPUTS_MEDIUM.jpg"> </a>
-	<figcaption>Siguiendo las pistas de entradas analogas</figcaption>
+	<figcaption>Following analog input tracks</figcaption>
 </figure>
 
-Los pines se encontraron mapeados de la siguiente manera:
+The pins were found mapped as follows:
 
-|ELEMENTO   |PIN
+|ELEMENT    |PIN
 |-----------|-----
 | AD1       | PC1
 | AD2       | PC2
