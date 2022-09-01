@@ -183,13 +183,14 @@ The pins were found mapped as follows:
 | AD2       | PC2
 | AD3       | PC0
 
-##### Toques finales
+##### Final touches
 
-En este momento ya se tienen mapeados todos los perifericos a los pines de I/O del microcontrolador, sin embargo, cada que se requiere programar, se debera hacer el puente entre los 3.3 V y el pin BOOT0. Lo que implica abrir la carcasa. Una solucion rapida seria cablear el interruptor que usaba el PLC para la funcion de RUN/STOP al pin BOOT0, de esta forma se podria activar/desactivar el bootloader de forma externa sin tener que quitar la tapa cada vez que se requiera reprogramarlo
+At this point, all peripherals are mapped to the microcontroller I/O pins, however, whenever the board needs to be reprogrammed, BOOT0 needs to be set to 3.3 V using a temporal wire jumper, which implies opening the enclosure. A quick fix will be to connect a wire from the BOOT0 pin to the RUN/STOP switch used by the old PLC firmware, in this way the ROM bootloader could be initiated externally without opening the case for reprogramming
+
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_BOOTSWITCH.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_BOOTSWITCH_MEDIUM.jpg"> </a>
-	<figcaption>Interruptor para BOOT0 ahora accionable de forma externa</figcaption>
+	<figcaption>External switch now wired to BOOT0 pin</figcaption>
 </figure>
 
 
