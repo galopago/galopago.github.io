@@ -33,59 +33,62 @@ These boards mention compatibility with GX software, which is manufactured by a 
 	<figcaption>Plastic enclosure, DIN rail installation </figcaption>
 </figure>
 
-Por su bajo precio (Alrededor de $25 USD), y por disponer de reles de salida, entradas opto-acoplada, puerto RS232 y fuente de poder regulada, son ideales para realizar pequeños proyectos, siempre y cuando estas pudieran programarse con otro tipo de herramienta libre y multiplataforma como Arduino o la suite de STM. Adicional a lo anterior, se requeriria del esquematico para saber que pines de I/O del microcontrolador coinciden con los perifericos de la tarjeta!
+Due to their low cost (around $25 USD), and for their relay isolated outputs, optically isolated inputs, RS232 serial port and regulated power supply, are great candidates for small projects as long as they can be programmed with a free multi-platform tool like Arduino or STM suite. In addition, a schematic diagram is needed to find out which I/O of the microcontroller goes to which peripheral in the board!
 
-##### Listado de materiales
+##### Bill of materials
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_PARTS.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_PARTS_MEDIUM.jpg"> </a>
-	<figcaption>Partes usadas en el proceso</figcaption>
+	<figcaption>Parts used </figcaption>
 </figure>
 
-| Componente                                          | Enlace de compra                                           | Hoja de datos
+| Component                                           | Buy link                                          | Datasheet
 |-----------------------------------------------------|------------------------------------------------------------|---------------
-| Tarjeta de control industrial compatible con FX1N   | [compralo aqui](https://s.click.aliexpress.com/e/_DDbOiuF) | [industrial-control-board-fx1n.pdf](https://github.com/galopago/logistic/blob/main/datasheet/industrial-control-board-fx1n.pdf)
-| Fuente de poder 24 V 15 W  para montaje en riel DIN | [compralo aqui](https://s.click.aliexpress.com/e/_DdcNhEL) | [24v-din-rail-power-supply.pdf](https://github.com/galopago/logistic/blob/main/datasheet/24v-din-rail-power-supply.pdf)
-| Convertidor USB a RS232                             | [compralo aqui](https://s.click.aliexpress.com/e/_DFlu2nD) | [usb-rs232-converter.pdf](https://github.com/galopago/logistic/blob/main/datasheet/usb-rs232-converter.pdf)
-| Conector terminal DB9 no requiere soldar            | [compralo aqui](https://s.click.aliexpress.com/e/_Dl5STXV) | [db9-solderless-terminal-connector.pdf](https://github.com/galopago/logistic/blob/main/datasheet/db9-solderless-terminal-connector.pdf)
-| Cable calibre 30 AWG tipo UL1423 PVDF               | [compralo aqui](https://s.click.aliexpress.com/e/_eMiimB)  | [UL1423.pdf](https://github.com/galopago/logistic/blob/main/datasheet/UL1423.pdf)
-| Cables dupont jumper                                | [compralo aqui](https://s.click.aliexpress.com/e/_DmusOdH) | [dupont-jumper-cables.pdf](https://github.com/galopago/logistic/blob/main/datasheet/dupont-jumper-cables.pdf)
-| Conector de hilera de pines macho 2.54mm            | [compralo aqui](https://s.click.aliexpress.com/e/_eMCUJv)  | [FHA3-S1XX.pdf](https://github.com/galopago/logistic/blob/main/datasheet/FHA3-S1XX.pdf)
+| Industrial control board compatible with FX1N   | [buy it](https://s.click.aliexpress.com/e/_DDbOiuF) | [industrial-control-board-fx1n.pdf](https://github.com/galopago/logistic/blob/main/datasheet/industrial-control-board-fx1n.pdf)
+| 24 V 15 W  DIN rail mount power supply | [buy it](https://s.click.aliexpress.com/e/_DdcNhEL) | [24v-din-rail-power-supply.pdf](https://github.com/galopago/logistic/blob/main/datasheet/24v-din-rail-power-supply.pdf)
+| USB to RS232 converter                             | [buy it](https://s.click.aliexpress.com/e/_DFlu2nD) | [usb-rs232-converter.pdf](https://github.com/galopago/logistic/blob/main/datasheet/usb-rs232-converter.pdf)
+| DB9 solderless terminal connector            | [buy it](https://s.click.aliexpress.com/e/_Dl5STXV) | [db9-solderless-terminal-connector.pdf](https://github.com/galopago/logistic/blob/main/datasheet/db9-solderless-terminal-connector.pdf)
+| 30 AWG UL1423 type PVDF wire               | [buy it](https://s.click.aliexpress.com/e/_eMiimB)  | [UL1423.pdf](https://github.com/galopago/logistic/blob/main/datasheet/UL1423.pdf)
+| Dupont cable jumper                                | [buy it](https://s.click.aliexpress.com/e/_DmusOdH) | [dupont-jumper-cables.pdf](https://github.com/galopago/logistic/blob/main/datasheet/dupont-jumper-cables.pdf)
+| Single line male header 2.54mm            | [buy it](https://s.click.aliexpress.com/e/_eMCUJv)  | [FHA3-S1XX.pdf](https://github.com/galopago/logistic/blob/main/datasheet/FHA3-S1XX.pdf)
 
 
-| Mapa de pines para tarjetas de control industrial | repositorio 
+| Pinout for industrial control boards              | repository 
 | ------------------------------------------------- | ----------- 
-| Tarjetas de control industrial basadas en STM32   | [stm32-industrial-control-boards](https://github.com/galopago/stm32-industrial-control-boards)
+| Industrial control boards based on STM32   | [stm32-industrial-control-boards](https://github.com/galopago/stm32-industrial-control-boards)
 
-| Herramientas opcionales                       | Enlace de compra                                          | Hoja de datos 
+| Optional component                       | Buy link                                         | Datasheet 
 | ----------------------------------------------|-----------------------------------------------------------|--------------- 
-| Lentes dobles para relojeria                  | [compralo aqui](https://s.click.aliexpress.com/e/_DcZsrEF)| [magnifying-double-eye.pdf](https://github.com/galopago/logistic/blob/main/datasheet/magnifying-double-eye.pdf) 
-| Microscopio digital USB                       | [compralo aqui](https://s.click.aliexpress.com/e/_Dl3rIxZ)| [microscope-camera-digital-usb.pdf](https://github.com/galopago/logistic/blob/main/datasheet/microscope-camera-digital-usb.pdf) 
-| Multimetro digital alimentado por baterias AA | [compralo aqui](https://s.click.aliexpress.com/e/_DeAv3zv)| [digital-multimeter-powered-aa-batteries-ut139c.pdf](https://github.com/galopago/logistic/blob/main/datasheet/digital-multimeter-powered-aa-batteries-ut139c.pdf) 
+| Magnifying double eye for jewelry                  | [buy it](https://s.click.aliexpress.com/e/_DcZsrEF)| [magnifying-double-eye.pdf](https://github.com/galopago/logistic/blob/main/datasheet/magnifying-double-eye.pdf) 
+| USB digital microscope camera                       | [buy it](https://s.click.aliexpress.com/e/_Dl3rIxZ)| [microscope-camera-digital-usb.pdf](https://github.com/galopago/logistic/blob/main/datasheet/microscope-camera-digital-usb.pdf) 
+| Digital multimeter powered by AA batteries | [buy it](https://s.click.aliexpress.com/e/_DeAv3zv)| [digital-multimeter-powered-aa-batteries-ut139c.pdf](https://github.com/galopago/logistic/blob/main/datasheet/digital-multimeter-powered-aa-batteries-ut139c.pdf) 
 
-##### Reprogramando
+##### Reprograming
 
-La tarjeta en cuestion, cuenta con un procesador STM32F103, por lo tanto, instintivamente se buscara una huella de header en el PCB con los pines para conectar un programador SWD
+The aforementioned board, sports a STM32F103 microcontroller, so instinctively a footprint for a SWD programming header should be looked for.
+
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_PROGHEADER.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_PROGHEADER_MEDIUM.jpg"> </a>
-	<figcaption>Posible header para programacion en la derecha abajo del terminal de tornillos</figcaption>
+	<figcaption>Possible programming header footprint at lower right</figcaption>
 </figure>
 
-Despues de seguir las pistas de este header, se encontro que uno de los pines estaba conectado a 3.3 V el otro a GND, pero los restantes no estaban conectados a los pines SWD del microcontrolador, sino a los pines PC10 y PC11. Tampoco se encontraron pistas visibles saliendo de los pines SWD desde el procesador, ni tampoco de los pines USB, por lo tanto, la unica alternativa para lograr reprogramar el micro seria desde la UART1 usando el bootloader almacenado en la ROM.
+After following the tracks of this header, one pin was found connected to 3.3 V, another one to GND, but the other two pins were not connected to SWD pins on the microcontroller but to PC10 and PC11 pins. Starting the search from the microcontroller, there are no tracks from SWD or USB pins, so the only alternative available for reprogramming is through UART1 using the bootloader stored in ROM
+
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_UART1.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_UART1_MEDIUM.jpg"> </a>
-	<figcaption>Componentes involucrados en el puerto serial</figcaption>
+	<figcaption>Serial port related components</figcaption>
 </figure>
 
-Haciendo el seguimiento desde el conector DB9, las pistas llegan a un circuito integrado que tiene la referencia borrada, sin embargo, tratandose de un puerto serial, y por los condensadores cercanos, se puede deducir que es un MAX232 o similar. Siguiendo las pistas desde este integrado al procesador, efectivamente esta conectado a los pines PA9 y PA10 que corresponden a la UART1.
+Following the tracks leaving from the DB9 connector, they end in an unmarked chip, however, due to the nearby capacitors it is probably a MAX232 or equivalent. Following the tracks leaving from this chip they end in PA9 and PA10 pins of the microcontroller which are the UART1 pins.
 
-Afortunadamente, en esta tarjeta esta claramente marcada la resistencia que esta conectada al pin BOOT0, lo que sera necesario para ingresar al modo bootloader y poder iniciar a reprogramar la tarjeta. Para lograrlo se soldo un conector header macho al pad donde hay 3.3 V y mediante un cable Dupont, se conecta temporalmente el pin BOOT0 a 3.3 V mientras se aplica poder a la tarjeta.
+Luckily in this board, the resistor which is connected to the BOOT0 pin is clearly marked on the silkscreen. To start in bootloader mode, a male header was soldered to the 3.3 V pad, and using a Dupont wire jumper, a temporary connection between BOOT0 and 3.3 V is made while the board is powered up
+
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_BOOT0.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_BOOT0_MEDIUM.jpg"> </a>
-	<figcaption>Metodo usado para entrar en modo bootloader</figcaption>
+	<figcaption>Method used for bootloader activation</figcaption>
 </figure>
 
 Una vez ejecutandose el bootloader, se procedio a abrir [STM32CubeProg](https://www.st.com/en/development-tools/stm32cubeprog.html) y se constato la comunicacion con el microcontrolador. Se observo que este estaba en modo de proteccion de lectura, por lo que no se podria hacer un backup y dejar la tarjeta en su estado original. Se procedio a borrar toda la memoria flash del dispositivo.
