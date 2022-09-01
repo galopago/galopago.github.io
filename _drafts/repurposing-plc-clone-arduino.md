@@ -91,13 +91,13 @@ Luckily in this board, the resistor which is connected to the BOOT0 pin is clear
 	<figcaption>Method used for bootloader activation</figcaption>
 </figure>
 
-Una vez ejecutandose el bootloader, se procedio a abrir [STM32CubeProg](https://www.st.com/en/development-tools/stm32cubeprog.html) y se constato la comunicacion con el microcontrolador. Se observo que este estaba en modo de proteccion de lectura, por lo que no se podria hacer un backup y dejar la tarjeta en su estado original. Se procedio a borrar toda la memoria flash del dispositivo.
+Once the bootloader was running, [STM32CubeProg](https://www.st.com/en/development-tools/stm32cubeprog.html) was launched and communication with the microcontroller was verified. The chip was in read protect mode, so no way to backup the firmware to reverse the board to its original state. All FLASH memory has been erased.
 
-Mediante el IDE de Arduino, se instalo el [STM32duino core](https://github.com/stm32duino/Arduino_Core_STM32) y se realizo una pequeña aplicacion de prueba que enviaba datos por el puerto serial. Se descargo el programa y se verifico que estos datos llegaban al computador. ¡Ahora empieza lo bueno!
+Using Arduino IDE, it was proceeded to the installation [STM32duino core](https://github.com/stm32duino/Arduino_Core_STM32) and to make a small test application that sends data through the serial port to the PC. The app was downloaded and the incoming data verified. Now the adventure starts!
 
 <figure>
 	<a href="/assets/images/AN007/PLC_CLONE_ARDUINO_USB232.jpg"> <img src="/assets/images/AN007/PLC_CLONE_ARDUINO_USB232_MEDIUM.jpg"> </a>
-	<figcaption>Convertidor USB a RS232 y conectores usados para la comunicacion entre el PC y la tarjeta</figcaption>
+	<figcaption>USB to RS232 converter and connectors used for communication check between PC and board</figcaption>
 </figure>
 
 
