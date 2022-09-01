@@ -193,18 +193,18 @@ At this point, all peripherals are mapped to the microcontroller I/O pins, howev
 	<figcaption>External switch now wired to BOOT0 pin</figcaption>
 </figure>
 
+##### Summarizing
 
-##### Resumiendo
+At this stage, you have a low cost board with enough peripherals for small experiments without requiring additional hardware and can be programmed using Arduino IDE or STM suite. To replicate this experiment with a different board (as long as the CPU has been identified) follow the steps below:
 
-En este punto se tiene una tarjeta de bajo costo y con perifericos suficentes para realizar pequeños proyectos y experimentos sin requerir hardware adicional, y que puede ser programada mediante Arduino o la suite de STM. En caso de querer replicar esta experiencia con una tarjeta diferente (siempre y cuando se logre identificar la referencia de la CPU) se deberan seguir los siguientes pasos:
+* Look for SWD header footprint on the PCB (4 pads) and follow the tracks to the microcontroller to make sure the pins are the right ones.
+* If the previous step fails, follow the tracks from the UART1 pins of the microcontroller and add the additional hardware (level converter, connectors) for PC communication
+* Look for BOOT0 pin, it is usually connected to the ground through a resistor, it will serve as a "test point"
+* Using STM32CubeProg erase the microcontroller FLASH memory, If UART1 was used as a connection means, the ROM bootloader must be launched, setting BOOT0 to 3.3 V while powering on the board.
+* Using the Arduino IDE or the STM suite, make a little test application, which sends characters to the serial port, to know if the board could be programmed
+* Follow the tracks from the peripherals to the microcontroller, to make the I/O pin mapping
+* Make a wire connection from BOOT0 to the RUN/STOP switch to easily program the board
 
-* Buscar la huella de un posible header de programacion SWD en la PCB (4 pines) y seguir las pistas para corroborar que si lo sea.
-* Si el paso anterior falla, seguir los pines de la UART1 y agregar el hardware necesario para conectar al computador (convertidores de nivel, conectores, etc.)
-* Buscar el pin BOOT0, generalmente va conectado a tierra mediante una resistencia, esta servira como "testpoint"
-* Mediante STM32CubeProg borrar la memoria del microcontrolador. Si se usa la UART1 como medio de conexion, se debera ejecutar el Bootloader almacenado en la ROM poniendo el pin BOOT0 a 3.3 V cuando se conecta la alimentacion de la tarjeta.
-* Mediante el IDE de Arduino o el de STM generar una pequeña aplicacion de transmision por puerto serial, para comprobar que la tarjeta puede ser programada.
-* Seguir las pistas para encontrar los pines de I/O del microcontrolador conectados a los diversos perifericos
-* Realizar una conexion entre el pin BOOT0 y el interruptor RUN/STOP para poder reprogramar con facilidad
 
 ##### Posibles mejoras
 
