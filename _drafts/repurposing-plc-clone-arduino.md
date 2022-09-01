@@ -206,9 +206,8 @@ At this stage, you have a low cost board with enough peripherals for small exper
 * Make a wire connection from BOOT0 to the RUN/STOP switch to easily program the board
 
 
-##### Posibles mejoras
+##### Possible improvements
 
-Crear una aplicacion esqueleto, sobre la que se escribiran todos los programas, esta aplicacion tendra algun tipo de mecanismo para verificar el estado del interruptor RUN/STOP cada vez que se inicia el programa, y saltar al bootloader que esta en la ROM para programacion o ejecutar el programa almacenado en la FLASH, de forma tal que no se requiera hacer la conexion electrica mediante cable que une el BOOT0 con el interruptor de RUN/STOP.
+Create a skeleton application as a boiler plate for each program for the board, this application should have some kind of mechanism that checks the condition of the RUN/STOP switch to decide whether to go to ROM bootloader or start executing the program stored in the FLASH, This eliminates the need for an electrical connection between BOOT0 and the switch.
 
-Otra alternativa, si no se quiere tener una aplicacion esqueleto con lineas de codigo adicionales, seria desarrollar un bootloader que use la UART1, similar al que hay almacenado en la ROM, pero almacenado en la FLASH, de forma tal que este sea lo primero que se ejecute siempre al alimentar el microcontrolador (sin requerir poner BOOT0 a 3.3 V), revise el estado del interruptor RUN/STOP, para descargar un nuevo programa, o para ejecutar el que ya hay almacenado.
-
+Another option, if a skeleton app is not desired, is to make a bootloader stored in the FLASH that uses UART1 for communication, similar to the one stored in ROM, but this one checks the condition of the RUN/STOP switch to decide whether to download a new program or executing the program stored in the FLASH
