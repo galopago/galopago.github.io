@@ -120,7 +120,7 @@ The pins were found mapped as follows:
 |----------------------|-----
 | LED RUN              | PB12
 | LED ERR              | PB13
-| INTERRUPTOR RUN/STOP | PC9
+| RUN/STOP SWITCH      | PC9
 
 ###### Digital inputs
 Digital inputs were relatively easy to find, because the tracks leaving the optocuplers went directly to the microcontroller. Only a few ones were tricky because they jumped to the opposite layer or traveled under a big component.
