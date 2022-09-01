@@ -160,8 +160,6 @@ Los pines se encontraron mapeados de la siguiente manera:
 | Y3        | PB0
 | Y4        | PC5
 | Y5        | PC4
-| Y6        | PB4
-| Y7        | PD2
 
 
 ###### Entradas analogas

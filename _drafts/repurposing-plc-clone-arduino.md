@@ -163,8 +163,6 @@ The pins were found mapped as follows:
 | Y3        | PB0
 | Y4        | PC5
 | Y5        | PC4
-| Y6        | PB4
-| Y7        | PD2
 
 ###### Analog inputs
 
