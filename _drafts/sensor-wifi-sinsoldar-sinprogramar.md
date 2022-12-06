@@ -36,7 +36,7 @@ Se realizara una aplicacion de ejemplo: un termometro WiFi basado en ESP32, sens
 
 <figure>
 	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTS.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTS_MEDIUM.jpg"> </a>
-	<figcaption>Partes usadas en la construccion</figcaption>
+	<figcaption>Componentes usados en el proyecto</figcaption>
 </figure>
 
 ##### Partes discretas necesarias
@@ -46,6 +46,7 @@ Se realizara una aplicacion de ejemplo: un termometro WiFi basado en ESP32, sens
 | ESP32 D1 MINI     | [compralo aqui](https://s.click.aliexpress.com/e/_DlJju2n) | [esp32-d1-mini.pdf](/assets/pdf/esp32-d1-mini.pdf) |
 | Pantalla OLED 0.96 I2C | [compralo aqui](https://s.click.aliexpress.com/e/_DBmZwu3) | [096-i2c-oled-display.pdf](/assets/pdf/096-i2c-oled-display.pdf) |
 | Sensor de temperatura DS18B20 a prueba de agua |[compralo aqui](https://s.click.aliexpress.com/e/_DCzX5Mn)|[ds18b20-waterproof.pdf](/assets/pdf/ds18b20-waterproof.pdf)|
+| Resistencias TH 1/4W 1% |[compralo aqui](https://s.click.aliexpress.com/e/_etm4gJ)|[MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf)|
 | Caja generica a prueba de agua “Sonoff” 100x68x50mm | [compralo aqui](https://s.click.aliexpress.com/e/_AtukwZ) | [SONOFF-IP66-waterproof-case.pdf](/assets/pdf/SONOFF-IP66-waterproof-case.pdf)|
 
 ##### Componentes necesarios para los modulos misistemita requeridos
@@ -73,15 +74,95 @@ Se realizara una aplicacion de ejemplo: un termometro WiFi basado en ESP32, sens
 | ESPHome | [descargalo aqui](https://esphome.io/) |
 | TASMOTA | [descargalo aqui](https://tasmota.github.io/docs/) |
 
-##### Construccion de la plataforma
+#### Ensamblaje del Hardware
 
-La plataforma consta de una carcasa a prueba de agua para una camara deportiva y una tarjeta de circuito impreso con las dimensiones adecuadas para ser ubicada adentro. 
+El primer paso consiste en ubicar las diversas tarjetas en el bastidor, en general las tarjetas de borneras de tornillos debaran ponerse algun lugar en el borde del bastidor y lo mas cerca posible del sitio del ingreso de los cables.
+
 
 <figure>
-	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS_MEDIUM.jpg"> </a>
-	<figcaption>Componentes de la plataforma basica</figcaption>
+	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTSPLACED.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTSPLACED_MEDIUM.jpg"> </a>
+	<figcaption>Componentes ubicados en el bastidor</figcaption>
 </figure>
 
+El segundo paso consiste en cablear los diferentes modulos dependiendo del proyecto originalmente planteado. Puede usarse tanto cable de cobre solido como cable de cobre de multiples hilos. Cargar un firmware minimo de prueba para probar la conectividad de los componentes
+
+<figure>
+	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTSWIRED.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTSWIRED_MEDIUM.jpg"> </a>
+	<figcaption>Componentes ubicados en el bastidor e interconectados mediante cable</figcaption>
+</figure>
+
+El tercer paso consiste en retirar las conexiones externas, ubicar el bastidor en la carcasa y fijarlo mediante tornillos autorroscantes. Introducir los cables de alimentacion por medio de los pasacables y conectarlos nuevamente a la tarjeta.
+
+<figure>
+	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_BACKPLANEFIXED.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_BACKPLANEFIXED_MEDIUM.jpg"> </a>
+	<figcaption>Bastidor fijado en la caja y cables de alimentacion externos conectados</figcaption>
+</figure>
+
+El paso final consiste en cerrar la tapa, ajustar los pasacables e instalar en muro
+
+<figure>
+	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_LIDCLOSED.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_LIDCLOSED_MEDIUM.jpg"> </a>
+	<figcaption>Caja cerrada, lista para instalar en muro</figcaption>
+</figure>
+
+#### Configuracion del Firmware
+
+Los siguientes puntos no pretenden ser una guia completa de instalacion ni configuracion, se asume que el lector tiene conocimiento en las plataformas usadas. Se daran unas breves ideas de como se creo en cada una de ellas:
+
+##### Tasmota
+
+<figure>
+	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_TASMOTA.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_TASMOTA_MEDIUM.jpg"> </a>
+	<figcaption>Firmware del sensor usando Tasmota</figcaption>
+</figure>
+
+
+La filosofia de tasmota consiste en un firmware basico precompilado que se descarga al dispositivo y una vez descargado se personaliza mediante templates. El instalador de Tasmota esta basado en navegador Web, por lo tanto no se requiere instalar absolutamente nada, lo que lo hace multiplataforma. Los parametros que se usaron fueron los siguientes:
+
+* Firmware usado como base: Display
+* Configuracion del template: Pines del puerto I2C, pin del sensor DS18B20 
+* Modo del display: 0
+* Tipo del display: SSD1306
+* Regla para visualizacion de temperatura: rule 1 ON DS18B20#Temperature DO Displaytext[zs2y20] %value% C ENDON
+
+##### ESPHome
+
+<figure>
+	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_ESPHOME.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_ESPHOME_MEDIUM.jpg"> </a>
+	<figcaption>Firmware del sensor usando ESPHome</figcaption>
+</figure>
+
+La filosofia de ESPHome consiste en compilar un firmware basado en archivo de configuracion YAML. Esto significa que se requiere tener instalado Home Assistant, y una vez se tiene este en funcionamiento, ESPHome se debera instalara como un add-on. Una vez realizados estos dos pasos, ya es posible crear sensores. Se muestra aqui un aparte del archivo de configuracion en las secciones mas significativas:
+
+
+```
+# GPIO setup
+dallas:
+  - pin: 26
+i2c:
+  sda: 21
+  scl: 22
+
+# Sensor setup
+sensor:
+  - platform: dallas
+    address: 0x8c01131b44162184
+    id: outside_temperature
+    name: "External temperature"
+font:  
+  # gfonts://family[@weight]
+  - file: "gfonts://Roboto"
+    id: roboto
+    size: 20
+display:
+  - platform: ssd1306_i2c
+    model: "SSD1306 128x64"
+    address: 0x3c
+    lambda: |-
+      it.printf(90, 35, id(roboto), TextAlign::BASELINE_RIGHT , "%.1f °C", id(outside_temperature).state);           
+```
+
+ 
 La carcasa usada es bastante comun, facil de conseguir y economica. Se abre y cierra sin necesidad de tornillos y posee un punto donde se le pueden agregar diferentes tipos de accesorios para ser montada. 
 
 La tarjeta de circuito impreso fue diseñada para ubicar el modulo ESP32-CAM en la ventana que la carcasa dispone para la ubicacion del lente. El modulo puede ser montado en dos posiciones diferentes para maximizar el area dependiendo de los componentes a usar.
