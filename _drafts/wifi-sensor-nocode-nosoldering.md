@@ -1,16 +1,18 @@
 ---
-title: "Sensor Wi-Fi sin soldar y sin programar*"
+title: "DIY Wi-Fi sensor, no programming, no soldering required*"
 excerpt_separator: "<!--more-->"
 classes: wide
 categories:
-  - espanol
+  - english
 tags:
   - AN008
   - ESP32
-  - Prototipado
+  - Prototyping
 header:
      teaser: "/assets/images/AN008/WIFI_SENSOR_LOWCODE_TEASER.jpg"
 ---
+
+Software no-code/low-code plattforms allow to build applications writting only a few lines of code, and in some cases, no code at all!, This reduces development and deployment time 
 
 Las plataformas para desarrollo de software no-code/low-code permiten crear aplicaciones escribiendo muy poco codigo y en algunos casos, ningun codigo, de forma tal que reducen el tiempo de desarrollo para poner en produccion aplicaciones en muy poco tiempo. 
 
