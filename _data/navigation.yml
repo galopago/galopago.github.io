@@ -6,6 +6,8 @@ main:
     url: /english
   - title: "Español"
     url: /espanol
+  - title: "Portugues"
+    url: /portugues    
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
