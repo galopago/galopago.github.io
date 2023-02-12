@@ -119,11 +119,11 @@ Uma vez que a caixa está fechada, as atualizações de firmware podem ser feita
 
 | Placas de circuito impressas (PCB) | Ligação do compra | Arquivos de origem                                          | 
 | -------- | ------------------------------------------------------------ |
-| A02 placa de montagem removível para o caixa de 200x120x75mm |[Compre aqui](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_GENERIC_200x120_mm_WATERPROOF_ENCLOSURE_MISISTEMITA_A02_BACKPLAT_e6658e42.html)| [A02](https://github.com/galopago/misistemita/tree/master/A_BACKPLATES)           |
-| A05 Placa adaptadora (10.16mm Distância entre furos) para o 5V 3.8A PSU  |[Compre aqui](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_CONVERTINGA_A_YXDY_5V_3_8A_S_20W_5_POWER_SUPPLY_TO_GENERIC_10_16_m_4a18a928.html)| [A05](https://github.com/galopago/misistemita/tree/master/A_BACKPLATES)        |
-| B01 2x4 3.5mm placa borne de parafuso|[Compre aqui](https://www.pcbway.com/project/shareproject/2x4_3_5_mm_SCREW_TERMINAL_BOARD_MISISTEMITA_B01_SCREW_TERMINALS_6c422d70.html)| [B01](https://github.com/galopago/misistemita/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
-| C08 Placa Borne De Expansão para NODEMCU V3  |[Compre aqui](https://www.pcbway.com/project/shareproject/Breakout_for_ESP8266_dev_boards_with_30_pins_2x15_2_54mm_pitch_or_less_MISIS_fa81133a.html)| [C08](https://github.com/galopago/misistemita/tree/master/C_BREAKOUTS)        |
-| D06 Placa de conversor de nível lógico  |[Compre aqui]()| [D06](https://github.com/galopago/misistemita/tree/master/D_ELECTRONICS)        |
+| A02 placa de montagem removível para o caixa de 200x120x75mm |[Compre aqui](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_GENERIC_200x120_mm_WATERPROOF_ENCLOSURE_MISISTEMITA_A02_BACKPLAT_e6658e42.html)| [A02](https://github.com/galopago/misistemita/tree/main/a-backplates)           |
+| A05 Placa adaptadora (10.16mm Distância entre furos) para o 5V 3.8A PSU  |[Compre aqui](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_CONVERTINGA_A_YXDY_5V_3_8A_S_20W_5_POWER_SUPPLY_TO_GENERIC_10_16_m_4a18a928.html)| [A05](https://github.com/galopago/misistemita/tree/main/a-backplates)        |
+| B01 2x4 3.5mm placa borne de parafuso|[Compre aqui](https://www.pcbway.com/project/shareproject/2x4_3_5_mm_SCREW_TERMINAL_BOARD_MISISTEMITA_B01_SCREW_TERMINALS_6c422d70.html)| [B01](https://github.com/galopago/misistemita/tree/main/b-screw-terminal-wire-connectors)        |
+| C08 Placa Borne De Expansão para NODEMCU V3  |[Compre aqui](https://www.pcbway.com/project/shareproject/Breakout_for_ESP8266_dev_boards_with_main/C_BREAKOUTS)        |[C08](https://github.com/galopago/misistemita/tree/main/c-breakouts)
+| D06 Placa de conversor de nível lógico  |[Compre aqui]()| [D06](https://github.com/galopago/misistemita/tree/main/d-electronics)        |
 
 
 #### Software
