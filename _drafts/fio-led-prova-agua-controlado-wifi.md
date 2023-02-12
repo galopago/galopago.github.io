@@ -65,47 +65,44 @@ Para enviar dados para cada LED, o código de cor é extraído aleatoriamente de
 
 Uma conexão MQTT é estabelecida com um corretor onde o aplicativo se inscreve em um tópico específico. Um aplicativo cliente de terceiros deve se conectar ao mesmo corretor MQTT e publicar dados no mesmo tópico para mudar a paleta de cores utilizada. Este é um jeito muito simples de mudar o padrão de luz na internet.
 
-##### Circuit assembly:
+##### Montagem do circuito:
 
-The circuit was built using components of TUSISTEMITA, like enclosure backplate, power source backplate, NODEMCU breakboard, logic level shifter board and screw
- terminal board. Once the app is downloaded for the first time, and electrical connections verified, the backplate could be attached to the enclosure hassle free. Just unplug
-external cables from terminals, screw backplate to enclosure and reconnect cables again.
+O circuito foi construído usando componentes da MISISTEMITA, como a placa de montagem removível, a placa de fonte de alimentação, a placa breakout NODEMCU, a placa de conversor de nível lógico e a placa borne de parafuso. Uma vez que o aplicativo é baixado pela primeira vez e as conexões elétricas são verificadas, a placa de montagem removível pode ser fixada ao caixa sem problemas. Basta desconectar os cabos externos dos terminais, fixar a placa de montagem removível ao caixa e reconectar os cabos novamente.
 
 <figure class="third">
 	<a href="/assets/images/MOS_WIFI_LIGHTS_PARTS.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_PARTS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_WIRED.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WIRED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_WORKING.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_WORKING_MEDIUM.jpg"> </a>
-	<figcaption>Assembly and wiring.</figcaption>
+	<figcaption>Montagem e fiação</figcaption>
 </figure>
 
-It is recommended to change the connectors of the LED strip, for a more robust and waterproof connectors. Heatshrink tube with glue (double wall) should 
-be used to protect solder joints from the elements.
+É recomendável trocar os conectores da fita LED por conectores mais robustos e à prova d'água. Deve-se usar tubo termoretrátil com cola (parede dupla) para proteger as soldas do tempo.
 
 <figure class="third">
 	<a href="/assets/images/MOS_WIFI_LIGHTS_CABLEGLAND.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_CABLEGLAND_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_CONNECTOR.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_CONNECTOR_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOS_WIFI_LIGHTS_FINISHED.jpg"> <img src="/assets/images/MOS_WIFI_LIGHTS_FINISHED_MEDIUM.jpg"> </a>
-	<figcaption>Cable glands and waterproof connectors</figcaption>
+	<figcaption>Conectores à prova d'água e prensa cabos</figcaption>
 </figure>
 
-Once the enclosure is closed, firmware updates could be done via wirelessly via OTA, using Mongoose OS device management dashboard mDASH.
+Uma vez que a caixa está fechada, as atualizações de firmware podem ser feitas sem fio via OTA, usando o painel de gerenciamento de dispositivos mDASH do Mongoose OS.
 
-#### Bill of materials
+#### Lista de materiais
 
-| Component         | Get yours! | Datasheet
-| -------- | ------ | ------------------------------------------------------------ |
-| ESP8266 NodeMCU V3    | [💸](https://s.click.aliexpress.com/e/_As5zmb)     | [NodeMCUV3.pdf](/assets/pdf/NodeMCUV3.pdf)           |
-| WS2811 waterproof LED string | [💸](https://s.click.aliexpress.com/e/_AWaLpZ )  | [WS2811_WATERPROOF_LED_STRING.pdf](/assets/pdf/WS2811_WATERPROOF_LED_STRING.pdf)                               |
-| Switched power supply 5V 3.8A 20W   | [💸](https://s.click.aliexpress.com/e/_9gYBnH)     | [5V_4A_switching_power.pdf](/assets/pdf/5V_4A_switching_power.pdf)           |
-| Waterproof plastic enclosure 200x120x75mm (multiple options: transparent lid, wall mounting tabs)| [💸](https://s.click.aliexpress.com/e/_ASuE1N)  | [g373_g269.pdf](/assets/pdf/g373_g269.pdf)           |
-| M2.6 self-tapping B type screw | [💸](https://s.click.aliexpress.com/e/_98ymAB)  | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)                           |
-| M3 countersunk phillips screw | [💸](https://s.click.aliexpress.com/e/_AoOvPz)  | [M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf](/assets/pdf/M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf)                           |
-| M3 hex flanged nut DIN6923 | [💸](https://s.click.aliexpress.com/e/_9g89th)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FLANGED_NUT_3MM_DIN6923.pdf)                           |
-| Nylon spacer G228  | [💸](https://s.click.aliexpress.com/e/_A7PPYf)  | [G228.pdf](/assets/pdf/G228.pdf)                           |
-| Cable gland PG7 or PG9 | [💸](https://s.click.aliexpress.com/e/_9z6Z4r )  | [pg_7.pdf](/assets/pdf/pg_7.pdf) | 
-| 3 pin waterproof cable connector for LED string  | [💸](https://s.click.aliexpress.com/e/_AesJgr )  | [Waterproof_led_string_connector.pdf](/assets/pdf/Waterproof_led_string_connector.pdf)                           |
-| 3:1 Heatshrink tube with glue  | [💸](https://s.click.aliexpress.com/e/_AaW9bd)  | [3_1_heatshrink_tube_glue.pdf](/assets/pdf/3_1_heatshrink_tube_glue.pdf)                           |
-| 2:1 Heatshrink tube multiple colors  | [💸](https://s.click.aliexpress.com/e/_9ikkU7 )  | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf)                           |
+| Componente | Ligação do compra | Folha de dados
+| ------------------ | ----------------- | ----------------------------- |
+| ESP8266 NodeMCU V3    | [Compre aqui](https://s.click.aliexpress.com/e/_As5zmb)| [NodeMCUV3.pdf](/assets/pdf/NodeMCUV3.pdf)           |
+| Corda LED WS2811 à prova d'água | [Compre aqui](https://s.click.aliexpress.com/e/_AWaLpZ )| [WS2811_WATERPROOF_LED_STRING.pdf](/assets/pdf/WS2811_WATERPROOF_LED_STRING.pdf)                               |
+| Fonte de alimentação comutada 5V 3.8A 20W   | [Compre aqui](https://s.click.aliexpress.com/e/_9gYBnH)     | [5V_4A_switching_power.pdf](/assets/pdf/5V_4A_switching_power.pdf)           |
+| Caixa plástica à prova d'água 200x120x75mm (multiple options: transparent lid, wall mounting tabs)| [Compre aqui](https://s.click.aliexpress.com/e/_ASuE1N)  | [g373_g269.pdf](/assets/pdf/g373_g269.pdf)           |
+| Parafuso auto-rostante tipo B M2.6 | [Compre aqui](https://s.click.aliexpress.com/e/_98ymAB)  | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)                           |
+| Parafuso cabeça chata Phillips M3 | [Compre aqui](https://s.click.aliexpress.com/e/_AoOvPz)  | [M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf](/assets/pdf/M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf)                           |
+| Porca Flangeada M3 DIN6923 | [Compre aqui](https://s.click.aliexpress.com/e/_9g89th)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FLANGED_NUT_3MM_DIN6923.pdf)                           |
+| Espaçador de Nylon de travamento reverso G228  | [Compre aqui](https://s.click.aliexpress.com/e/_A7PPYf)  | [G228.pdf](/assets/pdf/G228.pdf)                           |
+| Prensa cabo PG7 or PG9 | [Compre aqui](https://s.click.aliexpress.com/e/_9z6Z4r )  | [pg_7.pdf](/assets/pdf/pg_7.pdf) | 
+| Conector de cabo à prova d'água de 3 pinos para corda de LED.  | [Compre aqui](https://s.click.aliexpress.com/e/_AesJgr )  | [Waterproof_led_string_connector.pdf](/assets/pdf/Waterproof_led_string_connector.pdf)                           |
+| 3:1 tubo termoretrátil com cola  | [Compre aqui](https://s.click.aliexpress.com/e/_AaW9bd)  | [3_1_heatshrink_tube_glue.pdf](/assets/pdf/3_1_heatshrink_tube_glue.pdf)                           |
+| 2:1 Tubo termoretrátil em múltiplas cores  | [Compre aqui](https://s.click.aliexpress.com/e/_9ikkU7 )  | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf)                           |
 
 #### TUSISTEMITA blocks
 
