@@ -12,53 +12,39 @@ header:
      teaser: "/assets/images/MOS_WIFI_IOT_LIGHTS_TEASER.jpg"
 ---
 
-Decorative lights suitable for Halloween, Christmas, parties, etc. Not only controlled over internet but, also completely reprogrammed 
-wirelessly using OTA over WiFi. Waterproof, dustproof and sturdy. Ideal for indoor projects like interactive backgrounds for youtubers/streamers
-controlled by their audience and for outdoor projects like advertizing signs in walls or vehicles.
+Luzes decorativas adequadas para Halloween, Natal, festas, etc. Não apenas controladas na internet, mas também completamente reprogramadas sem fio usando OTA sobre WiFi. à prova d'água, à prova de poeira e resistentes. Ideal para projetos internos como planos de fundo interativos para youtubers / streamers controlados por sua audiência e para projetos externos como sinais de publicidade em paredes ou veículos.
 
 
 <figure>
 	<a href="/assets/images/MOS_WIFI_IOT_LIGHTS.jpg"> <img src="/assets/images/MOS_WIFI_IOT_LIGHTS_MEDIUM.jpg"> </a>
-	<figcaption>Open enclosure showing internal components</figcaption>
+	<figcaption>Abertura da caixa mostrando componentes internos</figcaption>
 </figure>
 
-Key component: [WS2811 waterproof LED string.](https://s.click.aliexpress.com/e/_AWaLpZ)
+Componente chave: [WS2811 waterproof LED string.](https://s.click.aliexpress.com/e/_AWaLpZ)
 {: .notice--danger}
 
 
-##### Concept:
+##### Conceito:
 
-With the advent of addressable LED like WS2812, WS2812b, WS2811, etc. is now possible for small microcontrollers to 
-handle large amounts of LEDs with only one I/O pin. That advantage popularized this component and a lot of variants appeared: surface mount 
-single leds, flexible strips, Christmas-like strings, etc. The last one will be used in this article due to its flexibility and strength and could adapt
-easily to different project from Christmas ornaments to led matrix, without soldering or other electrical modifications.
+Com o advento de LEDs endereçáveis, como WS2812, WS2812b, WS2811, etc., agora é possível para microcontroladores pequenos lidarem com grandes quantidades de LEDs com apenas um pino de E/S. Essa vantagem popularizou esse componente e muitas variantes surgiram: LED único montado na superfície, fitas flexíveis, cordas como as de Natal, etc. A última será usada neste artigo devido à sua flexibilidade e força e pode ser facilmente adaptada a projetos diferentes, desde enfeites de Natal até matrizes de LED, sem soldar ou outras modificações elétricas.
 
-The microcontroller chosen was an ESP8266, more exactly a development board known as "NODEMCU V3" which has all additional components necessary to start work on
-programming the MCU with a computer. The onboard WiFi of the ESP8266 is not only possible to to change light sequences, but also download a totally different
-firmware wirelessly (OTA), using a powerful combo: [Mongoose OS](https://mongoose-os.com/) and its remote device management dashboard [mDASH](https://mdash.net/).
-Mongoose OS uses a scaled down version of JavaScript known as [mJS](https://github.com/cesanta/mjs). This is an attractive language for web developers whom already 
-work with JS. Mongoose OS is built on top of Espressif's ESP-iDF, so it is possible to write functions in C, which is also attractive for more "traditional" embedded programmers.
+O microcontrolador escolhido foi o ESP8266, mais especificamente uma placa de desenvolvimento conhecida como "NODEMCU V3", que possui todos os componentes adicionais necessários para começar a trabalhar na programação do MCU com um computador. O WiFi onboard do ESP8266 permite não apenas mudar as sequências de luz, mas também baixar um firmware totalmente diferente sem fio (OTA), usando uma combinação poderosa: [Mongoose OS](https://mongoose-os.com/) e sua central de gerenciamento de dispositivos remotos [mDASH](https://mdash.net/). O Mongoose OS usa uma versão reduzida do JavaScript conhecida como [mJS](https://github.com/cesanta/mjs). Este é um idioma atraente para desenvolvedores web que já trabalham com JS. O Mongoose OS é construído em cima do ESP-iDF do Espressif, então é possível escrever funções em C, o que também é atraente para programadores embarcados mais "tradicionais".
 
-The circuit is built using [TUSISTEMITA](https://github.com/galopago/TUSISTEMITA) hardware prototyping system, which provides different kinds of prebuilt modules which allows
-to build an electronic project without soldering, but making it very robust and expandable. All the parts are enclosed in a dustproof and waterproof IP65 box. This enclosure gives an
-"industrial look" to the project and also adds mechanical strength to withstand abuses. The external electrical connections (AC, and LEDs) were fitted with IP accessories to provide
-a good seal.
+O circuito é construído usando o sistema de prototipagem de hardware [MISISTEMITA](https://github.com/galopago/misistemita), que fornece diferentes tipos de módulos pré-construídos, permitindo construir um projeto eletrônico sem solda, mas tornando-o muito robusto e expansível. Todas as peças estão encerradas em uma caixa à prova de poeira e à prova d'água IP65. Esta caixa dá um "aspecto industrial" ao projeto e também adiciona força mecânica para suportar abusos. As conexões elétricas externas (CA e LED) foram equipadas com acessórios IP para fornecer uma boa vedação.
 
-#### Key features:
-* Mongoose OS embedded operating system running on ESP8266.
-* Dustproof, waterproof and wall mountable.
-* Wireless remote firmware update, thanks to Mongoose OS management dashboard mDASH.
-* Built with TUSISTEMITA hardware prototyping blocks
-* 110/220V AC power
+#### Recursos Chave:
+* Sistema operacional embarcado Mongoose OS executando no ESP8266.
+Proteção contra poeira, água e pode ser montado na parede.
+* Atualização remota de firmware sem fio, graças ao painel de gerenciamento mDASH do Mongoose OS.
+* Construído com blocos de prototipagem de hardware MISISTEMITA
+Alimentação AC de 110/220V
 
-The circuit is composed of 4 elements well differentiated: Power source, CPU, logic level shifter and LEDs. Power source is switched type, 20W power, 5V output and 110/220V input, so
-it could be used in any country of the world. ESP8266 was used as CPU (NODEMCU V3). This board can be powered by 3.3V directly to processor power pin or by 5V using the
-onboard regulator. The high logic level output of ESP8266 is 3.3V, so a logic level shifter is needed for working with 5V sensors. WS2812 works with 5V logic levels so TUSISTEMITA D06
-logic level board converter was used. This board is based on BSS138 MOSFET.
+O circuito é composto por 4 elementos bem diferenciados: fonte de alimentação, CPU, conversor de nível lógico e LEDs. A fonte de alimentação é do tipo comutado, com potência de 20W, saída de 5V e entrada de 110/220V, de forma a ser utilizado em qualquer país do mundo. O ESP8266 foi usado como CPU (NODEMCU V3). Esta placa pode ser alimentada com 3,3V diretamente no pino de alimentação do processador ou com 5V usando o regulador embarcado. O nível lógico alto de saída do ESP8266 é de 3,3V, portanto, é necessário um conversor de nível lógico para trabalhar com sensores de 5V. O WS2812 funciona com níveis lógicos de 5V, então foi usado o conversor de nível lógico MISISTEMITA D06. Esta placa é baseada no MOSFET BSS138.
+
 
 <figure>
 	<a href="/assets/images/mos_wifi_iot_lights_blockdiag.png"> <img src="/assets/images/mos_wifi_iot_lights_blockdiag.png"> </a>
-	<figcaption>Simplified block diagram</figcaption>
+	<figcaption>Diagrama de blocos simplificado</figcaption>
 </figure>
 
 Power source output current is around 3.8A max, and each WS2811 LED consumes 60 mA max, so at least 63 LED could be powered. To stay below absolute maximum only 50
