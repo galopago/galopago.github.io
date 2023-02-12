@@ -47,29 +47,23 @@ O circuito é composto por 4 elementos bem diferenciados: fonte de alimentação
 	<figcaption>Diagrama de blocos simplificado</figcaption>
 </figure>
 
-Power source output current is around 3.8A max, and each WS2811 LED consumes 60 mA max, so at least 63 LED could be powered. To stay below absolute maximum only 50
-LED is recommended. Any LED string that works with WS2811 compatible protocol could be used.
+A corrente de saída da fonte de alimentação é de cerca de 3,8A máximo, e cada LED WS2811 consome 60 mA no máximo, então pelo menos 63 LEDs poderiam ser alimentados. Para ficar abaixo do máximo absoluto, apenas 50 LED é recomendado. Qualquer corda de LED que funcione com o protocolo compatível com WS2811 pode ser usada.
 
 ##### Mongoose OS:
 
-Mongoose OS is an operating system for the Internet Of Things, it can run on ESP8266, ESP32 and others. Is a blend of easiness and robustness. Ideal for rapid prototyping
-of IoT products because of its native built-in cloud connectivity (AWS, Google, Azure).
-There are two characteristics that make Mongoose OS so versatile. One of them is the possibility to work "remote/local". Remote is the default option, and compiles
-the code in the cloud, this is good for beginners because avoids the problems related to SDK installations. Local option is based on docker containers and is good for automatic builds
-without internet connection.
+O Mongoose OS é um sistema operacional para a Internet das Coisas, que pode rodar no ESP8266, ESP32 e em outros dispositivos. É uma mistura de facilidade e robustez. Ideal para prototipagem rápida de produtos IoT devido à sua conectividade nativa com a nuvem (AWS, Google, Azure).
 
-Another important characteristic is the use of a scaled down version of JavaScript called mJS as programming language. Advanced functionalities could be written with
-few lines of code compared to other languages (Assembler, C, Processing). However, nothing prevents to call functions written in C, especially for time sensitive device drivers.
+Existem duas características que tornam o Mongoose OS tão versátil. Uma delas é a possibilidade de trabalhar "remoto/local". A opção remota é a padrão e compila o código na nuvem, o que é bom para iniciantes, pois evita problemas relacionados à instalação de SDKs. A opção local é baseada em containers Docker e é boa para builds automáticos sem conexão à internet.
+
+Outra característica importante é o uso de uma versão simplificada de JavaScript chamada mJS como linguagem de programação. Funcionalidades avançadas podem ser escritas com poucas linhas de código em comparação com outras linguagens (Assembler, C, Processing). No entanto, não há impedimento de chamar funções escritas em C, especialmente para controladores de dispositivos sensíveis ao tempo.
 
 ##### Software:
 
-Sample application presented here is composed of two tasks: Send color data for every LED in the string and listen to incoming data coming from the cloud.
+A amostra da aplicação apresentada aqui é composta por duas tarefas: Enviar dados de cor para cada LED na string e escutar dados de entrada vindos da nuvem.
 
-To send data to each LED, the color code is randomly extracted from a predefined color table. Communication to the LED string is made using NEOPIXEL library bundled 
-with Mongoose OS.
+Para enviar dados para cada LED, o código de cor é extraído aleatoriamente de uma tabela de cores predefinida. A comunicação com a corda de LED é feita usando a biblioteca NEOPIXEL que vem junto com o Mongoose OS.
 
-An MQTT connection is established to a broker where the app subscribes to a specific topic. A third party client application must connect to the same MQTT broker and publish
-data to the same topic to change the color palette used. This is a very simple way to change the light pattern over the internet.
+Uma conexão MQTT é estabelecida com um corretor onde o aplicativo se inscreve em um tópico específico. Um aplicativo cliente de terceiros deve se conectar ao mesmo corretor MQTT e publicar dados no mesmo tópico para mudar a paleta de cores utilizada. Este é um jeito muito simples de mudar o padrão de luz na internet.
 
 ##### Circuit assembly:
 
