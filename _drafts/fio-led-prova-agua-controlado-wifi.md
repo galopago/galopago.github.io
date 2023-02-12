@@ -113,15 +113,16 @@ Uma vez que a caixa está fechada, as atualizações de firmware podem ser feita
 | Porca Flangeada M3 DIN6923 | [Compre aqui](https://s.click.aliexpress.com/e/_9g89th)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FLANGED_NUT_3MM_DIN6923.pdf)                           |
 | Borne de parafuso 3.5mm kf350 (2,3 pinos) para PCB. | [Compre aqui](https://s.click.aliexpress.com/e/_eLjzKB)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/KF350.pdf)   
 | Barra De Pinos Fêmea 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FHA3-S1XX.pdf)   
+| BSS138 MOSFET | [Compre aqui](https://s.click.aliexpress.com/e/_DBMA4C1)  | [BSS138.pdf](/assets/pdf/bss138.pdf)   
 
 #### Placas de circuito impressas necessárias para construir os módulos necessários do MISISTEMITA.
 
 | Placas de circuito impressas (PCB) | Ligação do compra | Arquivos de origem                                          | 
 | -------- | ------------------------------------------------------------ |
-| A02 placa de montagem removível para o caixa de 200x120x75mm |[Compre aqui]()| [A02](https://github.com/galopago/misistemita/tree/master/A_BACKPLATES)           |
-| A05 Placa adaptadora (10.16mm Distância entre furos) para o 5V 3.8A PSU  |[Compre aqui]()| [A05](https://github.com/galopago/misistemita/tree/master/A_BACKPLATES)        |
-| B01 2x4 3.5mm placa borne de parafuso|[Compre aqui]()| [B01](https://github.com/galopago/misistemita/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
-| C08 Placa Borne De Expansão para NODEMCU V3  |[Compre aqui]()| [C08](https://github.com/galopago/misistemita/tree/master/C_BREAKOUTS)        |
+| A02 placa de montagem removível para o caixa de 200x120x75mm |[Compre aqui](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_GENERIC_200x120_mm_WATERPROOF_ENCLOSURE_MISISTEMITA_A02_BACKPLAT_e6658e42.html)| [A02](https://github.com/galopago/misistemita/tree/master/A_BACKPLATES)           |
+| A05 Placa adaptadora (10.16mm Distância entre furos) para o 5V 3.8A PSU  |[Compre aqui](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_CONVERTINGA_A_YXDY_5V_3_8A_S_20W_5_POWER_SUPPLY_TO_GENERIC_10_16_m_4a18a928.html)| [A05](https://github.com/galopago/misistemita/tree/master/A_BACKPLATES)        |
+| B01 2x4 3.5mm placa borne de parafuso|[Compre aqui](https://www.pcbway.com/project/shareproject/2x4_3_5_mm_SCREW_TERMINAL_BOARD_MISISTEMITA_B01_SCREW_TERMINALS_6c422d70.html)| [B01](https://github.com/galopago/misistemita/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
+| C08 Placa Borne De Expansão para NODEMCU V3  |[Compre aqui](https://www.pcbway.com/project/shareproject/Breakout_for_ESP8266_dev_boards_with_30_pins_2x15_2_54mm_pitch_or_less_MISIS_fa81133a.html)| [C08](https://github.com/galopago/misistemita/tree/master/C_BREAKOUTS)        |
 | D06 Placa de conversor de nível lógico  |[Compre aqui]()| [D06](https://github.com/galopago/misistemita/tree/master/D_ELECTRONICS)        |
 
 
