@@ -114,28 +114,28 @@ Uma vez que a caixa está fechada, as atualizações de firmware podem ser feita
 | Borne de parafuso 3.5mm kf350 (2,3 pinos) para PCB. | [Compre aqui](https://s.click.aliexpress.com/e/_eLjzKB)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/KF350.pdf)   
 | Barra De Pinos Fêmea 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FHA3-S1XX.pdf)   
 
-#### TUSISTEMITA blocks
+#### Placas de circuito impressas necessárias para construir os módulos necessários do MISISTEMITA.
 
-| PCB    |  Source file                                          | 
+| Placas de circuito impressas (PCB) | Ligação do compra | Arquivos de origem                                          | 
 | -------- | ------------------------------------------------------------ |
-| A02 Backplate for 200x120x75mm enclosure | [A02](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| A05 adapterboard 10.16mm pitch for 5V 3.8A PSU  | [A05](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)        |
-| B01 2x4 3.5mm screw terminal board | [B01](https://github.com/galopago/TUSISTEMITA/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
-| C08 screw terminal breakout board for NODEMCU V3  | [C08](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
-| D06 logic level shifter board  | [D06](https://github.com/galopago/TUSISTEMITA/tree/master/D_ELECTRONICS)        |
+| A02 placa de montagem removível para o caixa de 200x120x75mm |[Compre aqui]()| [A02](https://github.com/galopago/misistemita/tree/master/A_BACKPLATES)           |
+| A05 Placa adaptadora (10.16mm Distância entre furos) para o 5V 3.8A PSU  |[Compre aqui]()| [A05](https://github.com/galopago/misistemita/tree/master/A_BACKPLATES)        |
+| B01 2x4 3.5mm placa borne de parafuso|[Compre aqui]()| [B01](https://github.com/galopago/misistemita/tree/master/B_SCREW_TERMINAL_WIRE_CONNECTORS)        |
+| C08 Placa Borne De Expansão para NODEMCU V3  |[Compre aqui]()| [C08](https://github.com/galopago/misistemita/tree/master/C_BREAKOUTS)        |
+| D06 Placa de conversor de nível lógico  |[Compre aqui]()| [D06](https://github.com/galopago/misistemita/tree/master/D_ELECTRONICS)        |
 
 
 #### Software
 
-| Software    | Source file                                          | 
+| Software    | Arquivos de origem                                                                                 | 
 | -------- | ------------------------------------------------------------ |
 | Firmware    | [MOS_IOT_ADDRESSABLE_LEDS](https://github.com/galopago/MOS_IOT_ADDRESSABLE_LEDS)           |
 
  
 
-## Componentes opcionales:
+## Componentes opcionais:
 
-| Component         | Get yours! | Datasheet                                          | 
+| Componente         | Ligação do compra | Folha de dados                                      | 
 | -------- | ------ | ------------------------------------------------------------ |
-| 3 pc step drill bit 3-20 mm + centerpunch | [💸](https://s.click.aliexpress.com/e/_9vxJV5 )     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
-| 8 Step drill bit 10-45 mm    | [💸](https://s.click.aliexpress.com/e/_9Ior51)     | [8_steps_10-45mm_incremental_drill_bit.pdf](/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf)           |
+| Broca Escalonada bit 3 a 20 mm  | [Compre aqui](https://s.click.aliexpress.com/e/_9vxJV5 )     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
+| Broca Escalonada 10 a 45 mm    | [Compre aqui](https://s.click.aliexpress.com/e/_9Ior51)     | [8_steps_10-45mm_incremental_drill_bit.pdf](/assets/pdf/8_steps_10-45mm_incremental_drill_bit.pdf)           |
