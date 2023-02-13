@@ -111,11 +111,10 @@ Uma vez que a caixa está fechada, as atualizações de firmware podem ser feita
 | Parafuso auto-rostante tipo B M2.6 | [Compre aqui](https://s.click.aliexpress.com/e/_98ymAB)  | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)                           |
 | Parafuso cabeça chata Phillips M3 | [Compre aqui](https://s.click.aliexpress.com/e/_AoOvPz)  | [M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf](/assets/pdf/M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf)                           |
 | Porca Flangeada M3 DIN6923 | [Compre aqui](https://s.click.aliexpress.com/e/_9g89th)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FLANGED_NUT_3MM_DIN6923.pdf)                           |
-| Borne de parafuso 3.5mm kf350 (2,3 pinos) para PCB. | [Compre aqui](https://s.click.aliexpress.com/e/_eLjzKB)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/KF350.pdf)   
-| Barra De Pinos Fêmea 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FHA3-S1XX.pdf)   
-| BSS138 MOSFET | [Compre aqui](https://s.click.aliexpress.com/e/_DBMA4C1)  | [BSS138.pdf](/assets/pdf/bss138.pdf)   
-[FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FHA3-S1XX.pdf)   
-| 10K 0805 SMD resistor | [Compre aqui](https://s.click.aliexpress.com/e/_DFxVwKH)  | [0805-resistor-kit.pdf](/assets/pdf/bss138.pdf)   
+| Borne de parafuso 3.5mm kf350 (2,3 pinos) para PCB. | [Compre aqui](https://s.click.aliexpress.com/e/_eLjzKB)  | [KF350.pdf](/assets/pdf/KF350.pdf)   
+| Barra De Pinos Fêmea 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN)  | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |  
+| BSS138 MOSFET | [Compre aqui](https://s.click.aliexpress.com/e/_DBMA4C1)  | [BSS138.pdf](/assets/pdf/bss138.pdf)|
+| 10K 0805 SMD resistor | [Compre aqui](https://s.click.aliexpress.com/e/_DFxVwKH)  | [0805-resistor-kit.pdf](/assets/pdf/0805-resistor-kit.pdf)|   
 
 
 #### Placas de circuito impressas necessárias para construir os módulos necessários do MISISTEMITA.
