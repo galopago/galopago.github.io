@@ -114,6 +114,9 @@ Uma vez que a caixa está fechada, as atualizações de firmware podem ser feita
 | Borne de parafuso 3.5mm kf350 (2,3 pinos) para PCB. | [Compre aqui](https://s.click.aliexpress.com/e/_eLjzKB)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/KF350.pdf)   
 | Barra De Pinos Fêmea 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FHA3-S1XX.pdf)   
 | BSS138 MOSFET | [Compre aqui](https://s.click.aliexpress.com/e/_DBMA4C1)  | [BSS138.pdf](/assets/pdf/bss138.pdf)   
+[FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FHA3-S1XX.pdf)   
+| 10K 0805 SMD resistor | [Compre aqui](https://s.click.aliexpress.com/e/_DFxVwKH)  | [0805-resistor-kit.pdf](/assets/pdf/bss138.pdf)   
+
 
 #### Placas de circuito impressas necessárias para construir os módulos necessários do MISISTEMITA.
 
@@ -123,7 +126,7 @@ Uma vez que a caixa está fechada, as atualizações de firmware podem ser feita
 | A05 Placa adaptadora (10.16mm Distância entre furos) para o 5V 3.8A PSU  |[Compre aqui](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_CONVERTINGA_A_YXDY_5V_3_8A_S_20W_5_POWER_SUPPLY_TO_GENERIC_10_16_m_4a18a928.html)| [A05](https://github.com/galopago/misistemita/tree/main/a-backplates)        |
 | B01 2x4 3.5mm placa borne de parafuso|[Compre aqui](https://www.pcbway.com/project/shareproject/2x4_3_5_mm_SCREW_TERMINAL_BOARD_MISISTEMITA_B01_SCREW_TERMINALS_6c422d70.html)| [B01](https://github.com/galopago/misistemita/tree/main/b-screw-terminal-wire-connectors)        |
 | C08 Placa Borne De Expansão para NODEMCU V3  |[Compre aqui](https://www.pcbway.com/project/shareproject/Breakout_for_ESP8266_dev_boards_with_main/C_BREAKOUTS)        |[C08](https://github.com/galopago/misistemita/tree/main/c-breakouts)
-| D06 Placa de conversor de nível lógico  |[Compre aqui]()| [D06](https://github.com/galopago/misistemita/tree/main/d-electronics)        |
+| D06 Placa de conversor de nível lógico  |[Compre aqui](https://www.pcbway.com/project/shareproject/BSS138_Level_shifter_MISISTEMITA_D06_BREAKOUT_ELECTRONICS_500967e3.html)| [D06](https://github.com/galopago/misistemita/tree/main/d-electronics)        |
 
 
 #### Software
