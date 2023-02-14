@@ -99,49 +99,48 @@ A placa de de camada única pode ser gravada em casa. Há algumas pad GPIO livre
 	<a href="/assets/images/SINSONTE_BOARD_HOMEMADE.jpg"> <img src="/assets/images/SINSONTE_BOARD_HOMEMADE_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SINSONTE_BOARD_NOCONNECTOR.jpg"> <img src="/assets/images/SINSONTE_BOARD_NOCONNECTOR_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SINSONTE_BOARD_WITHCONNECTORS.jpg"> <img src="/assets/images/SINSONTE_BOARD_WITHCONNECTORS_MEDIUM.jpg"> </a>
-	<figcaption>Home etched board, direct soldering example and finished with connector headers.</figcaption>
+	<figcaption>Placa impressa gravada em casa, exemplo de soldagem direta e finalizada com barra de pinos.</figcaption>
 </figure>
 
-To build the wall clock, choose a plate or disk made of plastic or wood, with enough diameter to hide the clock movement and the sound board. Fix all electronic components and then decorative accessories like LED lights. Finish it with the paint work
+Para construir o relógio de parede, escolha uma placa ou disco feito de plástico ou madeira, com diâmetro suficiente para esconder o movimento do relógio e a placa de som. Fixe todos os componentes eletrônicos e, em seguida, acessórios decorativos, como luzes LED. Finalize com a pintura.
 
 <figure class="third">
 	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_MECHANISM_MEDIUM.jpg"> </a>
 	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_COMPONENTS.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_COMPONENTS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_BACK.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_BACK_MEDIUM.jpg"> </a>
 	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK_FRONT.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_FRONT_MEDIUM.jpg"> </a>
-	<figcaption>clock movement with external contacts, decorative elements, finished back and finished front</figcaption>
+	<figcaption>Movimento de relógio com contatos externos, elementos decorativos, verso finalizado e frente finalizada.</figcaption>
 </figure>
 
-For hour adjustment, remove all batteries and clock hands (hour, minute, second). Slowly turn clock adjustment knob until a "click" sound is heard. Put all clock hands pointing to 12 O'clock. Put the batteries. Sounds can be shifted pressing the momentary push button switch on the board.
+Para ajustar a hora, retire todas as baterias e as mãos do relógio (hora, minuto, segundo). Gire lentamente a chave de ajuste do relógio até ouvir um som de "clique". Coloque todas as mãos do relógio apontando para 12 horas. Coloque as baterias. Os sons podem ser deslocados pressionando o interruptor de botão momentâneo na placa.
 
 
+#### Lista de materiais
 
-#### Bill of materials
-
-| Component         | Get yours! | Datasheet                                          |
+| Componente         | Ligação do compra! | Folha de dados                                        |
 | -------- | ------ | ------------------------------------------------------------ |
-| Female header 2.54mm | [shop now](https://s.click.aliexpress.com/e/_eNNciZ) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
-| Male pin header 2.54mm | [shop now](https://s.click.aliexpress.com/e/_eMCUJv) | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf) |
-| 1/4W 1% TH Resistors | [shop now](https://s.click.aliexpress.com/e/_eMCbH1) | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf) |
-| Push button 6x6mm | [shop now](https://s.click.aliexpress.com/e/_eKd4YV) | [TS-1301.pdf](/assets/pdf/TS-1301.pdf) |
-| Raspberry Pi Pico | [shop now](https://s.click.aliexpress.com/e/_AXStdl) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
-| 2xAA battery holder for PCB | [shop now](https://s.click.aliexpress.com/e/_AoI96B) | [Comfortable_Catalog.pdf](/assets/pdf/Comfortable_Catalog.pdf) |
-| 8 Ohm speaker 29 mm 0.25W | [shop now](https://s.click.aliexpress.com/e/_ATihaX) | [DXP29W-A.pdf](/assets/pdf/DXP29W-A.pdf) |
-| MOSFET 2N7000 | [shop now](https://s.click.aliexpress.com/e/_9j8Bgx) | [NDS7002A-D.pdf](/assets/pdf/NDS7002A-D.pdf) |
-| NPN BIPOLAR TRANSISTOR 2N2222A | [shop now](https://s.click.aliexpress.com/e/_ANvtiX) | [P2N2222A-D.pdf](/assets/pdf/P2N2222A-D.pdf) |
-| TH Radial Electrolytic Capacitor | [shop now](https://s.click.aliexpress.com/e/_9gn4vh) | [TS13DE-CD110X.pdf](/assets/pdf/TS13DE-CD110X.pdf) |
-| TH Ceramic Disc Capacitor | [shop now](https://s.click.aliexpress.com/e/_Apm6Pd) | [TS15.pdf](/assets/pdf/TS15.pdf) |
-| Quartz clock movement with trigger | [shop now](https://s.click.aliexpress.com/e/_AfCGIL) | [12888SE_TRIGGER_CLOCK_MOVEMENT.pdf](/assets/pdf/12888SE_TRIGGER_CLOCK_MOVEMENT.pdf) |
-| Wall Clock hooks DIY | [shop now](https://s.click.aliexpress.com/e/_A0tg3V) | [wall_clock_hook.pdf](/assets/pdf/wall_clock_hook.pdf) |
-| TEPT5700 visible light photodiode | [shop now](https://s.click.aliexpress.com/e/_AM6wDK) | [tept5700.pdf](/assets/pdf/tept5700.pdf) |
-| LED Copper Wire with battery box | [shop now](https://s.click.aliexpress.com/e/_9vylbl) | [LED_Copper_Wire_Battery_Box.pdf](/assets/pdf/LED_Copper_Wire_Battery_Box.pdf) |
+| Barra de pinos fêmea  2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNNciZ) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
+| barra de pinos macho 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eMCUJv) | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf) |
+| 1/4W 1% TH Resistors | [Compre aqui](https://s.click.aliexpress.com/e/_eMCbH1) | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf) |
+| Botão Microchave Push Button 6x6mm | [Compre aqui](https://s.click.aliexpress.com/e/_eKd4YV) | [TS-1301.pdf](/assets/pdf/TS-1301.pdf) |
+| Raspberry Pi Pico | [Compre aqui](https://s.click.aliexpress.com/e/_AXStdl) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
+| Suporte Caixa para 2 Pilhas AA para PCB | [Compre aqui](https://s.click.aliexpress.com/e/_AoI96B) | [Comfortable_Catalog.pdf](/assets/pdf/Comfortable_Catalog.pdf) |
+| 8 Ohm Alto-falante 29 mm 0.25W | [Compre aqui](https://s.click.aliexpress.com/e/_ATihaX) | [DXP29W-A.pdf](/assets/pdf/DXP29W-A.pdf) |
+| MOSFET 2N7000 | [Compre aqui](https://s.click.aliexpress.com/e/_9j8Bgx) | [NDS7002A-D.pdf](/assets/pdf/NDS7002A-D.pdf) |
+| TRANSISTOR BIPOLAR NPN 2N2222A | [Compre aqui](https://s.click.aliexpress.com/e/_ANvtiX) | [P2N2222A-D.pdf](/assets/pdf/P2N2222A-D.pdf) |
+| TH Capacitor eletrolítico radial | [Compre aqui](https://s.click.aliexpress.com/e/_9gn4vh) | [TS13DE-CD110X.pdf](/assets/pdf/TS13DE-CD110X.pdf) |
+| TH Capacitor ceramico disco | [Compre aqui](https://s.click.aliexpress.com/e/_Apm6Pd) | [TS15.pdf](/assets/pdf/TS15.pdf) |
+| movimento de relógio de quartzo com gatilho | [Compre aqui](https://s.click.aliexpress.com/e/_AfCGIL) | [12888SE_TRIGGER_CLOCK_MOVEMENT.pdf](/assets/pdf/12888SE_TRIGGER_CLOCK_MOVEMENT.pdf) |
+| Wall Clock hooks DIY | [Compre aqui](https://s.click.aliexpress.com/e/_A0tg3V) | [wall_clock_hook.pdf](/assets/pdf/wall_clock_hook.pdf) |
+| Fotodiodo de luz visível TEPT5700 | [Compre aqui](https://s.click.aliexpress.com/e/_AM6wDK) | [tept5700.pdf](/assets/pdf/tept5700.pdf) |
+| Fio De Fada Led a bateria | [Compre aqui](https://s.click.aliexpress.com/e/_9vylbl) | [LED_Copper_Wire_Battery_Box.pdf](/assets/pdf/LED_Copper_Wire_Battery_Box.pdf) |
 
 
-#### Circuit board
+#### Placa de circuito impresso
 
-| PCB    |  Source files                                        | 
-| -------- | ------------------------------------------------------------ |
-| Sound board (hardware directory) | [SINSONTE](https://github.com/galopago/SINSONTE)           |
+| Placas de circuito impressas (PCB)    | Ligação do compra| Arquivos de origem             | 
+| -------- | -----|------------------------------------------------------- |
+|Placa de som (diretório de hardware) |[Compre aqui](https://www.pcbway.com/project/shareproject/Talking_wall_clock_board_for_Raspberry_Pi_Pico_399ca59f.html) |[SINSONTE](https://github.com/galopago/SINSONTE)           |
 
 
 
@@ -149,12 +148,12 @@ For hour adjustment, remove all batteries and clock hands (hour, minute, second)
 
 | Software    | Source files                                         | 
 | -------- | ------------------------------------------------------------ |
-| Firmware CircuitPython & SDK C/C++ (software folder)   | [SINSONTE](https://github.com/galopago/SINSONTE)           |
+| Firmware CircuitPython & SDK C/C++ (diretório de software)   | [SINSONTE](https://github.com/galopago/SINSONTE)           |
 
  
 
-## Optional components:
+## Componentes opcionais:
 
-| Component         | Get yours! | Datasheet                                          | 
+| Componente         | Ligação do compra | Folha de dados                                          | 
 | -------- | ------ | ------------------------------------------------------------ |
-| 3 pc step drill bit 3-20 mm + centerpunch  | [shop now](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
+| Broca Escalonada bit 3 a 20 mm  | [shop now](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
