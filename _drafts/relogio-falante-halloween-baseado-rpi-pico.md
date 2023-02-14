@@ -72,28 +72,28 @@ Arquivos MP3 podem armazenar cerca de 10 vezes mais tempo de som do que WAV para
 
 
 ##### Hardware:
-External components are part of one of the three different functionalities:
+Componentes externos fazem parte de uma das três diferentes funcionalidades:
 
-* __On/Off__ : The circuit is made up by a MOSFET, Drain terminal connected to 3V3_EN and the Source terminal connected to GND. Connected to the gate are 2 elements: A capacitor to ground, and a resistor to V+. The circuit works in the following way:
+* __On/Off__ : O circuito é composto por um MOSFET, o terminal de dreno conectado a 3V3_EN e o terminal de fonte conectado a GND. Conectados à porta há 2 elementos: um capacitor para o solo e um resistor para V+. O circuito funciona da seguinte maneira:
 
-  * Step 1: Capacitor is fully charged, turning on the MOSFET and tying 3V3_EN to ground totally powering off Rpi Pico board
+* Passo 1: O capacitor é totalmente carregado, ligando o MOSFET e ligando 3V3_EN ao solo, desligando totalmente a placa Rpi Pico.
 
-  * Step 2: Capacitor is quickly discharged by the brief closure of the contacts of the clock movement, turning off the MOSFET, and powering on the Rpi Pico. The first thing to do after power up, is keeping the capacitor discharged with the aid of a GPIO output in low level.
+* Passo 2: O capacitor é rapidamente descarregado pelo breve fechamento dos contatos do movimento do relógio, desligando o MOSFET e ligando a Rpi Pico. A primeira coisa a fazer após a ligar é manter o capacitor descarregado com a ajuda de uma saída GPIO em nível baixo.
+
+* Passo 3: Enquanto o som é reproduzido, o nível baixo na GPIO é mantido. Uma vez que o som termina, a saída GPIO é ligada em nível alto, fazendo com que o MOSFET ligue novamente, desligando a Rpi Pico até o próximo fechamento de Interruptor.
+
+* __Amplificador de áudio__: amplificador de uma etapa, com um único transistor NPN alimenta um pequeno alto-falante de 8 Ohms. Há também um filtro RC passa-baixa de entrada para suavizar o ruído devido à saída PWM.
   
-  * Step 3: While sound is played, low level on the GPIO is kept. Once sound finishes, GPIO output turned high level, so MOSFET turns on again, powering off the Rpi Pico until the next switch closure
-
-* __Audio amplifier__: Single-stage, single NPN transistor powers a small 8 Ohm speaker. There is also an input RC low pass filter to smooth noise due to the PWM output.
-
-* __Day/night detection__: Visible light sensor to avoid playing sounds at night. Connected to an ADC pin
+* __Detecção de dia/noite__: Sensor de luz visível para evitar a reprodução de sons à noite. Conectado a um pino ADC.
 
 
 
-##### Board assembly:
+##### Montagem da placa:
 
-Rpi Pico, speaker, light sensor, and clock contacts could be soldered directly to the PCB to get a very small height profile, or add pin headers and female sockets for a more flexible option.
+A Rpi Pico, alto-falante, sensor de luz e contatos de relógio podem ser soldados diretamente à placa para obter um perfil de altura muito pequeno ou adicionar barra de pinos para uma opção mais flexível.
 
-The single sided board can be etched at home. There are some free gpio pads for experimentation and also mounting holes near the corners
- 
+A placa de de camada única pode ser gravada em casa. Há algumas pad GPIO livres para experimentação e também furos de montagem perto das cantos.
+
 
 <figure class="third">
 	<a href="/assets/images/SINSONTE_BOARD_HOMEMADE.jpg"> <img src="/assets/images/SINSONTE_BOARD_HOMEMADE_MEDIUM.jpg"> </a>
