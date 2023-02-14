@@ -14,60 +14,62 @@ header:
 ---
 Relógio falante de Halloween que toca sons a cada hora cheia. Apenas alguns componentes externos (fáceis de encontrar e soldar) são necessários. A placa de uma face pode ser fabricada em casa. Projeto altamente personalizável que envolve múltiplas áreas de conhecimento ([STEAM](https://en.wikipedia.org/wiki/STEAM_fields)): Eletrônica, programação, marcenaria, artes, etc.
 
-Halloween talking clock that plays sounds every O'clock hour. Only a few external components (easy to source and solder) needed. The single side board could be manufactured at home. Very customizable project than involves multiple knowledge areas ([STEAM](https://en.wikipedia.org/wiki/STEAM_fields)): Electronics, programming, woodworking, arts, etc.
-
 <figure>
 	<a href="/assets/images/HALLOWEEN_TALKING_CLOCK.jpg"> <img src="/assets/images/HALLOWEEN_TALKING_CLOCK_MEDIUM.jpg"> </a>
-	<figcaption>Customized clock hanging on a wall</figcaption>
+	<figcaption>Relógio personalizado pendurado na parede.</figcaption>
 </figure>
 
-Key component: [Quartz clock movement with trigger](https://s.click.aliexpress.com/e/_AfCGIL)
+Componente chave: [Movimento de relógio de quartzo com gatilho](https://s.click.aliexpress.com/e/_AfCGIL)
 {: .notice--danger}
 
 
-##### Concept:
+##### Conceito:
 
-A lot of musical wall clocks on the market lacks the possibility of change original sounds. A clock with that capability can be built with an embedded system. But which one to choose? Raspberry Pi Pico was chosen for the 3 following reasons: 
+Um grande número de relógios de parede musicais no mercado carecem da possibilidade de mudar os sons originais. Um relógio com essa capacidade pode ser construído com um sistema embarcado. Mas qual escolher? O Raspberry Pi Pico foi escolhido por 3 razões:
 
-* There's no need to install software for initial firmware download
-* Onboard memory 2 MegaBytes of flash can store some amount of sounds without requiring external memory
-* Can be powered by 2xAA batteries without additional components
+Não é necessário instalar software para o download inicial do firmware
+A memória onboard de 2 MegaBytes de flash pode armazenar alguma quantidade de sons sem precisar de memória externa
+Pode ser alimentado por 2 baterias AA sem componentes adicionais.
 
-Rpi Pico draws about 1.6 mA in it's lowest power mode (deep sleep). Seems not much, but is too high for a battery powered circuit, because they will exhaust in around two months. For that reason an external power circuit that can shut off the board completely was added. After that, power consumption lowered to 70 uA, so batteries will last for a year.
+A Rpi Pico consome cerca de 1,6 mA no seu modo de consumo mais baixo (sono profundo). Pode parecer pouco, mas é alto demais para um circuito alimentado por bateria, pois elas se esgotarão em cerca de dois meses. Por esse motivo, um circuito de alimentação externo que pode desligar completamente a placa foi adicionado. Depois disso, o consumo de energia caiu para 70 uA, então as baterias durarão por um ano.
 
-The Rpi Pico acts as sound storage and player. To show the time and generate an O'clock signal, a quartz clock movement with trigger was used. Combining these 2 elements a talking sound clock was born
+O Rpi Pico age como armazenador e tocador de som. Para exibir o tempo e gerar um sinal de "hora", foi usado um movimento de relógio de quartzo com gatilho. Ao combinar esses dois elementos, nasceu um relógio falante de som.
 
-#### Key features:
 
-* Two versions of the (almost) same application: One developed in [CircuitPython](https://www.adafruit.com/circuitpython) and the other in the [C/C++ SDK](https://github.com/raspberrypi/pico-sdk).
-* Compatible with the most common operating systems.
-* No need to install apps for initial firmware download
-* There's no need to recompile code (in the app developed in CircuitPython) to change sounds
-* Up to 3 years in standby mode using a pair of AA batteries.
-* Easy to source, and solder components.
+#### Recursos principais:
+
+* Duas versões da mesma aplicação (quase): Uma desenvolvida em [CircuitPython](https://www.adafruit.com/circuitpython) e a outra no [C/C++ SDK](https://github.com/raspberrypi/pico-sdk).
+* Compatível com os sistemas operacionais mais comuns.
+* Não é necessário instalar aplicativos para o download inicial do firmware.
+* Não é necessário recompilar o código (na aplicação desenvolvida em CircuitPython) para mudar os sons.
+* Até 3 anos em modo de standby usando uma par de pilhas AA.
+* Componentes fáceis de encontrar e soldar.
+
 
 <figure>
 	<a href="/assets/images/rpi_pico_sound_clock.png"> <img src="/assets/images/rpi_pico_sound_clock.png"> </a>
-	<figcaption>Simplified diagram of the power circuit</figcaption>
+	<figcaption>Diagrama simplificado do circuito de energia</figcaption>
 </figure>
 
 ##### Software:
 
-Right after power on, Rpi Pico puts a low level on the GPIO that is wired to the power circuit to keep it powered, then decides which file should be played, and after the sound finishes, a high level is put on the GPIO powering off the Pico. Additionally a light sensor is read to not play sound when is dark (night).
+Assim que ligado, o Rpi Pico coloca um nível baixo no GPIO que está conectado ao circuito de alimentação para mantê-lo ligado, então decide qual arquivo deve ser tocado e, após o som terminar, é colocado um nível alto no GPIO desligando o Pico. Além disso, é lida uma sensibilidade à luz para não tocar som quando estiver escuro (à noite).
 
-Sound files are played sequentially, one by one on each power on. A pointer to the next file is stored in nonvolatile memory, be carefully modifying the program to keep writing at a minimum.
+Os arquivos de som são reproduzidos sequencialmente, um por um a cada ligada. Um ponteiro para o próximo arquivo é armazenado na memória não volátil, cuidado ao modificar o programa para manter a escrita mínima.
 
-###### PECULIARITIES OF THE SDK C/C++ VERSION:
+###### Peculiaridades da versão C/C++ SDK:
 
-Sounds to be played must be converted first to WAV format 16 bit mono @ 44100 Hz, then converted to C arrays[] before compiling. The application uses a PWM via digital output and interrupts to play sounds.
+Os sons a serem reproduzidos devem ser convertidos primeiro para o formato WAV de 16 bits mono a 44100 Hz, em seguida convertidos para arrays C[] antes da compilação. A aplicação usa uma PWM via saída digital e interrupções para reproduzir sons.
 
-The program execution starts almost immediately after power on. The main disadvantage of the application for now, it only supports .WAV files which are big, and cannot be changed without recompiling code
+O programa começa a ser executado logo após a ligação. A principal desvantagem do aplicativo por enquanto é que ele só suporta arquivos .WAV, que são grandes e não podem ser alterados sem recompilar o código.
 
-###### PECULIARITIES OF THE CIRCUITPYTHON VERSION:
 
-Sounds to be played must be converted to MP3 mono format, The app uses audiomp3 and audiopwmio modules to output audio out of a digital pin (PWM). These files are stored in the filesystem provided by CP, so modifying them is straightforward, just drag and drop.
+###### Peculiaridades da versão CircuitPython:
 
-MP3 files can store about 10 more sound time than WAV for the same file size, however CircuitPython runtime execution takes more than a second after power on, so probably it won't be a good thing for any kind of final application
+Sons a serem tocados devem ser convertidos para o formato MP3 mono, o aplicativo usa módulos audiomp3 e audiopwmio para saída de áudio de um pino digital (PWM). Esses arquivos são armazenados no sistema de arquivos fornecido pelo CP, então a sua modificação é simples, basta arrastar e soltar.
+
+Arquivos MP3 podem armazenar cerca de 10 vezes mais tempo de som do que WAV para o mesmo tamanho de arquivo, no entanto, a execução do tempo de execução do CircuitPython leva mais de um segundo após a ligar, então provavelmente não será uma coisa boa para qualquer tipo de aplicação final.
+
 
 ##### Hardware:
 External components are part of one of the three different functionalities:
