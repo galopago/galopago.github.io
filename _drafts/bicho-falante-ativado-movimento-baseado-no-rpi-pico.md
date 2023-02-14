@@ -12,142 +12,145 @@ tags:
 header:
      teaser: "/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_TEASER.jpg"
 ---
-Halloween critter that plays sounds when movement of people is detected. Only a few external components (easy to source and solder) needed. The single side board could be manufactured at home. Very customizable project than involves multiple knowledge areas ([STEAM](https://en.wikipedia.org/wiki/STEAM_fields)): Electronics, programming, woodworking, arts, etc.
+Bicho de Halloween que toca sons quando é detectado movimento de pessoas. São necessários apenas alguns componentes externos (fáceis de encontrar e soldar). A placa de uma só face pode ser fabricada em casa. Projeto muito personalizável que envolve múltiplas áreas de conhecimento ([STEAM](https://en.wikipedia.org/wiki/STEAM_fields)): Eletrônica, programação, marcenaria, artes, etc.
+
 
 <figure>
 	<a href="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER.jpg"> <img src="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_MEDIUM.jpg"> </a>
-	<figcaption>Customized critter hanging on a wall</figcaption>
+	<figcaption>Bicho personalizado pendurado na parede</figcaption>
 </figure>
 
-Key component: [AM312 Mini IR Pyroelectric Infrared Sensor](https://s.click.aliexpress.com/e/_9wbM0t)
+Componente chave: [AM312 Mini IR Pyroelectric Infrared Sensor](https://s.click.aliexpress.com/e/_9wbM0t)
 {: .notice--danger}
 
 
-##### Concept:
+##### Conceito:
 
-The project is a slight modification of [talking clock](https://galopago.github.io/english/halloween-talking-clock-based-on-rpi-pico/), but in this case, power is activated by a PIR sensor. When a person moves near the critter, a random sound is played. Raspberry Pi Pico was chosen for the 3 following reasons: 
+O projeto é uma pequena modificação do [relógio falante](https://galopago.github.io/portugues/relogio-falante-halloween-baseado-rpi-pico/) , mas neste caso, a energia é ativada por um sensor PIR. Quando uma pessoa se move perto do bicho, um som aleatório é tocado. O Raspberry Pi Pico foi escolhido pelas 3 seguintes razões:
 
-* There's no need to install software for initial firmware download
-* Onboard memory 2 MegaBytes of flash can store some amount of sounds without requiring external memory
-* Can be powered by 2xAA batteries without additional components
+* Não é necessário instalar software para o download inicial do firmware
+* A memória onboard de 2 MegaBytes de flash pode armazenar alguma quantidade de sons sem exigir memória externa
+* Pode ser alimentado por 2 baterias AA sem componentes adicionais
 
-Rpi Pico draws about 1.6 mA in it's lowest power mode (deep sleep). Seems not much, but is too high for a battery powered circuit, because they will exhaust in around two months. For that reason an external power circuit that can shut off the board completely was added. After that, power consumption lowered to 70 uA, so batteries will last for a year.
+Rpi Pico consome cerca de 1,6 mA em seu modo de baixo consumo de energia (sono profundo). Parece pouco, mas é muito alto para um circuito alimentado por bateria, pois eles se esgotarão em cerca de dois meses. Por essa razão, um circuito de alimentação externo que pode desligar completamente a placa foi adicionado. Depois disso, o consumo de energia caiu para 70 uA, então as baterias durarão por um ano.
 
-The Rpi Pico acts as sound storage and player. 
+O Rpi Pico atua como armazenador e reproductor de som.
 
-#### Key features:
+#### Recursos principais:
 
-* Two versions of the (almost) same application: One developed in [CircuitPython](https://www.adafruit.com/circuitpython) and the other in the [C/C++ SDK](https://github.com/raspberrypi/pico-sdk).
-* Compatible with the most common operating systems.
-* No need to install apps for initial firmware download
-* There's no need to recompile code (in the app developed in CircuitPython) to change sounds
-* Up to 3 years in standby mode using a pair of AA batteries.
-* Easy to source, and solder components.
+* Duas versões da mesma aplicação (quase): Uma desenvolvida em CircuitPython e a outra no C/C++ SDK.
+* Compatível com os sistemas operacionais mais comuns.
+* Não é necessário instalar aplicativos para o download inicial do firmware.
+* Não é necessário recompilar o código (na aplicação desenvolvida em CircuitPython) para mudar os sons.
+* Até 3 anos em modo de standby usando uma par de pilhas AA.
+* Componentes fáceis de encontrar e soldar.
+
 
 <figure>
 	<a href="/assets/images/rpi_pico_sound_motion.png"> <img src="/assets/images/rpi_pico_sound_motion.png"> </a>
-	<figcaption>Simplified diagram of the power circuit</figcaption>
+	<figcaption>Diagrama simplificado do circuito de energia</figcaption>
 </figure>
 
 ##### Software:
 
-Right after power on, Rpi Pico puts a low level on the GPIO that is wired to the power circuit to keep it powered, then decides which file should be played, and after the sound finishes, a high level is put on the GPIO powering off the Pico. Additionally a light sensor is read to not play sound when is dark (night).
+Assim que ligado, o Rpi Pico coloca um nível baixo no GPIO que está conectado ao circuito de alimentação para mantê-lo ligado, então decide qual arquivo deve ser tocado e, após o som terminar, é colocado um nível alto no GPIO desligando o Pico. Além disso, é lida uma sensibilidade à luz para não tocar som quando estiver escuro (à noite).
 
-Sound files are played randomly, one by one on each power on. 
+Arquivos de som são reproduzidos aleatoriamente, um por um a cada ligação
 
-###### PECULIARITIES OF THE SDK C/C++ VERSION:
+###### Peculiaridades da versão C/C++ SDK
 
-Sounds to be played must be converted first to WAV format 16 bit mono @ 44100 Hz, then converted to C arrays[] before compiling. The application uses a PWM via digital output and interrupts to play sounds.
+Os sons a serem reproduzidos devem ser convertidos primeiro para o formato WAV de 16 bits mono a 44100 Hz, em seguida convertidos para arrays C[] antes da compilação. A aplicação usa uma PWM via saída digital e interrupções para reproduzir sons.
 
-The program execution starts almost immediately after power on. The main disadvantage of the application for now, it only supports .WAV files which are big, and cannot be changed without recompiling code
+O programa começa a ser executado logo após a ligação. A principal desvantagem do aplicativo por enquanto é que ele só suporta arquivos .WAV, que são grandes e não podem ser alterados sem recompilar o código.
 
-###### PECULIARITIES OF THE CIRCUITPYTHON VERSION:
+###### Peculiaridades da versão CircuitPython:
 
-Sounds to be played must be converted to MP3 mono format, The app uses audiomp3 and audiopwmio modules to output audio out of a digital pin (PWM). These files are stored in the filesystem provided by CP, so modifying them is straightforward, just drag and drop.
+Sons a serem tocados devem ser convertidos para o formato MP3 mono, o aplicativo usa módulos audiomp3 e audiopwmio para saída de áudio de um pino digital (PWM). Esses arquivos são armazenados no sistema de arquivos fornecido pelo CP, então a sua modificação é simples, basta arrastar e soltar.
 
-MP3 files can store about 10 more sound time than WAV for the same file size, however CircuitPython runtime execution takes more than a second after power on, so probably it won't be a good thing for any kind of final application
+Arquivos MP3 podem armazenar cerca de 10 vezes mais tempo de som do que WAV para o mesmo tamanho de arquivo, no entanto, a execução do tempo de execução do CircuitPython leva mais de um segundo após a ligar, então provavelmente não será uma coisa boa para qualquer tipo de aplicação final.
 
 ##### Hardware:
 External components are part of one of the three different functionalities:
 
-* __On/Off__ : The circuit is made up by a MOSFET, Drain terminal connected to 3V3_EN and the Source terminal connected to GND. Connected to the gate are 2 elements: A capacitor to ground, and a resistor to V+. The circuit works in the following way:
+Componentes externos fazem parte de uma das três diferentes funcionalidades:
 
-  * Step 1: Capacitor is fully charged, turning on the MOSFET and tying 3V3_EN to ground totally powering off Rpi Pico board
+* __On/Off__ : O circuito é composto por um MOSFET, o terminal de dreno conectado a 3V3_EN e o terminal de fonte conectado a GND. Conectados à porta há 2 elementos: um capacitor para o solo e um resistor para V+. O circuito funciona da seguinte maneira:
 
-  * Step 2: Capacitor is quickly discharged by the PIR signal, turning off the MOSFET, and powering on the Rpi Pico. The first thing to do after power up, is keeping the capacitor discharged with the aid of a GPIO output in low level.
-  
-  * Step 3: While sound is played, low level on the GPIO is kept. Once sound finishes, GPIO output turned high level, so MOSFET turns on again, powering off the Rpi Pico until the next switch closure
+* Passo 1: O capacitor é totalmente carregado, ligando o MOSFET e ligando 3V3_EN ao solo, desligando totalmente a placa Rpi Pico.
 
-* __Audio amplifier__: Single-stage, single NPN transistor powers a small 8 Ohm speaker. There is also an input RC low pass filter to smooth noise due to the PWM output.
+* Passo 2: O capacitor é rapidamente descarregado pelo breve fechamento dos contatos do movimento do relógio, desligando o MOSFET e ligando a Rpi Pico. A primeira coisa a fazer após a ligar é manter o capacitor descarregado com a ajuda de uma saída GPIO em nível baixo.
 
-* __Day/night detection__: Visible light sensor to avoid playing sounds at night. Connected to an ADC pin
+* Passo 3: Enquanto o som é reproduzido, o nível baixo na GPIO é mantido. Uma vez que o som termina, a saída GPIO é ligada em nível alto, fazendo com que o MOSFET ligue novamente, desligando a Rpi Pico até o próximo fechamento de Interruptor.
+
+* __Amplificador de áudio__: amplificador de uma etapa, com um único transistor NPN alimenta um pequeno alto-falante de 8 Ohms. Há também um filtro RC passa-baixa de entrada para suavizar o ruído devido à saída PWM.
+
+* __Detecção de dia/noite__: Sensor de luz visível para evitar a reprodução de sons à noite. Conectado a um pino ADC.
 
 
+##### Montagem da placa:
 
-##### Board assembly:
+A Rpi Pico, alto-falante, sensor de luz e contatos de relógio podem ser soldados diretamente à placa para obter um perfil de altura muito pequeno ou adicionar barra de pinos para uma opção mais flexível.
 
-Rpi Pico, speaker, light sensor, and PIR sensor could be soldered directly to the PCB to get a very small height profile, or add pin headers and female sockets for a more flexible option.
-
-The single sided board can be etched at home. There are some free gpio pads for experimentation and also mounting holes near the corners
- 
+A placa de de camada única pode ser gravada em casa. Há algumas pad GPIO livres para experimentação e também furos de montagem perto das cantos.
 
 <figure class="third">
 	<a href="/assets/images/SINSONTE_BOARD_HOMEMADE.jpg"> <img src="/assets/images/SINSONTE_BOARD_HOMEMADE_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SINSONTE_BOARD_NOCONNECTOR.jpg"> <img src="/assets/images/SINSONTE_BOARD_NOCONNECTOR_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SINSONTE_BOARD_WITHCONNECTORS.jpg"> <img src="/assets/images/SINSONTE_BOARD_WITHCONNECTORS_MEDIUM.jpg"> </a>
-	<figcaption>Home etched board, direct soldering example and finished with connector headers.</figcaption>
+	<figcaption>Placa impressa gravada em casa, exemplo de soldagem direta e finalizada com barra de pinos.</figcaption>
 </figure>
 
-To build the critter, choose a piece of plastic or wood, with enough diameter to hide the sound board. Fix all electronic components and then decorative accessories like LED lights. Finish it with the paint work.
+Para construir o bicho, escolha uma placa ou disco feito de plástico ou madeira, com diâmetro suficiente para esconder o placa de som. Fixe todos os componentes eletrônicos e, em seguida, acessórios decorativos, como luzes LED. Finalize com a pintura.
+
 
 <figure class="third">
 	<a href="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_SENSOR.jpg"> <img src="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_SENSOR_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_COMPONENTS.jpg"> <img src="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_COMPONENTS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_BACK.jpg"> <img src="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_MEDIUM.jpg"> </a>
 	<a href="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_FRONT.jpg"> <img src="/assets/images/MOTION_ACTIVATED_TALKING_CRITTER_FRONT_MEDIUM.jpg"> </a>
-	<figcaption>PIR sensor with a transistor, critter shaped wood, finished back and finished front</figcaption>
+	<figcaption>Sensor PIR com transistor, forma de bicho em madeira, traseira e frente acaba</figcaption>
 </figure>
 
-An NPN transistor was added to the PIR sensor to invert its' signal to keep it compatible with the original circuit.
+Um transistor NPN foi adicionado ao sensor PIR para invertê-lo sinal para mantê-lo compatível com o circuito original.
 
 
-#### Bill of materials
+#### Lista de materiais
 
-| Component         | Get yours! | Datasheet                                          |
+| Componente         | Ligação do compra | Folha de dados                                          |
 | -------- | ------ | ------------------------------------------------------------ |
-| Female header 2.54mm | [shop now](https://s.click.aliexpress.com/e/_eNNciZ) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
-| Male pin header 2.54mm | [shop now](https://s.click.aliexpress.com/e/_eMCUJv) | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf) |
-| 1/4W 1% TH Resistors | [shop now](https://s.click.aliexpress.com/e/_eMCbH1) | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf) |
-| Push button 6x6mm | [shop now](https://s.click.aliexpress.com/e/_eKd4YV) | [TS-1301.pdf](/assets/pdf/TS-1301.pdf) |
+| Barra de pinos fêmea 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNNciZ) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
+| Barra de pinos macho  2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eMCUJv) | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf) |
+| 1/4W 1% TH Resistors | [Compre aqui](https://s.click.aliexpress.com/e/_eMCbH1) | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf) |
+| Botão Microchave Push Button 6x6mm | [Compre aqui](https://s.click.aliexpress.com/e/_eKd4YV) | [TS-1301.pdf](/assets/pdf/TS-1301.pdf) |
 | Raspberry Pi Pico | [shop now](https://s.click.aliexpress.com/e/_AXStdl) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
-| 2xAA battery holder for PCB | [shop now](https://s.click.aliexpress.com/e/_AoI96B) | [Comfortable_Catalog.pdf](/assets/pdf/Comfortable_Catalog.pdf) |
-| 8 Ohm speaker 29 mm 0.25W | [shop now](https://s.click.aliexpress.com/e/_ATihaX) | [DXP29W-A.pdf](/assets/pdf/DXP29W-A.pdf) |
+| Suporte Caixa para 2 Pilhas AA para PCB | [Compre aqui](https://s.click.aliexpress.com/e/_AoI96B) | [Comfortable_Catalog.pdf](/assets/pdf/Comfortable_Catalog.pdf) |
+| 8 Ohm Alto-falante 29 mm 0.25W | [Compre aqui](https://s.click.aliexpress.com/e/_ATihaX) | [DXP29W-A.pdf](/assets/pdf/DXP29W-A.pdf) |
 | MOSFET 2N7000 | [shop now](https://s.click.aliexpress.com/e/_9j8Bgx) | [NDS7002A-D.pdf](/assets/pdf/NDS7002A-D.pdf) |
-| NPN BIPOLAR TRANSISTOR 2N2222A | [shop now](https://s.click.aliexpress.com/e/_ANvtiX) | [P2N2222A-D.pdf](/assets/pdf/P2N2222A-D.pdf) |
-| TH Radial Electrolytic Capacitor | [shop now](https://s.click.aliexpress.com/e/_9gn4vh) | [TS13DE-CD110X.pdf](/assets/pdf/TS13DE-CD110X.pdf) |
-| TH Ceramic Disc Capacitor | [shop now](https://s.click.aliexpress.com/e/_Apm6Pd) | [TS15.pdf](/assets/pdf/TS15.pdf) |
-| TEPT5700 visible light photodiode | [shop now](https://s.click.aliexpress.com/e/_AM6wDK) | [tept5700.pdf](/assets/pdf/tept5700.pdf) |
-| AM312 Mini IR Pyroelectric Infrared Sensor | [shop now](https://s.click.aliexpress.com/e/_9wbM0t) | [AS312.pdf](/assets/pdf/AS312.pdf) |
+| TRANSISTOR BIPOLAR NPN 2N2222A | [Compre aqui](https://s.click.aliexpress.com/e/_ANvtiX) | [P2N2222A-D.pdf](/assets/pdf/P2N2222A-D.pdf) |
+| TH Capacitor eletrolítico radial | [Compre aqui](https://s.click.aliexpress.com/e/_9gn4vh) | [TS13DE-CD110X.pdf](/assets/pdf/TS13DE-CD110X.pdf) |
+| TH Capacitor ceramico disco | [Compre aqui](https://s.click.aliexpress.com/e/_Apm6Pd) | [TS15.pdf](/assets/pdf/TS15.pdf) |
+| Fotodiodo de luz visível TEPT5700 | [Compre aqui](https://s.click.aliexpress.com/e/_AM6wDK) | [tept5700.pdf](/assets/pdf/tept5700.pdf) |
+| AM312 Mini Pir Sensor De Movimento | [Compre aqui](https://s.click.aliexpress.com/e/_9wbM0t) | [AS312.pdf](/assets/pdf/AS312.pdf) |
 
 
-#### Circuit board
+#### Placa de circuito impresso
 
-| PCB    |  Source files                                        | 
-| -------- | ------------------------------------------------------------ |
-| Sound board (hardware directory) | [SINSONTE](https://github.com/galopago/SINSONTE)           |
+| Placas de circuito impressas (PCB)    | | Arquivos de origem                                        | 
+| -------- | -----------|------------------------------------------------- |
+| Placa de som (diretório de hardware) |[Compre aqui](https://www.pcbway.com/project/shareproject/Talking_wall_clock_board_for_Raspberry_Pi_Pico_399ca59f.html)| [SINSONTE](https://github.com/galopago/SINSONTE)           |
 
 
 
 #### Software
 
-| Software    | Source files                                         | 
+| Software    | Arquivos de origem                                         | 
 | -------- | ------------------------------------------------------------ |
-| Firmware CircuitPython & SDK C/C++ (software folder, random app folder)   | [SINSONTE](https://github.com/galopago/SINSONTE)           |
+| Firmware CircuitPython & SDK C/C++ (diretório de software)	   | [SINSONTE](https://github.com/galopago/SINSONTE)           |
 
  
 
-## Optional components:
+## Componentes opcionais:
 
-| Component         | Get yours! | Datasheet                                          | 
+| Componente         | Ligação do compra | Folha de dados                                       | 
 | -------- | ------ | ------------------------------------------------------------ |
-| 3 pc step drill bit 3-20 mm + centerpunch  | [shop now](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
+| Broca Escalonada bit 3 a 20 mm  | [Compre aqui](https://s.click.aliexpress.com/e/_AalUrz)     | [3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf](/assets/pdf/3_pc_set_3-20mm_drill_bit_incremental_center_punch.pdf)           |
