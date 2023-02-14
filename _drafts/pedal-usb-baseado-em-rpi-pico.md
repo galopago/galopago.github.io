@@ -73,52 +73,61 @@ A aplicação de exemplo apresentada aqui é composta por duas tarefas: iniciali
 A estrutura do arquivo de configuração é muito simples. A primeira linha é dos GPIOs a serem usados, a segunda linha é do código de tecla a ser enviado e a terceira linha é do código de tecla modificadora (como SHIFT, CONTROL, ALT). Se durante a inicialização o arquivo de configuração não for encontrado, o programa assumirá alguns valores padrão. Mais GPIOs podem ser adicionados ao arquivo de configuração, permitindo que sejam plugadas 3, 4 ou mais pedais.
 
 
-##### Circuit assembly:
+##### Montagem do circuito::
 
-The circuit was built using components of TUSISTEMITA, like enclosure backplate, and Rpi Pico screw terminal breakboard.
+A montagem do circuito foi feita usando componentes da MISISTEMITA, como a placa de montagem removível e o placa borne de expansão para Rpi Pico.
 
-Once the app is downloaded for the first time, and electrical connections verified, the backplate could be attached to the enclosure hassle free. Just unplug USB cable and debug switches' screw terminals, screw backplate to enclosure and reconnect cables again.
+
+Uma vez que o aplicativo é baixado pela primeira vez, e as conexões elétricas verificadas, a placa de montagem removível pode ser fixada na caixa sem complicações. Basta desconectar o cabo USB e os terminais com parafusos dos interruptores de depuração, fixar a placa de montagem removível na caixa e reconectar os cabos novamente.
 
 <figure class="third">
 	<a href="/assets/images/USB_PEDAL_PICO_DEBUG.jpg"> <img src="/assets/images/USB_PEDAL_PICO_DEBUG_MEDIUM.jpg"> </a>
 	<a href="/assets/images/USB_PEDAL_PICO_PARTS.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PARTS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/USB_PEDAL_PICO_WIRED.jpg"> <img src="/assets/images/USB_PEDAL_PICO_WIRED_MEDIUM.jpg"> </a>
-	<figcaption>Debug, wiring and assembly.</figcaption>
+	<figcaption>Depuração, fiação e montagem.</figcaption>
 </figure>
 
-USB printer connector (Type B) was chosen because is very robust and intuitive. This specific connector is designed for panel mounting and sports 4 metal pins (VCC,USB+,USB-,GND) that must be soldered to a Micro USB extension cable to plug to the Rpi Pico. Pedals use circular aviation connectors.
-
+A conexão USB impressora (Tipo B) foi escolhida por ser muito robusta e intuitiva. Este conector específico é projetado para montagem em painel e possui 4 pinos de metal (VCC, USB+, USB-, GND) que devem ser soldados em um cabo de extensão Micro USB para ser conectado ao Rpi Pico. Os pedais usam conectores circulares de aviação.
 
 <figure class="third">
 	<a href="/assets/images/USB_PEDAL_PICO_AVIATION.jpg"> <img src="/assets/images/USB_PEDAL_PICO_AVIATION_MEDIUM.jpg"> </a>
 	<a href="/assets/images/USB_PEDAL_PICO_PANEL.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PANEL_MEDIUM.jpg"> </a>
 	<a href="/assets/images/USB_PEDAL_PICO_PRINTER.jpg"> <img src="/assets/images/USB_PEDAL_PICO_PRINTER_MEDIUM.jpg"> </a>
-	<figcaption>Connectors for computer and pedals</figcaption>
+	<figcaption>Conectores para o computador e pedais</figcaption>
 </figure>
 
-Once the enclosure is closed, firmware updates could be done modifying the CircuitPython file, or via interactive environment. For a CircuitPython re-installation or Rpi Pico "format", the enclosure must be open to access bootsel button.
+Uma vez que a caixa está fechado, as atualizações de firmware podem ser feitas modificando o arquivo CircuitPython ou via ambiente interativo. Para uma reinstalação do CircuitPython ou formatação do Rpi Pico, o gabinete deve ser aberto para acessar o botão de inicialização (bootsel).
 
-#### Bill of materials
+#### Lista de materiais.
 
-| Component         | Get yours! | Datasheet                                          |
+| Componente        | Ligação do compra | Folha de dados                                       |
 | -------- | ------ | ------------------------------------------------------------ |
-| M2.6 self-tapping B-type screw | [💸](https://s.click.aliexpress.com/e/_eOJ3Kd) | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf) |
-| 2:1 Heatshrink tube multiple colors | [💸](https://s.click.aliexpress.com/e/_9ikkU7) | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf) |
-| 115x90x55 mm enclosure box | [💸](https://s.click.aliexpress.com/e/_AFnqxL) | [KH-F3.pdf](/assets/pdf/KH-F3.pdf) |
-| Raspberry Pi Pico | [💸](https://s.click.aliexpress.com/e/_AXStdl) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
-| USB Type B IP68 panel connector | [💸](https://s.click.aliexpress.com/e/_AbHdB8) | [USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf](/assets/pdf/USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf) |
-| 4 pin aviation connector | [💸](https://s.click.aliexpress.com/e/_9yPVWE) | [CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf](/assets/pdf/CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf) |
-| Metal electric foot switch | [💸](https://s.click.aliexpress.com/e/_97Yt4m) | [METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf](/assets/pdf/METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf) |
-| USB printer cable A type | [💸](https://s.click.aliexpress.com/e/_A1mCwQ) | [USB_PRINTER_CABLE.pdf](/assets/pdf/USB_PRINTER_CABLE.pdf) |
-| Micro USB cable | [💸](https://s.click.aliexpress.com/e/_97vmPY) | [MICRO_USB_CABLE.pdf](/assets/pdf/MICRO_USB_CABLE.pdf) |
+| Parafuso auto-rostante tipo B M2.6 | [Compre aqui](https://s.click.aliexpress.com/e/_eOJ3Kd) | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf) |
+| 2:1 Tubo termoretrátil em múltiplas cores | [Compre aqui](https://s.click.aliexpress.com/e/_9ikkU7) | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf) |
+| Caixa plástica à prova d'água 115x90x55 mm | [Compre aqui](https://s.click.aliexpress.com/e/_AFnqxL) | [KH-F2.pdf](/assets/pdf/KH-F2.pdf) |
+| Raspberry Pi Pico | [Compre aqui](https://s.click.aliexpress.com/e/_AXStdl) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
+| USB tipo B IP68 para painel. | [Compre aqui](https://s.click.aliexpress.com/e/_AbHdB8) | [USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf](/assets/pdf/USB_TYPE_B_PANEL_MOUNT_CONNECTOR.pdf) |
+| 4 pin aviation connector | [Compre aqui](https://s.click.aliexpress.com/e/_9yPVWE) | [CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf](/assets/pdf/CIRCULAR_AVIATION_PANEL_CONNECTOR.pdf) |
+| Interruptor elétrico de pé metálico | [Compre aqui](https://s.click.aliexpress.com/e/_97Yt4m) | [METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf](/assets/pdf/METAL_MOMENTARY_ELECTRIC_FOOT_SWITCH.pdf) |
+| Cabo de impressora USB tipo A | [Compre aqui](https://s.click.aliexpress.com/e/_A1mCwQ) | [USB_PRINTER_CABLE.pdf](/assets/pdf/USB_PRINTER_CABLE.pdf) |
+| Cabo Micro USB | [Compre aqui](https://s.click.aliexpress.com/e/_97vmPY) | [MICRO_USB_CABLE.pdf](/assets/pdf/MICRO_USB_CABLE.pdf) |
 
 
-#### TUSISTEMITA blocks
+#### Componentes necessários para construir os módulos necessários de misistemita.
 
-| PCB    |  Source file                                          | 
-| -------- | ------------------------------------------------------------ |
-| A01 Backplate for 158x90x60mm enclosure| [A01](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
-| C11 screw terminal breakout board for Rpi Pico  | [C11](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
+| Componente         | Ligação do compra | Folha de dados                |
+| ------------------ | ----------------- | ----------------------------- |
+| Espaçador de Nylon de travamento reverso G228  | [Compre aqui](https://s.click.aliexpress.com/e/_DCFVOtz)  | [G228.pdf](/assets/pdf/G228.pdf)|                                                   
+| Borne de parafuso 3.5mm kf350 (2,3 pinos) para PCB. | [Compre aqui](https://s.click.aliexpress.com/e/_eLjzKB)  | [KF350.pdf](/assets/pdf/KF350.pdf)   
+| Barra De Pinos Fêmea 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN)  | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |  
+
+
+#### Placas de circuito impressas necessárias para construir os módulos necessários do MISISTEMITA.
+
+| Placas de circuito impressas (PCB)    |  Ligação do compra | Arquivos de origem                                          | 
+| ------------------------------------- | ------------------------------------------------------------ |
+| A01 placa de montagem removível para o caixa de 158x90x60mm |[Compre aqui](https://www.pcbway.com/project/shareproject/[A01]_Backplate_for_generic_158x90_mm_waterproof_enclosure_MISISTEMITA_A01_BAC_2a71a1b0.html)| [A01](https://github.com/galopago/TUSISTEMITA/tree/master/A_BACKPLATES)           |
+| C11 Placa Borne De Expansão para Rpi Pico  |[Compre aqui](https://www.pcbway.com/project/shareproject/[C11]_Breakboard_for_Raspberry_Pi_Pico_4_holes_10_16_mm_spaced_for_mounting_on_92053ae5.html) | [C11](https://github.com/galopago/TUSISTEMITA/tree/master/C_BREAKOUTS)        |
 
 
 

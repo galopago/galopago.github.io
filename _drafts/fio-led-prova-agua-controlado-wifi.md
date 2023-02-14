@@ -101,6 +101,7 @@ Uma vez que a caixa está fechada, as atualizações de firmware podem ser feita
 | Conector de cabo à prova d'água de 3 pinos para corda de LED.  | [Compre aqui](https://s.click.aliexpress.com/e/_AesJgr )  | [Waterproof_led_string_connector.pdf](/assets/pdf/Waterproof_led_string_connector.pdf)                           |
 | 3:1 tubo termoretrátil com cola  | [Compre aqui](https://s.click.aliexpress.com/e/_AaW9bd)  | [3_1_heatshrink_tube_glue.pdf](/assets/pdf/3_1_heatshrink_tube_glue.pdf)                           |
 | 2:1 Tubo termoretrátil em múltiplas cores  | [Compre aqui](https://s.click.aliexpress.com/e/_9ikkU7 )  | [2_1_heatshrink_tube_colors.pdf](/assets/pdf/2_1_heatshrink_tube_colors.pdf)                           |
+| Parafuso auto-rostante tipo B M2.6 | [Compre aqui](https://s.click.aliexpress.com/e/_98ymAB)  | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)                           |
 
 
 #### Componentes necessários para construir os módulos necessários de misistemita.
@@ -108,8 +109,7 @@ Uma vez que a caixa está fechada, as atualizações de firmware podem ser feita
 | Componente         | Ligação do compra | Folha de dados                |
 | ------------------ | ----------------- | ----------------------------- |
 | Espaçador de Nylon de travamento reverso G228  | [Compre aqui](https://s.click.aliexpress.com/e/_DCFVOtz)  | [G228.pdf](/assets/pdf/G228.pdf)|
-| Parafuso auto-rostante tipo B M2.6 | [Compre aqui](https://s.click.aliexpress.com/e/_98ymAB)  | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)                           |
-| Parafuso cabeça chata Phillips M3 | [Compre aqui](https://s.click.aliexpress.com/e/_AoOvPz)  | [M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf](/assets/pdf/M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf)                           |
+| Parafuso cabeça chata Phillips M3 | [Compre aqui](https://s.click.aliexpress.com/e/_AoOvPz)  | [M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf](/assets/pdf/M2-M10_Stainless_steel_304_countersunk_screw_flat_head_phillips.pdf)                           
 | Porca Flangeada M3 DIN6923 | [Compre aqui](https://s.click.aliexpress.com/e/_9g89th)  | [FLANGED_NUT_3MM_DIN6923.pdf](/assets/pdf/FLANGED_NUT_3MM_DIN6923.pdf)                           |
 | Borne de parafuso 3.5mm kf350 (2,3 pinos) para PCB. | [Compre aqui](https://s.click.aliexpress.com/e/_eLjzKB)  | [KF350.pdf](/assets/pdf/KF350.pdf)   
 | Barra De Pinos Fêmea 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN)  | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |  
