@@ -32,47 +32,46 @@ Outra vantagem adicional sobre os pedais USB comerciais, o próprio pedal pode s
 
 O circuito é construído usando o sistema de prototipagem de hardware [MISISTEMITA](https://github.com/galopago/misistemita), que fornece diferentes tipos de módulos pré-construídos que permitem construir um projeto eletrônico sem solda, mas tornando-o muito robusto e expansível. Todas as peças estão enclausuradas em uma caixa à prova de poeira e água IP65. Essa caixa confere um aspecto "industrial" ao projeto e também adiciona força mecânica para suportar abusos. As conexões elétricas externas (pedais e USB) foram equipadas com acessórios IP para fornecer uma boa vedação.
 
+#### Recursos principais:
 
-#### Key features:
+* Desenvolvido usando CircuitPython, amigável e fácil de aprender
+* Compatível com os sistemas operacionais mais comuns
+* Não é necessário instalar aplicativos para o download inicial de firmware
+* Configuração de teclas feita em um arquivo de texto
+* Resistente a respingos e à choques
+* Pedais desmontáveis e substituíveis
+* Construído usando sistema de prototipagem de hardware
+* Alimentado por USB, sem necessidade de fonte de alimentação adicional
 
-* Developed using CircuitPython, friendly and easy to learn
-* Compatible with the most common operating systems
-* No need to install apps for initial firmware download
-* Key configuration done in a text file
-* Splash resistant and shockproof
-* Detachable and replaceable pedals
-* Built using hardware prototyping system
-* Powered by USB, no additional power source needed
-
-The hardware is pretty simple, only requires a Rpi Pico and switches connected between GPIO and ground. Internal pull-up resistors used. Power and data via USB cable
+O hardware é bastante simples, apenas exige um Rpi Pico e interruptores conectados entre GPIO e terra. Resistores de pull-up internos utilizados. Alimentação e dados via cabo USB.
 
 
 <figure>
 	<a href="/assets/images/rpi_pico_usb_keyboard.png"> <img src="/assets/images/rpi_pico_usb_keyboard.png"> </a>
-	<figcaption>Simplified block diagram</figcaption>
+	<figcaption>Diagrama de blocos simplificado</figcaption>
 </figure>
 
 
-##### What is CircuitPython?:
-In [Adafruit Industres](https://learn.adafruit.com/bienvenido-a-circuitpython-2/que-es-circuitpython) words, makers of CircuitPython: 
-> CircuitPython is a programming language designed to simplify experimenting and learning to program on low-cost microcontroller boards. It makes getting started easier than ever with no upfront desktop downloads needed. Once you get your board set up, open any text editor, and get started editing code. It's that simple.
+##### O que é CircuitPython?:
+Na palavras da [Adafruit Industres](https://learn.adafruit.com/bienvenido-a-circuitpython-2/que-es-circuitpython), criadora do CircuitPython:
+> CircuitPython é uma linguagem de programação projetada para simplificar a experimentação e o aprendizado de programação em placas de microcontroladores de baixo custo. Torna o início mais fácil do que nunca, sem downloads prévios necessários. Assim que você configurar sua placa, basta abrir qualquer editor de texto e começar a editar o código. É assim de simples.
 
-Other reasons to use CircuitPython include:
+Outras razões para usar o CircuitPython incluem:
 
-
-* You want to get up and running quickly. Create a file, edit your code, save the file, and it runs immediately. There is no compiling, no downloading and no uploading needed.
-* You're new to programming. CircuitPython is designed with education in mind. It's easy to start learning how to program and you get immediate feedback from the board.
-* Easily update your code. Since your code lives on the disk drive, you can edit it whenever you like, you can also keep multiple files around for easy experimentation.
-* The serial console and REPL. These allow for live feedback from your code and interactive programming.
-* File storage. The internal storage for CircuitPython makes it great for data-logging, playing audio clips, and otherwise interacting with files.
-* Strong hardware support. There are many libraries and drivers for sensors, breakout boards and other external components.
-* It's Python! Python is the fastest-growing programming language. It's taught in schools and universities. CircuitPython is almost-completely compatible with Python. It simply adds hardware support.
+* Você quer começar rapidamente. Crie um arquivo, edite seu código, salve o arquivo e ele será executado imediatamente. Não há compilação, nem download nem upload necessários.
+* Você é novo em programação. O CircuitPython foi projetado pensando na educação. É fácil começar a aprender a programar e você recebe um feedback imediato da placa.
+* Atualize facilmente seu código. Como o seu código fica armazenado no disco, você pode editá-lo sempre que quiser. Além disso, você pode manter vários arquivos para fácil experimentação.
+* A console serial e o REPL. Eles permitem feedback ao vivo do seu código e programação interativa.
+* Armazenamento de arquivos. O armazenamento interno do CircuitPython é ótimo para registro de dados, reprodução de áudio e interação com arquivos.
+* Suporte sólido a hardware. Existem muitas bibliotecas e drivers para sensores, placas de expansão e outros componentes externos.
+É Python! O Python é a linguagem de programação em mais rápido crescimento. É ensinado em escolas e universidades. O CircuitPython é quase completamente compatível com o Python. Ele simplesmente adiciona suporte ao hardware.
 
 ##### Software:
 
-Sample application presented here is composed of two tasks: Initialize GPIO according to the configuration file and then runs an endless loop verifying for switch closing to send its respective keycode. Software debouncing function was used to avoid false key press. Rpi Pico onboard LED lights when whatever configured switch closes.
+A aplicação de exemplo apresentada aqui é composta por duas tarefas: inicializar o GPIO de acordo com o arquivo de configuração e, em seguida, executar um loop interminável verificando o fechamento do interruptor para enviar seu respectivo código de tecla. Uma função de descancelamento de software foi usada para evitar pressionamentos falsos de tecla. A LED integrada ao Rpi Pico acende quando qualquer interruptor configurado é fechado.
 
-The configuration file structure is very simple. First line GPIOS to use, second line keycode to send, and third line modifier keycode (I.E SHIFT, CONTROL, ALT). If during initialization the config file isn't found, the program will assume some default values. More GPIOS can be added to the config file, so 3, 4 or mode pedals could be plugged.
+A estrutura do arquivo de configuração é muito simples. A primeira linha é dos GPIOs a serem usados, a segunda linha é do código de tecla a ser enviado e a terceira linha é do código de tecla modificadora (como SHIFT, CONTROL, ALT). Se durante a inicialização o arquivo de configuração não for encontrado, o programa assumirá alguns valores padrão. Mais GPIOs podem ser adicionados ao arquivo de configuração, permitindo que sejam plugadas 3, 4 ou mais pedais.
+
 
 ##### Circuit assembly:
 
