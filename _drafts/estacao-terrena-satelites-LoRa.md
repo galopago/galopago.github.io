@@ -59,7 +59,7 @@ Este projeto trata-se de uma ponte entre a Internet (WiFi) e LoRa @433Mhz, utili
 | Heltec Lora Kit 32 V2 433MHZ ESP32| [Compre aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
 | RP-SMA flange a U.FL pigtail | [Compre aqui](https://s.click.aliexpress.com/e/_9vbEjm) | [Catalog_SMA.pdf](/assets/pdf/Catalog_SMA.pdf) |
 | 433 Mhz antenna SMA  | [Compre aqui](https://s.click.aliexpress.com/e/_AYvZau) | [433_MHZ_SMA_ANTENNA.pdf](/assets/pdf/433_MHZ_SMA_ANTENNA.pdf) |
-| Caixa Ip66 Prova De "Água Sonoff" 100x68x50mm | [Compre aqui](https://s.click.aliexpress.com/e/_AtukwZ) | [SONOFF-IP66-waterproof-case.pdf](/assets/pdf/SONOFF-IP66-waterproof-case.pdf) |
+| Caixa Ip66 Prova De agua "Sonoff" 100x68x50mm | [Compre aqui](https://s.click.aliexpress.com/e/_AtukwZ) | [SONOFF-IP66-waterproof-case.pdf](/assets/pdf/SONOFF-IP66-waterproof-case.pdf) |
 | Parafuso cabeça chata M2.5 | [Compre aqui](https://s.click.aliexpress.com/e/_AEYxys) | [M2-5_COUNTERSUNK_SCREW.pdf](/assets/pdf/M2-5_COUNTERSUNK_SCREW.pdf) |
 | Porca travante nylon M2.5  | [Compre aqui](https://s.click.aliexpress.com/e/_9RIfcu) | [M2-5_NYLON_LOCK_NUT.pdf](/assets/pdf/M2-5_NYLON_LOCK_NUT.pdf) |
 | Parafuso auto-rostante tipo B M2.6 | [Compre aqui](https://s.click.aliexpress.com/e/_esHHyb) | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf) |
@@ -175,29 +175,29 @@ A antena foi adquirida em uma loja local sem nenhuma otimização ou ajuste. O t
 	<figcaption>Estação terrena funcionando.</figcaption>
 </figure>
 
-###### Variants.
+###### Variantes
 
-A portable version of the ground station has been developed, it uses a smaller enclosure and is powered by a battery. It was designed to be a temporary-mobile station which connects to a mobile phone via WiFi. It uses a 3.2v [LiFePo4](https://es.wikipedia.org/wiki/Bater%C3%ADa_de_litio-ferrofosfato) battery, therefore no voltage regulator was required, the battery is connected directly to the 3.3v power pin of the LoRa module
+Uma versão portátil da Estação terrena foi desenvolvida, ela usa uma caixa menor e é alimentada por uma bateria. Foi projetada para ser uma estação temporária-móvel que se conecta a um celular via WiFi. Ela usa uma bateria de 3.2v [LiFePo4](https://en.wikipedia.org/wiki/Lithium_iron_phosphate_battery), portanto, não foi necessário um regulador de tensão, a bateria é conectada diretamente ao pino de alimentação de 3.3v do módulo LoRa.
 
-The same hardware (fixed or mobile versions) could be used for another type of projects, such as [aprs.fi](https://aprs.fi/), which is of particular interest to amateur radio operators. The hardware is 100% compatible and only requires a [firmware change](https://github.com/lora-aprs/LoRa_APRS_iGate)
+O mesmo hardware (versões fixa ou móvel) pode ser usado para outro tipo de projetos, como [aprs.fi](https://aprs.fi/), que é de particular interesse para operadores de rádio amadores. O hardware é 100% compatível e só exige uma [mudança de firmware](https://github.com/lora-aprs/LoRa_APRS_iGate).
 
 
 <figure class="third">
 	<a href="/assets/images/TINYGS_PORTABLE_PCB.jpg"> <img src="/assets/images/TINYGS_PORTABLE_PCB_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TINYGS_PORTABLE_WIRED.jpg"> <img src="/assets/images/TINYGS_PORTABLE_WIRED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TINYGS_PORTABLE_FW.jpg"> <img src="/assets/images/TINYGS_PORTABLE_FW_MEDIUM.jpg"> </a>
-	<figcaption>Detail of portable ground station</figcaption>
+	<figcaption>Detalhes da estação terrena portátil</figcaption>
 </figure>
 
-| Optional components for mobile version| Buy link | Datasheet           |
+| Componentes opcionais para versão portátil| Ligação do compra | Folha de dados          |
 | ------------ | ------ | ------------------------------------------------------------ |
-| Generic 83x58x33mm waterproof enclosure box | [buy it](https://s.click.aliexpress.com/e/_Ad6Gxn) | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf) |
-| AA Battery holder for PCB | [buy it](https://s.click.aliexpress.com/e/_A0wUdR) | [BH311.pdf](/assets/pdf/BH311.pdf) |
-| LiFePo4 3.2V 14500 AA Rechargeable battery| [buy it](https://s.click.aliexpress.com/e/_Asl8pn) | [Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf](/assets/pdf/Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf) |
+| Caixa Ip66 Prova De agua 83x58x33mm | [Compre aqui](https://s.click.aliexpress.com/e/_Ad6Gxn) | [AK10019-A1.pdf](/assets/pdf/AK10019-A1.pdf) |
+| Suporte Caixa para bateria AA para PCB | [Compre aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [BH311.pdf](/assets/pdf/BH311.pdf) |
+| Bateria Recarregável LiFePo4 3.2V 14500 AA | [Compre aqui](https://s.click.aliexpress.com/e/_Asl8pn) | [Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf](/assets/pdf/Lifepo4-3.2V-14500-Rechargeable-battery-AA.pdf) |
 
 
-| Printed Circuit Board | Buy link | Source files repository  |
+| Placa de circuito impresso | Ligação do compra | Arquivos de origem  |
 | --------------------------------- | ---------------- | ------------------------------- |
-| Prototype circuit board for 83x58mm enclosure | [buy it](https://www.pcbway.com/project/shareproject/mcu_proto_83x58mm_16815998.html) | [mcu-proto-83x58mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-83x58mm) |
+| Placa PCB protótipo para caixa de 83x58mm | [Compre aqui](https://www.pcbway.com/project/shareproject/mcu_proto_83x58mm_16815998.html) | [mcu-proto-83x58mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-83x58mm) |
 
 
