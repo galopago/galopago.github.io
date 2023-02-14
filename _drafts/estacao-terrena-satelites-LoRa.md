@@ -11,128 +11,121 @@ tags:
 header:
      teaser: "/assets/images/LORA_GROUND_STATION_TEASER.jpg"
 ---
-The arrival of [small satellites](https://en.wikipedia.org/wiki/Small_satellite) that used [LoRa](https://en.wikipedia.org/wiki/LoRa) for telemetry data has meant that less technically qualified persons, with a very low budget, can receive their signals.Thanks to TinyGS, there is now an open network of distributed ground stations, and more stations can be built to increase their coverage.The project presented here is a reasonably robust, dust-resistant and waterproof implementation of TinyGS ground station, using commercial off-the-shelf components. Ideal for outdoor usage
+A chegada de [satélites miniaturizados](https://pt.wikipedia.org/wiki/Sat%C3%A9lite_miniaturizado) que usam [LoRa](https://pt.wikipedia.org/wiki/LoRa) para telemetria de dados significou que pessoas menos qualificadas tecnicamente, com orçamento muito baixo, podem receber suas transmissões. Graças ao TinyGS, agora há uma rede aberta de estações terrestres distribuídas, e mais estações podem ser construídas para aumentar sua cobertura. O projeto apresentado aqui é uma implementação razoavelmente robusta, resistente a poeira e à água do TinyGS ground station, usando componentes comerciais de prateleira. Ideal para uso ao ar livre.
 
 
 <figure>
 	<a href="/assets/images/LORA_GROUND_STATION.jpg"> <img src="/assets/images/LORA_GROUND_STATION_MEDIUM.jpg"> </a>
-	<figcaption>Ground station ready to be placed outside</figcaption>
+	<figcaption>Estação terrestre pronta para ser colocada ao ar livre</figcaption>
 </figure>
 
-Key component: [Heltec WiFi LoRa kit 32 v2 433mhz](https://s.click.aliexpress.com/e/_A0wUdR)
+Componente chave: [Heltec WiFi LoRa kit 32 v2 433mhz](https://s.click.aliexpress.com/e/_A0wUdR)
 {: .notice--danger}
 
 
-##### Why?
+##### Por quê?
 
+A ideia de usar o LoRa para comunicações por satélite se tornou óbvia para muitas pessoas por seguintes motivos:
 
-The idea of using LoRa for satellite communications became obvious to many people for the following reasons:
+* Usa a bandas de rádio [ISM](https://en.wikipedia.org/wiki/ISM_radio_band) não licenciada
+* Disponibilidade de módulos eletrônicos prontos para usar, de baixo custo e fáceis de encontrar
+* Comunicações de longo alcance e baixa potência
+* Receptação possível com sinais de nível muito baixo, -120dBm
 
-* Uses unlicensed [ISM](https://en.wikipedia.org/wiki/ISM_radio_band) band
-* Availability of ready to use, low cost, easy to find electronic modules.
-* Very long range, and low power communications
-* Reception possible with very low level signals -120dBm
+O último ponto é muito importante, pois muitas antenas comerciais podem ser usadas (também podem ser feitas em casa!), mesmo que não sejam muito eficientes, são suficientes para receber sinais. Isso era o ponto fraco das comunicações por satélite até agora.
 
-The last point is very important, since many commercial antennas can be used (homemade too!), even if they aren't very efficient, are enough to receive signals. This was the Achiles' heel of satellite communications until now
+#### O que é o projeto sobre?
 
+Este projeto trata-se de uma ponte entre a Internet (WiFi) e LoRa @433Mhz, utilizando o máximo possível de componentes comerciais de prateleira ([COTS](https://en.wikipedia.org/wiki/Commercial_off-the-shelf)), o que significa que não é necessário muita experiência para a montagem. A chave final é fazer o download do [firmware TinyGS](https://github.com/G4lile0/tinyGS), que permite:
 
-#### What is the project about?
-
-This project is about a gateway between the Internet (WiFi) and LoRa @433Mhz using as much as possible of [commercial off-the-shelf components](https://en.wikipedia.org/wiki/Commercial_off-the-shelf), so not much expertise needed for assembly. The final key consists in downloading [TinyGS firmware](https://github.com/G4lile0/tinyGS) which allows something like:
-
-* Download automatic firmware updates (OTA)
-* The receiver will tune automagically to the nearest satellite in the sky
-* Configuration of parameters using the local web interface
-
+* Download de atualizações de firmware automáticas (OTA)
+* O receptor irá sintonizar automaticamente o satélite mais próximo no céu
+* Configuração de parâmetros usando a interface web local.
 
 <figure>
 	<a href="/assets/images/LORA_GROUND_STATION_TINYGS.png"> <img src="/assets/images/LORA_GROUND_STATION_TINYGS.png"> </a>
-	<figcaption>TinyGS network architecture (taken from TinyGS site)</figcaption>
+	<figcaption>Arquitetura da rede TinyGS (retirada do site TinyGS)</figcaption>
 </figure>
 
-#### Bill of materials
+#### Lista de materiais
 
 <figure>
 	<a href="/assets/images/LORA_GROUND_STATION_PARTS.jpg"> <img src="/assets/images/LORA_GROUND_STATION_PARTS_MEDIUM.jpg"> </a>
-	<figcaption>A little bit of knolling.</figcaption>
+	<figcaption>Um pouco de arrumação dos objetos.</figcaption>
 </figure>
 
-| Component        | Buy link | Datasheet                                 |
+| Componente        | 	Ligação do compra | Folha de dados                         |
 | -------- | ------ | ------------------------------------------------------------ |
-| Heltec Lora Kit 32 V2 433MHZ ESP32| [buy it](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
-| RP-SMA flange to U.FL pigtail | [buy it](https://s.click.aliexpress.com/e/_9vbEjm) | [Catalog_SMA.pdf](/assets/pdf/Catalog_SMA.pdf) |
-| 433 Mhz antenna SMA  | [buy it](https://s.click.aliexpress.com/e/_AYvZau) | [433_MHZ_SMA_ANTENNA.pdf](/assets/pdf/433_MHZ_SMA_ANTENNA.pdf) |
-| Generic 100x68x50mm waterproof enclosure box "Sonoff" | [buy it](https://s.click.aliexpress.com/e/_AtukwZ) | [SONOFF-IP66-waterproof-case.pdf](/assets/pdf/SONOFF-IP66-waterproof-case.pdf) |
-| M2.5 countersunk screw phillips | [buy it](https://s.click.aliexpress.com/e/_AEYxys) | [M2-5_COUNTERSUNK_SCREW.pdf](/assets/pdf/M2-5_COUNTERSUNK_SCREW.pdf) |
-| M2.5 nylon lock nut | [buy it](https://s.click.aliexpress.com/e/_9RIfcu) | [M2-5_NYLON_LOCK_NUT.pdf](/assets/pdf/M2-5_NYLON_LOCK_NUT.pdf) |
-| M2.6 self-tapping B-type screw | [buy it](https://s.click.aliexpress.com/e/_esHHyb) | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf) |
-| Screw terminal kf350 3.5mm 3 pin | [buy it](https://s.click.aliexpress.com/e/_eLjzKB) | [KF350.pdf](/assets/pdf/KF350.pdf) |
-| Female header 2.54mm | [buy it](https://s.click.aliexpress.com/e/_eNYVzN) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
-| 30 AWG wire wrap UL1423 PVDF | [buy it](https://s.click.aliexpress.com/e/_eL2EYB) | [UL1423.pdf](/assets/pdf/UL1423.pdf) |
-| PoE injector 48V 0.5A  | [buy it](https://s.click.aliexpress.com/e/_Dl1hpWX) | [PoE-injector-48V-05A.pdf](/assets/pdf/PoE-injector-48V-05A.pdf)|
-| PoE Splitter D1398 module 5V 2A output  | [buy it](https://s.click.aliexpress.com/e/_Al2dql) | [WC-PD13C050I.pdf](/assets/pdf/WC-PD13C050I.pdf)|
-| SMA Female To RP SMA Male adapter | [buy it](https://s.click.aliexpress.com/e/_9JKRaz) | [SMA-Female-To-RP-SMA-Male-adapter.pdf](/assets/pdf/SMA-Female-To-RP-SMA-Male-adapter.pdf) |
-| Silicone Sealant Neutral RTV | [buy it](https://s.click.aliexpress.com/e/_ANKQnb) | [Neutral-cure-silicone.pdf](/assets/pdf/Neutral-cure-silicone.pdf) |
-| Waterproof silicone self fusing vulcanizing tape | [buy it](https://s.click.aliexpress.com/e/_DlbGSST) | [Waterproof-silicone-self-fusing-vulcanizing-tape.pdf](/assets/pdf/Waterproof-silicone-self-fusing-vulcanizing-tape.pdf) |
+| Heltec Lora Kit 32 V2 433MHZ ESP32| [Compre aqui](https://s.click.aliexpress.com/e/_A0wUdR) | [WiFi-LoRa-32-V2-433-470-510.pdf](/assets/pdf/WiFi-LoRa-32-V2-433-470-510.pdf) |
+| RP-SMA flange a U.FL pigtail | [Compre aqui](https://s.click.aliexpress.com/e/_9vbEjm) | [Catalog_SMA.pdf](/assets/pdf/Catalog_SMA.pdf) |
+| 433 Mhz antenna SMA  | [Compre aqui](https://s.click.aliexpress.com/e/_AYvZau) | [433_MHZ_SMA_ANTENNA.pdf](/assets/pdf/433_MHZ_SMA_ANTENNA.pdf) |
+| Caixa Ip66 Prova De "Água Sonoff" 100x68x50mm | [Compre aqui](https://s.click.aliexpress.com/e/_AtukwZ) | [SONOFF-IP66-waterproof-case.pdf](/assets/pdf/SONOFF-IP66-waterproof-case.pdf) |
+| Parafuso cabeça chata M2.5 | [Compre aqui](https://s.click.aliexpress.com/e/_AEYxys) | [M2-5_COUNTERSUNK_SCREW.pdf](/assets/pdf/M2-5_COUNTERSUNK_SCREW.pdf) |
+| Porca travante nylon M2.5  | [Compre aqui](https://s.click.aliexpress.com/e/_9RIfcu) | [M2-5_NYLON_LOCK_NUT.pdf](/assets/pdf/M2-5_NYLON_LOCK_NUT.pdf) |
+| Parafuso auto-rostante tipo B M2.6 | [Compre aqui](https://s.click.aliexpress.com/e/_esHHyb) | [M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf) |
+| Borne de parafuso 3.5mm kf350 (2,3 pinos) para PCB. | [Compre aqui](https://s.click.aliexpress.com/e/_eLjzKB) | [KF350.pdf](/assets/pdf/KF350.pdf) |
+| Barra De Pinos Fêmea 2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN) | [FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf) |
+| 30 AWG cabo wire wrap UL1423 PVDF | [Compre aqui](https://s.click.aliexpress.com/e/_eL2EYB) | [UL1423.pdf](/assets/pdf/UL1423.pdf) |
+| PoE injetor 48V 0.5A  | [Compre aqui](https://s.click.aliexpress.com/e/_Dl1hpWX) | [PoE-injector-48V-05A.pdf](/assets/pdf/PoE-injector-48V-05A.pdf)|
+| PoE separador D1398 modulo 5V 2A | [Compre aqui](https://s.click.aliexpress.com/e/_Al2dql) | [WC-PD13C050I.pdf](/assets/pdf/WC-PD13C050I.pdf)|
+| Adaptadpr SMA Fêmea a RP SMA macho | [Compre aqui](https://s.click.aliexpress.com/e/_9JKRaz) | [SMA-Female-To-RP-SMA-Male-adapter.pdf](/assets/pdf/SMA-Female-To-RP-SMA-Male-adapter.pdf) |
+| Silicone Neutro RTV | [Compre aqui](https://s.click.aliexpress.com/e/_ANKQnb) | [Neutral-cure-silicone.pdf](/assets/pdf/Neutral-cure-silicone.pdf) |
+| Fita Isolante Auto Fusão | [Compre aqui](https://s.click.aliexpress.com/e/_DlbGSST) | [Waterproof-silicone-self-fusing-vulcanizing-tape.pdf](/assets/pdf/Waterproof-silicone-self-fusing-vulcanizing-tape.pdf) |
 
 
-| Printed Circuit Board | Buy link | Source files repository  |
-| --------------------------------- | ---------------- | ------------------------------- |
-| Prototype circuit board for 100x68mm enclosure | [buy it](https://www.pcbway.com/project/shareproject/mcu_proto_100x68mm_6ae31333.html) | [mcu-proto-100x68mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-100x68mm) |
+| Placas de circuito impressas (PCB) | Ligação do compra | Arquivos de origem |
+| ---------------------------------- | ----------------- | ------------------------------- |
+| Placa PCB protótipo para caixa de 100x68mm | [Compre aqui](https://www.pcbway.com/project/shareproject/mcu_proto_100x68mm_6ae31333.html) | [mcu-proto-100x68mm](https://github.com/galopago/misistemote/tree/main/mcu-proto-100x68mm) |
 
-| Software | repository |
+| Software | 	repositório|
 | ----------------------- | ---------------- |
 | TingyGS Firmware | [download it](https://github.com/G4lile0/tinyGS) |
 
-|  Optional component  | Buy link | Datasheet  |
+|  Componentes opcionais  | Ligação do compra | Folha de dados  |
 | ----------------------- | ---------------- | ------------------------------- |
-| Hand drill set mini 0.5-3mm | [buy it](https://s.click.aliexpress.com/e/_DBPw6on) | [Hand-drill-set-mini.pdf](/assets/pdf/Hand-drill-set-mini.pdf) |
+| Mini Furadeira De Mão e brocas 0.5-3mm | [Compre aqui](https://s.click.aliexpress.com/e/_DBPw6on) | [Hand-drill-set-mini.pdf](/assets/pdf/Hand-drill-set-mini.pdf) |
 
 
-##### Assembly:
+##### Montagem:
 
-This article is not intended to be a step-by-step assembly guide, it will attempt to explain briefly what to do next. Depending on the components obtained, some instructions and their sequence may change slightly.
+Este artigo não pretende ser um guia de montagem passo a passo, ele tentará explicar brevemente o que fazer em seguida. Dependendo dos componentes obtidos, algumas instruções e sua sequência podem mudar ligeiramente.
 
+###### Furações para conectores de antenas:
 
-###### Antenna connector drillings:
+* Faça 4 furações com uma broca ligeiramente maior que 2,5 mm, é aí que as parafusos de fixação vão ir.
 
-* Make 4 drillings with a bit slightly wider than 2.5 mm, that's where the fixing screws will go.
-
-* Make another drilling in the middle with a bit slightly wider than 4 mm, that's where the pigtail wire will go. The drill assistant template can be found [here](https://github.com/galopago/panel-mount-drill-layouts/tree/main/sma-flange-4-holes).
+* Faça outra furação no meio com uma broca ligeiramente maior que 4 mm, é aí que o fio pigtail vai ir. O modelo de auxílio para furar pode ser encontrado [aqui](https://github.com/galopago/panel-mount-drill-layouts/tree/main/sma-flange-4-holes).
 
 
 <figure class="third">
 	<a href="/assets/images/SMA_FLANGE_TEMPLATE.jpg"> <img src="/assets/images/SMA_FLANGE_TEMPLATE_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SMA_FLANGE_FRONT.jpg"> <img src="/assets/images/SMA_FLANGE_FRONT_MEDIUM.jpg"> </a>
 	<a href="/assets/images/SMA_FLANTE_DIAG.jpg"> <img src="/assets/images/SMA_FLANTE_DIAG_MEDIUM.jpg"> </a>
-	<figcaption>Antenna connector drillings</figcaption>
+	<figcaption>furações para conectores de antenas</figcaption>
 </figure>
 
+###### Conectores e soldagem de fios
 
-###### Connectors and wire soldering
-
-There are two options to power the station: using a simple 5V power supply or using a PoE adapter. The 5V power option requires less hardware, but is limited to a few meters of cable, however the PoE version requires a PoE injector, a PoE splitter inside the case, but it can be placed up to 100 meters away
-
+Existem duas opções para alimentar a estação: usando uma fonte de alimentação simples de 5V ou usando um adaptador PoE. A opção de energia 5V requer menos hardware, mas está limitada a alguns metros de cabo. No entanto, a versão PoE requer um injetor PoE, um divisor PoE dentro da caixa, mas pode ser colocada a até 100 metros de distância.
 
 <figure>
 	<a href="/assets/images/tinygs_power_wires_blockdiag.png"> <img src="/assets/images/tinygs_power_wires_blockdiag.png"> </a>
-	<figcaption>Simplified diagram of electrical wiring</figcaption>
+	<figcaption>Diagrama simplificado de fiação elétrica</figcaption>
 </figure>
 
-* Solder LoRa module headers. This is not 100% necessary, because the module could be soldered directly to the board, however, using headers make it possible to disconnect the module at any time.
+* Soldar os barra de pinos do módulo LoRa. Isso não é 100% necessário, pois o módulo poderia ser soldado diretamente na placa, mas o uso de barra de pinos permite desconectar o módulo a qualquer momento.
 
-* Solder PoE splitter module header (if used!)
+* Soldar o barra de pinos do módulo divisor PoE (se usado!).
 
-* Solder PCB screw terminals for ease of connection/disconnection of the power cable.
+* Soldar terminais de parafuso na placa para facilitar a conexão/desconexão do cabo de energia.
 
-* Solder the power wires under the board, using PVDF coated wire when possible, between the screw terminal pads and the PoE power pads and then to the LoRa power pads
-
+* Soldar os fios de energia debaixo da placa, usando cabo revestido de PVDF quando possível, entre os pads dos terminais de parafuso e os pads de energia PoE e, em seguida, para os pads de energia LoRa.
 
 <figure class="third">
 	<a href="/assets/images/PCB_BARE.jpg"> <img src="/assets/images/PCB_BARE_MEDIUM.jpg"> </a>
 	<a href="/assets/images/PCB_CONNECTORS.jpg"> <img src="/assets/images/PCB_CONNECTORS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/PCB_POWER_WIRES.jpg"> <img src="/assets/images/PCB_POWER_WIRES_MEDIUM.jpg"> </a>
-	<figcaption>Connectors and wires soldered</figcaption>
+	<figcaption>Conectores e fios soldados</figcaption>
 </figure>
 
 ###### Fix antenna connector, circuit board and power cable.

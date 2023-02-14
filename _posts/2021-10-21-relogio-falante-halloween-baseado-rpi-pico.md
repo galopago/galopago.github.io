@@ -10,7 +10,7 @@ tags:
   - C/C++ SDK
   - CIRCUITPHYTON
 header:
-     teaser: "/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg.jpg"
+     teaser: "/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg"
 ---
 Relógio falante de Halloween que toca sons a cada hora cheia. Apenas alguns componentes externos (fáceis de encontrar e soldar) são necessários. A placa de uma face pode ser fabricada em casa. Projeto altamente personalizável que envolve múltiplas áreas de conhecimento ([STEAM](https://en.wikipedia.org/wiki/STEAM_fields)): Eletrônica, programação, marcenaria, artes, etc.
 

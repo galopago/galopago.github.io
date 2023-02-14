@@ -10,7 +10,7 @@ tags:
   - C/C++ SDK
   - CIRCUITPHYTON
 header:
-     teaser: "/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg.jpg"
+     teaser: "/assets/images/HALLOWEEN_TALKING_CLOCK_TEASER.jpg"
 ---
 
 Reloj con sonidos de halloween que son reproducidos cada hora en punto. Requiere pocos componentes externos, los cuales son faciles de conseguir y de soldar. La tarjeta de circuito impreso es de una sola cara y puede hacerse de forma casera. Proyecto bastante personalizable y que involucra multiples areas ([STEAM](https://es.wikipedia.org/wiki/STEAM)):Montaje electronico, programacion, carpinteria, arte, manualidades, etc.
