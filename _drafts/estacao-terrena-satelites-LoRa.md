@@ -128,51 +128,51 @@ Existem duas opções para alimentar a estação: usando uma fonte de alimentaç
 	<figcaption>Conectores e fios soldados</figcaption>
 </figure>
 
-###### Fix antenna connector, circuit board and power cable.
+######  Fixação do conector de antena, placa de circuito e cabo de energia.
 
-* Fix antenna connector to the enclosure with the screws and nylon nuts
+* Fixe o conector de antena na caixa com os parafusos e porcas de nylon
 
-* Pass power cable through cable gland, let the adjusting nuts a little bit unscrewed
+* Passe o cabo de energia através do prensa cabo, deixando as porcas de ajuste um pouco desapertadas
 
-* Place PCB inside enclosure and fix it using the self tapping screws
+* Colocar a placa de circuito dentro da caixa e fixá-la com os auto-parafusos
 
-* Connect power cable to screw terminals, antenna cable to LoRa module, and tight cable gland nut. Some experimentation with the order of the aforementioned steps will be required to find the easiest way to assembly.
+* Conecte o cabo de energia aos terminais de parafuso, cabo de antena ao módulo LoRa e aperte a porca do tampão de cabo. Alguma experimentação com a ordem dos passos mencionados acima será necessária para encontrar a maneira mais fácil de montar.
 
 <figure class="third">
 	<a href="/assets/images/TINYGS_ANT_CONNECTOR_FRONT.jpg"> <img src="/assets/images/TINYGS_ANT_CONNECTOR_FRONT_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TINYGS_POWER_CABLES.jpg"> <img src="/assets/images/TINYGS_POWER_CABLES_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TINYGS_PCB_FIXED.jpg"> <img src="/assets/images/TINYGS_PCB_FIXED_MEDIUM.jpg"> </a>
-	<figcaption>All components fixed inside the enclosure</figcaption>
+	<figcaption>Todos os componentes fixados dentro da caixa.</figcaption>
 </figure>
 
-###### Firmware download.
+######  Baixe o firmware.
 
-Once the power connection was verified (usually the modules came with some sort of test firmware, so when the power is plugged some data will appear on the screen), connect the LoRa module to a computer using a USB cable, and follow the steps of the [TinyGS wiki](https://github.com/G4lile0/tinyGS/wiki)
-
+Depois de verificar a conexão de energia (normalmente os módulos vêm com algum tipo de firmware de teste, então quando a energia é conectada, alguns dados aparecerão na tela), conecte o módulo LoRa a um computador usando um cabo USB e siga os passos da [wiki do TinyGS](https://github.com/G4lile0/tinyGS/wiki).
 
 <figure>
 	<a href="/assets/images/LORA_GROUND_STATION_FW.jpg"> <img src="/assets/images/LORA_GROUND_STATION_FW_MEDIUM.jpg"> </a>
-	<figcaption>TinyGS firmware installed!</figcaption>
+	<figcaption>TinyGS firmware instalado!</figcaption>
 </figure>
 
-###### Antenna placement.
+###### Colocação da antena.
 
-The antenna must be placed where there is the clearest view of the sky (on the roof or on a long pole) and away from walls or metal structures. In some houses it is not possible so, many tests on the windows must be carried out to obtain the best result
+A antena deve ser colocada onde há a visão mais clara do céu (no telhado ou em um poste longo) e longe de paredes ou estruturas metálicas. Em algumas casas, isso não é possível, então muitos testes nas janelas devem ser realizados para obter o melhor resultado.
 
-For outdoor installation, seal the second cable gland with a piece of rubber, wrap some self fusing tape around antenna metallic parts, and put a bit of neutral cure silicone sealant over the screws. Avoid using an acidic silicone sealant (those that smell like vinegar) as it oxidizes screws and metallic parts
+Para instalação externa, selle a segunda prensa cabo com uma peça de borracha, envole algum fita auto fusão em torno das partes metálicas da antena e aplique um pouco de silicone selante de cura neutra sobre os parafusos. Evite usar silicone selante ácido (aquele que cheira a vinagre) pois ele oxida parafusos e partes metálicas.
 
 
-###### Results
+###### Resultados
 
-Due to the specific logistic conditions of this test, access to the roof was not possible and permanent structures could not be installed outside the windows, so the following configuration was tested: the receiver box would be placed inside, and a temporary magnetic mounted antenna on the outside.
+Devido às condições logísticas específicas deste teste, não foi possível acessar o telhado e não foi possível instalar estruturas permanentes fora das janelas, então foi testada a seguinte configuração: a caixa receptor seria colocada dentro e uma antena temporária com suporte magnético seria colocada fora.
 
-The antenna was purchased at a local store without any optimization or adjustment. The test was carried out in Cali, Colombia, the longest range transmission was received from [NORBY](https://tinygs.com/satellite/Norbi) satellite over Arequipa, Peru. The distance is about 2265 Km in line of sight, nothing bad for a home-assembled satellite receiver, with a budget of approximately 40 EUR and no adjustment required
+A antena foi adquirida em uma loja local sem nenhuma otimização ou ajuste. O teste foi realizado em Cali, Colômbia, e a transmissão de maior alcance foi recebida do satélite [NORBY](https://tinygs.com/satellite/Norbi) sobre Arequipa, Peru. A distância é de cerca de 2265 Km em linha de vista, nada mal para um receptor de satélite montado em casa, com um orçamento de aproximadamente 40 EUR e sem necessidade de ajuste.
+
 
 <figure class="third">
 	<a href="/assets/images/TINYGS_WINDOW_SETUP.jpg"> <img src="/assets/images/TINYGS_WINDOW_SETUP_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TINYGS_WINDOW_ANTENNA.jpg"> <img src="/assets/images/TINYGS_WINDOW_ANTENNA_MEDIUM.jpg"> </a>
 	<a href="/assets/images/TYNYGS_ANTENNA_RECEPTION.jpg"> <img src="/assets/images/TYNYGS_ANTENNA_RECEPTION_MEDIUM.jpg"> </a>
-	<figcaption>Ground station setup working</figcaption>
+	<figcaption>Estação terrena funcionando.</figcaption>
 </figure>
 
 ###### Variants.
