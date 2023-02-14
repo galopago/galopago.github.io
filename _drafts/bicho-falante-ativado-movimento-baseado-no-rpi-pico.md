@@ -70,7 +70,6 @@ Sons a serem tocados devem ser convertidos para o formato MP3 mono, o aplicativo
 Arquivos MP3 podem armazenar cerca de 10 vezes mais tempo de som do que WAV para o mesmo tamanho de arquivo, no entanto, a execução do tempo de execução do CircuitPython leva mais de um segundo após a ligar, então provavelmente não será uma coisa boa para qualquer tipo de aplicação final.
 
 ##### Hardware:
-External components are part of one of the three different functionalities:
 
 Componentes externos fazem parte de uma das três diferentes funcionalidades:
 
@@ -122,10 +121,10 @@ Um transistor NPN foi adicionado ao sensor PIR para invertê-lo sinal para mant�
 | Barra de pinos macho  2.54mm | [Compre aqui](https://s.click.aliexpress.com/e/_eMCUJv) | [PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf) |
 | 1/4W 1% TH Resistors | [Compre aqui](https://s.click.aliexpress.com/e/_eMCbH1) | [MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf) |
 | Botão Microchave Push Button 6x6mm | [Compre aqui](https://s.click.aliexpress.com/e/_eKd4YV) | [TS-1301.pdf](/assets/pdf/TS-1301.pdf) |
-| Raspberry Pi Pico | [shop now](https://s.click.aliexpress.com/e/_AXStdl) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
+| Raspberry Pi Pico | [Compre aqui](https://s.click.aliexpress.com/e/_AXStdl) | [pico-datasheet.pdf](/assets/pdf/pico-datasheet.pdf) |
 | Suporte Caixa para 2 Pilhas AA para PCB | [Compre aqui](https://s.click.aliexpress.com/e/_AoI96B) | [Comfortable_Catalog.pdf](/assets/pdf/Comfortable_Catalog.pdf) |
 | 8 Ohm Alto-falante 29 mm 0.25W | [Compre aqui](https://s.click.aliexpress.com/e/_ATihaX) | [DXP29W-A.pdf](/assets/pdf/DXP29W-A.pdf) |
-| MOSFET 2N7000 | [shop now](https://s.click.aliexpress.com/e/_9j8Bgx) | [NDS7002A-D.pdf](/assets/pdf/NDS7002A-D.pdf) |
+| MOSFET 2N7000 | [Compre aqui](https://s.click.aliexpress.com/e/_9j8Bgx) | [NDS7002A-D.pdf](/assets/pdf/NDS7002A-D.pdf) |
 | TRANSISTOR BIPOLAR NPN 2N2222A | [Compre aqui](https://s.click.aliexpress.com/e/_ANvtiX) | [P2N2222A-D.pdf](/assets/pdf/P2N2222A-D.pdf) |
 | TH Capacitor eletrolítico radial | [Compre aqui](https://s.click.aliexpress.com/e/_9gn4vh) | [TS13DE-CD110X.pdf](/assets/pdf/TS13DE-CD110X.pdf) |
 | TH Capacitor ceramico disco | [Compre aqui](https://s.click.aliexpress.com/e/_Apm6Pd) | [TS15.pdf](/assets/pdf/TS15.pdf) |
@@ -135,7 +134,7 @@ Um transistor NPN foi adicionado ao sensor PIR para invertê-lo sinal para mant�
 
 #### Placa de circuito impresso
 
-| Placas de circuito impressas (PCB)    | | Arquivos de origem                                        | 
+| Placas de circuito impressas (PCB)    | Ligação do compra | Arquivos de origem                                        | 
 | -------- | -----------|------------------------------------------------- |
 | Placa de som (diretório de hardware) |[Compre aqui](https://www.pcbway.com/project/shareproject/Talking_wall_clock_board_for_Raspberry_Pi_Pico_399ca59f.html)| [SINSONTE](https://github.com/galopago/SINSONTE)           |
 
