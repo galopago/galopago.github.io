@@ -52,46 +52,48 @@ Essas modificações reduziram a corrente em modo de sono profundo para 0,8 mA, 
 	<figcaption>Modificações e resultado final, fita de poliamida utilizada para proteger fios finos.</figcaption>
 </figure>
 
-##### Bill of materials
+##### Lista de materiais
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_PARTS_MEDIUM.jpg"> </a>
-	<figcaption>Parts used </figcaption>
+	<figcaption>peças utilizadas </figcaption>
 </figure>
 
-| Component        | Buy link | Datasheet                                   |
-| ----------------- | ---------------- | ----------------------------------------------- |
-| ESP32-CAM         | [buy it](https://s.click.aliexpress.com/e/_Dde4rkL) | [esp-32-cam.pdf](/assets/pdf/esp-32-cam.pdf) |
-| Waterproof case for SJ4000 sport cam | [buy it](https://s.click.aliexpress.com/e/_DFtVPpl) | [sj-4000-sport-cam-waterproof-case.pdf](/assets/pdf/sj-4000-sport-cam-waterproof-case.pdf) |
-| BQ25504 energy harvesting module |[buy it](https://s.click.aliexpress.com/e/_DDgPnXv)|[bq25504-energy-harvesting-module.pdf](/assets/pdf/bq25504-energy-harvesting-module.pdf)|
-| 39.5x39.5 mm solar panel| [buy it](https://s.click.aliexpress.com/e/_DCzYmzh) | [solar-panel-39-5x39-5.pdf](/assets/pdf/solar-panel-39-5x39-5.pdf)|
-| 30x25 mm solar panel |[buy it](https://s.click.aliexpress.com/e/_DFMaS0r)|[solar-panel-30x25.pdf](/assets/pdf/solar-panel-30x25.pdf)|
-| 53x18 mm solar panel |[buy it](https://s.click.aliexpress.com/e/_DCbT3Mb)|[solar-panel-53x18.pdf](/assets/pdf/solar-panel-53x18.pdf)|
-| 3.2V AAA 10440 LiFePO4 Battery  |[buy it](https://s.click.aliexpress.com/e/_DCA8kGr) |[lifepo4-3-2v-10440-rechargeable-battery-aaa.pdf](/assets/pdf/lifepo4-3-2v-10440-rechargeable-battery-aaa.pdf) |
-| Micro SD Card|[buy it](https://s.click.aliexpress.com/e/_De2Jybl)|[micro-sd-card.pdf](/assets/pdf/micro-sd-card.pdf)|
-| 1N5817 Diode Schottky |[buy it](https://s.click.aliexpress.com/e/_DewOC9v)|[1n5817.pdf](/assets/pdf/1n5817.pdf)|
-| Single AAA battery clip for PCB |[buy it](https://s.click.aliexpress.com/e/_DmApqEj)|[bh-411.pdf](/assets/pdf/bh-411.pdf)|
-| SMD 0603 resistor kit | [buy it](https://s.click.aliexpress.com/e/_DF6FuyR) | [4250-pcs-0603-smd-resistor-kit.pdf](/assets/pdf/4250-pcs-0603-smd-resistor-kit.pdf) |
-| 2.54 mm female header|[buy it](https://s.click.aliexpress.com/e/_eNYVzN)|[FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf)|
-| 2.54 mm male header|[buy it](https://s.click.aliexpress.com/e/_eMCUJv)|[PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)|
-| 2 pin jumper | [buy it](https://s.click.aliexpress.com/e/_DCCHLqX) | [pin-header-jumper-block.pdf](/assets/pdf/pin-header-jumper-block.pdf)|
-| High temperature 30 AWG UL1423 PVDF wire| [buy it](https://s.click.aliexpress.com/e/_eMiimB) | [UL1423.pdf](/assets/pdf/UL1423.pdf) |
-| Enamelled copper wire | [buy it](https://s.click.aliexpress.com/e/_DEHlzoj) | [repair-copper-enamelled-wire.pdf](/assets/pdf/repair-copper-enamelled-wire.pdf) |
-| High temperature Polyimide insulation tape |[buy it](https://s.click.aliexpress.com/e/_Dkf4nOR)|[high-temperature-polyimide-insulation-tape.pdf](/assets/pdf/high-temperature-polyimide-insulation-tape.pdf)|
+Caixa à prova d'água para câmera esportiva SJ4000, módulo de colheita de energia BQ25504, painel solar, cartão Micro SD.
 
-| Printed Circuit Board | Buy link | Source files repository  |
+| Componente        | Ligação do compra | Folha de dados                                   |
+| ----------------- | ----------------- | ----------------------------------------------- |
+| ESP32-CAM         | [Compre aqui](https://s.click.aliexpress.com/e/_Dde4rkL) | [esp-32-cam.pdf](/assets/pdf/esp-32-cam.pdf) |
+| Caixa à prova d'água para câmera esportiva SJ4000 | [Compre aqui](https://s.click.aliexpress.com/e/_DFtVPpl) | [sj-4000-sport-cam-waterproof-case.pdf](/assets/pdf/sj-4000-sport-cam-waterproof-case.pdf) |
+| módulo de colheita de energia BQ25504 |[Compre aqui](https://s.click.aliexpress.com/e/_DDgPnXv)|[bq25504-energy-harvesting-module.pdf](/assets/pdf/bq25504-energy-harvesting-module.pdf)|
+| painel solar 39.5x39.5 mm | [Compre aqui](https://s.click.aliexpress.com/e/_DCzYmzh) | [solar-panel-39-5x39-5.pdf](/assets/pdf/solar-panel-39-5x39-5.pdf)|
+| painel solar 30x25 mm |[Compre aqui](https://s.click.aliexpress.com/e/_DFMaS0r)|[solar-panel-30x25.pdf](/assets/pdf/solar-panel-30x25.pdf)|
+| painel solar 53x18 mm |[Compre aqui](https://s.click.aliexpress.com/e/_DCbT3Mb)|[solar-panel-53x18.pdf](/assets/pdf/solar-panel-53x18.pdf)|
+| Bateria de 3,2 V LiFePO4 |[Compre aqui](https://s.click.aliexpress.com/e/_DCA8kGr) |[lifepo4-3-2v-10440-rechargeable-battery-aaa.pdf](/assets/pdf/lifepo4-3-2v-10440-rechargeable-battery-aaa.pdf) |
+| cartão Micro SD|[Compre aqui](https://s.click.aliexpress.com/e/_De2Jybl)|[micro-sd-card.pdf](/assets/pdf/micro-sd-card.pdf)|
+| Diode Schottky 1N5817  |[Compre aqui](https://s.click.aliexpress.com/e/_DewOC9v)|[1n5817.pdf](/assets/pdf/1n5817.pdf)|
+| Single AAA battery clip for PCB |[Compre aqui](https://s.click.aliexpress.com/e/_DmApqEj)|[bh-411.pdf](/assets/pdf/bh-411.pdf)|
+| resistor kit  SMD 0603 | [Compre aqui](https://s.click.aliexpress.com/e/_DF6FuyR) | [4250-pcs-0603-smd-resistor-kit.pdf](/assets/pdf/4250-pcs-0603-smd-resistor-kit.pdf) |
+| Barra De Pinos Fêmea 2.54mm|[Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN)|[FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf)|
+| Barra De Pinos macho 2.54mm|[Compre aqui](https://s.click.aliexpress.com/e/_eMCUJv)|[PHA1-S3XX.pdf](/assets/pdf/PHA1-S3XX.pdf)|
+| Jumper 2 pinos| [Compre aqui](https://s.click.aliexpress.com/e/_DCCHLqX) | [pin-header-jumper-block.pdf](/assets/pdf/pin-header-jumper-block.pdf)|
+| Cabo de 30 AWG UL1423 PVDF alta temperatura| [Compre aqui](https://s.click.aliexpress.com/e/_eMiimB) | [UL1423.pdf](/assets/pdf/UL1423.pdf) |
+| Fio de cobre esmaltado | [Compre aqui](https://s.click.aliexpress.com/e/_DEHlzoj) | [repair-copper-enamelled-wire.pdf](/assets/pdf/repair-copper-enamelled-wire.pdf) |
+| Fita Térmica Poliamida |[Compre aqui](https://s.click.aliexpress.com/e/_Dkf4nOR)|[high-temperature-polyimide-insulation-tape.pdf](/assets/pdf/high-temperature-polyimide-insulation-tape.pdf)|
+
+| Placas de circuito impressas (PCB) | Ligação do compra | Arquivos de origem  |
 | --------------------------------- | ---------------- | ------------------------------- |
-| ESP32-CAM prototyping board for sport cam enclosure | [buy it](https://www.pcbway.com/project/shareproject/ESP32_CAM_HOST_BOARD_THAT_FITS_INSIDE_WATERPROOF_SPORTSCAM_HOUSING_d06579a9.html) | [esp32cam-proto-sportcam](https://github.com/galopago/misistemote/tree/main/esp32cam-proto-sportcam) |
+| Placa PCB protótipo para caixa à prova d'água para câmera esportiva  | [Compre aqui](https://www.pcbway.com/project/shareproject/ESP32_CAM_HOST_BOARD_THAT_FITS_INSIDE_WATERPROOF_SPORTSCAM_HOUSING_d06579a9.html) | [esp32cam-proto-sportcam](https://github.com/galopago/misistemote/tree/main/esp32cam-proto-sportcam) |
 
-| Software | repository |
+| Software | repositório |
 | ----------------------- | ---------------- |
-| Sample Firmware takes photos and send them to a server using HTTP POST | [download it](https://github.com/galopago/esp32cam-upload) |
-| Sample Golang server for image upload via HTTP POST | [download it](https://github.com/galopago/golang-upload-server) |
+| Sample Firmware takes photos and send them to a server using HTTP POST | [download](https://github.com/galopago/esp32cam-upload) |
+| Sample Golang server for image upload via HTTP POST | [download](https://github.com/galopago/golang-upload-server) |
 
-| Optional component | Buy link | Datasheet |
+| Componentes opcionais | Ligação do compra | Arquivos de origem |
 | ----------------------- | ---------------- | ------------------------------- |
-| USB to TTL 3.3 V 5 V interface| [buy it](https://s.click.aliexpress.com/e/_Dc9HbCx) | [usb-ttl-converter-3-3v-5v.pdf](/assets/pdf/usb-ttl-converter-3-3v-5v.pdf) |
-| Digital LCD Lux meter | [buy it](https://s.click.aliexpress.com/e/_DkDfxFp) | [digital-lcd-lux-meter.pdf](/assets/pdf/digital-lcd-lux-meter.pdf) |
+| Conversor USB a TTL 3.3 V 5 V | [Compre aqui](https://s.click.aliexpress.com/e/_Dc9HbCx) | [usb-ttl-converter-3-3v-5v.pdf](/assets/pdf/usb-ttl-converter-3-3v-5v.pdf) |
+| Medidor Lux digital LCD | [Compre aqui](https://s.click.aliexpress.com/e/_DkDfxFp) | [digital-lcd-lux-meter.pdf](/assets/pdf/digital-lcd-lux-meter.pdf) |
 
 ##### Assembly
 
