@@ -65,7 +65,7 @@ The following application will be built as an example: a WiFi thermometer based 
 | Printed circuit board (PCB)       | Buy link         | Source files repository         |
 | --------------------------------- | ---------------- | ------------------------------- |
 | Backplate for generic waterproof 100 x 68 x 52 mm enclosure   | [buy it](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_GENERIC_100x68_mm_WATERPROOF_ENCLOSURE_MISISTEMITA_A06_BACKPLATE_64582f71.html) | [a06 backplate](https://github.com/galopago/misistemita/tree/main/a-backplates/a06) |
-| 3.5mm screw terminal 2x7 connection board  | [buy it](https://www.pcbway.com/project/shareproject/2x7_3_5_mm_SCREW_TERMINAL_BOARD_TUSISTEMITA_B02_SCREW_TERMINALS_98bfe5fa.html) | [b02 Bornera de conexiones](https://github.com/galopago/misistemita/tree/main/b-screw-terminal-wire-connectors/b02) |
+| 3.5mm screw terminal 2x7 connection board  | [buy it](https://www.pcbway.com/project/shareproject/2x7_3_5_mm_SCREW_TERMINAL_BOARD_TUSISTEMITA_B02_SCREW_TERMINALS_98bfe5fa.html) | [b02 Screw terminals](https://github.com/galopago/misistemita/tree/main/b-screw-terminal-wire-connectors/b02) |
 | 3.5mm screw terminal breakout for ESP32 D1 MINI  | [buy it](https://www.pcbway.com/project/shareproject/Breakout_ESP8266_D1_MINI_ESP32_CAM_and_ESP32_D1_MINI_ce1e3011.html) | [c12 Breakout](https://github.com/galopago/misistemita/tree/main/c-breakouts/c12) |
 | 3.5mm screw terminal breakout for I2C display | [buy it](https://www.pcbway.com/project/shareproject/Breakout_for_I2C_0_96_OLED_Display_MISISTEMITA_C10_BREAKOUT_abf0ab6f.html) | [c10 Breakout](https://github.com/galopago/misistemita/tree/main/c-breakouts/c10) |
 
