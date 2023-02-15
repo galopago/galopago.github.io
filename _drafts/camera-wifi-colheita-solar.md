@@ -190,42 +190,42 @@ Se for usado um painel menor, como o de 30x25 mm na frente da câmera, cuja pot�
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_PANELCOMPARE.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_PANELCOMPARE_MEDIUM.jpg"> </a>
-	<figcaption>Solar panel in the front vs. solar panel in the back</figcaption>
+	<figcaption>O painel solar na frente vs. painel solar atrás.</figcaption>
 </figure>
 
-To use the camera with such a small panel, a lot of light is required, especially direct light.
+Para usar a câmera com um painel tão pequeno, é necessário muita luz, especialmente luz direta.
 
-##### Firmware and Software
+##### Firmware e Software 
 
-The firmware released here does the following things: take a picture and store in the Micro SD card, then send it over Wi-Fi to a server doing a multipart HTTP POST request and then, enters deep sleep for X amount of seconds before starting the cycle again. The code could serve as a starting point in the creation of a more robust application adapted to individual needs.
+O firmware disponibilizado aqui faz as seguintes coisas: tira uma foto e armazena no cartão Micro SD, depois envia-a via Wi-Fi para um servidor usando um pedido HTTP POST multipart e, em seguida, entra em modo de hibernação profunda por X segundos antes de iniciar o ciclo novamente. O código pode servir como ponto de partida na criação de um aplicativo mais robusto adaptado às necessidades individuais.
 
-On the server side, there is a small app written in Golang, which listens HTTP POST requests and receives the images sent by the ESP32-CAM and stores them in a local folder. This app should run on a PC, or a Raspberry Pi in the same LAN of the ESP32-CAM. Due to being a basic starter example, there is no authentication method developed, so it is not recommended for deploying in a public server in the Internet.
+No lado do servidor, há um pequeno aplicativo escrito em Golang, que escuta pedidos HTTP POST e recebe as imagens enviadas pelo ESP32-CAM e as armazena em uma pasta local. Este aplicativo deve ser executado em um PC ou em um Raspberry Pi na mesma LAN do ESP32-CAM. Por ser um exemplo básico de partida, não há um método de autenticação desenvolvido, portanto, não é recomendado para implantação em um servidor público na Internet.
 
-To program the module, a USB to TTL serial converter is needed, because the module hasn’t an onboard chip for that task. In addition, GPIO0 should be tied to GND during programming.
+Para programar o módulo, é necessário um conversor USB para serial TTL, pois o módulo não tem um chip onboard para essa tarefa. Além disso, o GPIO0 deve ser conectado ao GND durante a programação.
 
-GPIO33 was freed from the onboard LED and wired externally. The supplied firmware uses it for debugging, but it may be used for other purposes like:
+O GPIO33 foi liberado do LED onboard e conectado externamente. O firmware fornecido o usa para debug, mas ele pode ser usado para outros propósitos, como:
 
-* ADC for battery voltage measurement
-* Set up as an RTC pin to wake up the MCU from deep sleep, i.e., PIR sensor
-* Wire to a pushbutton to make local changes without a computer or Wi-Fi connectivity
+* ADC para medição da tensão da bateria
+* Configurado como pino RTC para acordar o MCU do modo deep sleep, ou seja, sensor PIR
+* Conectado a um botão para fazer configuração local sem um computador ou conectividade Wi-Fi
 
-##### Results
+##### Resultados
 
-Image quality isn't great, which was expected due to the cost of the module. Quality could be improved, modifying several parameters of the chip depending on the specific lighting conditions. The image shown below was uploaded automatically by the module through Wi-Fi to a Raspberry Pi where the [Golang upload server](https://github.com/galopago/golang-upload-server) was running
+A qualidade da imagem não é ótima, o que era esperado devido ao custo do módulo. A qualidade poderia ser melhorada modificando vários parâmetros do chip, dependendo das condições específicas de iluminação. A imagem mostrada abaixo foi carregada automaticamente pelo módulo por Wi-Fi para um Raspberry Pi onde o [servidor de upload em Golang](https://github.com/galopago/golang-upload-server) estava sendo executado.
 
 <figure class="half">
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_TESTRIG.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_TESTRIG_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_TESTPIC.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_TESTPIC_MEDIUM.jpg"> </a>
-	<figcaption>Test rig and uploaded picture</figcaption>
+	<figcaption>Montagem de prova e imagem enviada</figcaption>
 </figure>
 
-##### Possible improvements
+##### Possíveis melhorias
 
-Since firmware and upload server are very basic examples, there are some tasks proposed to the reader like:
+Dado que o firmware e o servidor de upload são exemplos muito básicos, existem algumas tarefas propostas ao leitor, tais como:
 
-* Wi-Fi manager to set up credentials without reprogramming.
-* Implement some form of authentication when communicating with the server.
-* A mechanism to change the deep sleep time, image settings, etc. from the server on every picture exchange.
-* Develop an RTC-based scheduler to take pictures on specific dates.
-* Use of a better Wi-Fi antenna (external to the module, but placed inside the enclosure), and place it in a place with less obstructions. Certain changes are needed in the components near the U.FL connector.
- 
+* Gerenciador de Wi-Fi para configurar credenciais sem reprogramação.
+* Implementação de algum tipo de autenticação ao se comunicar com o servidor.
+* Um mecanismo para alterar o tempo de sono profundo, as configurações de imagem, etc. do servidor em cada troca de imagem.
+* Desenvolver um agendador baseado em RTC para tirar fotos em datas específicas.
+* Uso de uma antena Wi-Fi melhor (externa ao módulo, mas colocada dentro do caixa) e colocá-la em um lugar com menos obstruções. Algumas mudanças são necessárias nos componentes próximos ao conector U.FL.
+
