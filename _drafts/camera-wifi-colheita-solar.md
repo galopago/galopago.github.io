@@ -87,104 +87,105 @@ Caixa à prova d'água para câmera esportiva SJ4000, módulo de colheita de ene
 
 | Software | repositório |
 | ----------------------- | ---------------- |
-| Sample Firmware takes photos and send them to a server using HTTP POST | [download](https://github.com/galopago/esp32cam-upload) |
-| Sample Golang server for image upload via HTTP POST | [download](https://github.com/galopago/golang-upload-server) |
+| Firmware de exemplo que tira fotos e as envia para um servidor usando HTTP POST. | [download](https://github.com/galopago/esp32cam-upload) |
+| Exemplo de servidor em Golang para upload de imagens via HTTP POST. | [download](https://github.com/galopago/golang-upload-server) |
 
 | Componentes opcionais | Ligação do compra | Arquivos de origem |
 | ----------------------- | ---------------- | ------------------------------- |
 | Conversor USB a TTL 3.3 V 5 V | [Compre aqui](https://s.click.aliexpress.com/e/_Dc9HbCx) | [usb-ttl-converter-3-3v-5v.pdf](/assets/pdf/usb-ttl-converter-3-3v-5v.pdf) |
 | Medidor Lux digital LCD | [Compre aqui](https://s.click.aliexpress.com/e/_DkDfxFp) | [digital-lcd-lux-meter.pdf](/assets/pdf/digital-lcd-lux-meter.pdf) |
 
-##### Assembly
+##### Montagem
 
-The basic platform consists of a waterproof enclosure for sport cam and a printed circuit board with the appropriate size to fit inside.
+A plataforma básica consiste de uma caixa estanque para câmera de esporte e uma placa de circuito impresso com o tamanho apropriado para caber no interio
+
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_PLATFORM.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_PLATFORM_MEDIUM.jpg"> </a>
-	<figcaption>Basic platform components</figcaption>
+	<figcaption>Componentes da plataforma básica.</figcaption>
 </figure>
 
-The proposed enclosure is pretty common, easy to find and inexpensive. Opens and closes without screws and has a mounting point where different mounting accessories can be installed.
+A caixa proposta é bastante comum, fácil de encontrar e barata. Abre e fecha sem parafusos e possui um ponto de montagem onde diferentes acessórios de montagem podem ser instalados.
 
-The printed circuit board was designed to place ESP32-CAM near the window where the camera lens was to be located. The module can be positioned in two different orientations to maximize area, depending on the selected components.
+A placa de circuito impresso foi projetada para colocar o ESP32-CAM perto da janela onde a lente da câmera seria localizada. O módulo pode ser posicionado em duas orientações diferentes para maximizar a área, dependendo dos componentes selecionados.
 
-AAA battery clip added, female connectors to plug/unplug module easily and header pins for programming, because the board does not have such circuitry. Also, a red LED for debugging purposes was added.
+Foi adicionado um clipe de bateria AAA, conectores fêmea para conectar/desconectar facilmente o módulo e barra de pinos para programação, porque a placa não possui tal circuito. Além disso, foi adicionado um LED vermelho para fins de depuração.
 
 <figure class="third">
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDFRONT.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDFRONT_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDBACK.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDBACK_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_WITHMODULE.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_WITHMODULE_MEDIUM.jpg"> </a>
-	<figcaption>Board with all components</figcaption>
+	<figcaption>Placa com todos os componentes.</figcaption>
 </figure>
 
-##### Energy harvester
+##### Colhedor de energia
 
-The camera gets its energy from solar panels installed inside the enclosure, which means that the area available is small, so a way to maximize its efficiency is needed. A harvesting module based on [BQ25504](https://www.lab4iot.com/2019/07/29/energy-harvesting-tutorial-with-the-ti-bq25570-part-1/) chip was used. This device boosts solar panel voltage and is able to do that with voltages down to 130 mV!, is therefore able to supply current for storage in the battery, even without direct light hitting the panel.
+A câmera obtém energia de painéis solares instalados dentro da caixa, o que significa que a área disponível é pequena, por isso é necessário um meio de maximizar a eficiência. Foi usado um módulo coletor baseado no chip [BQ25504](https://www.lab4iot.com/2019/07/29/energy-harvesting-tutorial-with-the-ti-bq25570-part-1/). Este dispositivo aumenta a tensão do painel solar e é capaz de fazer isso com tensões de até 130 mV! Assim, é capaz de fornecer corrente para armazenamento na bateria, mesmo sem a luz direta atingir o painel.
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_HARVESTER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_HARVESTER_MEDIUM.jpg"> </a>
-	<figcaption>Energy harvesting module attached with double sided-tape</figcaption>
+	<figcaption>Módulo de colheita de energia fixado com fita dupla face.</figcaption>
 </figure>
 
-The module also works as a battery charger with over voltage and under voltage protection. In order to [set voltage values](https://github.com/galopago/electronic-modules-helper/tree/main/cjmcu-25504), some resistors must be modified. The module's manufacturer provides a [spreadsheet](https://www.ti.com/product/BQ25504) to make the process easier.
+O módulo também funciona como um carregador de bateria com proteção contra sobretensão e subtensão. Para definir os [valores de tensão](https://github.com/galopago/electronic-modules-helper/tree/main/cjmcu-25504), alguns resistores devem ser modificados. O fabricante do módulo fornece uma [planilha](https://www.ti.com/product/BQ25504) para facilitar o processo.
 
-Because the enclosure is transparent, it is possible to put a few solar panels in various places inside, and wire them in parallel or series. Maybe some [diodes](https://www.electronics-tutorials.ws/diode/bypass-diodes.html) will be required to not lose a lot of efficiency when some panels are shaded.
+Como o caixa é transparente, é possível colocar alguns painéis solares em vários locais dentro dele e conectá-los em paralelo ou em série. Talvez alguns [diodos](https://www.electronics-tutorials.ws/diode/bypass-diodes.html) sejam necessários para não perder muita eficiência quando alguns painéis estiverem sombreados.
 
-Another important function of the energy harvesting module is the ability to output a VOLTAGE OK SIGNAL, so the MCU could be kept in reset state when the battery voltage is too low to operate. 
+Outra função importante do módulo de colheita de energia é a capacidade de fornecer um SINAL DE OK DE TENSÃO, para que o MCU possa ser mantido no estado de reset quando a tensão da bateria estiver muito baixa para operar.
 
 <figure class="third">
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_TWOPANELS.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_TWOPANELS_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDINSTALLED.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BOARDINSTALLED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_BACKPANEL.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_BACKPANEL_MEDIUM.jpg"> </a>
-	<figcaption>Solar panels and board installed in the interior. Use a piece of EVA foam to keep things in place</figcaption>
+	<figcaption>Painéis solares e placa instalados no interior. Use um pedaço de espuma EVA para manter as coisas no lugar.</figcaption>
 </figure>
 
-##### Energy budget
+##### Orçamento de energia
 
-Warning: Some data and procedures will be simplified to yield simpler and faster results!
+Aviso: Alguns dados e procedimentos serão simplificados para obter resultados mais simples e rápidos!
 {: .notice--danger}
 
-ESP32 draws about 200 mA at 3.3 V to send data over Wi-Fi, which is equivalent to 0.66 W. A 40x40 mm solar panel that fits inside the aforementioned enclosure yields around 65 mA at 2 V at full sun, which is equivalent to 0.13 W.
+O ESP32 consome cerca de 200 mA a 3,3 V para enviar dados via Wi-Fi, o que é equivalente a 0,66 W. Um painel solar de 40x40 mm que cabe dentro do invólucro mencionado acima gera cerca de 65 mA a 2 V em pleno sol, o que equivale a 0,13 W.
 
-With this data, it is clear that it is not possible to use ESP32 sending data over Wi-Fi continuously with that panel, even in full sunlight.
+Com esses dados, fica claro que não é possível usar o ESP32 enviando dados via Wi-Fi continuamente com esse painel, mesmo sob plena luz do sol.
 
-To deal with this problem, two things are needed: a storage element, and the use of the ESP32 module in non continuous (duty cycled) mode.
+Para lidar com esse problema, duas coisas são necessárias: um elemento de armazenamento e o uso do módulo ESP32 em modo não contínuo (ciclo de trabalho).
 
-The module in deep sleep mode draws about 0.88 mA at 3.3 V, which is equivalent to 0.003 W. Assuming 12 hours of daylight, it will take an average of 0.006 W average per day, just to keep the module energized up in sleep mode. If the pair panel/harvester can yield an average of 4.6% of the maximum power of the solar panel at full sun, it is enough to keep energized the ESP32 in deep sleep mode for a very long time (until battery degradation!).
+O módulo no modo de sono profundo consome cerca de 0,88 mA a 3,3 V, o que equivale a 0,003 W. Supondo 12 horas de luz solar, serão necessários em média 0,006 W por dia apenas para manter o módulo energizado em modo de sono. Se o par painel/coletor puder fornecer em média 4,6% da potência máxima do painel solar em pleno sol, será suficiente para manter o ESP32 energizado em modo de sono profundo por muito tempo (até a degradação da bateria!).
 
-Assuming 100.000 Lux as a full sun and 100% of the 40x40 mm solar panel power as 0.13 W, it is estimated that the average irradiance required per day to keep the ESP32 energized in deep sleep is around 4600 Lux. 
+Assumindo 100.000 lux como sol pleno e 100% da potência do painel solar de 40x40 mm como 0,13 W, estima-se que a irradiância média necessária por dia para manter o ESP32 energizado em modo de sono profundo é de cerca de 4600 lux.
 
-##### How much energy is required to take a picture and upload it over the internet?
+##### Quanta energia é necessária para tirar uma foto e enviá-la pela internet?
 
-After waking up from a deep sleep, it takes about 4 seconds for the ESP32 to take a picture, store it in the SD card, and bring it online. The average power consumption of these 4 seconds is 200 mA at 3.3 V. The current to be accumulated for 12 hours to is:
+Depois de acordar de um deep sleep, leva cerca de 4 segundos para o ESP32 tirar uma foto, armazená-la no cartão SD e disponibilizá-la na internet. O consumo médio de energia desses 4 segundos é de 200 mA em 3,3 V. A corrente a ser acumulada por 12 horas é:
 
-ESP 32 Cycle:  
-200 mA x 4 S
+Ciclo ESP32:
+200 mA x 4 s
 
-It is needed:  
-? mA x 12 H  
-? ma x 12 (3600) S  
-? ma x 43200 S  (Approximating to 40000 to make calculations easier)  
+É necessário:
+? mA x 12 h
+? mA x 12 (3600) s
+? mA x 43200 s (Aproximando para 40000 para facilitar os cálculos)
 
-factor = 4 S / 40000 S = 0.0001  
-200 mA * 0.0001 = 10 uA  
+fator = 4 S / 40000 S = 0,0001
+200 mA * 0,0001 = 10 uA
 
-It is required an average of 10 uA for 12 hours to take a picture and send it to a server, which is perfectly feasible in the outdoors, even on cloudy days.
+É necessário uma média de 10 uA por 12 horas para tirar uma foto e enviá-la para um servidor, o que é perfeitamente viável ao ar livre, mesmo em dias nublados.
 
-Finding the relation between Lux and output power of the 40x40 mm and 0.13 W solar panel.
+Encontrando a relação entre Lux e a saída de energia do painel solar de 40x40 mm e 0,13 W.
 
-100.000 Lux	=> 0.13 W  
-0.77 Lux => 1 uW  
+100.000 Lux => 0,13 W
+0,77 Lux => 1 uW
 
-10uA * 3.3V = 33 uW
+10uA * 3,3V = 33 uW
 
-(0.77 Lux /uW ) 33 uW = 25.4 Lux (Approximating to 26 Lux)
+(0,77 Lux / uW) 33 uW = 25,4 Lux (Aproximando para 26 Lux)
 
-It will take an average of 26 Lux per day to take a photo and send it over Wi-Fi
+Será necessário uma média diária de 26 Lux para tirar uma foto e enviá-la por Wi-Fi.
 
-In short, to take at least one photo a day and send it over Wi-Fi, it will take a daily average of 4600 Lux + 26 Lux = 4626 Lux. For two pictures a day it will take a daily average of 4652 Lux, and so on.
+Em resumo, para tirar pelo menos uma foto por dia e enviá-la por Wi-Fi, será necessário uma média diária de 4600 Lux + 26 Lux = 4626 Lux. Para duas fotos por dia, será necessário uma média diária de 4652 Lux, e assim por diante.
 
-If a smaller panel is used, such as the 30x25 mm in the front of the camera, whose power is about a quarter of that installed on the back, the irradiance should be 4 times stronger.
+Se for usado um painel menor, como o de 30x25 mm na frente da câmera, cuja potência é cerca de um quarto do instalado na parte de trás, a irradiância deve ser 4 vezes mais forte.
 
 
 <figure>
