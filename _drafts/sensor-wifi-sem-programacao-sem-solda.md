@@ -120,10 +120,10 @@ Os seguintes pontos não têm a intenção de ser um guia de instalação ou con
 	<figcaption>Firmware de sensor usando Tasmota</figcaption>
 </figure>
 
-The philosophy of Tasmota consists of a basic pre-compiled firmware that is downloaded to the device and once downloaded it is customized using templates. The Tasmota installer is based on a web browser, so no additional software is required. The following parameters were used:
+A filosofia do Tasmota consiste em um firmware pré-compilado básico que é baixado no dispositivo e uma vez baixado, é personalizado usando templates. O instalador do Tasmota é baseado em um navegador da web, portanto, nenhum software adicional é necessário. Os seguintes parâmetros foram usados:
 
-* Base Firmware: Display
-* Template setup: I2C port pins, DS18B20 sensor pin
+* Firmware Base: Display
+* Configuração de template: Pinos da porta I2C, pino do sensor DS18B20
 * Display mode: 0
 * Display type: SSD1306
 * Temperature visualization rule: rule 1 ON DS18B20#Temperature DO Displaytext[zs2y20] %value% C ENDON
@@ -135,7 +135,7 @@ The philosophy of Tasmota consists of a basic pre-compiled firmware that is down
 	<figcaption>Firmware de sensor usando ESPHome</figcaption>
 </figure>
 
-The philosophy of ESPHome consists of compiling a custom firmware using a YAML configuration file. This means that Home Assistant needs to be installed, and once it's up and running, ESPHome should be installed as an add-on. After these two steps, it's already possible to create sensors. A part of the configuration file is shown here in the most significant sections.
+A filosofia do ESPHome consiste em compilar um firmware personalizado usando um arquivo de configuração YAML. Isso significa que o Home Assistant precisa ser instalado e, uma vez em funcionamento, o ESPHome deve ser instalado como um add-on. Após essas duas etapas, já é possível criar sensores. Uma parte do arquivo de configuração é mostrada aqui nas seções mais significativas.
 
 ```
 # GPIO setup
@@ -164,11 +164,11 @@ display:
       it.printf(90, 35, id(roboto), TextAlign::BASELINE_RIGHT , "%.1f °C", id(outside_temperature).state);           
 ```
 
-##### End result
+##### resultado final
 
 ###### hardware:
 
-The assembly of the hardware, starting from pre-built modules, took approximately one hour.
+A montagem do hardware, começando a partir de módulos pré-construídos, levou cerca de uma hora.
 
 ###### firmware:
 
