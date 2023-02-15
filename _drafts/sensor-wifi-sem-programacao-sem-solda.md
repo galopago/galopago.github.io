@@ -108,16 +108,16 @@ O último passo consiste em fechar a tampa, ajustar as prensa cabos e instalar n
 	<figcaption>Tampa fechada, pronta para instalação na parede</figcaption>
 </figure>
 
-#### Firmware setup
+#### Configuração de firmware
 
-The following points are not intended to be a comprehensive installation or configuration guide. For more information, refer to the documentation of each platform used, ([Tasmota](https://tasmota.github.io/docs/) and [ESPHome](https://esphome.io/guides/)). Briefly, some hints about how the sensor was created on each of them will be presented.
+Os seguintes pontos não têm a intenção de ser um guia de instalação ou configuração abrangente. Para obter mais informações, consulte a documentação de cada plataforma utilizada ([Tasmota](https://tasmota.github.io/docs/) e [ESPHome](https://esphome.io/guides/)). Em resumo, algumas dicas sobre como o sensor foi criado em cada uma delas serão apresentadas.
 
 
 ##### Tasmota
 
 <figure>
 	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_TASMOTA.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_TASMOTA_MEDIUM.jpg"> </a>
-	<figcaption>Sensor Firmware using Tasmota</figcaption>
+	<figcaption>Firmware de sensor usando Tasmota</figcaption>
 </figure>
 
 The philosophy of Tasmota consists of a basic pre-compiled firmware that is downloaded to the device and once downloaded it is customized using templates. The Tasmota installer is based on a web browser, so no additional software is required. The following parameters were used:
@@ -132,7 +132,7 @@ The philosophy of Tasmota consists of a basic pre-compiled firmware that is down
 
 <figure>
 	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_ESPHOME.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_ESPHOME_MEDIUM.jpg"> </a>
-	<figcaption>Sensor Firmware using ESPHome</figcaption>
+	<figcaption>Firmware de sensor usando ESPHome</figcaption>
 </figure>
 
 The philosophy of ESPHome consists of compiling a custom firmware using a YAML configuration file. This means that Home Assistant needs to be installed, and once it's up and running, ESPHome should be installed as an add-on. After these two steps, it's already possible to create sensors. A part of the configuration file is shown here in the most significant sections.
