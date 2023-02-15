@@ -16,39 +16,40 @@ Um módulo [ESP32-CAM](https://www.arducam.com/esp32-machine-vision-learning-gui
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_MEDIUM.jpg"> </a>
-	<figcaption>Solar harvesting Wi-Fi camera ready to be placed outside</figcaption>
+	<figcaption>A câmera Wi-Fi com coleta de energia solar está pronta para ser colocada ao ar livre.</figcaption>
 </figure>
 
-Key component: [ESP 32 CAM](https://s.click.aliexpress.com/e/_Dde4rkL)
+Componente chave: [ESP 32 CAM](https://s.click.aliexpress.com/e/_Dde4rkL)
 {: .notice--danger}
 
 
 <figure>
 	<a href="/assets/images/solar_wificamera_wires.png"> <img src="/assets/images/solar_wificamera_wires.png"> </a>
-	<figcaption>Simplified diagram</figcaption>
+	<figcaption>Diagrama simplificado</figcaption>
 </figure>
 
-##### Lowering power consumption
+##### Redução do consumo de energia
 
-ESP32-CAM wasn't designed to be a low power device. Without modifications, deep sleep current measured was 2.8 mA, it leaves much to be desired.  
+O ESP32-CAM não foi projetado para ser um dispositivo de baixo consumo de energia. Sem modificações, a corrente de sono profundo medida foi de 2,8 mA, deixando muito a desejar.
 
 <figure>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_POWER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_POWER_MEDIUM.jpg"> </a>
-	<figcaption>Deep sleep current measurement without modifications </figcaption>
+	<figcaption>Medição da corrente de sono profundo sem modificações. </figcaption>
 </figure>
 
-Some [people on the Internet](https://brettbeeson.com.au/mini-battery-and-solar-powered-timelapse-camera/) already ventured in the following modifications:
-* Removed 5 V to 3 V voltage regulator, the camera will be powered directly from a 3.2 V LiFePO4 battery.
-* Break trace that powers the camera from 3.3 V and wire to [MOSFET Q2](https://github.com/SeeedDocument/forum_doc/blob/master/reg/ESP32_CAM_V1.6.pdf) who switches on 2.8 V and 1.2 V voltage regulators.
-* Remove onboard led and wire GPIO33 to 5 V pin (this pin is already isolated after regulator removal) to use it externally.
+Algumas [pessoas já se aventuraram](https://brettbeeson.com.au/mini-battery-and-solar-powered-timelapse-camera/) nas seguintes modificações na Internet:
 
-These modifications lowered deep sleep current to 0.8 mA, which is scandalous for a low power device, however, is a substantial advance from the 2.8 mA without modifications.
+* Remover o regulador de tensão de 5 V para 3 V, a câmera será alimentada diretamente por uma bateria de 3,2 V LiFePO4.
+* Quebrar a trilha que alimenta a câmera a partir de 3,3 V e ligá-la ao [MOSFET Q2](https://github.com/SeeedDocument/forum_doc/blob/master/reg/ESP32_CAM_V1.6.pdf), que liga os reguladores de tensão de 2,8 V e 1,2 V.
+* Remover o led embarcado e ligar o GPIO33 ao pino de 5 V (este pino já está isolado após a remoção do regulador) para usá-lo externamente.
+
+Essas modificações reduziram a corrente em modo de sono profundo para 0,8 mA, o que é escandaloso para um dispositivo de baixo consumo, no entanto, é uma melhoria substancial em relação aos 2,8 mA sem modificações.
 
 <figure class="third">
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_SWTICH.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_SWTICH_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_NOREGULATORLED.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_NOREGULATORLED_MEDIUM.jpg"> </a>
 	<a href="/assets/images/ENERGY_HARVESTING_CAMERA_LOWPOWER.jpg"> <img src="/assets/images/ENERGY_HARVESTING_CAMERA_LOWPOWER_MEDIUM.jpg"> </a>
-	<figcaption>Modifications and final result, Polyimide tape used to protect fine wire</figcaption>
+	<figcaption>Modificações e resultado final, fita de poliamida utilizada para proteger fios finos.</figcaption>
 </figure>
 
 ##### Bill of materials
