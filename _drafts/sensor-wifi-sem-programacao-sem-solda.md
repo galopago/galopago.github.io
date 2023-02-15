@@ -18,59 +18,59 @@ Este projeto combina duas ideias: plataforma de software no-code/low-code e um s
 
 <figure>
 	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_MEDIUM.jpg"> </a>
-	<figcaption>Wi-Fi sensor developed using rapid prototyping tools for both software and hardware, operating in real-world conditions.</figcaption>
+	<figcaption>Sensor Wi-Fi desenvolvido usando ferramentas de prototipagem rápida tanto para software quanto para hardware, operando em condições do mundo real..</figcaption>
 </figure>
 
-Key component: [ESP 32 D1 MINI](https://s.click.aliexpress.com/e/_DlJju2n)
+Componente chave: [ESP 32 D1 MINI](https://s.click.aliexpress.com/e/_DlJju2n)
 {: .notice--danger}
 
+### Prototipagem rápida de hardware-software
 
-### Quick, robust hardware-software prototyping
+A seguinte aplicação será construída como exemplo: um termômetro WiFi baseado em ESP32, sensor de temperatura DS18B20 e indicador local I2C. Tudo isso será fechado em uma caixa à prova d'água, montável na parede e alimentado por 5V. Isso será alcançado usando os seguintes projetos:
 
-The following application will be built as an example: a WiFi thermometer based on ESP32, DS18B20 temperature sensor, and local I2C indicator. All this enclosed in a waterproof, wall-mountable box and powered by 5V. This will be accomplished using the following projects:
+HARDWARE: Sistema de prototipagem rápida, de código aberto e robusto: [MISISTEMITA](https://github.com/galopago/misistemita)
 
-* HARDWARE: Quick, Open Source, robust prototyping system: [MISISTEMITA](https://github.com/galopago/misistemita)
+SOFTWARE: Testado [TASMOTA](https://tasmota.github.io) e também [ESPHome](https://esphome.io).
 
-* SOFTWARE: Tested [TASMOTA](https://tasmota.github.io) and also [ESPHome](https://esphome.io).
 
-##### Bill of materials
+##### Lista de materiais
 
 <figure>
 	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTS.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTS_MEDIUM.jpg"> </a>
-	<figcaption>Parts used in the project</figcaption>
+	<figcaption>Peças usadas no projeto.</figcaption>
 </figure>
 
-##### Discrete parts needed
+##### Peças discretas necessárias
 
-| Component         | Buy link         | Datasheet                                       |
-| ----------------- | ---------------- | ----------------------------------------------- |
-| ESP32 D1 MINI     | [buy it](https://s.click.aliexpress.com/e/_DlJju2n) | [esp32-d1-mini.pdf](/assets/pdf/esp32-d1-mini.pdf) |
-| OLED 0.96 I2C Display| [buy it](https://s.click.aliexpress.com/e/_DBmZwu3) | [096-i2c-oled-display.pdf](/assets/pdf/096-i2c-oled-display.pdf) |
-| DS18B20 waterproof temperature sensor |[buy it](https://s.click.aliexpress.com/e/_DCzX5Mn)|[ds18b20-waterproof.pdf](/assets/pdf/ds18b20-waterproof.pdf)|
-| 1/4W 1% TH Resistor |[buy it](https://s.click.aliexpress.com/e/_etm4gJ)|[MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf)|
-| Generic waterproof “Sonoff” enclosure 100x68x50mm | [buy it](https://s.click.aliexpress.com/e/_AtukwZ) | [SONOFF-IP66-waterproof-case.pdf](/assets/pdf/SONOFF-IP66-waterproof-case.pdf)|
+| Componente        | Ligação do compra  | Folha de dados                                   |
+| ----------------- | ------------------ | ----------------------------------------------- |
+| ESP32 D1 MINI     | [Compre aqui](https://s.click.aliexpress.com/e/_DlJju2n) | [esp32-d1-mini.pdf](/assets/pdf/esp32-d1-mini.pdf) |
+| Display OLED 0.96 I2C | [Compre aqui](https://s.click.aliexpress.com/e/_DBmZwu3) | [096-i2c-oled-display.pdf](/assets/pdf/096-i2c-oled-display.pdf) |
+| Sensor temperatura prova dágua DS18B20 |[Compre aqui](https://s.click.aliexpress.com/e/_DCzX5Mn)|[ds18b20-waterproof.pdf](/assets/pdf/ds18b20-waterproof.pdf)|
+| Resistor 1/4W 1% TH  |[Compre aqui](https://s.click.aliexpress.com/e/_etm4gJ)|[MGR-SERIES.pdf](/assets/pdf/MGR-SERIES.pdf)|
+| Caixa plástica à prova d’água “Sonoff” 100x68x50mm | [Compre aqui](https://s.click.aliexpress.com/e/_AtukwZ) | [SONOFF-IP66-waterproof-case.pdf](/assets/pdf/SONOFF-IP66-waterproof-case.pdf)|
 
-##### Components needed to build the required misistemita modules
+##### Componentes necessários para construir os módulos necessários de misistemita
 
-| Component         | Buy link         | Datasheet                                       |
-| ----------------- | ---------------- | ----------------------------------------------- |
-| Reverse locking nylon spacer |[buy it](https://s.click.aliexpress.com/e/_DCFVOtz)|[G228.pdf](/assets/pdf/G228.pdf)|
-| M2.6 B-type self-tapping screw |[buy it](https://s.click.aliexpress.com/e/_esHHyb)|[M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)|
-| 3.5mm kf350 screw terminal (2,3 pins) for PCB   |[buy it](https://s.click.aliexpress.com/e/_eLjzKB)|[KF350.pdf](/assets/pdf/KF350.pdf)|
-| 2.54mm female header connector |[buy it](https://s.click.aliexpress.com/e/_eNYVzN)|[FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf)|
-
-
-##### Printed circuit boards needed to build the required misistemita modules
-
-| Printed circuit board (PCB)       | Buy link         | Source files repository         |
-| --------------------------------- | ---------------- | ------------------------------- |
-| Backplate for generic waterproof 100 x 68 x 52 mm enclosure   | [buy it](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_GENERIC_100x68_mm_WATERPROOF_ENCLOSURE_MISISTEMITA_A06_BACKPLATE_64582f71.html) | [a06 backplate](https://github.com/galopago/misistemita/tree/main/a-backplates/a06) |
-| 3.5mm screw terminal 2x7 connection board  | [buy it](https://www.pcbway.com/project/shareproject/2x7_3_5_mm_SCREW_TERMINAL_BOARD_TUSISTEMITA_B02_SCREW_TERMINALS_98bfe5fa.html) | [b02 Bornera de conexiones](https://github.com/galopago/misistemita/tree/main/b-screw-terminal-wire-connectors/b02) |
-| 3.5mm screw terminal breakout for ESP32 D1 MINI  | [buy it](https://www.pcbway.com/project/shareproject/Breakout_ESP8266_D1_MINI_ESP32_CAM_and_ESP32_D1_MINI_ce1e3011.html) | [c12 Breakout](https://github.com/galopago/misistemita/tree/main/c-breakouts/c12) |
-| 3.5mm screw terminal breakout for I2C display | [buy it](https://www.pcbway.com/project/shareproject/Breakout_for_I2C_0_96_OLED_Display_MISISTEMITA_C10_BREAKOUT_abf0ab6f.html) | [c10 Breakout](https://github.com/galopago/misistemita/tree/main/c-breakouts/c10) |
+| Componente        | Ligação do compra   | Folha de dados                                      |
+| ----------------- | ------------------- | ----------------------------------------------- |
+| Espaçador de Nylon de travamento reverso |[Compre aqui](https://s.click.aliexpress.com/e/_DCFVOtz)|[G228.pdf](/assets/pdf/G228.pdf)|
+| Parafuso auto-rostante tipo B M2.6 |[Compre aqui](https://s.click.aliexpress.com/e/_esHHyb)|[M2.6x5-6-8-12mm.pdf](/assets/pdf/M2.6x5-6-8-12mm.pdf)|
+| Borne de parafuso 3.5mm kf350 (2,3 pinos) para PCB.   |[Compre aqui](https://s.click.aliexpress.com/e/_eLjzKB)|[KF350.pdf](/assets/pdf/KF350.pdf)|
+| Barra De Pinos Fêmea 2.54mm |[Compre aqui](https://s.click.aliexpress.com/e/_eNYVzN)|[FHA3-S1XX.pdf](/assets/pdf/FHA3-S1XX.pdf)|
 
 
-| Software | repository   |
+##### Placas de circuito impressas necessárias para construir os módulos necessários do MISISTEMITA
+
+| Placas de circuito impressas (PCB)  | Ligação do compra  | Arquivos de origem         |
+| ----------------------------------- | ------------------ | ------------------------------- |
+| A06 placa de montagem removível para o caixa de 100 x 68 x 52 mm | [Compre aqui](https://www.pcbway.com/project/shareproject/BACKPLATE_FOR_GENERIC_100x68_mm_WATERPROOF_ENCLOSURE_MISISTEMITA_A06_BACKPLATE_64582f71.html) | [a06 backplate](https://github.com/galopago/misistemita/tree/main/a-backplates/a06) |
+| B02 3.5mm 2x7 placa borne de parafuso  | [Compre aqui](https://www.pcbway.com/project/shareproject/2x7_3_5_mm_SCREW_TERMINAL_BOARD_TUSISTEMITA_B02_SCREW_TERMINALS_98bfe5fa.html) | [b02 Screw terminal](https://github.com/galopago/misistemita/tree/main/b-screw-terminal-wire-connectors/b02) |
+| C12 Placa Borne De Expansão para ESP32 D1 MINI  | [Compre aqui](https://www.pcbway.com/project/shareproject/Breakout_ESP8266_D1_MINI_ESP32_CAM_and_ESP32_D1_MINI_ce1e3011.html) | [c12 Breakout](https://github.com/galopago/misistemita/tree/main/c-breakouts/c12) |
+| C10 Placa Borne De Expansão para display I2C  | [Compre aqui](https://www.pcbway.com/project/shareproject/Breakout_for_I2C_0_96_OLED_Display_MISISTEMITA_C10_BREAKOUT_abf0ab6f.html) | [c10 Breakout](https://github.com/galopago/misistemita/tree/main/c-breakouts/c10) |
+
+
+| Software | repositorio   |
 | ----------------------- | ---------------- |
 | ESPHome | [download](https://esphome.io/) |
 | TASMOTA | [download](https://tasmota.github.io/docs/) |
