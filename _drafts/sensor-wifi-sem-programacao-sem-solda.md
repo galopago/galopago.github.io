@@ -75,36 +75,37 @@ SOFTWARE: Testado [TASMOTA](https://tasmota.github.io) e também [ESPHome](https
 | ESPHome | [download](https://esphome.io/) |
 | TASMOTA | [download](https://tasmota.github.io/docs/) |
 
-#### Hardware assembly
+#### Montagem de hardware
 
-Soldering will not be required* if the modules to be used have been built or acquired beforehand. The first step is to locate the boards in the backplate, as good practice, the [screw terminal wire connection boards](https://github.com/galopago/misistemita/tree/main/b-screw-terminal-wire-connectors) should be placed somewhere on the edge of the backplate and as close as possible to the cable entry point.
+A soldagem não será necessária* se os módulos a serem usados já tiverem sido construídos ou adquiridos antecipadamente. O primeiro passo é localizar as placas na placa de montagem removível, como boa prática, os [terminais borna com parafuso](https://github.com/galopago/misistemita/tree/main/b-screw-terminal-wire-connectors) devem ser colocados em algum lugar na borda da placa de montagem removível e o mais próximo possível do ponto de entrada do cabo.
 
 
 <figure>
 	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTSPLACED.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTSPLACED_MEDIUM.jpg"> </a>
-	<figcaption>Boards placed on the backplate</figcaption>
+	<figcaption> Placas colocadas na placa de montagem removível </figcaption>
 </figure>
 
-The second step is to wire the different modules depending on the originally proposed project. Both solid copper cable and multi-stranded copper cable can be used. Downloading a minimum test firmware is recommended to test the connectivity of the components.
+O segundo passo é conectar os diferentes módulos dependendo do projeto originalmente proposto. Tanto cabos de cobre sólido quanto cabos de cobre multifilares podem ser usados. É recomendável baixar um firmware de teste mínimo para testar a conectividade dos componentes.
+
 
 <figure>
 	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTSWIRED.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_PARTSWIRED_MEDIUM.jpg"> </a>
-	<figcaption>Boards placed on the backplate and wired</figcaption>
+	<figcaption>Placas colocadas na placa de montagem removível e conectadas com fios</figcaption>
 </figure>
 
-The third step is to remove the external connections, locating the backplate in the enclosure and securing it with self-tapping screws. Pass the power cables through the cable glands and reconnect them to the board.
+O terceiro passo é remover as conexões externas, posicionar a placa de montagem removível na caixa e fixá-la com parafusos autoroscantes. Passe os cabos de alimentação pelos prensa cabos e reconecte-os à placa.
 
 
 <figure>
 	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_BACKPLANEFIXED.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_BACKPLANEFIXED_MEDIUM.jpg"> </a>
-	<figcaption>Backplate fixed to the enclosure and external cables connected again</figcaption>
+	<figcaption>Placa de montagem removível fixada na caixa e cabos externos reconectados</figcaption>
 </figure>
 
-The final step consists of closing the cover, adjusting the cable glands, and installing on the wall.
+O último passo consiste em fechar a tampa, ajustar as prensa cabos e instalar na parede.
 
 <figure>
 	<a href="/assets/images/AN008/WIFI_SENSOR_LOWCODE_LIDCLOSED.jpg"> <img src="/assets/images/AN008/WIFI_SENSOR_LOWCODE_LIDCLOSED_MEDIUM.jpg"> </a>
-	<figcaption>Lid closed, ready for wall installation</figcaption>
+	<figcaption>Tampa fechada, pronta para instalação na parede</figcaption>
 </figure>
 
 #### Firmware setup
