@@ -120,9 +120,6 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/company/galopago"
-    - label: "Mastodon"
-      icon: "fab fa-fw fa-mastodon"
-      url: "https://techhub.social/@Galopago"
 
 # Site Footer
 footer:
@@ -148,9 +145,6 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/company/galopago"
-    - label: "Mastodon"
-      icon: "fab fa-fw fa-mastodon"
-      url: "https://techhub.social/@Galopago"
 
 
 # Reading Files
